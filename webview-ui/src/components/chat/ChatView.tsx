@@ -1831,12 +1831,14 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 											modeShortcutText={modeShortcutText}
 										/>
 									</div>
-									<div className="w-full max-w-2xl">
-										<AutoApproveMenu />
-									</div>
 								</div>
 							)}
-
+							{/* AutoApproveMenu moved to bottom */}
+							{!task && (
+								<div className="w-full max-w-2xl mx-auto">
+									<AutoApproveMenu />
+								</div>
+							)}
 							{/* Show the task history preview if expanded and tasks exist */}
 							{taskHistory.length > 0 && isExpanded && <HistoryPreview />}
 						</div>
