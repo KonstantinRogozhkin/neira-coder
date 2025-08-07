@@ -1,14 +1,16 @@
-import { memo } from "react"
+import { memo, useState } from "react"
 
 import { vscode } from "@src/utils/vscode"
 import { useAppTranslation } from "@src/i18n/TranslationContext"
 
 import { useTaskSearch } from "./useTaskSearch"
 import TaskItem from "./TaskItem"
+import { DeleteTaskDialog } from "./DeleteTaskDialog"
 
 const HistoryPreview = () => {
 	const { tasks } = useTaskSearch()
 	const { t } = useAppTranslation()
+	const [deleteTaskId, setDeleteTaskId] = useState<string | null>(null)
 
 	const handleViewAllHistory = () => {
 		vscode.postMessage({ type: "switchTab", tab: "history" })
@@ -19,7 +21,7 @@ const HistoryPreview = () => {
 			{tasks.length !== 0 && (
 				<>
 					{tasks.slice(0, 3).map((item) => (
-						<TaskItem key={item.id} item={item} variant="compact" />
+						<TaskItem key={item.id} item={item} variant="compact" onDelete={setDeleteTaskId} />
 					))}
 					<button
 						onClick={handleViewAllHistory}
@@ -28,6 +30,11 @@ const HistoryPreview = () => {
 						{t("history:viewAllHistory")}
 					</button>
 				</>
+			)}
+
+			{/* Delete dialog */}
+			{deleteTaskId && (
+				<DeleteTaskDialog taskId={deleteTaskId} onOpenChange={(open) => !open && setDeleteTaskId(null)} open />
 			)}
 		</div>
 	)
