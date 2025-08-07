@@ -7,7 +7,7 @@ const RooHero = () => {
 	})
 
 	return (
-		<div className="flex flex-col items-center justify-center pb-4 forced-color-adjust-none">
+		<div className="flex flex-col items-center justify-center pb-2 forced-color-adjust-none">
 			<div
 				style={{
 					backgroundColor: "var(--vscode-editor-foreground, #ffffff)",
@@ -21,6 +21,9 @@ const RooHero = () => {
 				}}
 				className="mx-auto brightness-110">
 				<img src={imagesBaseUri + "/roo-logo.svg"} alt="Roo logo" className="h-8 opacity-0" />
+			</div>
+			<div className="text-center mt-2 text-xs text-vscode-descriptionForeground opacity-80">
+				Мультиролевой ИИ для автоматизации рутинных бизнес-задач
 			</div>
 		</div>
 	)
