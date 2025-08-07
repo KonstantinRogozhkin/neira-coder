@@ -35,8 +35,6 @@ import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { useExtensionState } from "@src/context/ExtensionStateContext"
 import { useSelectedModel } from "@src/components/ui/hooks/useSelectedModel"
 import RooHero from "@src/components/welcome/RooHero"
-import RooTips from "@src/components/welcome/RooTips"
-import RooCloudCTA from "@src/components/welcome/RooCloudCTA"
 import { StandardTooltip } from "@src/components/ui"
 import { useAutoApprovalState } from "@src/hooks/useAutoApprovalState"
 import { useAutoApprovalToggles } from "@src/hooks/useAutoApprovalToggles"
@@ -116,7 +114,6 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 		historyPreviewCollapsed, // Added historyPreviewCollapsed
 		soundEnabled,
 		soundVolume,
-		cloudIsAuthenticated,
 	} = useExtensionState()
 
 	const messagesRef = useRef(messages)
@@ -1808,9 +1805,38 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 							<RooHero />
 							{telemetrySetting === "unset" && <TelemetryBanner />}
 
-							<div className="mb-2.5">
-								{cloudIsAuthenticated || taskHistory.length < 4 ? <RooTips /> : <RooCloudCTA />}
-							</div>
+							{/* Input area moved to center under logo */}
+							{!task && (
+								<div className="flex flex-col items-center gap-4 mt-8">
+									<div className="w-full max-w-2xl">
+										<AutoApproveMenu />
+									</div>
+									<div className="w-full max-w-2xl">
+										<ChatTextArea
+											ref={textAreaRef}
+											inputValue={inputValue}
+											setInputValue={setInputValue}
+											sendingDisabled={sendingDisabled || isProfileDisabled}
+											selectApiConfigDisabled={sendingDisabled && clineAsk !== "api_req_failed"}
+											placeholderText={placeholderText}
+											selectedImages={selectedImages}
+											setSelectedImages={setSelectedImages}
+											onSend={() => handleSendMessage(inputValue, selectedImages)}
+											onSelectImages={selectImages}
+											shouldDisableImages={shouldDisableImages}
+											onHeightChange={() => {
+												if (isAtBottom) {
+													scrollToBottomAuto()
+												}
+											}}
+											mode={mode}
+											setMode={setMode}
+											modeShortcutText={modeShortcutText}
+										/>
+									</div>
+								</div>
+							)}
+
 							{/* Show the task history preview if expanded and tasks exist */}
 							{taskHistory.length > 0 && isExpanded && <HistoryPreview />}
 						</div>
@@ -1832,11 +1858,6 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 			//    This ensures it takes its natural height when there's space
 			//    but becomes scrollable when the viewport is too small
 			*/}
-				{!task && (
-					<div className="mb-1 flex-initial min-h-0">
-						<AutoApproveMenu />
-					</div>
-				)}
 
 				{task && (
 					<>
@@ -1965,27 +1986,31 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 						setMessageQueue((prev) => prev.map((msg, i) => (i === index ? { ...msg, text: newText } : msg)))
 					}}
 				/>
-				<ChatTextArea
-					ref={textAreaRef}
-					inputValue={inputValue}
-					setInputValue={setInputValue}
-					sendingDisabled={sendingDisabled || isProfileDisabled}
-					selectApiConfigDisabled={sendingDisabled && clineAsk !== "api_req_failed"}
-					placeholderText={placeholderText}
-					selectedImages={selectedImages}
-					setSelectedImages={setSelectedImages}
-					onSend={() => handleSendMessage(inputValue, selectedImages)}
-					onSelectImages={selectImages}
-					shouldDisableImages={shouldDisableImages}
-					onHeightChange={() => {
-						if (isAtBottom) {
-							scrollToBottomAuto()
-						}
-					}}
-					mode={mode}
-					setMode={setMode}
-					modeShortcutText={modeShortcutText}
-				/>
+
+				{/* ChatTextArea only for active tasks */}
+				{task && (
+					<ChatTextArea
+						ref={textAreaRef}
+						inputValue={inputValue}
+						setInputValue={setInputValue}
+						sendingDisabled={sendingDisabled || isProfileDisabled}
+						selectApiConfigDisabled={sendingDisabled && clineAsk !== "api_req_failed"}
+						placeholderText={placeholderText}
+						selectedImages={selectedImages}
+						setSelectedImages={setSelectedImages}
+						onSend={() => handleSendMessage(inputValue, selectedImages)}
+						onSelectImages={selectImages}
+						shouldDisableImages={shouldDisableImages}
+						onHeightChange={() => {
+							if (isAtBottom) {
+								scrollToBottomAuto()
+							}
+						}}
+						mode={mode}
+						setMode={setMode}
+						modeShortcutText={modeShortcutText}
+					/>
+				)}
 
 				{isProfileDisabled && (
 					<div className="px-3">
