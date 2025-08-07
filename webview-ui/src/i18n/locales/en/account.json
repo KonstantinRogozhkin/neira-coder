@@ -1,0 +1,14 @@
+{
+	"title": "Account",
+	"profilePicture": "Profile Picture",
+	"logOut": "Log Out",
+	"testApiAuthentication": "Test API Authentication",
+	"signIn": "Connect to Neira Coder Cloud",
+	"connect": "Connect",
+	"cloudBenefitsTitle": "Connect to Neira Coder Cloud",
+	"cloudBenefitsSubtitle": "Sync your prompts and telemetry to enable:",
+	"cloudBenefitHistory": "Online task history",
+	"cloudBenefitSharing": "Sharing and collaboration features",
+	"cloudBenefitMetrics": "Usage metrics based on tasks, tokens, and costs",
+	"visitCloudWebsite": "Visit Neira Coder Cloud"
+} 

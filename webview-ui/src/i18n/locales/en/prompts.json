@@ -1,0 +1,103 @@
+{
+	"title": "Modes",
+	"done": "Done",
+	"modes": {
+		"title": "Modes",
+		"createNewMode": "Create new mode",
+		"importMode": "Import mode",
+		"noMatchFound": "No modes found",
+		"editModesConfig": "Edit modes configuration",
+		"editGlobalModes": "Edit global modes",
+		"editProjectModes": "Edit project modes (.neiramodes)",
+		"createModeHelpText": "Modes are specialized personas that adapt Roo's behavior. <0>Learn about using modes</0> or <1>configuring modes.</1>",
+		"selectMode": "Search modes"
+	},
+	"apiConfiguration": {
+		"title": "API Configuration",
+		"select": "Select which API configuration to use for this mode"
+	},
+	"tools": {
+		"title": "Available tools",
+		"builtInModesText": "Tools for built-in modes cannot be changed",
+		"editTools": "Edit tools",
+		"doneEditing": "Done editing",
+		"allowedFiles": "Allowed files:",
+		"toolNames": {
+			"read": "Read files",
+			"edit": "Edit files",
+			"browser": "Use browser",
+			"command": "Run commands",
+			"mcp": "Use MCP"
+		},
+		"noTools": "None"
+	},
+	"roleDefinition": {
+		"title": "Role definition",
+		"resetToDefault": "Reset to default",
+		"description": "Define Roo's expertise and personality for this mode. This description shapes how Roo will behave and perform tasks."
+	},
+	"description": {
+		"title": "Short description (for humans)",
+		"resetToDefault": "Reset to default description",
+		"description": "Short description displayed in the mode selection dropdown."
+	},
+	"whenToUse": {
+		"title": "When to use (optional)",
+		"description": "Describe when this mode should be used. This helps the Orchestrator choose the right mode for a task.",
+		"resetToDefault": "Reset default 'When to use' description"
+	},
+	"customInstructions": {
+		"title": "Custom mode instructions (optional)",
+		"resetToDefault": "Reset to default",
+		"description": "Add behavior recommendations specific to mode {{modeName}}.",
+		"loadFromFile": "Custom instructions for mode {{mode}} can also be loaded from the <span>.neira/rules-{{slug}}/</span> folder in your workspace (.neiramodes-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
+	},
+	"exportMode": {
+		"title": "Export mode",
+		"description": "Export this mode to a YAML file with all included rules for easy sharing with others.",
+		"export": "Export mode",
+		"exporting": "Exporting..."
+	},
+	"globalCustomInstructions": {
+		"title": "Custom instructions for all modes",
+		"description": "These instructions apply to all modes. They set the base behavior that can be extended with the instructions below. <0>Learn more</0>",
+		"loadFromFile": "Instructions can also be loaded from the <span>.neira/rules/</span> folder in your workspace (.neiramodes and .clinerules are deprecated and will stop working soon)."
+	},
+	"importMode": {
+		"selectLevel": "Select where to import this mode:",
+		"import": "Import",
+		"importing": "Importing...",
+		"global": {
+			"label": "Global level",
+			"description": "Available in all projects. Rules will be merged with custom instructions."
+		},
+		"project": {
+			"label": "Project level",
+			"description": "Available only in this workspace. If the exported mode contained rule files, they will be recreated in the .neira/rules-{slug}/ folder."
+		}
+	},
+	"systemPrompt": {
+		"preview": "System prompt preview",
+		"copy": "Copy system prompt to clipboard",
+		"title": "System prompt (mode {{modeName}})"
+	},
+	"supportPrompts": {
+		"title": "Support prompts",
+		"resetPrompt": "Reset {{promptType}} prompt to default",
+		"prompt": "Prompt",
+		"enhance": {
+			"apiConfiguration": "API Configuration",
+			"apiConfigDescription": "You can select an API configuration that will always be used for prompt enhancement, or use the currently selected one",
+			"useCurrentConfig": "Use current API configuration",
+			"testPromptPlaceholder": "Enter a prompt to test enhancement",
+			"previewButton": "Preview enhanced prompt",
+			"testEnhancement": "Test enhancement",
+			"includeTaskHistory": "Include task history as context",
+			"includeTaskHistoryDescription": "When enabled, the last 10 messages from the current conversation will be included as context when enhancing prompts, helping generate more relevant and context-aware suggestions."
+		},
+		"condense": {
+			"apiConfiguration": "API Configuration for context condensing",
+			"apiConfigDescription": "Select which API configuration to use for context condensing operations. Leave unselected to use the currently active configuration."
+		}
+	}
+} 

@@ -1,0 +1,40 @@
+{
+	"name": "@neira-coder/types",
+	"version": "1.40.0",
+	"description": "TypeScript type definitions for Neira Coder.",
+	"publishConfig": {
+		"access": "public",
+		"name": "@neira-coder/types"
+	},
+	"author": "Neira Coder Team",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NeiraCoderInc/Neira-Coder.git"
+	},
+	"bugs": {
+		"url": "https://github.com/NeiraCoderInc/Neira-Coder/issues"
+	},
+	"homepage": "https://github.com/NeiraCoderInc/Neira-Coder/tree/main/packages/types",
+	"keywords": [
+		"neira",
+		"neira-coder",
+		"ai"
+	],
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"files": [
+		"dist"
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"greeting": "Welcome to Neira Coder!",
+	"introduction": "With built-in and extensible Modes, Neira Coder lets you plan, design, code, debug, and boost productivity like never before.",
+	"notice": "This extension needs an API provider to get started.",
+	"start": "Let's go!",
+	"routers": {
+		"requesty": {
+			"description": "Your optimized LLM router",
+			"incentive": "$1 free credit"
+		},
+		"openrouter": {
+			"description": "Unified interface for LLMs"
+		}
+	},
+	"chooseProvider": "For its magic, Roo needs an API key.",
+	"startRouter": "We recommend using an LLM router:",
+	"startCustom": "Or you can use your own API key:",
+	"telemetry": {
+		"title": "Help improve Neira Coder",
+		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. Code, prompts, and personal information are never sent.",
+		"changeSettings": "You can always change this at the bottom of the <settingsLink>settings</settingsLink> page",
+		"settings": "settings",
+		"allow": "Allow",
+		"deny": "Deny"
+	},
+	"importSettings": "Import Settings"
+} 

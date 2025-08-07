@@ -1,0 +1,13 @@
+{
+	"dialogTitle": "Human Relay — Please help copy/paste information",
+	"dialogDescription": "Please copy the following prompt to a web AI, then paste the AI response in the input field below.",
+	"copiedToClipboard": "Copied to clipboard",
+	"aiResponse": {
+		"label": "Please enter the AI response:",
+		"placeholder": "Paste the AI response here..."
+	},
+	"actions": {
+		"cancel": "Cancel",
+		"submit": "Submit"
+	}
+} 

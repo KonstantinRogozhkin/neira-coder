@@ -1,0 +1,7 @@
+{
+	"name": "@neira-coder/config-typescript",
+	"private": true,
+	"publishConfig": {
+		"access": "public"
+	}
+}

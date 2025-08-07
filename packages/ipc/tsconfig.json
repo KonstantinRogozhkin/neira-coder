@@ -1,0 +1,8 @@
+{
+	"extends": "@neira-coder/config-typescript/base.json",
+	"compilerOptions": {
+		"types": ["vitest/globals"]
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
+}

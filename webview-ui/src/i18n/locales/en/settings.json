@@ -1,0 +1,55 @@
+{
+	"common": {
+		"save": "Save",
+		"done": "Done",
+		"cancel": "Cancel",
+		"reset": "Reset",
+		"select": "Select",
+		"add": "Add",
+		"remove": "Remove"
+	},
+	"header": {
+		"title": "Settings",
+		"saveButtonTooltip": "Save changes",
+		"nothingChangedTooltip": "No changes",
+		"doneButtonTooltip": "Discard unsaved changes and close settings panel"
+	},
+	"unsavedChangesDialog": {
+		"title": "Unsaved Changes",
+		"description": "Do you want to discard changes and continue?",
+		"cancelButton": "Cancel",
+		"discardButton": "Discard Changes"
+	},
+	"sections": {
+		"providers": "Providers",
+		"autoApprove": "Auto Approve",
+		"browser": "Computer Access",
+		"checkpoints": "Checkpoints",
+		"notifications": "Notifications",
+		"contextManagement": "Context",
+		"terminal": "Terminal",
+		"prompts": "Prompts",
+		"experimental": "Experimental",
+		"language": "Language",
+		"about": "About Neira Coder"
+	},
+	"prompts": {
+		"description": "Configure support prompts used for quick actions like prompt improvement, code explanation, and issue fixing. These prompts help Neira provide better support for common development tasks."
+	},
+	"providers": {
+		"apiProvider": "API Provider",
+		"providerDocumentation": "Provider Documentation",
+		"anthropicApiKey": "Anthropic API Key",
+		"apiKeyStorageNotice": "Your API key is stored locally and never sent to our servers.",
+		"getAnthropicApiKey": "Get Anthropic API Key",
+		"useCustomBaseUrl": "Use custom base URL",
+		"model": "Model",
+		"validation": {
+			"apiKey": "API key is required"
+		},
+		"placeholders": {
+			"apiKey": "Enter your API key"
+		}
+	},
+	"importSettings": "Import Settings"
+} 

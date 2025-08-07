@@ -1,0 +1,45 @@
+# Exclude everything
+**
+
+# Include README.md, CHANGELOG.md and LICENSE
+!README.md
+!CHANGELOG.md
+!LICENSE
+
+# Include package.json
+!package.json
+!package.nls.*
+
+# Include the built extension
+!dist
+
+# Include the built webview (excluding source maps for smaller size)
+!webview-ui/audio
+!webview-ui/build/assets/*.js
+!webview-ui/build/assets/*.ttf
+!webview-ui/build/assets/*.css
+!webview-ui/build/assets/fonts/*.woff
+!webview-ui/build/assets/fonts/*.woff2
+!webview-ui/build/assets/fonts/*.ttf
+!webview-ui/build/index.html
+!webview-ui/build/favicon.ico
+
+# Exclude source maps to reduce bundle size
+webview-ui/build/assets/*.js.map
+webview-ui/build/assets/*.map
+webview-ui/build/sourcemap-manifest.json
+
+# Exclude large icons
+webview-ui/build/*.icns
+
+# Include default themes JSON files used in getTheme
+!integrations/theme/default-themes/**
+
+# Include icons and images
+!assets/codicons/**
+!assets/vscode-material-icons/**
+!assets/icons/**
+!assets/images/**
+
+# Include .env file for telemetry
+!.env

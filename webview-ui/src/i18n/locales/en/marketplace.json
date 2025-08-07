@@ -1,0 +1,102 @@
+{
+	"title": "Neira Marketplace",
+	"tabs": {
+		"installed": "Installed",
+		"settings": "Settings",
+		"browse": "Browse"
+	},
+	"done": "Done",
+	"refresh": "Refresh",
+	"filters": {
+		"search": {
+			"placeholder": "Search marketplace items...",
+			"placeholderMcp": "Search MCPs...",
+			"placeholderMode": "Search modes..."
+		},
+		"type": {
+			"label": "Filter by type:",
+			"all": "All types",
+			"mode": "Mode",
+			"mcpServer": "MCP server"
+		},
+		"sort": {
+			"label": "Sort by:",
+			"name": "Name",
+			"author": "Author",
+			"lastUpdated": "Last updated"
+		},
+		"tags": {
+			"label": "Filter by tags:",
+			"clear": "Clear tags",
+			"placeholder": "Type to search and select tags...",
+			"noResults": "No matching tags found",
+			"selected": "Showing items with any of the selected tags",
+			"clickToFilter": "Click on tags to filter items"
+		},
+		"none": "None"
+	},
+	"sections": {
+		"organizationMcps": "{{organization}} MCPs",
+		"marketplace": "Marketplace"
+	},
+	"type-group": {
+		"modes": "Modes",
+		"mcps": "MCP servers"
+	},
+	"items": {
+		"empty": {
+			"noItems": "No marketplace items found",
+			"withFilters": "Try adjusting filters",
+			"noSources": "Try adding a source in the Sources tab",
+			"adjustFilters": "Try adjusting filters or search queries",
+			"clearAllFilters": "Clear all filters"
+		},
+		"count": "Found {{count}} items",
+		"components": "{{count}} components",
+		"matched": "{{count}} matches",
+		"refresh": {
+			"button": "Refresh",
+			"refreshing": "Refreshing...",
+			"mayTakeMoment": "This may take a moment."
+		},
+		"card": {
+			"by": "by {{author}}",
+			"from": "from {{source}}",
+			"install": "Install",
+			"installProject": "Install",
+			"installGlobal": "Install (Global)",
+			"remove": "Remove",
+			"removeProject": "Remove",
+			"removeGlobal": "Remove (Global)",
+			"viewSource": "View",
+			"viewOnSource": "View on {{source}}",
+			"noWorkspaceTooltip": "Open a workspace to install marketplace items",
+			"installed": "Installed",
+			"removeProjectTooltip": "Remove from current project",
+			"removeGlobalTooltip": "Remove from global configuration",
+			"actionsMenuLabel": "Additional actions"
+		},
+		"removeFailed": "Failed to remove item: {{error}}",
+		"unknownError": "An unknown error occurred"
+	},
+	"install": {
+		"title": "Install {{name}}",
+		"titleMode": "Install mode {{name}}",
+		"titleMcp": "Install MCP {{name}}",
+		"scope": "Installation scope",
+		"project": "Project (current workspace)",
+		"global": "Global (all workspaces)",
+		"method": "Installation method",
+		"configuration": "Configuration",
+		"configurationDescription": "Configure parameters required for this MCP server",
+		"button": "Install",
+		"successTitle": "{{name}} installed",
+		"successDescription": "Installation completed successfully",
+		"installed": "Successfully installed!",
+		"whatNextMcp": "You can now configure and use this MCP server. Click on the MCP icon in the sidebar to switch tabs.",
+		"whatNextMode": "You can now use this mode. Click on the Modes icon in the sidebar to switch tabs.",
+		"done": "Done",
+		"goToMcp": "Go to MCP tab",
+		"goToModes": "Go to Modes settings"
+	}
+} 

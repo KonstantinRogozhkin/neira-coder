@@ -1,0 +1,102 @@
+{
+	"greeting": "Welcome to Neira Coder",
+	"task": {
+		"title": "Task",
+		"seeMore": "Show more",
+		"seeLess": "Show less",
+		"tokens": "Tokens:",
+		"cache": "Cache:",
+		"apiCost": "API Cost:",
+		"contextWindow": "Context Length:",
+		"closeAndStart": "Close task and start new",
+		"export": "Export task history",
+		"delete": "Delete task (Shift + click to skip confirmation)",
+		"condenseContext": "Intelligently condense context",
+		"share": "Share task",
+		"shareWithOrganization": "Share with organization",
+		"shareWithOrganizationDescription": "Only members of your organization can access",
+		"sharePublicly": "Share publicly",
+		"sharePubliclyDescription": "Anyone with the link can access",
+		"connectToCloud": "Connect to cloud",
+		"connectToCloudDescription": "Sign in to Neira Coder Cloud to share tasks",
+		"sharingDisabledByOrganization": "Sharing disabled by organization",
+		"shareSuccessOrganization": "Organization link copied to clipboard",
+		"shareSuccessPublic": "Public link copied to clipboard"
+	},
+	"unpin": "Unpin",
+	"pin": "Pin",
+	"retry": {
+		"title": "Retry",
+		"tooltip": "Try the operation again"
+	},
+	"startNewTask": {
+		"title": "Start new task",
+		"tooltip": "Start a new task"
+	},
+	"proceedAnyways": {
+		"title": "Proceed anyway",
+		"tooltip": "Continue with command execution"
+	},
+	"save": {
+		"title": "Save",
+		"tooltip": "Save message changes"
+	},
+	"tokenProgress": {
+		"availableSpace": "Available space: {{amount}} tokens",
+		"tokensUsed": "Tokens used: {{used}} of {{total}}",
+		"reservedForResponse": "Reserved for model response: {{amount}} tokens"
+	},
+	"reject": {
+		"title": "Reject",
+		"tooltip": "Reject this action"
+	},
+	"completeSubtaskAndReturn": "Complete subtask and return",
+	"approve": {
+		"title": "Approve",
+		"tooltip": "Approve this action"
+	},
+	"runCommand": {
+		"title": "Run command",
+		"tooltip": "Execute this command"
+	},
+	"proceedWhileRunning": {
+		"title": "Proceed while running",
+		"tooltip": "Continue despite warnings"
+	},
+	"resumeTask": {
+		"title": "Resume task",
+		"tooltip": "Continue current task"
+	},
+	"killCommand": {
+		"title": "Kill command",
+		"tooltip": "Terminate current command"
+	},
+	"terminate": {
+		"title": "Terminate",
+		"tooltip": "Terminate current task"
+	},
+	"cancel": {
+		"title": "Cancel",
+		"tooltip": "Cancel current operation"
+	},
+	"scrollToBottom": "Scroll chat to bottom",
+	"about": "Create, refactor, and debug code with AI. See our <DocsLink>documentation</DocsLink> for more.",
+	"rooTips": {
+		"boomerangTasks": {
+			"title": "Task Orchestration",
+			"description": "Break tasks into smaller, manageable parts"
+		},
+		"stickyModels": {
+			"title": "Sticky modes",
+			"description": "Each mode remembers your last used model"
+		},
+		"tools": {
+			"title": "Tools",
+			"description": "Let AI solve problems by browsing web pages, running commands, etc."
+		},
+		"customizableModes": {
+			"title": "Customizable modes",
+			"description": "Specialized personas with their own behavior and assigned models"
+		}
+	}
+} 

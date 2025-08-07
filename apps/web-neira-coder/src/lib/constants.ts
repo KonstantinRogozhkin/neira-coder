@@ -1,0 +1,31 @@
+export const EXTERNAL_LINKS = {
+	GITHUB: "https://github.com/NeiraCoderInc/Neira-Coder",
+	GITHUB_DISCUSSIONS: "https://github.com/NeiraCoderInc/Neira-Coder/discussions",
+	DISCORD: "https://discord.gg/neira-coder",
+	REDDIT: "https://reddit.com/r/NeiraCoder",
+	X: "https://x.com/neira_coder",
+	LINKEDIN: "https://www.linkedin.com/company/neira-coder",
+	TIKTOK: "https://www.tiktok.com/@neira.coder",
+	BLUESKY: "https://bsky.app/profile/neira-coder.bsky.social",
+	YOUTUBE: "https://www.youtube.com/@NeiraCoderYT",
+	DOCUMENTATION: "https://docs.neira-coder.com",
+	CAREERS: "https://careers.neira-coder.com",
+	ISSUES: "https://github.com/NeiraCoderInc/Neira-Coder/issues",
+	FEATURE_REQUESTS: "https://github.com/NeiraCoderInc/Neira-Coder/discussions/categories/feature-requests",
+	COMMUNITY: "https://github.com/NeiraCoderInc/Neira-Coder/discussions",
+	CHANGELOG: "https://github.com/NeiraCoderInc/Neira-Coder/blob/main/CHANGELOG.md",
+	PRIVACY_POLICY_EXTENSION: "https://github.com/NeiraCoderInc/Neira-Coder/blob/main/PRIVACY.md",
+	INTEGRATIONS: "https://docs.neira-coder.com/community",
+	TUTORIALS: "https://docs.neira-coder.com/tutorial-videos",
+	MARKETPLACE: "https://marketplace.visualstudio.com/items?itemName=NeiraCoderInc.neira",
+	SECURITY: "https://trust.neira-coder.com",
+	EVALS: "https://neira-coder.com/evals",
+	BLOG: "https://blog.neira-coder.com",
+	OFFICE_HOURS_PODCAST: "https://www.youtube.com/@NeiraCoderYT/podcasts",
+	FAQ: "https://neira-coder.com/#faq",
+	TESTIMONIALS: "https://neira-coder.com/#testimonials",
+}
+
+export const INTERNAL_LINKS = {
+	PRIVACY_POLICY_WEBSITE: "/privacy",
+}

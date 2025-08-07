@@ -1,0 +1,65 @@
+{
+	"title": "MCP Servers",
+	"done": "Done",
+	"marketplace": "MCP Marketplace",
+	"description": "<0>Model Context Protocol</0> enables communication with locally running MCP servers that provide additional tools and resources to extend Roo's capabilities. You can use <1>community-created servers</1> or ask Roo to create new tools specific to your workflow (e.g., \"add a tool that fetches the latest npm documentation\").",
+	"instructions": "Instructions",
+	"enableToggle": {
+		"title": "Enable MCP servers",
+		"description": "Enable for Roo to use tools from connected MCP servers. This will give Roo more capabilities. If you don't plan to use these additional tools, disable to save API tokens."
+	},
+	"enableServerCreation": {
+		"title": "Enable MCP server creation",
+		"description": "Enable for Roo to help create <1>new</1> custom MCP servers. <0>Learn more about creating servers</0>",
+		"hint": "Tip: To reduce API token costs, disable this setting when you're not asking Roo to create a new MCP server."
+	},
+	"editGlobalMCP": "Edit global MCP",
+	"editProjectMCP": "Edit project MCP",
+	"learnMoreEditingSettings": "Learn more about editing MCP configuration files",
+	"tool": {
+		"alwaysAllow": "Always allow",
+		"parameters": "Parameters",
+		"noDescription": "No description",
+		"togglePromptInclusion": "Toggle prompt inclusion"
+	},
+	"tabs": {
+		"tools": "Tools",
+		"resources": "Resources",
+		"errors": "Errors"
+	},
+	"emptyState": {
+		"noTools": "No tools found",
+		"noResources": "No resources found",
+		"noErrors": "No errors found"
+	},
+	"networkTimeout": {
+		"label": "Network timeout",
+		"description": "Maximum time to wait for server response",
+		"options": {
+			"15seconds": "15 seconds",
+			"30seconds": "30 seconds",
+			"1minute": "1 minute",
+			"5minutes": "5 minutes",
+			"10minutes": "10 minutes",
+			"15minutes": "15 minutes",
+			"30minutes": "30 minutes",
+			"60minutes": "60 minutes"
+		}
+	},
+	"deleteDialog": {
+		"title": "Delete MCP server",
+		"description": "Are you sure you want to delete the MCP server \"{{serverName}}\"? This action cannot be undone.",
+		"cancel": "Cancel",
+		"delete": "Delete"
+	},
+	"serverStatus": {
+		"retrying": "Retrying...",
+		"retryConnection": "Retry connection"
+	},
+	"refreshMCP": "Refresh MCP servers",
+	"execution": {
+		"running": "Running",
+		"completed": "Completed",
+		"error": "Error"
+	}
+} 
