@@ -1,6 +1,6 @@
 {
 	"name": "neira-coder",
-	"version": "3.31.5",
+	"version": "3.31.6",
 	"packageManager": "pnpm@10.8.1",
 	"engines": {
 		"node": "20.19.2"
