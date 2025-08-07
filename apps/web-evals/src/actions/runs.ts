@@ -15,7 +15,7 @@ import {
 	deleteRun as _deleteRun,
 	createTask,
 	getExercisesForLanguage,
-} from "@neira-coder/evals"
+} from "@researcherry-ai/evals"
 
 import { CreateRun } from "@/lib/schemas"
 
@@ -63,7 +63,7 @@ export async function createRun({ suite, exercises = [], systemPrompt, timeout, 
 			"-e HOST_EXECUTION_METHOD=docker",
 		]
 
-		const cliCommand = `pnpm --filter @neira-coder/evals cli --runId ${run.id}`
+		const cliCommand = `pnpm --filter @researcherry-ai/evals cli --runId ${run.id}`
 
 		const command = isRunningInDocker
 			? `docker run ${dockerArgs.join(" ")} evals-runner sh -c "${cliCommand}"`

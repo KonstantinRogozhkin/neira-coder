@@ -1,6 +1,6 @@
 "use server"
 
-import { client, getProductionClient, copyRun } from "@neira-coder/evals"
+import { client, getProductionClient, copyRun } from "@researcherry-ai/evals"
 
 export async function copyRunToProduction(runId: number) {
 	try {

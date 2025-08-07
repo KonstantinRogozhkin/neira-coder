@@ -1,6 +1,11 @@
 import { Fragment, HTMLAttributes } from "react"
 
-import { type Keys, type NeiraCoderSettings, GLOBAL_SETTINGS_KEYS, PROVIDER_SETTINGS_KEYS } from "@neira-coder/types"
+import {
+	type Keys,
+	type NeiraCoderSettings,
+	GLOBAL_SETTINGS_KEYS,
+	PROVIDER_SETTINGS_KEYS,
+} from "@researcherry-ai/types"
 
 import { cn } from "@/lib/utils"
 

@@ -3,7 +3,7 @@
 	"extends": ["//"],
 	"tasks": {
 		"bundle:nightly": {
-			"dependsOn": ["^build", "@neira-coder/vscode-webview#build:nightly"],
+			"dependsOn": ["^build", "@researcherry-ai/vscode-webview#build:nightly"],
 			"outputs": ["build/**"]
 		},
 		"vsix:nightly": {

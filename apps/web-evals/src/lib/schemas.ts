@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-import { neiraCoderSettingsSchema } from "@neira-coder/types"
+import { neiraCoderSettingsSchema } from "@researcherry-ai/types"
 
 /**
  * CreateRun

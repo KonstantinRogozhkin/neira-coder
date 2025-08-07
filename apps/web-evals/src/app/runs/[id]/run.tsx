@@ -3,7 +3,7 @@
 import { useMemo } from "react"
 import { LoaderCircle } from "lucide-react"
 
-import type { Run, TaskMetrics as _TaskMetrics } from "@neira-coder/evals"
+import type { Run, TaskMetrics as _TaskMetrics } from "@researcherry-ai/evals"
 
 import { formatCurrency, formatDuration, formatTokens } from "@/lib/formatters"
 import { useRunStatus } from "@/hooks/use-run-status"

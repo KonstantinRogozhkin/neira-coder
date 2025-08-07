@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { Rocket } from "lucide-react"
 
-import type { Run, TaskMetrics } from "@neira-coder/evals"
+import type { Run, TaskMetrics } from "@researcherry-ai/evals"
 
 import { Button, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui"
 import { Run as Row } from "@/components/home/run"

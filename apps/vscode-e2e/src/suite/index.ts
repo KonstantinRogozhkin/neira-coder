@@ -3,7 +3,7 @@ import Mocha from "mocha"
 import { glob } from "glob"
 import * as vscode from "vscode"
 
-import type { NeiraCoderAPI } from "@neira-coder/types"
+import type { NeiraCoderAPI } from "@researcherry-ai/types"
 
 import { waitFor } from "./utils"
 

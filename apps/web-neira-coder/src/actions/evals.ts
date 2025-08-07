@@ -1,7 +1,7 @@
 "use server"
 
-import { getModelId, neiraCoderSettingsSchema } from "@neira-coder/types"
-import { getRuns, getLanguageScores } from "@neira-coder/evals"
+import { getModelId, neiraCoderSettingsSchema } from "@researcherry-ai/types"
+import { getRuns, getLanguageScores } from "@researcherry-ai/evals"
 
 import { formatScore } from "@/lib"
 

@@ -1,8 +1,8 @@
 import { useState, useCallback, useRef } from "react"
 import { useQuery, keepPreviousData } from "@tanstack/react-query"
 
-import { type TokenUsage, NeiraCoderEventName, taskEventSchema } from "@neira-coder/types"
-import type { Run, Task, TaskMetrics } from "@neira-coder/evals"
+import { type TokenUsage, NeiraCoderEventName, taskEventSchema } from "@researcherry-ai/types"
+import type { Run, Task, TaskMetrics } from "@researcherry-ai/evals"
 
 import { getHeartbeat } from "@/actions/heartbeat"
 import { getRunners } from "@/actions/runners"

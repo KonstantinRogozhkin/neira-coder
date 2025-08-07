@@ -1,5 +1,5 @@
 {
-	"extends": "@neira-coder/config-typescript/nextjs.json",
+	"extends": "@researcherry-ai/config-typescript/nextjs.json",
 	"compilerOptions": {
 		"paths": { "@/*": ["./src/*"] }
 	},

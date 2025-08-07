@@ -1,4 +1,4 @@
-import type { NeiraCoderAPI } from "@neira-coder/types"
+import type { NeiraCoderAPI } from "@researcherry-ai/types"
 
 declare global {
 	var api: NeiraCoderAPI
