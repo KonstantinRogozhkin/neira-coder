@@ -1807,7 +1807,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 
 							{/* Input area moved to center under logo */}
 							{!task && (
-								<div className="flex flex-col items-center gap-4 mt-8">
+								<div className="flex flex-col items-center gap-4 mt-4">
 									<div className="w-full max-w-2xl">
 										<ChatTextArea
 											ref={textAreaRef}
