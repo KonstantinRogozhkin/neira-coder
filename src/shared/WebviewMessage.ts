@@ -7,8 +7,8 @@ import type {
 	InstallMarketplaceItemOptions,
 	MarketplaceItem,
 	ShareVisibility,
-} from "@neira-coder/types"
-import { marketplaceItemSchema } from "@neira-coder/types"
+} from "@researcherry-ai/types"
+import { marketplaceItemSchema } from "@researcherry-ai/types"
 
 import { Mode } from "./modes"
 

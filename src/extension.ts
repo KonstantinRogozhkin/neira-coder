@@ -7,7 +7,7 @@ import * as fs from "fs"
 try {
 	// Specify path to .env file in the project root directory
 	const envPath = path.join(__dirname, "..", ".env")
-	
+
 	// Check if .env file exists before trying to load it
 	if (fs.existsSync(envPath)) {
 		dotenvx.config({ path: envPath })
@@ -19,8 +19,8 @@ try {
 	console.warn("Failed to load environment variables:", e)
 }
 
-import { CloudService } from "@neira-coder/cloud"
-import { TelemetryService, PostHogTelemetryClient } from "@neira-coder/telemetry"
+import { CloudService } from "@researcherry-ai/cloud"
+import { TelemetryService, PostHogTelemetryClient } from "@researcherry-ai/telemetry"
 
 import "./utils/path" // Necessary to have access to String.prototype.toPosix.
 import { createOutputChannelLogger, createDualLogger } from "./utils/outputChannelLogger"

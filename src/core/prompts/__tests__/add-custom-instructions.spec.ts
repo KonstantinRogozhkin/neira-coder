@@ -45,7 +45,7 @@ vi.mock("fs/promises")
 
 import * as vscode from "vscode"
 
-import { ModeConfig } from "@neira-coder/types"
+import { ModeConfig } from "@researcherry-ai/types"
 
 import { SYSTEM_PROMPT } from "../system"
 import { McpHub } from "../../../services/mcp/McpHub"

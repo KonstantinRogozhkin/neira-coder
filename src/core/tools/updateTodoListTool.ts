@@ -4,7 +4,7 @@ import { formatResponse } from "../prompts/responses"
 
 import cloneDeep from "clone-deep"
 import crypto from "crypto"
-import { TodoItem, TodoStatus, todoStatusSchema } from "@neira-coder/types"
+import { TodoItem, TodoStatus, todoStatusSchema } from "@researcherry-ai/types"
 import { getLatestTodo } from "../../shared/todo"
 
 let approvedTodoList: TodoItem[] | undefined = undefined

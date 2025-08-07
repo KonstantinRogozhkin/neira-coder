@@ -8,7 +8,7 @@ import {
 	vertexDefaultModelId,
 	vertexModels,
 	ANTHROPIC_DEFAULT_MAX_TOKENS,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import { ApiHandlerOptions } from "../../shared/api"
 import { safeJsonParse } from "../../shared/safeJsonParse"

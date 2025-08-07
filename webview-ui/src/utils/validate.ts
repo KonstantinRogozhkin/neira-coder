@@ -1,6 +1,6 @@
 import i18next from "i18next"
 
-import type { ProviderSettings, OrganizationAllowList } from "@neira-coder/types"
+import type { ProviderSettings, OrganizationAllowList } from "@researcherry-ai/types"
 
 import { isRouterName, RouterModels } from "@roo/api"
 

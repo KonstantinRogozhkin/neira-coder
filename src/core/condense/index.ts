@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk"
 
-import { TelemetryService } from "@neira-coder/telemetry"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { t } from "../../i18n"
 import { ApiHandler } from "../../api"

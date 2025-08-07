@@ -9,8 +9,8 @@ import {
 import { getDefaultModelId, getModelQueryPrefix } from "../../../shared/embeddingModels"
 import { t } from "../../../i18n"
 import { withValidationErrorHandling, HttpError, formatEmbeddingError } from "../shared/validation-helpers"
-import { TelemetryEventName } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 import { Mutex } from "async-mutex"
 
 interface EmbeddingItem {

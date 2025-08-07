@@ -1,4 +1,4 @@
-import type { OrganizationAllowList, OrganizationSettings } from "@neira-coder/types"
+import type { OrganizationAllowList, OrganizationSettings } from "@researcherry-ai/types"
 
 /**
  * Interface for settings services that provide organization settings

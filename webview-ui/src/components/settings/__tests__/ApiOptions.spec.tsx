@@ -3,7 +3,7 @@
 import { render, screen, fireEvent } from "@/utils/test-utils"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
-import { type ModelInfo, type ProviderSettings, openAiModelInfoSaneDefaults } from "@neira-coder/types"
+import { type ModelInfo, type ProviderSettings, openAiModelInfoSaneDefaults } from "@researcherry-ai/types"
 
 import { ExtensionStateContextProvider } from "@src/context/ExtensionStateContext"
 

@@ -12,9 +12,9 @@ import {
 	type GlobalState,
 	type ClineMessage,
 	TelemetryEventName,
-} from "@neira-coder/types"
-import { CloudService } from "@neira-coder/cloud"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry-ai/types"
+import { CloudService } from "@researcherry-ai/cloud"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 import { type ApiMessage } from "../task-persistence/apiMessages"
 
 import { ClineProvider } from "./ClineProvider"

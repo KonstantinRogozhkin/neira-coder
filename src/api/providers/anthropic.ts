@@ -8,7 +8,7 @@ import {
 	anthropicDefaultModelId,
 	anthropicModels,
 	ANTHROPIC_DEFAULT_MAX_TOKENS,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

@@ -12,8 +12,8 @@ import { CodeIndexConfigManager } from "./config-manager"
 import { CacheManager } from "./cache-manager"
 import { Ignore } from "ignore"
 import { t } from "../../i18n"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
 
 /**
  * Factory class responsible for creating and configuring code indexing service dependencies.

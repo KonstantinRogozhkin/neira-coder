@@ -2,7 +2,7 @@ import * as vscode from "vscode"
 import { CloudSettingsService } from "../CloudSettingsService"
 import { RefreshTimer } from "../RefreshTimer"
 import type { AuthService } from "../auth"
-import type { OrganizationSettings } from "@neira-coder/types"
+import type { OrganizationSettings } from "@researcherry-ai/types"
 
 // Mock dependencies
 vi.mock("../RefreshTimer")

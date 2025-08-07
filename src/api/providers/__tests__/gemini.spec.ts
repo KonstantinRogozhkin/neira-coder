@@ -2,7 +2,7 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { type ModelInfo, geminiDefaultModelId } from "@neira-coder/types"
+import { type ModelInfo, geminiDefaultModelId } from "@researcherry-ai/types"
 
 import { t } from "i18next"
 import { GeminiHandler } from "../gemini"

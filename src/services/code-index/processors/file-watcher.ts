@@ -23,8 +23,8 @@ import { codeParser } from "./parser"
 import { CacheManager } from "../cache-manager"
 import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path"
 import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
 import { sanitizeErrorMessage } from "../shared/validation-helpers"
 
 /**

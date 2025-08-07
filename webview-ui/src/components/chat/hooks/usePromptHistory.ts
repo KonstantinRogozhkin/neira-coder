@@ -1,4 +1,4 @@
-import { ClineMessage, HistoryItem } from "@neira-coder/types"
+import { ClineMessage, HistoryItem } from "@researcherry-ai/types"
 import { useCallback, useEffect, useMemo, useState } from "react"
 
 interface UsePromptHistoryProps {

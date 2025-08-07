@@ -2,7 +2,7 @@
 
 import * as vscode from "vscode"
 
-import { GLOBAL_STATE_KEYS, SECRET_STATE_KEYS } from "@neira-coder/types"
+import { GLOBAL_STATE_KEYS, SECRET_STATE_KEYS } from "@researcherry-ai/types"
 
 import { ContextProxy } from "../ContextProxy"
 

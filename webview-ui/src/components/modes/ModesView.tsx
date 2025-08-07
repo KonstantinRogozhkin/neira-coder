@@ -10,7 +10,7 @@ import {
 import { Trans } from "react-i18next"
 import { ChevronDown, X, Upload, Download } from "lucide-react"
 
-import { ModeConfig, GroupEntry, PromptComponent, ToolGroup, modeConfigSchema } from "@neira-coder/types"
+import { ModeConfig, GroupEntry, PromptComponent, ToolGroup, modeConfigSchema } from "@researcherry-ai/types"
 
 import {
 	Mode,

@@ -6,7 +6,7 @@ vitest.mock("vscode", () => ({}))
 import OpenAI from "openai"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { type GroqModelId, groqDefaultModelId, groqModels } from "@neira-coder/types"
+import { type GroqModelId, groqDefaultModelId, groqModels } from "@researcherry-ai/types"
 
 import { GroqHandler } from "../groq"
 

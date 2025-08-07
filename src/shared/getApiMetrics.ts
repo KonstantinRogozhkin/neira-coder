@@ -1,4 +1,4 @@
-import type { TokenUsage, ClineMessage } from "@neira-coder/types"
+import type { TokenUsage, ClineMessage } from "@researcherry-ai/types"
 
 export type ParsedApiReqStartedTextType = {
 	tokensIn: number

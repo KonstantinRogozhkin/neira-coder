@@ -2,7 +2,7 @@ import { BetaThinkingConfigParam } from "@anthropic-ai/sdk/resources/beta"
 import OpenAI from "openai"
 import type { GenerateContentConfig } from "@google/genai"
 
-import type { ModelInfo, ProviderSettings } from "@neira-coder/types"
+import type { ModelInfo, ProviderSettings } from "@researcherry-ai/types"
 
 import { shouldUseReasoningBudget, shouldUseReasoningEffort } from "../../shared/api"
 

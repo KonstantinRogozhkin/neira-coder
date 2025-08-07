@@ -1,4 +1,4 @@
-import { OrganizationAllowList, ProviderSettings } from "@neira-coder/types"
+import { OrganizationAllowList, ProviderSettings } from "@researcherry-ai/types"
 
 export class ProfileValidator {
 	public static isProfileAllowed(profile: ProviderSettings, allowList: OrganizationAllowList): boolean {

@@ -1,4 +1,4 @@
-import type { ProviderSettings } from "@neira-coder/types"
+import type { ProviderSettings } from "@researcherry-ai/types"
 
 import { buildApiHandler, SingleCompletionHandler } from "../api"
 

@@ -1,4 +1,4 @@
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry-ai/types"
 
 function calculateApiCostInternal(
 	modelInfo: ModelInfo,

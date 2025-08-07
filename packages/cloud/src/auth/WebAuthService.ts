@@ -4,7 +4,7 @@ import EventEmitter from "events"
 import * as vscode from "vscode"
 import { z } from "zod"
 
-import type { CloudUserInfo, CloudOrganizationMembership } from "@neira-coder/types"
+import type { CloudUserInfo, CloudOrganizationMembership } from "@researcherry-ai/types"
 
 import { getClerkBaseUrl, getNeiraCoderApiUrl, PRODUCTION_CLERK_BASE_URL } from "../Config.js"
 import { RefreshTimer } from "../RefreshTimer"

@@ -14,8 +14,8 @@ import {
 	providerSettingsSchema,
 	globalSettingsSchema,
 	isSecretStateKey,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { logger } from "../../utils/logging"
 

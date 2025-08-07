@@ -3,7 +3,7 @@ import {
 	type ChutesModelId,
 	chutesDefaultModelId,
 	chutesModels,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 

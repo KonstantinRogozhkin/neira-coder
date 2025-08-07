@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react"
 import { FlaskConical } from "lucide-react"
 
-import type { Experiments } from "@neira-coder/types"
+import type { Experiments } from "@researcherry-ai/types"
 
 import { EXPERIMENT_IDS, experimentConfigsMap } from "@roo/experiments"
 

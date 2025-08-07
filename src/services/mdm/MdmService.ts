@@ -4,7 +4,7 @@ import * as os from "os"
 import * as vscode from "vscode"
 import { z } from "zod"
 
-import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@neira-coder/cloud"
+import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@researcherry-ai/cloud"
 import { Package } from "../../shared/package"
 import { t } from "../../i18n"
 

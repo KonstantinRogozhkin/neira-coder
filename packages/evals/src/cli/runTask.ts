@@ -12,8 +12,8 @@ import {
 	NeiraCoderEventName,
 	IpcMessageType,
 	EVALS_SETTINGS,
-} from "@neira-coder/types"
-import { IpcClient } from "@neira-coder/ipc"
+} from "@researcherry-ai/types"
+import { IpcClient } from "@researcherry-ai/ipc"
 
 import {
 	type Run,
@@ -95,7 +95,7 @@ export const processTaskInContainer = async ({
 		"-e HOST_EXECUTION_METHOD=docker",
 	]
 
-	const command = `pnpm --filter @neira-coder/evals cli --taskId ${taskId}`
+	const command = `pnpm --filter @researcherry-ai/evals cli --taskId ${taskId}`
 	logger.info(command)
 
 	for (let attempt = 0; attempt <= maxRetries; attempt++) {

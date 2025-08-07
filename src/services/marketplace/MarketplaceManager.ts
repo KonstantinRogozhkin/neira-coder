@@ -4,9 +4,14 @@ import * as path from "path"
 import * as vscode from "vscode"
 import * as yaml from "yaml"
 
-import type { MarketplaceItem, MarketplaceItemType, McpMarketplaceItem, OrganizationSettings } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService } from "@neira-coder/cloud"
+import type {
+	MarketplaceItem,
+	MarketplaceItemType,
+	McpMarketplaceItem,
+	OrganizationSettings,
+} from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { CloudService } from "@researcherry-ai/cloud"
 
 import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"

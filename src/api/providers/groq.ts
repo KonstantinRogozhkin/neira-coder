@@ -1,4 +1,4 @@
-import { type GroqModelId, groqDefaultModelId, groqModels } from "@neira-coder/types"
+import { type GroqModelId, groqDefaultModelId, groqModels } from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

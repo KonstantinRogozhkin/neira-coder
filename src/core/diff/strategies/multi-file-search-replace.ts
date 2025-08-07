@@ -1,5 +1,5 @@
 import { distance } from "fastest-levenshtein"
-import { ToolProgressStatus } from "@neira-coder/types"
+import { ToolProgressStatus } from "@researcherry-ai/types"
 
 import { addLineNumbers, everyLineHasLineNumbers, stripLineNumbers } from "../../../integrations/misc/extract-text"
 import { ToolUse, DiffStrategy, DiffResult } from "../../../shared/tools"

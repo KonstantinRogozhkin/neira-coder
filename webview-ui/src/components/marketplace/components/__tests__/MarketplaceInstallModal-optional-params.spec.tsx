@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@/utils/test-utils"
 
-import { MarketplaceItem } from "@neira-coder/types"
+import { MarketplaceItem } from "@researcherry-ai/types"
 
 import { MarketplaceInstallModal } from "../MarketplaceInstallModal"
 

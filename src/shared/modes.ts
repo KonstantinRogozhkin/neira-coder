@@ -9,7 +9,7 @@ import {
 	type ToolGroup,
 	type PromptComponent,
 	DEFAULT_MODES,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 // Conditional import to avoid Node.js modules in webview
 let addCustomInstructions: any = null

@@ -26,8 +26,8 @@ import {
 	MAX_PENDING_BATCHES,
 } from "../constants"
 import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
 import { sanitizeErrorMessage } from "../shared/validation-helpers"
 
 export class DirectoryScanner implements IDirectoryScanner {

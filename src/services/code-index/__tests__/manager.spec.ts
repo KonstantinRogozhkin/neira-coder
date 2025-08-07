@@ -30,7 +30,7 @@ vi.mock("../state-manager", () => ({
 }))
 
 // Mock TelemetryService
-vi.mock("@neira-coder/telemetry", () => ({
+vi.mock("@researcherry-ai/telemetry", () => ({
 	TelemetryService: {
 		instance: {
 			captureEvent: vi.fn(),

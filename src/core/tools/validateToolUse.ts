@@ -1,4 +1,4 @@
-import type { ToolName, ModeConfig } from "@neira-coder/types"
+import type { ToolName, ModeConfig } from "@researcherry-ai/types"
 
 import { Mode, isToolAllowedForMode } from "../../shared/modes"
 

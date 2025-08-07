@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { TerminalActionId, TerminalActionPromptType } from "@neira-coder/types"
+import { TerminalActionId, TerminalActionPromptType } from "@researcherry-ai/types"
 
 import { getTerminalCommand } from "../utils/commands"
 import { ClineProvider } from "../core/webview/ClineProvider"

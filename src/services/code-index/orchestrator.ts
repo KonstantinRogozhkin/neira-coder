@@ -5,8 +5,8 @@ import { CodeIndexStateManager, IndexingState } from "./state-manager"
 import { IFileWatcher, IVectorStore, BatchProcessingSummary } from "./interfaces"
 import { DirectoryScanner } from "./processors"
 import { CacheManager } from "./cache-manager"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
 import { t } from "../../i18n"
 
 /**

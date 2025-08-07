@@ -11,7 +11,7 @@ import {
 	IpcMessageType,
 	type IpcMessage,
 	ipcMessageSchema,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 export class IpcServer extends EventEmitter<IpcServerEvents> implements NeiraCoderIpcServer {
 	private readonly _socketPath: string

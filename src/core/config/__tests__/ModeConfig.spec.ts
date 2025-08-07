@@ -2,7 +2,7 @@
 
 import { ZodError } from "zod"
 
-import { type ModeConfig, modeConfigSchema } from "@neira-coder/types"
+import { type ModeConfig, modeConfigSchema } from "@researcherry-ai/types"
 
 function validateCustomMode(mode: unknown): asserts mode is ModeConfig {
 	modeConfigSchema.parse(mode)

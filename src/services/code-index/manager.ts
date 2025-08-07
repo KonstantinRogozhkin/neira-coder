@@ -13,8 +13,8 @@ import fs from "fs/promises"
 import ignore from "ignore"
 import path from "path"
 import { t } from "../../i18n"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { TelemetryEventName } from "@researcherry-ai/types"
 
 export class CodeIndexManager {
 	// --- Singleton Implementation ---

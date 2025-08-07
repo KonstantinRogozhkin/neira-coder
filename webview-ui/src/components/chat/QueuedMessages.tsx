@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import Thumbnails from "../common/Thumbnails"
-import { QueuedMessage } from "@neira-coder/types"
+import { QueuedMessage } from "@researcherry-ai/types"
 import { Mention } from "./Mention"
 import { Button } from "@src/components/ui"
 

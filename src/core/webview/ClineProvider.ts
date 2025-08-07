@@ -29,9 +29,9 @@ import {
 	ORGANIZATION_ALLOW_ALL,
 	DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT,
 	DEFAULT_WRITE_DELAY_MS,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService, getNeiraCoderApiUrl } from "@neira-coder/cloud"
+} from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { CloudService, getNeiraCoderApiUrl } from "@researcherry-ai/cloud"
 
 import { t } from "../../i18n"
 import { setPanel } from "../../activate/registerCommands"

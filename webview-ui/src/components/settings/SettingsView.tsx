@@ -25,7 +25,7 @@ import {
 	LucideIcon,
 } from "lucide-react"
 
-import type { ProviderSettings, ExperimentId } from "@neira-coder/types"
+import type { ProviderSettings, ExperimentId } from "@researcherry-ai/types"
 
 import { TelemetrySetting } from "@roo/TelemetrySetting"
 

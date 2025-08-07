@@ -14,7 +14,7 @@ vitest.mock("openai", () => {
 import OpenAI from "openai"
 import type { Anthropic } from "@anthropic-ai/sdk"
 
-import { xaiDefaultModelId, xaiModels } from "@neira-coder/types"
+import { xaiDefaultModelId, xaiModels } from "@researcherry-ai/types"
 
 import { XAIHandler } from "../xai"
 

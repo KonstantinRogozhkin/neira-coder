@@ -6,7 +6,7 @@ vitest.mock("vscode", () => ({}))
 import OpenAI from "openai"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@neira-coder/types"
+import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@researcherry-ai/types"
 
 import { SambaNovaHandler } from "../sambanova"
 

@@ -1,6 +1,6 @@
 import OpenAI from "openai"
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry-ai/types"
 
 import { ApiHandlerOptions, RouterName, ModelRecord } from "../../shared/api"
 

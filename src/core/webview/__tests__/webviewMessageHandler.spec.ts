@@ -88,7 +88,7 @@ import * as path from "path"
 import * as fsUtils from "../../../utils/fs"
 import { getWorkspacePath } from "../../../utils/path"
 import { ensureSettingsDirectoryExists } from "../../../utils/globalContext"
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry-ai/types"
 
 vi.mock("../../../utils/fs")
 vi.mock("../../../utils/path")

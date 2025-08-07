@@ -1,4 +1,4 @@
-import type { ModelInfo, OrganizationAllowList } from "@neira-coder/types"
+import type { ModelInfo, OrganizationAllowList } from "@researcherry-ai/types"
 
 import { filterProviders, filterModels } from "../organizationFilters"
 

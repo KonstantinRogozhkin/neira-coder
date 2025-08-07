@@ -1,7 +1,7 @@
 import { render, screen } from "@/utils/test-utils"
 import userEvent from "@testing-library/user-event"
 
-import { MarketplaceItem } from "@neira-coder/types"
+import { MarketplaceItem } from "@researcherry-ai/types"
 
 import { vscode } from "@/utils/vscode"
 import { TooltipProvider } from "@/components/ui/tooltip"

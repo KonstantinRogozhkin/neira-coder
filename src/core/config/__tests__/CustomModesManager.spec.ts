@@ -8,7 +8,7 @@ import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import * as vscode from "vscode"
 
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry-ai/types"
 
 import { fileExistsAtPath } from "../../../utils/fs"
 import { getWorkspacePath, arePathsEqual } from "../../../utils/path"
@@ -49,7 +49,7 @@ describe("CustomModesManager", () => {
 	const mockStoragePath = `${path.sep}mock${path.sep}settings`
 	const mockSettingsPath = path.join(mockStoragePath, "settings", GlobalFileNames.customModes)
 	const mockWorkspacePath = path.resolve("/mock/workspace")
-			const mockRoomodes = path.join(mockWorkspacePath, ".neira", ".neira-modes")
+	const mockRoomodes = path.join(mockWorkspacePath, ".neira", ".neira-modes")
 
 	beforeEach(() => {
 		mockOnUpdate = vi.fn()

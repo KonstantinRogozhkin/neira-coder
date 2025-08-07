@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const RooHero = () => {
+const ResearcherryHero = () => {
 	const [imagesBaseUri] = useState(() => {
 		const w = window as any
 		return w.IMAGES_BASE_URI || ""
@@ -12,21 +12,25 @@ const RooHero = () => {
 				style={{
 					backgroundColor: "var(--vscode-editor-foreground, #ffffff)",
 					opacity: 0.9,
-					WebkitMaskImage: `url('${imagesBaseUri}/roo-logo.svg')`,
+					WebkitMaskImage: `url('${imagesBaseUri}/researcherry-logo.svg')`,
 					WebkitMaskRepeat: "no-repeat",
 					WebkitMaskSize: "contain",
-					maskImage: `url('${imagesBaseUri}/roo-logo.svg')`,
+					maskImage: `url('${imagesBaseUri}/researcherry-logo.svg')`,
 					maskRepeat: "no-repeat",
 					maskSize: "contain",
 				}}
 				className="mx-auto brightness-110">
-				<img src={imagesBaseUri + "/roo-logo.svg"} alt="Roo logo" className="h-8 opacity-0" />
+				<img
+					src={imagesBaseUri + "/researcherry-logo.svg"}
+					alt="ResearcherryAI logo"
+					className="h-8 opacity-0"
+				/>
 			</div>
 			<div className="text-center mt-2 text-xs text-vscode-descriptionForeground opacity-80">
-				Мультиролевой ИИ для автоматизации рутинных бизнес-задач
+				AI-агенты для глубокого изучения клиентов и автоматизации исследований
 			</div>
 		</div>
 	)
 }
 
-export default RooHero
+export default ResearcherryHero

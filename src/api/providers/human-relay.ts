@@ -1,7 +1,7 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry-ai/types"
 
 import { getCommand } from "../../utils/commands"
 import { ApiStream } from "../transform/stream"

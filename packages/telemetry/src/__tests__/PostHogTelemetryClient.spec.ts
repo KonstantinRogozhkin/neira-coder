@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import { PostHogTelemetryClient } from "../PostHogTelemetryClient"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryEventName } from "@researcherry-ai/types"
 
 // Mock vscode
 vi.mock("vscode", () => ({

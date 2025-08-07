@@ -1,4 +1,4 @@
-import { mcpParameterSchema } from "@neira-coder/types"
+import { mcpParameterSchema } from "@researcherry-ai/types"
 
 describe("Optional Parameters", () => {
 	describe("McpParameter Schema", () => {

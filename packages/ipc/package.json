@@ -1,5 +1,5 @@
 {
-	"name": "@neira-coder/ipc",
+	"name": "@researcherry-ai/ipc",
 	"description": "IPC server and client for remote Roo Code access.",
 	"version": "0.0.0",
 	"type": "module",
@@ -10,12 +10,12 @@
 		"clean": "rimraf .turbo"
 	},
 	"dependencies": {
-		"@neira-coder/types": "workspace:^",
+		"@researcherry-ai/types": "workspace:^",
 		"node-ipc": "^12.0.0"
 	},
 	"devDependencies": {
-		"@neira-coder/config-eslint": "workspace:^",
-		"@neira-coder/config-typescript": "workspace:^",
+		"@researcherry-ai/config-eslint": "workspace:^",
+		"@researcherry-ai/config-typescript": "workspace:^",
 		"@types/node": "20.x",
 		"@types/node-ipc": "^9.2.3",
 		"vitest": "^3.2.3"

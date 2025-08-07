@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { CodeActionName, CodeActionId } from "@neira-coder/types"
+import { CodeActionName, CodeActionId } from "@researcherry-ai/types"
 import { Package } from "../shared/package"
 
 import { getCodeActionCommand } from "../utils/commands"

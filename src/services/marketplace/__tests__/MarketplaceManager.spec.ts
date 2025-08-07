@@ -1,11 +1,11 @@
 // npx vitest services/marketplace/__tests__/MarketplaceManager.spec.ts
 
-import type { MarketplaceItem } from "@neira-coder/types"
+import type { MarketplaceItem } from "@researcherry-ai/types"
 
 import { MarketplaceManager } from "../MarketplaceManager"
 
 // Mock CloudService
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry-ai/cloud", () => ({
 	getNeiraCoderApiUrl: () => "https://test.api.com",
 	CloudService: {
 		hasInstance: vi.fn(),
@@ -189,7 +189,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should return organization MCPs when available", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 
 			// Mock CloudService to return organization settings
 			vi.mocked(CloudService.hasInstance).mockReturnValue(true)
@@ -233,7 +233,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should filter out hidden MCPs from marketplace results", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 
 			// Mock CloudService to return organization settings with hidden MCPs
 			vi.mocked(CloudService.hasInstance).mockReturnValue(true)
@@ -276,7 +276,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should handle CloudService not being available", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 
 			// Mock CloudService to not be available
 			vi.mocked(CloudService.hasInstance).mockReturnValue(false)

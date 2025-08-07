@@ -7,7 +7,7 @@ import type { ClineMessage, TokenUsage } from "./message.js"
 import type { ToolUsage, ToolName } from "./tool.js"
 import type { IpcMessage, IpcServerEvents, IsSubtask } from "./ipc.js"
 
-// TODO: Make sure this matches `NeiraCoderEvents` from `@neira-coder/types`.
+// TODO: Make sure this matches `NeiraCoderEvents` from `@researcherry-ai/types`.
 export interface NeiraCoderAPIEvents {
 	message: [data: { taskId: string; action: "created" | "updated"; message: ClineMessage }]
 	taskCreated: [taskId: string]

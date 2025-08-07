@@ -1,8 +1,8 @@
 {
-	"name": "neira",
+	"name": "researcherry-ai",
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
-	"publisher": "NeiraCoderInc",
+	"publisher": "ResearcherryAI",
 	"version": "3.31.16",
 	"icon": "assets/icons/icon.png",
 	"galleryBanner": {
@@ -14,13 +14,13 @@
 		"node": "20.19.2"
 	},
 	"author": {
-		"name": "Neira Coder"
+		"name": "ResearcherryAI"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/NeiraCoderInc/Neira-Coder"
+		"url": "https://github.com/ResearcherryAI/ResearcherryAI"
 	},
-	"homepage": "https://github.com/NeiraCoderInc/Neira-Coder",
+	"homepage": "https://github.com/ResearcherryAI/ResearcherryAI",
 	"categories": [
 		"AI",
 		"Chat",
@@ -30,20 +30,21 @@
 		"Testing"
 	],
 	"keywords": [
-		"cline",
-		"claude",
-		"dev",
-		"mcp",
-		"openrouter",
-		"coding",
+		"researcherry",
+		"research",
+		"ai",
 		"agent",
+		"user-research",
+		"product-research",
+		"claude",
+		"anthropic",
+		"openai",
+		"coding",
 		"autonomous",
 		"chatgpt",
 		"sonnet",
-		"ai",
 		"llama",
-		"neira coder",
-		"neira-coder"
+		"researcherry-ai"
 	],
 	"activationEvents": [
 		"onLanguage",
@@ -54,273 +55,273 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "neira-ActivityBar",
+					"id": "researcherry-ActivityBar",
 					"title": "%views.activitybar.title%",
 					"icon": "assets/icons/icon.svg"
 				}
 			]
 		},
 		"views": {
-			"neira-ActivityBar": [
+			"researcherry-ActivityBar": [
 				{
 					"type": "webview",
-					"id": "neira.SidebarProvider",
+					"id": "researcherry.SidebarProvider",
 					"name": "%views.sidebar.name%"
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "neira.plusButtonClicked",
+				"command": "researcherry.plusButtonClicked",
 				"title": "%command.newTask.title%",
 				"icon": "$(add)"
 			},
 			{
-				"command": "neira.promptsButtonClicked",
+				"command": "researcherry.promptsButtonClicked",
 				"title": "%command.prompts.title%",
 				"icon": "$(organization)"
 			},
 			{
-				"command": "neira.mcpButtonClicked",
+				"command": "researcherry.mcpButtonClicked",
 				"title": "%command.mcpServers.title%",
 				"icon": "$(server)"
 			},
 			{
-				"command": "neira.historyButtonClicked",
+				"command": "researcherry.historyButtonClicked",
 				"title": "%command.history.title%",
 				"icon": "$(history)"
 			},
 			{
-				"command": "neira.marketplaceButtonClicked",
+				"command": "researcherry.marketplaceButtonClicked",
 				"title": "%command.marketplace.title%",
 				"icon": "$(extensions)"
 			},
 			{
-				"command": "neira.popoutButtonClicked",
+				"command": "researcherry.popoutButtonClicked",
 				"title": "%command.openInEditor.title%",
-				"icon": "$(link-external)"
+				"icon": "$(open-preview)"
 			},
 			{
-				"command": "neira.accountButtonClicked",
-				"title": "Account",
+				"command": "researcherry.accountButtonClicked",
+				"title": "%command.account.title%",
 				"icon": "$(account)"
 			},
 			{
-				"command": "neira.settingsButtonClicked",
+				"command": "researcherry.settingsButtonClicked",
 				"title": "%command.settings.title%",
-				"icon": "$(settings-gear)"
+				"icon": "$(gear)"
 			},
 			{
-				"command": "neira.openInNewTab",
+				"command": "researcherry.openInNewTab",
 				"title": "%command.openInNewTab.title%",
-				"category": "%configuration.title%"
+				"icon": "$(new-window)"
 			},
 			{
-				"command": "neira.explainCode",
+				"command": "researcherry.explainCode",
 				"title": "%command.explainCode.title%",
-				"category": "%configuration.title%"
+				"icon": "$(lightbulb)"
 			},
 			{
-				"command": "neira.fixCode",
+				"command": "researcherry.fixCode",
 				"title": "%command.fixCode.title%",
-				"category": "%configuration.title%"
+				"icon": "$(tools)"
 			},
 			{
-				"command": "neira.improveCode",
+				"command": "researcherry.improveCode",
 				"title": "%command.improveCode.title%",
-				"category": "%configuration.title%"
+				"icon": "$(star)"
 			},
 			{
-				"command": "neira.addToContext",
+				"command": "researcherry.addToContext",
 				"title": "%command.addToContext.title%",
-				"category": "%configuration.title%"
+				"icon": "$(add)"
 			},
 			{
-				"command": "neira.newTask",
+				"command": "researcherry.newTask",
 				"title": "%command.newTask.title%",
-				"category": "%configuration.title%"
+				"icon": "$(add)"
 			},
 			{
-				"command": "neira.terminalAddToContext",
-				"title": "%command.terminal.addToContext.title%",
-				"category": "Terminal"
+				"command": "researcherry.terminalAddToContext",
+				"title": "%command.terminalAddToContext.title%",
+				"icon": "$(terminal)"
 			},
 			{
-				"command": "neira.terminalFixCommand",
-				"title": "%command.terminal.fixCommand.title%",
-				"category": "Terminal"
+				"command": "researcherry.terminalFixCommand",
+				"title": "%command.terminalFixCommand.title%",
+				"icon": "$(tools)"
 			},
 			{
-				"command": "neira.terminalExplainCommand",
-				"title": "%command.terminal.explainCommand.title%",
-				"category": "Terminal"
+				"command": "researcherry.terminalExplainCommand",
+				"title": "%command.terminalExplainCommand.title%",
+				"icon": "$(lightbulb)"
 			},
 			{
-				"command": "neira.setCustomStoragePath",
+				"command": "researcherry.setCustomStoragePath",
 				"title": "%command.setCustomStoragePath.title%",
-				"category": "%configuration.title%"
+				"icon": "$(folder)"
 			},
 			{
-				"command": "neira.importSettings",
+				"command": "researcherry.importSettings",
 				"title": "%command.importSettings.title%",
-				"category": "%configuration.title%"
+				"icon": "$(import)"
 			},
 			{
-				"command": "neira.focusInput",
+				"command": "researcherry.focusInput",
 				"title": "%command.focusInput.title%",
-				"category": "%configuration.title%"
+				"icon": "$(search)"
 			},
 			{
-				"command": "neira.acceptInput",
+				"command": "researcherry.acceptInput",
 				"title": "%command.acceptInput.title%",
-				"category": "%configuration.title%"
+				"icon": "$(check)"
 			},
 			{
-				"command": "neira.clearModesCache",
-				"title": "Clear Modes Cache",
-				"category": "%configuration.title%"
+				"command": "researcherry.clearModesCache",
+				"title": "%command.clearModesCache.title%",
+				"icon": "$(refresh)"
 			}
 		],
 		"menus": {
 			"editor/context": [
 				{
-					"submenu": "neira-coder.contextMenu",
-					"group": "1"
+					"submenu": "researcherry-ai.contextMenu",
+					"group": "researcherry-ai"
 				}
 			],
-			"neira-coder.contextMenu": [
+			"researcherry-ai.contextMenu": [
 				{
-					"command": "neira.addToContext",
-					"group": "1_actions@1"
+					"command": "researcherry.addToContext",
+					"group": "researcherry-ai"
 				},
 				{
-					"command": "neira.explainCode",
-					"group": "1_actions@2"
+					"command": "researcherry.explainCode",
+					"group": "researcherry-ai"
 				},
 				{
-					"command": "neira.improveCode",
-					"group": "1_actions@3"
+					"command": "researcherry.improveCode",
+					"group": "researcherry-ai"
 				}
 			],
 			"terminal/context": [
 				{
-					"submenu": "neira-coder.terminalMenu",
-					"group": "2"
+					"submenu": "researcherry-ai.terminalMenu",
+					"group": "researcherry-ai"
 				}
 			],
-			"neira-coder.terminalMenu": [
+			"researcherry-ai.terminalMenu": [
 				{
-					"command": "neira.terminalAddToContext",
-					"group": "1_actions@1"
+					"command": "researcherry.terminalAddToContext",
+					"group": "researcherry-ai"
 				},
 				{
-					"command": "neira.terminalFixCommand",
-					"group": "1_actions@2"
+					"command": "researcherry.terminalFixCommand",
+					"group": "researcherry-ai"
 				},
 				{
-					"command": "neira.terminalExplainCommand",
-					"group": "1_actions@3"
+					"command": "researcherry.terminalExplainCommand",
+					"group": "researcherry-ai"
 				}
 			],
 			"view/title": [
 				{
-					"command": "neira.plusButtonClicked",
-					"group": "navigation@1",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.plusButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.marketplaceButtonClicked",
-					"group": "navigation@2",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.marketplaceButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.settingsButtonClicked",
-					"group": "navigation@3",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.settingsButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.accountButtonClicked",
-					"group": "navigation@4",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.accountButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.historyButtonClicked",
-					"group": "overflow@1",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.historyButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.promptsButtonClicked",
-					"group": "overflow@2",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.promptsButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.mcpButtonClicked",
-					"group": "overflow@3",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.mcpButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.popoutButtonClicked",
-					"group": "overflow@4",
-					"when": "view == neira.SidebarProvider"
+					"command": "researcherry.popoutButtonClicked",
+					"when": "view == researcherry.SidebarProvider",
+					"group": "navigation"
 				}
 			],
-			"editor/title": [
+			"webview/title": [
 				{
-					"command": "neira.plusButtonClicked",
-					"group": "navigation@1",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.plusButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.marketplaceButtonClicked",
-					"group": "navigation@2",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.marketplaceButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.settingsButtonClicked",
-					"group": "navigation@3",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.settingsButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.accountButtonClicked",
-					"group": "navigation@4",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.accountButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.historyButtonClicked",
-					"group": "overflow@1",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.historyButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.promptsButtonClicked",
-					"group": "overflow@2",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.promptsButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.mcpButtonClicked",
-					"group": "overflow@3",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.mcpButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				},
 				{
-					"command": "neira.popoutButtonClicked",
-					"group": "overflow@4",
-					"when": "activeWebviewPanelId == neira.TabPanelProvider"
+					"command": "researcherry.popoutButtonClicked",
+					"when": "activeWebviewPanelId == researcherry.TabPanelProvider",
+					"group": "navigation"
 				}
 			]
 		},
 		"submenus": [
 			{
-				"id": "neira-coder.contextMenu",
-				"label": "%views.contextMenu.label%"
+				"id": "researcherry-ai.contextMenu",
+				"label": "%submenu.contextMenu.label%"
 			},
 			{
-				"id": "neira-coder.terminalMenu",
-				"label": "%views.terminalMenu.label%"
+				"id": "researcherry-ai.terminalMenu",
+				"label": "%submenu.terminalMenu.label%"
 			}
 		],
 		"configuration": {
 			"title": "%configuration.title%",
 			"properties": {
-				"neira.allowedCommands": {
+				"researcherry.allowedCommands": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -335,7 +336,7 @@
 					],
 					"description": "%commands.allowedCommands.description%"
 				},
-				"neira.deniedCommands": {
+				"researcherry.deniedCommands": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -343,14 +344,14 @@
 					"default": [],
 					"description": "%commands.deniedCommands.description%"
 				},
-				"neira.commandExecutionTimeout": {
+				"researcherry.commandExecutionTimeout": {
 					"type": "number",
 					"default": 0,
 					"minimum": 0,
 					"maximum": 600,
 					"description": "%commands.commandExecutionTimeout.description%"
 				},
-				"neira.commandTimeoutAllowlist": {
+				"researcherry.commandTimeoutAllowlist": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -358,12 +359,12 @@
 					"default": [],
 					"description": "%commands.commandTimeoutAllowlist.description%"
 				},
-				"neira.preventCompletionWithOpenTodos": {
+				"researcherry.preventCompletionWithOpenTodos": {
 					"type": "boolean",
 					"default": false,
 					"description": "%commands.preventCompletionWithOpenTodos.description%"
 				},
-				"neira.vsCodeLmModelSelector": {
+				"researcherry.vsCodeLmModelSelector": {
 					"type": "object",
 					"properties": {
 						"vendor": {
@@ -377,22 +378,22 @@
 					},
 					"description": "%settings.vsCodeLmModelSelector.description%"
 				},
-				"neira.customStoragePath": {
+				"researcherry.customStoragePath": {
 					"type": "string",
 					"default": "",
 					"description": "%settings.customStoragePath.description%"
 				},
-				"neira.enableCodeActions": {
+				"researcherry.enableCodeActions": {
 					"type": "boolean",
 					"default": true,
 					"description": "%settings.enableCodeActions.description%"
 				},
-				"neira.autoImportSettingsPath": {
+				"researcherry.autoImportSettingsPath": {
 					"type": "string",
 					"default": "",
 					"description": "%settings.autoImportSettingsPath.description%"
 				},
-				"neira.useAgentRules": {
+				"researcherry.useAgentRules": {
 					"type": "boolean",
 					"default": true,
 					"description": "%settings.useAgentRules.description%"
@@ -425,10 +426,10 @@
 		"@mistralai/mistralai": "^1.3.6",
 		"@modelcontextprotocol/sdk": "^1.9.0",
 		"@qdrant/js-client-rest": "^1.14.0",
-		"@neira-coder/cloud": "workspace:^",
-		"@neira-coder/ipc": "workspace:^",
-		"@neira-coder/telemetry": "workspace:^",
-		"@neira-coder/types": "workspace:^",
+		"@researcherry-ai/cloud": "workspace:^",
+		"@researcherry-ai/ipc": "workspace:^",
+		"@researcherry-ai/telemetry": "workspace:^",
+		"@researcherry-ai/types": "workspace:^",
 		"@types/lodash.debounce": "^4.0.9",
 		"@vscode/codicons": "^0.0.36",
 		"async-mutex": "^0.5.0",
@@ -489,9 +490,9 @@
 		"zod": "^3.25.61"
 	},
 	"devDependencies": {
-		"@neira-coder/build": "workspace:^",
-		"@neira-coder/config-eslint": "workspace:^",
-		"@neira-coder/config-typescript": "workspace:^",
+		"@researcherry-ai/build": "workspace:^",
+		"@researcherry-ai/config-eslint": "workspace:^",
+		"@researcherry-ai/config-typescript": "workspace:^",
 		"@types/clone-deep": "^4.0.4",
 		"@types/debug": "^4.1.12",
 		"@types/diff": "^5.2.1",

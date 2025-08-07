@@ -2,7 +2,7 @@ import { useState } from "react"
 import prettyBytes from "pretty-bytes"
 import { useTranslation } from "react-i18next"
 
-import type { HistoryItem } from "@neira-coder/types"
+import type { HistoryItem } from "@researcherry-ai/types"
 
 import { vscode } from "@/utils/vscode"
 import { useCopyToClipboard } from "@/utils/clipboard"

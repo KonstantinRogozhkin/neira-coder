@@ -7,7 +7,7 @@ import type {
 	MarketplaceItemType,
 	InstallMarketplaceItemOptions,
 	McpParameter,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
 import type { CustomModesManager } from "../../core/config/CustomModesManager"

@@ -1,5 +1,5 @@
 import EventEmitter from "events"
-import type { CloudUserInfo } from "@neira-coder/types"
+import type { CloudUserInfo } from "@researcherry-ai/types"
 
 export interface AuthServiceEvents {
 	"auth-state-changed": [

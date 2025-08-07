@@ -1,4 +1,4 @@
-import { deepSeekModels, deepSeekDefaultModelId } from "@neira-coder/types"
+import { deepSeekModels, deepSeekDefaultModelId } from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

@@ -30,7 +30,7 @@ vitest.mock("vscode", () => ({
 vitest.mock("lodash.debounce", () => ({ default: vitest.fn((fn) => fn) }))
 
 // Mock TelemetryService
-vitest.mock("@neira-coder/telemetry", () => ({
+vitest.mock("@researcherry-ai/telemetry", () => ({
 	TelemetryService: {
 		instance: {
 			captureEvent: vitest.fn(),

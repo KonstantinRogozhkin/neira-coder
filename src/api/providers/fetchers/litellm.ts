@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { LITELLM_COMPUTER_USE_MODELS } from "@neira-coder/types"
+import { LITELLM_COMPUTER_USE_MODELS } from "@researcherry-ai/types"
 
 import type { ModelRecord } from "../../../shared/api"
 

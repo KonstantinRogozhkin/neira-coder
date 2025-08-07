@@ -6,7 +6,7 @@ import {
 	mistralDefaultModelId,
 	mistralModels,
 	MISTRAL_DEFAULT_TEMPERATURE,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import { ApiHandlerOptions } from "../../shared/api"
 

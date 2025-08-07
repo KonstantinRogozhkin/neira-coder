@@ -2,7 +2,7 @@
 
 // npx vitest run src/__tests__/TelemetryClient.test.ts
 
-import { type TelemetryPropertiesProvider, TelemetryEventName } from "@neira-coder/types"
+import { type TelemetryPropertiesProvider, TelemetryEventName } from "@researcherry-ai/types"
 
 import { TelemetryClient } from "../TelemetryClient"
 

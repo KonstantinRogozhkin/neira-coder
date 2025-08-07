@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { shareResponseSchema } from "@neira-coder/types"
+import { shareResponseSchema } from "@researcherry-ai/types"
 import { getNeiraCoderApiUrl } from "./Config.js"
 import type { AuthService } from "./auth"
 import type { SettingsService } from "./SettingsService"

@@ -3,7 +3,7 @@ import knuthShuffle from "knuth-shuffle-seeded"
 import { Trans } from "react-i18next"
 import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 
-import type { ProviderSettings } from "@neira-coder/types"
+import type { ProviderSettings } from "@researcherry-ai/types"
 
 import { useExtensionState } from "@src/context/ExtensionStateContext"
 import { validateApiConfiguration } from "@src/utils/validate"
@@ -14,7 +14,7 @@ import { getRequestyAuthUrl, getOpenRouterAuthUrl } from "@src/oauth/urls"
 import ApiOptions from "../settings/ApiOptions"
 import { Tab, TabContent } from "../common/Tab"
 
-import RooHero from "./RooHero"
+import ResearcherryHero from "./RooHero"
 
 const WelcomeView = () => {
 	const { apiConfiguration, currentApiConfigName, setApiConfiguration, uriScheme, machineId } = useExtensionState()
@@ -50,7 +50,7 @@ const WelcomeView = () => {
 	return (
 		<Tab>
 			<TabContent className="flex flex-col gap-5 p-16">
-				<RooHero />
+				<ResearcherryHero />
 				<h2 className="mt-0 mb-0">{t("welcome:greeting")}</h2>
 
 				<div className="font-bold">

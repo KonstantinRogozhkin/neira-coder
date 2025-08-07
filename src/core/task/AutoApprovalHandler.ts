@@ -1,4 +1,4 @@
-import { GlobalState, ClineMessage, ClineAsk } from "@neira-coder/types"
+import { GlobalState, ClineMessage, ClineAsk } from "@researcherry-ai/types"
 import { getApiMetrics } from "../../shared/getApiMetrics"
 import { ClineAskResponse } from "../../shared/WebviewMessage"
 

@@ -1,10 +1,10 @@
 {
-	"name": "@neira-coder/types",
+	"name": "@researcherry-ai/types",
 	"version": "1.40.0",
 	"description": "TypeScript type definitions for Neira Coder.",
 	"publishConfig": {
 		"access": "public",
-		"name": "@neira-coder/types"
+		"name": "@researcherry-ai/types"
 	},
 	"author": "Neira Coder Team",
 	"license": "MIT",

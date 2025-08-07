@@ -1,6 +1,6 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import type { ProviderSettings, ModelInfo } from "@neira-coder/types"
+import type { ProviderSettings, ModelInfo } from "@researcherry-ai/types"
 
 import { ApiStream } from "./transform/stream"
 

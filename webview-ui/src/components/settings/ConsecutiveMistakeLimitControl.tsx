@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { Slider } from "@/components/ui"
 import { useAppTranslation } from "@/i18n/TranslationContext"
-import { DEFAULT_CONSECUTIVE_MISTAKE_LIMIT } from "@neira-coder/types"
+import { DEFAULT_CONSECUTIVE_MISTAKE_LIMIT } from "@researcherry-ai/types"
 
 interface ConsecutiveMistakeLimitControlProps {
 	value: number

@@ -1,6 +1,6 @@
 // npx vitest utils/__tests__/cost.spec.ts
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry-ai/types"
 
 import { calculateApiCostAnthropic, calculateApiCostOpenAI } from "../../shared/cost"
 

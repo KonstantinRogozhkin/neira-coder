@@ -1,6 +1,6 @@
 // npx vitest run src/api/transform/__tests__/reasoning.spec.ts
 
-import type { ModelInfo, ProviderSettings } from "@neira-coder/types"
+import type { ModelInfo, ProviderSettings } from "@researcherry-ai/types"
 
 import {
 	getOpenRouterReasoning,

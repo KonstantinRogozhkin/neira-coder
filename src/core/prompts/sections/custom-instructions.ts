@@ -3,7 +3,7 @@ import path from "path"
 import * as os from "os"
 import { Dirent } from "fs"
 
-import { isLanguage } from "@neira-coder/types"
+import { isLanguage } from "@researcherry-ai/types"
 
 import type { SystemPromptSettings } from "../types"
 
@@ -204,8 +204,8 @@ export async function loadRuleFiles(cwd: string): Promise<string> {
 		return "\n" + rules.join("\n\n")
 	}
 
-					// Fall back to existing behavior for legacy .neirarules/.clinerules files (deprecated)
-		const ruleFiles = [".neirarules", ".clinerules"]
+	// Fall back to existing behavior for legacy .neirarules/.clinerules files (deprecated)
+	const ruleFiles = [".neirarules", ".clinerules"]
 
 	for (const file of ruleFiles) {
 		const content = await safeReadFile(path.join(cwd, file))

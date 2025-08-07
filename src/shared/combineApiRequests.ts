@@ -1,4 +1,4 @@
-import type { ClineMessage } from "@neira-coder/types"
+import type { ClineMessage } from "@researcherry-ai/types"
 
 /**
  * Combines API request start and finish messages in an array of ClineMessages.

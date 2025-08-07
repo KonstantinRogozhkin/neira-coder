@@ -1,5 +1,5 @@
 import { memo } from "react"
-import type { HistoryItem } from "@neira-coder/types"
+import type { HistoryItem } from "@researcherry-ai/types"
 
 import { vscode } from "@/utils/vscode"
 import { cn } from "@/lib/utils"

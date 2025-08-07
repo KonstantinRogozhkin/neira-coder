@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Checkbox } from "vscrui"
 
-import { type ProviderSettings, type ModelInfo, type ReasoningEffort, reasoningEfforts } from "@neira-coder/types"
+import { type ProviderSettings, type ModelInfo, type ReasoningEffort, reasoningEfforts } from "@researcherry-ai/types"
 
 import { DEFAULT_HYBRID_REASONING_MODEL_MAX_TOKENS, DEFAULT_HYBRID_REASONING_MODEL_THINKING_TOKENS } from "@roo/api"
 

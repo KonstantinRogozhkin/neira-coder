@@ -5,7 +5,7 @@ import {
 	claudeCodeModels,
 	type ModelInfo,
 	getClaudeCodeModelId,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 import { type ApiHandler } from ".."
 import { ApiStreamUsageChunk, type ApiStream } from "../transform/stream"
 import { runClaudeCode } from "../../integrations/claude-code/run"

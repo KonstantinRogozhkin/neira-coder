@@ -16,8 +16,8 @@ import {
 	IpcMessageType,
 	TaskCommandName,
 	TaskEvent,
-} from "@neira-coder/types"
-import { IpcServer } from "@neira-coder/ipc"
+} from "@researcherry-ai/types"
+import { IpcServer } from "@researcherry-ai/ipc"
 
 import { Package } from "../shared/package"
 import { getWorkspacePath } from "../utils/path"

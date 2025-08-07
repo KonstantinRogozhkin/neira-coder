@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import { Globe } from "lucide-react"
 
-import type { Language } from "@neira-coder/types"
+import type { Language } from "@researcherry-ai/types"
 
 import { LANGUAGES } from "@roo/language"
 

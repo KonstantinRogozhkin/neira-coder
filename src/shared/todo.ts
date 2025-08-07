@@ -1,4 +1,4 @@
-import { ClineMessage } from "@neira-coder/types"
+import { ClineMessage } from "@researcherry-ai/types"
 export function getLatestTodo(clineMessages: ClineMessage[]) {
 	const todos = clineMessages
 		.filter(

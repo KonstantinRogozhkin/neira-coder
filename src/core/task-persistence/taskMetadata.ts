@@ -1,7 +1,7 @@
 import NodeCache from "node-cache"
 import getFolderSize from "get-folder-size"
 
-import type { ClineMessage, HistoryItem } from "@neira-coder/types"
+import type { ClineMessage, HistoryItem } from "@researcherry-ai/types"
 
 import { combineApiRequests } from "../../shared/combineApiRequests"
 import { combineCommandSequences } from "../../shared/combineCommandSequences"

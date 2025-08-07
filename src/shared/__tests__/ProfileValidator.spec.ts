@@ -1,6 +1,6 @@
 // npx vitest run src/shared/__tests__/ProfileValidator.spec.ts
 
-import { OrganizationAllowList, ProviderSettings } from "@neira-coder/types"
+import { OrganizationAllowList, ProviderSettings } from "@researcherry-ai/types"
 
 import { ProfileValidator } from "../ProfileValidator"
 

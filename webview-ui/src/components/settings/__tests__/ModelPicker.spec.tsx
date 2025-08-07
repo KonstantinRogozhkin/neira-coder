@@ -5,7 +5,7 @@ import { act } from "react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { vi } from "vitest"
 
-import { ModelInfo } from "@neira-coder/types"
+import { ModelInfo } from "@researcherry-ai/types"
 
 import { ModelPicker } from "../ModelPicker"
 

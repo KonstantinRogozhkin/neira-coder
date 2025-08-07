@@ -8,7 +8,7 @@ import {
 	OPEN_ROUTER_REASONING_BUDGET_MODELS,
 	OPEN_ROUTER_REQUIRED_REASONING_BUDGET_MODELS,
 	anthropicModels,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../../shared/api"
 import { parseApiPrice } from "../../../shared/cost"

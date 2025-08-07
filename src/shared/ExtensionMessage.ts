@@ -10,14 +10,14 @@ import type {
 	OrganizationAllowList,
 	CloudUserInfo,
 	ShareVisibility,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import { GitCommit } from "../utils/git"
 
 import { McpServer } from "./mcp"
 import { Mode } from "./modes"
 import { ModelRecord, RouterModels } from "./api"
-import type { MarketplaceItem } from "@neira-coder/types"
+import type { MarketplaceItem } from "@researcherry-ai/types"
 
 // Command interface for frontend/backend communication
 export interface Command {

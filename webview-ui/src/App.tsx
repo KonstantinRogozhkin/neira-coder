@@ -8,7 +8,7 @@ import { MarketplaceViewStateManager } from "./components/marketplace/Marketplac
 
 import { vscode } from "./utils/vscode"
 import { telemetryClient } from "./utils/TelemetryClient"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryEventName } from "@researcherry-ai/types"
 import { initializeSourceMaps, exposeSourceMapsForDebugging } from "./utils/sourceMapInitializer"
 import { ExtensionStateContextProvider, useExtensionState } from "./context/ExtensionStateContext"
 import ChatView, { ChatViewRef } from "./components/chat/ChatView"

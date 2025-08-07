@@ -1,5 +1,5 @@
 {
-	"name": "@neira-coder/config-eslint",
+	"name": "@researcherry-ai/config-eslint",
 	"private": true,
 	"type": "module",
 	"exports": {

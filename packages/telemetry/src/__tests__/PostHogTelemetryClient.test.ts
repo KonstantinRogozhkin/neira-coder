@@ -5,7 +5,7 @@
 import * as vscode from "vscode"
 import { PostHog } from "posthog-node"
 
-import { type TelemetryPropertiesProvider, TelemetryEventName } from "@neira-coder/types"
+import { type TelemetryPropertiesProvider, TelemetryEventName } from "@researcherry-ai/types"
 
 import { PostHogTelemetryClient } from "../PostHogTelemetryClient"
 

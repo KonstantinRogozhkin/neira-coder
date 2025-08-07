@@ -1,5 +1,5 @@
 {
-	"extends": "@neira-coder/config-typescript/base.json",
+	"extends": "@researcherry-ai/config-typescript/base.json",
 	"compilerOptions": {
 		"types": ["vitest/globals"],
 		"outDir": "dist"

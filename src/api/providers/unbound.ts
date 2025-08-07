@@ -1,7 +1,7 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import { unboundDefaultModelId, unboundDefaultModelInfo } from "@neira-coder/types"
+import { unboundDefaultModelId, unboundDefaultModelInfo } from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react"
-import { MarketplaceItem, McpParameter, McpInstallationMethod } from "@neira-coder/types"
+import { MarketplaceItem, McpParameter, McpInstallationMethod } from "@researcherry-ai/types"
 import { vscode } from "@/utils/vscode"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import {

@@ -1,6 +1,6 @@
 import { render, screen, act } from "@/utils/test-utils"
 
-import { ProviderSettings, ExperimentId } from "@neira-coder/types"
+import { ProviderSettings, ExperimentId } from "@researcherry-ai/types"
 
 import { ExtensionState } from "@roo/ExtensionMessage"
 

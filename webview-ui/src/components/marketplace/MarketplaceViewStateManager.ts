@@ -11,7 +11,7 @@
  * 3. Using minimal state updates to avoid resetting scroll position
  */
 
-import { MarketplaceItem } from "@neira-coder/types"
+import { MarketplaceItem } from "@researcherry-ai/types"
 import { vscode } from "../../utils/vscode"
 import { WebviewMessage } from "../../../../src/shared/WebviewMessage"
 

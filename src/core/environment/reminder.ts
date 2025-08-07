@@ -1,4 +1,4 @@
-import { TodoItem, TodoStatus } from "@neira-coder/types"
+import { TodoItem, TodoStatus } from "@researcherry-ai/types"
 
 /**
  * Format the reminders section as a markdown block in English, with basic instructions.

@@ -3,8 +3,8 @@ import {
 	type TelemetryEvent,
 	neiraCoderTelemetryEventSchema,
 	type ClineMessage,
-} from "@neira-coder/types"
-import { BaseTelemetryClient } from "@neira-coder/telemetry"
+} from "@researcherry-ai/types"
+import { BaseTelemetryClient } from "@researcherry-ai/telemetry"
 
 import { getNeiraCoderApiUrl } from "./Config.js"
 import type { AuthService } from "./auth"

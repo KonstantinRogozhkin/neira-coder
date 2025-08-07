@@ -1,6 +1,6 @@
 import { OpenAiHandler } from "./openai"
 import type { ApiHandlerOptions } from "../../shared/api"
-import { DOUBAO_API_BASE_URL, doubaoDefaultModelId, doubaoModels } from "@neira-coder/types"
+import { DOUBAO_API_BASE_URL, doubaoDefaultModelId, doubaoModels } from "@researcherry-ai/types"
 import { getModelParams } from "../transform/model-params"
 import { ApiStreamUsageChunk } from "../transform/stream"
 

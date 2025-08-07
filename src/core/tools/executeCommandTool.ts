@@ -4,8 +4,8 @@ import * as vscode from "vscode"
 
 import delay from "delay"
 
-import { CommandExecutionStatus, DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { CommandExecutionStatus, DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { Task } from "../task/Task"
 

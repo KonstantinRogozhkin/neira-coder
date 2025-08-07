@@ -2,14 +2,14 @@
 
 import axios from "axios"
 import { RemoteConfigLoader } from "../RemoteConfigLoader"
-import type { MarketplaceItemType } from "@neira-coder/types"
+import type { MarketplaceItemType } from "@researcherry-ai/types"
 
 // Mock axios
 vi.mock("axios")
 const mockedAxios = axios as any
 
 // Mock the cloud config
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry-ai/cloud", () => ({
 	getNeiraCoderApiUrl: () => "https://test.api.com",
 }))
 

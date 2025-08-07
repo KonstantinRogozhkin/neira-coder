@@ -6,7 +6,7 @@ import {
 	OrganizationAllowList,
 	OrganizationSettings,
 	organizationSettingsSchema,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 import { getNeiraCoderApiUrl } from "./Config.js"
 import type { AuthService, AuthState } from "./auth"

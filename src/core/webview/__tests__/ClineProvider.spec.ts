@@ -4,8 +4,8 @@ import Anthropic from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
 import axios from "axios"
 
-import { type ProviderSettingsEntry, type ClineMessage, ORGANIZATION_ALLOW_ALL } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { type ProviderSettingsEntry, type ClineMessage, ORGANIZATION_ALLOW_ALL } from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { ExtensionMessage, ExtensionState } from "../../../shared/ExtensionMessage"
 import { defaultModeSlug } from "../../../shared/modes"
@@ -313,7 +313,7 @@ vi.mock("../diff/strategies/multi-search-replace", () => ({
 	})),
 }))
 
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry-ai/cloud", () => ({
 	CloudService: {
 		hasInstance: vi.fn().mockReturnValue(true),
 		get instance() {
@@ -2475,7 +2475,7 @@ describe("getTelemetryProperties", () => {
 
 		test("includes cloud authentication property when user is authenticated", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockReturnValue(true),
 			}
@@ -2493,7 +2493,7 @@ describe("getTelemetryProperties", () => {
 
 		test("includes cloud authentication property when user is not authenticated", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockReturnValue(false),
 			}
@@ -2511,7 +2511,7 @@ describe("getTelemetryProperties", () => {
 
 		test("handles CloudService errors gracefully", async () => {
 			// Import the CloudService mock and update it to throw an error
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 			Object.defineProperty(CloudService, "instance", {
 				get: vi.fn().mockImplementation(() => {
 					throw new Error("CloudService not available")
@@ -2532,7 +2532,7 @@ describe("getTelemetryProperties", () => {
 
 		test("handles CloudService method errors gracefully", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry-ai/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockImplementation(() => {
 					throw new Error("Authentication check error")

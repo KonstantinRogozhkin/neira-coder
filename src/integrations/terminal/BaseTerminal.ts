@@ -1,5 +1,5 @@
 import { truncateOutput, applyRunLengthEncoding, processBackspaces, processCarriageReturns } from "../misc/extract-text"
-import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@neira-coder/types"
+import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@researcherry-ai/types"
 
 import type {
 	RooTerminalProvider,

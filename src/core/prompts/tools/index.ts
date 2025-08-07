@@ -1,4 +1,4 @@
-import type { ToolName, ModeConfig } from "@neira-coder/types"
+import type { ToolName, ModeConfig } from "@researcherry-ai/types"
 
 import { TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS, DiffStrategy } from "../../../shared/tools"
 import { McpHub } from "../../../services/mcp/McpHub"

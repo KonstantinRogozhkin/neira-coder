@@ -16,7 +16,7 @@ import {
 	chutesModels,
 	sambaNovaModels,
 	doubaoModels,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 export const MODELS_BY_PROVIDER: Partial<Record<ProviderName, Record<string, ModelInfo>>> = {
 	anthropic: anthropicModels,

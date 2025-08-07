@@ -1,7 +1,7 @@
 import { pgTable, text, timestamp, integer, real, boolean, jsonb, uniqueIndex } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 
-import type { NeiraCoderSettings, ToolName, ToolUsage } from "@neira-coder/types"
+import type { NeiraCoderSettings, ToolName, ToolUsage } from "@researcherry-ai/types"
 
 import type { ExerciseLanguage } from "../exercises/index.js"
 

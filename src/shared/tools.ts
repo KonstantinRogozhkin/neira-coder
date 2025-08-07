@@ -1,6 +1,6 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import type { ClineAsk, ToolProgressStatus, ToolGroup, ToolName } from "@neira-coder/types"
+import type { ClineAsk, ToolProgressStatus, ToolGroup, ToolName } from "@researcherry-ai/types"
 
 export type ToolResponse = string | Array<Anthropic.TextBlockParam | Anthropic.ImageBlockParam>
 

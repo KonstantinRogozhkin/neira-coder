@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ModelInfo, ollamaDefaultModelInfo } from "@neira-coder/types"
+import { ModelInfo, ollamaDefaultModelInfo } from "@researcherry-ai/types"
 import { z } from "zod"
 
 const OllamaModelDetailsSchema = z.object({

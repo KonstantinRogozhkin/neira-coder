@@ -3,7 +3,7 @@ import type Anthropic from "@anthropic-ai/sdk"
 import { execa } from "execa"
 import { ClaudeCodeMessage } from "./types"
 import readline from "readline"
-import { CLAUDE_CODE_DEFAULT_MAX_OUTPUT_TOKENS } from "@neira-coder/types"
+import { CLAUDE_CODE_DEFAULT_MAX_OUTPUT_TOKENS } from "@researcherry-ai/types"
 import * as os from "os"
 import { t } from "../../i18n"
 

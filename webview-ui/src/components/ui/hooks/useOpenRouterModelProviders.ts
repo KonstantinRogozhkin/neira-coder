@@ -2,7 +2,7 @@ import axios from "axios"
 import { z } from "zod"
 import { useQuery, UseQueryOptions } from "@tanstack/react-query"
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry-ai/types"
 
 import { parseApiPrice } from "@roo/cost"
 

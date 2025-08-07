@@ -1,9 +1,9 @@
 import axios from "axios"
 import * as yaml from "yaml"
 import { z } from "zod"
-import { getNeiraCoderApiUrl } from "@neira-coder/cloud"
-import type { MarketplaceItem, MarketplaceItemType } from "@neira-coder/types"
-import { modeMarketplaceItemSchema, mcpMarketplaceItemSchema } from "@neira-coder/types"
+import { getNeiraCoderApiUrl } from "@researcherry-ai/cloud"
+import type { MarketplaceItem, MarketplaceItemType } from "@researcherry-ai/types"
+import { modeMarketplaceItemSchema, mcpMarketplaceItemSchema } from "@researcherry-ai/types"
 
 // Response schemas for YAML API responses
 const modeMarketplaceResponse = z.object({

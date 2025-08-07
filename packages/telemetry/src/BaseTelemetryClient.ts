@@ -4,7 +4,7 @@ import {
 	TelemetryClient,
 	TelemetryPropertiesProvider,
 	TelemetryEventSubscription,
-} from "@neira-coder/types"
+} from "@researcherry-ai/types"
 
 export abstract class BaseTelemetryClient implements TelemetryClient {
 	protected providerRef: WeakRef<TelemetryPropertiesProvider> | null = null

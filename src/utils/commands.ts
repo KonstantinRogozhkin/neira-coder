@@ -1,4 +1,4 @@
-import type { CommandId, CodeActionId, TerminalActionId } from "@neira-coder/types"
+import type { CommandId, CodeActionId, TerminalActionId } from "@researcherry-ai/types"
 
 import { Package } from "../shared/package"
 

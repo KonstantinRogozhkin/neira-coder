@@ -64,7 +64,7 @@ vi.mock("openai", () => {
 import OpenAI from "openai"
 import type { Anthropic } from "@anthropic-ai/sdk"
 
-import { moonshotDefaultModelId } from "@neira-coder/types"
+import { moonshotDefaultModelId } from "@researcherry-ai/types"
 
 import type { ApiHandlerOptions } from "../../../shared/api"
 

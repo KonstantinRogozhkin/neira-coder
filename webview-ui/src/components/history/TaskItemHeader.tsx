@@ -1,5 +1,5 @@
 import React from "react"
-import type { HistoryItem } from "@neira-coder/types"
+import type { HistoryItem } from "@researcherry-ai/types"
 import { formatDate } from "@/utils/format"
 import { DeleteButton } from "./DeleteButton"
 import { cn } from "@/lib/utils"

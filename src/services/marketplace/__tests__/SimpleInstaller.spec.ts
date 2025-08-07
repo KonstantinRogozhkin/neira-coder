@@ -5,7 +5,7 @@ import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import * as vscode from "vscode"
 import * as os from "os"
-import type { MarketplaceItem } from "@neira-coder/types"
+import type { MarketplaceItem } from "@researcherry-ai/types"
 import type { CustomModesManager } from "../../../core/config/CustomModesManager"
 import * as path from "path"
 import { fileExistsAtPath } from "../../../utils/fs"
@@ -173,9 +173,9 @@ describe("SimpleInstaller", () => {
 
 			mockFs.readFile.mockResolvedValueOnce(invalidJson)
 
-			    await expect(installer.installItem(mockMcpItem, { target: "project" })).rejects.toThrow(
-      "Cannot install MCP server: The .neira/mcp.json file contains invalid JSON. Please fix the syntax errors in the file before installing new servers.",
-    )
+			await expect(installer.installItem(mockMcpItem, { target: "project" })).rejects.toThrow(
+				"Cannot install MCP server: The .neira/mcp.json file contains invalid JSON. Please fix the syntax errors in the file before installing new servers.",
+			)
 
 			// Should NOT write to file
 			expect(mockFs.writeFile).not.toHaveBeenCalled()

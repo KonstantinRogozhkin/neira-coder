@@ -1,6 +1,6 @@
 // npx vitest run src/utils/__tests__/enhance-prompt.spec.ts
 
-import type { ProviderSettings } from "@neira-coder/types"
+import type { ProviderSettings } from "@researcherry-ai/types"
 
 import { singleCompletionHandler } from "../single-completion-handler"
 import { buildApiHandler, SingleCompletionHandler } from "../../api"

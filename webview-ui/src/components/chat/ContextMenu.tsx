@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { getIconForFilePath, getIconUrlByName, getIconForDirectoryPath } from "vscode-material-icons"
 
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry-ai/types"
 import type { Command } from "@roo/ExtensionMessage"
 
 import {

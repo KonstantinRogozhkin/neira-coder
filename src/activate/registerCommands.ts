@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
 import delay from "delay"
 
-import type { CommandId } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { CommandId } from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { Package } from "../shared/package"
 import { getCommand } from "../utils/commands"
@@ -222,13 +222,13 @@ const getCommandsMap = ({ context, outputChannel, provider }: RegisterCommandOpt
 		try {
 			// Clear CustomModesManager cache
 			provider.customModesManager.clearCache()
-			
+
 			// Clear global state cache
 			await context.globalState.update("customModes", undefined)
-			
+
 			// Force refresh webview
 			await provider.postStateToWebview()
-			
+
 			vscode.window.showInformationMessage("Modes cache cleared successfully!")
 		} catch (error) {
 			vscode.window.showErrorMessage(`Failed to clear modes cache: ${error}`)

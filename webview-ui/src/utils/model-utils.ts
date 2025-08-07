@@ -1,4 +1,4 @@
-import { ANTHROPIC_DEFAULT_MAX_TOKENS } from "@neira-coder/types"
+import { ANTHROPIC_DEFAULT_MAX_TOKENS } from "@researcherry-ai/types"
 
 /**
  * Result of token distribution calculation

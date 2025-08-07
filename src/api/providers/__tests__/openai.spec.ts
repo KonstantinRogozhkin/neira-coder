@@ -4,7 +4,7 @@ import { OpenAiHandler } from "../openai"
 import { ApiHandlerOptions } from "../../../shared/api"
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
-import { openAiModelInfoSaneDefaults } from "@neira-coder/types"
+import { openAiModelInfoSaneDefaults } from "@researcherry-ai/types"
 import { Package } from "../../../shared/package"
 
 const mockCreate = vitest.fn()

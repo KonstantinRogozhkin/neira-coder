@@ -25,9 +25,9 @@ import {
 	TodoItem,
 	getApiProtocol,
 	getModelId,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService } from "@neira-coder/cloud"
+} from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
+import { CloudService } from "@researcherry-ai/cloud"
 
 // api
 import { ApiHandler, ApiHandlerCreateMessageMetadata, buildApiHandler } from "../../api"

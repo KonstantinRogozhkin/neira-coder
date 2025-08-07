@@ -8,8 +8,8 @@ import type {
 	OrganizationSettings,
 	ClineMessage,
 	ShareVisibility,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { CloudServiceEvents } from "./types"
 import type { AuthService } from "./auth"

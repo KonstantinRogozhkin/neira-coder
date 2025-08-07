@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest"
 import { getModelMaxOutputTokens, shouldUseReasoningBudget, shouldUseReasoningEffort } from "../api"
-import type { ModelInfo, ProviderSettings } from "@neira-coder/types"
-import { CLAUDE_CODE_DEFAULT_MAX_OUTPUT_TOKENS, ANTHROPIC_DEFAULT_MAX_TOKENS } from "@neira-coder/types"
+import type { ModelInfo, ProviderSettings } from "@researcherry-ai/types"
+import { CLAUDE_CODE_DEFAULT_MAX_OUTPUT_TOKENS, ANTHROPIC_DEFAULT_MAX_TOKENS } from "@researcherry-ai/types"
 
 describe("getModelMaxOutputTokens", () => {
 	const mockModel: ModelInfo = {

@@ -21,7 +21,7 @@ vi.mock("../constants", () => ({
 }))
 
 import { CerebrasHandler } from "../cerebras"
-import { cerebrasModels, type CerebrasModelId } from "@neira-coder/types"
+import { cerebrasModels, type CerebrasModelId } from "@researcherry-ai/types"
 
 // Mock fetch globally
 global.fetch = vi.fn()

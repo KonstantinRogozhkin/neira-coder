@@ -1,4 +1,4 @@
-import { reactConfig } from "@neira-coder/config-eslint/react"
+import { reactConfig } from "@researcherry-ai/config-eslint/react"
 
 /** @type {import("eslint").Linter.Config} */
 export default [

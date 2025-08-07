@@ -8,7 +8,7 @@ import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import * as vscode from "vscode"
 
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry-ai/types"
 
 import { fileExistsAtPath } from "../../../utils/fs"
 import { getWorkspacePath } from "../../../utils/path"
@@ -49,7 +49,7 @@ describe("CustomModesManager - Export/Import with Slug Changes", () => {
 	const mockStoragePath = `${path.sep}mock${path.sep}settings`
 	const mockSettingsPath = path.join(mockStoragePath, "settings", GlobalFileNames.customModes)
 	const mockWorkspacePath = path.resolve("/mock/workspace")
-			const mockRoomodes = path.join(mockWorkspacePath, ".neira", ".neira-modes")
+	const mockRoomodes = path.join(mockWorkspacePath, ".neira", ".neira-modes")
 
 	beforeEach(() => {
 		mockOnUpdate = vi.fn()
@@ -249,8 +249,12 @@ describe("CustomModesManager - Export/Import with Slug Changes", () => {
 			expect(result.success).toBe(true)
 
 			// Verify files were written to the correct new slug folder
-			const rule1Path = Object.keys(writtenFiles).find((p) => p.includes("rule1.md") && !p.includes(".neira-modes"))
-			const rule2Path = Object.keys(writtenFiles).find((p) => p.includes("rule2.md") && !p.includes(".neira-modes"))
+			const rule1Path = Object.keys(writtenFiles).find(
+				(p) => p.includes("rule1.md") && !p.includes(".neira-modes"),
+			)
+			const rule2Path = Object.keys(writtenFiles).find(
+				(p) => p.includes("rule2.md") && !p.includes(".neira-modes"),
+			)
 
 			expect(rule1Path).toBeDefined()
 			expect(rule2Path).toBeDefined()
@@ -304,8 +308,12 @@ describe("CustomModesManager - Export/Import with Slug Changes", () => {
 			expect(result.success).toBe(true)
 
 			// Verify files were written to the NEW slug folder, not the old one
-			const rule1Path = Object.keys(writtenFiles).find((p) => p.includes("rule1.md") && !p.includes(".neira-modes"))
-			const rule2Path = Object.keys(writtenFiles).find((p) => p.includes("rule2.md") && !p.includes(".neira-modes"))
+			const rule1Path = Object.keys(writtenFiles).find(
+				(p) => p.includes("rule1.md") && !p.includes(".neira-modes"),
+			)
+			const rule2Path = Object.keys(writtenFiles).find(
+				(p) => p.includes("rule2.md") && !p.includes(".neira-modes"),
+			)
 
 			expect(rule1Path).toBeDefined()
 			expect(rule2Path).toBeDefined()

@@ -5,8 +5,8 @@ import * as path from "path"
 
 import * as vscode from "vscode"
 
-import type { ProviderName } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { ProviderName } from "@researcherry-ai/types"
+import { TelemetryService } from "@researcherry-ai/telemetry"
 
 import { importSettings, importSettingsFromFile, importSettingsWithFeedback, exportSettings } from "../importExport"
 import { ProviderSettingsManager } from "../ProviderSettingsManager"
