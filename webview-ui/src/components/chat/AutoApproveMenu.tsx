@@ -190,6 +190,10 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 								}
 								// If no options enabled, do nothing
 							}}
+							style={{
+								transform: "scale(0.8)",
+								transformOrigin: "left center",
+							}}
 						/>
 					</StandardTooltip>
 				</div>
@@ -205,6 +209,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 						style={{
 							color: "var(--vscode-foreground)",
 							flexShrink: 0,
+							fontSize: "11px",
 						}}>
 						{t("chat:autoApprove.title")}
 					</span>
@@ -216,6 +221,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 							whiteSpace: "nowrap",
 							flex: 1,
 							minWidth: 0,
+							fontSize: "11px",
 						}}>
 						{displayText}
 					</span>
