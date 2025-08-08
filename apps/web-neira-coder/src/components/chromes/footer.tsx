@@ -54,8 +54,12 @@ export function Footer() {
 							rel="noopener noreferrer"
 							className="inline-flex items-center space-x-2 group">
 							<Image
-								src={resolvedTheme === "light" ? "/RooCode-Badge-blk.svg" : "/RooCode-Badge-white.svg"}
-								alt="Made with Researcherry Code"
+								src={
+									resolvedTheme === "light"
+										? "/Researcherry-Logo-Horiz-blk.svg"
+										: "/Researcherry-Logo-Horiz-white.svg"
+								}
+								alt="Researcherry logo"
 								width={120}
 								height={40}
 								className="h-8 w-auto opacity-70 transition-opacity group-hover:opacity-100"
