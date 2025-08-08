@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256"
+     viewBox="0 0 256 256"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Прозрачный фон: ничего лишнего, без <rect> -->
+  
+  <!-- Определение фильтра для внутренней тени -->
+  <defs>
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+      <feDropShadow dx="-1" dy="-1" stdDeviation="1" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <text x="50%" y="50%"
+        text-anchor="middle" dominant-baseline="central"
+        font-family="Inter, Arial, sans-serif"
+        font-size="180"
+        font-weight="700"
+        fill="#ffffff"
+        filter="url(#innerShadow)">
+    RS
+  </text>
+</svg>

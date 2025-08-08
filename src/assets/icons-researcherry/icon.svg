@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256"
+     viewBox="0 0 256 256"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Прозрачный фон: ничего лишнего, без <rect> -->
+  <text x="50%" y="50%"
+        text-anchor="middle" dominant-baseline="central"
+        font-family="Inter, Arial, sans-serif"
+        font-size="180"
+        font-weight="700"
+        fill="#000000">
+    RS
+  </text>
+</svg>
