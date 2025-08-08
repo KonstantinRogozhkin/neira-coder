@@ -1,3 +1,141 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+#
+# Researcherry: lightweight patch generator
+#
+# Generates trimmed patch files in the patches/ directory by comparing
+# the clean upstream (build-src) with the current repository, excluding
+# heavy and generated artifacts to keep patches small (<100MB).
+#
+
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PATCHES_DIR="$ROOT_DIR/patches"
+BUILD_DIR="$ROOT_DIR/build-src"
+
+# Upstream settings (can be overridden via env)
+UPSTREAM_REPO="${UPSTREAM_REPO:-https://github.com/RooCodeInc/Roo-Code.git}"
+UPSTREAM_BRANCH="${UPSTREAM_BRANCH:-main}"
+UPSTREAM_REF="${UPSTREAM_REF:-$UPSTREAM_BRANCH}"
+
+mkdir -p "$PATCHES_DIR"
+
+echo "=== Creating patches (trimmed) ==="
+
+# 1) Ensure baseline repo exists
+if [ ! -d "$BUILD_DIR/.git" ]; then
+  echo "-> Cloning upstream baseline into $BUILD_DIR (ref: $UPSTREAM_REF)"
+  git clone --depth 1 --branch "$UPSTREAM_BRANCH" "$UPSTREAM_REPO" "$BUILD_DIR"
+  if [ "$UPSTREAM_REF" != "$UPSTREAM_BRANCH" ]; then
+    (cd "$BUILD_DIR" && git fetch --depth 1 origin "$UPSTREAM_REF" && git checkout --detach "$UPSTREAM_REF") || true
+  fi
+fi
+
+# 2) Common exclude patterns (heavy / generated / cache)
+read -r -d '' EXCLUDES <<'EOF' || true
+--exclude .git/
+--exclude node_modules/
+--exclude .turbo/
+--exclude .vite-port
+--exclude dist/
+--exclude build/
+--exclude bin/
+--exclude webview-ui/build/
+--exclude webview-ui/node_modules/
+--exclude packages/**/node_modules/
+--exclude packages/**/npm/dist/
+--exclude scripts/**/tmp/**
+--exclude **/*.map
+--exclude **/*.log
+EOF
+
+tmpdir="$(mktemp -d)"
+cleanup() { rm -rf "$tmpdir"; }
+trap cleanup EXIT
+
+BASE_DIR="$tmpdir/base"
+CURR_DIR="$tmpdir/curr"
+mkdir -p "$BASE_DIR" "$CURR_DIR"
+
+echo "-> Preparing filtered snapshots for diff..."
+
+# 3) Copy filtered snapshots (use rsync include lists per category if needed)
+rsync -a --delete $EXCLUDES "$BUILD_DIR/" "$BASE_DIR/"
+rsync -a --delete $EXCLUDES "$ROOT_DIR/" "$CURR_DIR/"
+
+# 4) Helper to write patch if non-empty
+write_patch() {
+  local name="$1"; shift
+  local include_paths=("$@")
+  local patch_path="$PATCHES_DIR/$name"
+
+  # Build path filters for diff
+  local filters=( )
+  if [ ${#include_paths[@]} -gt 0 ]; then
+    for p in "${include_paths[@]}"; do
+      filters+=("--" "$p")
+    done
+  fi
+
+  echo "   - Generating $name"
+  if git -c core.quotepath=false diff --no-index --binary --src-prefix=a/ --dst-prefix=b/ "$BASE_DIR" "$CURR_DIR" "${filters[@]}" > "$patch_path"; then
+    if [ -s "$patch_path" ]; then
+      echo "     ✅ $name created ($(du -h "$patch_path" | awk '{print $1}'))"
+    else
+      rm -f "$patch_path"
+      echo "     ⚠️  $name empty, skipped"
+    fi
+  else
+    echo "     ⚠️  git diff returned non-zero for $name (might be ok)"
+  fi
+}
+
+# 5) Generate categorized patches (order matches build.sh expectations)
+
+# Branding (icons, names)
+write_patch "001-branding.patch" \
+  "src/assets/icons" \
+  "src/assets/icons/**" \
+  "webview-ui/public" \
+  "webview-ui/public/**" \
+  "src/package.json"
+
+# Documentation
+write_patch "002-documentation.patch" \
+  "README.md" "CHANGELOG.md" "LICENSE" \
+  "locales" "locales/**" \
+  ".docs" ".docs/**"
+
+# Configuration
+write_patch "003-configuration.patch" \
+  "package.json" ".github" ".github/**" \
+  "src/package.json" "webview-ui/package.json" \
+  "apps/**/package.json" "packages/**/package.json" \
+  "scripts" "scripts/**"
+
+# Rules / modes (keep flexible)
+write_patch "004-rules-modes.patch" \
+  ".clinerules" ".clinerules/**" \
+  ".neira" ".neira/**"
+
+# Source code (main)
+write_patch "005-source-code.patch" \
+  "src" "src/**" \
+  "webview-ui/src" "webview-ui/src/**" \
+  "packages" "packages/**"
+
+# Tests
+write_patch "006-tests.patch" \
+  "src/**/__tests__/**" \
+  "webview-ui/src/**/__tests__/**" \
+  "packages/**/__tests__/**"
+
+# General (everything else minor, but still filtered by EXCLUDES)
+write_patch "007-general.patch"
+
+echo "=== Done. Patches are in $PATCHES_DIR ==="
+
 #!/bin/bash
 
 # Скрипт для создания отдельных патчей по категориям (только русский и английский языки)

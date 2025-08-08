@@ -56,7 +56,11 @@ validate_icons_after_patch() {
 
 # --- КОНФИГУРАЦИЯ ---
 UPSTREAM_REPO="https://github.com/RooCodeInc/Roo-Code.git"
+# Ветка по умолчанию. Можно перекрыть через переменную окружения UPSTREAM_REF
 UPSTREAM_BRANCH="main"
+# Опциональный коммит/тег для воспроизводимой сборки. Можно задать через UPSTREAM_REF
+# Пример: export UPSTREAM_REF="1a2b3c4d" или "v3.31.0". Если не задан, используется $UPSTREAM_BRANCH
+UPSTREAM_REF="${UPSTREAM_REF:-$UPSTREAM_BRANCH}"
 BUILD_DIR="build-src"
 PATCHES_DIR="patches"
 
@@ -67,8 +71,14 @@ echo "-> Очистка предыдущей сборочной директор
 rm -rf $BUILD_DIR
 
 # 2. Клонирование чистого upstream
-echo "-> Клонирование оригинального репозитория roo-code..."
-git clone --depth 1 --branch $UPSTREAM_BRANCH $UPSTREAM_REPO $BUILD_DIR
+echo "-> Клонирование оригинального репозитория roo-code ($UPSTREAM_REF)..."
+git clone --depth 1 --branch "$UPSTREAM_BRANCH" "$UPSTREAM_REPO" "$BUILD_DIR"
+if [ "$UPSTREAM_REF" != "$UPSTREAM_BRANCH" ]; then
+    echo "-> Переключение на $UPSTREAM_REF"
+    (cd "$BUILD_DIR" && git fetch --depth 1 origin "$UPSTREAM_REF" && git checkout --detach "$UPSTREAM_REF") || {
+        echo "⚠️ Не удалось переключиться на $UPSTREAM_REF, оставляем $UPSTREAM_BRANCH"
+    }
+fi
 
 # 3. Применение патчей
 echo "-> Наложение патчей..."
