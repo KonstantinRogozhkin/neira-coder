@@ -291,6 +291,166 @@
 			"description": "Number of consecutive mistakes or repeats before showing the 'Having trouble' dialog",
 			"unlimitedDescription": "Unlimited retries are enabled (auto-continue). The dialog will never appear.",
 			"warning": "Setting 0 allows unlimited retries and may significantly increase API usage"
+		},
+		"openAiApiKey": "OpenAI API Key",
+		"getOpenAiApiKey": "Get OpenAI API Key",
+		"openAiBaseUrl": "Base URL",
+		"apiKey": "API Key",
+		"useLegacyFormat": "Use legacy OpenAI API format",
+		"customHeaders": "Custom headers",
+		"noCustomHeaders": "No custom headers defined. Click + to add.",
+		"headerName": "Header name",
+		"headerValue": "Header value",
+		"setReasoningLevel": "Enable reasoning effort",
+		"glamaApiKey": "Glama API Key",
+		"getGlamaApiKey": "Get Glama API Key",
+		"openRouterTransformsText": "Compress prompts and message chains to context size (<a>OpenRouter Transforms</a>)",
+		"requestyApiKey": "Requesty API Key",
+		"getRequestyApiKey": "Get Requesty API Key",
+		"cerebrasApiKey": "Cerebras API Key",
+		"getCerebrasApiKey": "Get Cerebras API Key",
+		"chutesApiKey": "Chutes API Key",
+		"getChutesApiKey": "Get Chutes API Key",
+		"deepSeekApiKey": "DeepSeek API Key",
+		"getDeepSeekApiKey": "Get DeepSeek API Key",
+		"doubaoApiKey": "Doubao API Key",
+		"getDoubaoApiKey": "Get Doubao API Key",
+		"geminiApiKey": "Gemini API Key",
+		"getGeminiApiKey": "Get Gemini API Key",
+		"geminiParameters": {
+			"urlContext": {
+				"title": "Enable URL context",
+				"description": "Allow Gemini to fetch and process URLs as additional context."
+			},
+			"groundingSearch": {
+				"title": "Enable grounding via Google Search",
+				"description": "Allow Gemini to search for up-to-date information and ground answers in real-time data."
+			}
+		},
+		"googleCloudSetup": {
+			"title": "To use Google Cloud Vertex AI:",
+			"step1": "1. Create a Google Cloud account, enable Vertex AI API and required Claude models.",
+			"step2": "2. Install Google Cloud CLI and configure default credentials.",
+			"step3": "3. Or create a service account with a key."
+		},
+		"googleCloudCredentials": "Google Cloud credentials",
+		"googleCloudKeyFile": "Google Cloud key file path",
+		"googleCloudProjectId": "Google Cloud Project ID",
+		"googleCloudRegion": "Google Cloud region",
+		"lmStudio": {
+			"baseUrl": "Base URL (optional)",
+			"modelId": "Model ID",
+			"speculativeDecoding": "Enable speculative decoding",
+			"draftModelId": "Draft model ID",
+			"draftModelDesc": "Draft model should be from the same family for speculative decoding to work well.",
+			"selectDraftModel": "Select draft model",
+			"noModelsFound": "No draft models found. Ensure LM Studio runs with server mode enabled.",
+			"description": "LM Studio lets you run models locally. Read the <a>quick guide</a>. Also enable the LM Studio <b>local server</b> to work with this extension. <span>Note:</span> Researcherry uses complex prompts and works best with Claude; smaller models may behave poorly."
+		},
+		"ollama": {
+			"baseUrl": "Base URL (optional)",
+			"modelId": "Model ID",
+			"description": "Ollama lets you run models locally. Read the quick guide.",
+			"warning": "Note: Researcherry uses complex prompts and works best with Claude. Less capable models may not work well."
+		},
+		"litellmApiKey": "LiteLLM API Key",
+		"litellmBaseUrl": "LiteLLM Base URL",
+		"refreshModels": {
+			"label": "Refresh models",
+			"hint": "Please reopen settings to see the latest models.",
+			"loading": "Refreshing models list...",
+			"success": "Models list refreshed successfully!",
+			"error": "Failed to refresh models. Please try again.",
+			"missingConfig": "Please configure Base URL and API key first to refresh models."
+		},
+		"awsCrossRegion": "Use cross-region output",
+		"awsBedrockVpc": {
+			"useCustomVpcEndpoint": "Use custom VPC endpoint",
+			"vpcEndpointUrlPlaceholder": "Enter VPC endpoint URL (optional)",
+			"examples": "Examples:"
+		},
+		"awsCustomArnUse": "Enter a valid Amazon Bedrock ARN for the model used. Format examples:",
+		"awsCustomArnDesc": "Ensure the region in the ARN matches the AWS region selected above.",
+		"invalidArnFormat": "Invalid ARN format. Please check the examples above.",
+		"huggingFaceApiKey": "Hugging Face API Key",
+		"getHuggingFaceApiKey": "Get Hugging Face API Key",
+		"huggingFaceModelId": "Model ID",
+		"huggingFaceLoading": "Loading...",
+		"huggingFaceModelsCount": "({{count}} models)",
+		"huggingFaceSelectModel": "Select a model...",
+		"huggingFaceSearchModels": "Search models...",
+		"huggingFaceNoModelsFound": "No models found",
+		"huggingFaceProvider": "Provider",
+		"huggingFaceProviderAuto": "Auto",
+		"huggingFaceSelectProvider": "Select a provider...",
+		"huggingFaceSearchProviders": "Search providers...",
+		"huggingFaceNoProvidersFound": "No providers found",
+		"openRouter": {
+			"providerRouting": {
+				"title": "OpenRouter provider routing",
+				"description": "OpenRouter routes requests to the best available providers for your selected model. You can also pin a specific provider.",
+				"learnMore": "Learn more about provider routing"
+			}
+		},
+		"customModel": {
+			"capabilities": "Configure capabilities and pricing for your custom OpenAI-compatible model. Be careful when declaring capabilities, as it may affect Researcherry behavior.",
+			"maxTokens": {
+				"label": "Max output tokens",
+				"description": "Maximum number of tokens the model can generate in a response. (-1 lets the server decide)"
+			},
+			"contextWindow": {
+				"label": "Context window size",
+				"description": "Total tokens (input + output) the model can process."
+			},
+			"imageSupport": { "label": "Image support", "description": "Whether the model can process images." },
+			"computerUse": { "label": "Computer use", "description": "Whether the model can use a browser." },
+			"promptCache": { "label": "Prompt cache", "description": "Whether the model supports prompt caching." },
+			"pricing": {
+				"input": {
+					"label": "Input price",
+					"description": "Price per million tokens in input messages/prompts."
+				},
+				"output": { "label": "Output price", "description": "Price per million tokens in model responses." },
+				"cacheReads": {
+					"label": "Cache read price",
+					"description": "Price per million tokens when reading from cache."
+				},
+				"cacheWrites": {
+					"label": "Cache write price",
+					"description": "Price per million tokens when writing to cache."
+				}
+			},
+			"resetDefaults": "Reset to default"
+		}
+	},
+	"defaults": {
+		"ollamaUrl": "Default: http://localhost:11434",
+		"lmStudioUrl": "Default: http://localhost:1234",
+		"geminiUrl": "Default: https://generativelanguage.googleapis.com"
+	},
+	"labels": { "customArn": "Custom ARN", "useCustomArn": "Use custom ARN..." },
+	"placeholders": {
+		"apiKey": "Enter API key...",
+		"profileName": "Enter profile name",
+		"accessKey": "Enter Access Key...",
+		"secretKey": "Enter Secret Key...",
+		"sessionToken": "Enter Session Token...",
+		"credentialsJson": "Enter Credentials JSON...",
+		"keyFilePath": "Enter key file path...",
+		"projectId": "Enter Project ID...",
+		"customArn": "Enter ARN (e.g., arn:aws:bedrock:us-east-1:123456789012:foundation-model/my-model)",
+		"baseUrl": "Enter base URL...",
+		"modelId": {
+			"lmStudio": "e.g., meta-llama-3.1-8b-instruct",
+			"lmStudioDraft": "e.g., lmstudio-community/llama-3.2-1b-instruct",
+			"ollama": "e.g., llama3.1"
+		},
+		"numbers": {
+			"maxTokens": "e.g., 4096",
+			"contextWindow": "e.g., 128000",
+			"inputPrice": "e.g., 0.0001",
+			"outputPrice": "e.g., 0.0002",
+			"cacheWritePrice": "e.g., 0.00005"
 		}
 	},
 	"temperature": {
