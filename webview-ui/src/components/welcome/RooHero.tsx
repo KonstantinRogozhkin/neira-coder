@@ -20,7 +20,7 @@ const RooHero = () => {
 					maskSize: "contain",
 				}}
 				className="mx-auto brightness-110">
-				<img src={imagesBaseUri + "/roo-logo.svg"} alt="Roo logo" className="h-8 opacity-0" />
+				<img src={imagesBaseUri + "/roo-logo.svg"} alt="Researcherry logo" className="h-8 opacity-0" />
 			</div>
 			<div className="text-center mt-2 text-xs text-vscode-descriptionForeground opacity-80">
 				Мультиролевой ИИ для автоматизации рутинных бизнес-задач
