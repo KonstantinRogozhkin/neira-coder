@@ -8,7 +8,7 @@ import { isLanguage } from "@researcherry/types"
 import type { SystemPromptSettings } from "../types"
 
 import { LANGUAGES } from "../../../shared/language"
-import { getResearcherryDirectoriesForCwd, getGlobalResearcherryDirectory } from "../../../services/researcherry-config"
+import { getResearcherryDirectoriesForCwd, getGlobalResearcherryDirectory } from "../../../services/neira-config"
 
 /**
  * Safely read a file and return its trimmed content

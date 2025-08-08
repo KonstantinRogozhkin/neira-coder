@@ -63,7 +63,7 @@ export async function insertContentTool(
 		const accessAllowed = cline.rooIgnoreController?.validateAccess(relPath)
 
 		if (!accessAllowed) {
-			await cline.say("rooignore_error", relPath)
+			await cline.say("rsignore_error", relPath)
 			pushToolResult(formatResponse.toolError(formatResponse.rooIgnoreError(relPath)))
 			return
 		}

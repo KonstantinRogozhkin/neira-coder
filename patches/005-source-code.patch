@@ -9720,7 +9720,7 @@ index a57dfcb6d..8490a0908 100644
  
  		if (stats.isFile()) {
  			if (rooIgnoreController && !rooIgnoreController.validateAccess(absPath)) {
--				return `(File ${mentionPath} is ignored by .rooignore)`
+-				return `(File ${mentionPath} is ignored by .rsignore)`
 +				return `(File ${mentionPath} is ignored by .researcherryignore)`
  			}
  			try {
@@ -9873,10 +9873,10 @@ index 7c4229b9c..540d511c4 100644
  
  describe("getPromptComponent", () => {
  	it("should return undefined for empty objects", () => {
-diff --git a/src/core/prompts/__tests__/responses-rooignore.spec.ts b/src/core/prompts/__tests__/responses-rooignore.spec.ts
+diff --git a/src/core/prompts/__tests__/responses-rsignore.spec.ts b/src/core/prompts/__tests__/responses-rsignore.spec.ts
 index ca0dcfbad..b22a8b565 100644
---- a/src/core/prompts/__tests__/responses-rooignore.spec.ts
-+++ b/src/core/prompts/__tests__/responses-rooignore.spec.ts
+--- a/src/core/prompts/__tests__/responses-rsignore.spec.ts
++++ b/src/core/prompts/__tests__/responses-rsignore.spec.ts
 @@ -44,17 +44,19 @@ describe("RooIgnore Response Formatting", () => {
  		mockReadFile.mockResolvedValue("node_modules\n.git\nsecrets/**\n*.log")
  	})
@@ -9891,12 +9891,12 @@ index ca0dcfbad..b22a8b565 100644
 +			const errorMessage = formatResponse.researcherryIgnoreError("secrets/api-keys.json")
  
  			// Verify error message format
--			expect(errorMessage).toContain("Access to secrets/api-keys.json is blocked by the .rooignore file settings")
+-			expect(errorMessage).toContain("Access to secrets/api-keys.json is blocked by the .rsignore file settings")
 +			expect(errorMessage).toContain(
 +				"Access to secrets/api-keys.json is blocked by the .researcherryignore file settings",
 +			)
  			expect(errorMessage).toContain("continue in the task without using this file")
--			expect(errorMessage).toContain("ask the user to update the .rooignore file")
+-			expect(errorMessage).toContain("ask the user to update the .rsignore file")
 +			expect(errorMessage).toContain("ask the user to update the .researcherryignore file")
  		})
  
@@ -9942,7 +9942,7 @@ index ca0dcfbad..b22a8b565 100644
  		/**
  		 * Tests the instructions format
  		 */
--		it("should format .rooignore instructions for the LLM", async () => {
+-		it("should format .rsignore instructions for the LLM", async () => {
 +		it("should format .researcherryignore instructions for the LLM", async () => {
  			// Create controller
  			const controller = new RooIgnoreController(TEST_CWD)
@@ -9951,7 +9951,7 @@ index ca0dcfbad..b22a8b565 100644
  			const instructions = controller.getInstructions()
  
  			// Verify format and content
--			expect(instructions).toContain("# .rooignore")
+-			expect(instructions).toContain("# .rsignore")
 +			expect(instructions).toContain("# .researcherryignore")
  			expect(instructions).toContain(LOCK_TEXT_SYMBOL)
  			expect(instructions).toContain("node_modules")
@@ -9960,13 +9960,13 @@ index ca0dcfbad..b22a8b565 100644
  		/**
  		 * Tests null/undefined case
  		 */
--		it("should return undefined when no .rooignore exists", async () => {
--			// Set up no .rooignore
+-		it("should return undefined when no .rsignore exists", async () => {
+-			// Set up no .rsignore
 +		it("should return undefined when no .researcherryignore exists", async () => {
 +			// Set up no .researcherryignore
  			mockFileExists.mockResolvedValue(false)
  
--			// Create controller without .rooignore
+-			// Create controller without .rsignore
 +			// Create controller without .researcherryignore
  			const controller = new RooIgnoreController(TEST_CWD)
  			await controller.initialize()
@@ -10367,7 +10367,7 @@ index 3f38789fd..cee3a9553 100644
 +		`Выполнение инструмента не удалось со следующей ошибкой:\n<error>\n${error}\n</error>`,
  
  	rooIgnoreError: (path: string) =>
--		`Access to ${path} is blocked by the .rooignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rooignore file.`,
+-		`Access to ${path} is blocked by the .rsignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rsignore file.`,
 +		`Доступ к ${path} заблокирован настройками файла .researcherryignore. Вы должны попытаться продолжить задачу без использования этого файла, или попросить пользователя обновить файл .researcherryignore.`,
  
  	noToolsUsed: () =>
@@ -12792,7 +12792,7 @@ index e6d57b22b..fa6749afd 100644
  
  	// Predefined list of protected Roo configuration patterns
  	private static readonly PROTECTED_PATTERNS = [
--		".rooignore",
+-		".rsignore",
 -		".roomodes",
 -		".roorules*",
 +		".researcherryignore",
@@ -12815,8 +12815,8 @@ index 0ee6135e8..e165e8965 100644
  	})
  
  	describe("isWriteProtected", () => {
--		it("should protect .rooignore file", () => {
--			expect(controller.isWriteProtected(".rooignore")).toBe(true)
+-		it("should protect .rsignore file", () => {
+-			expect(controller.isWriteProtected(".rsignore")).toBe(true)
 -		})
 +			it("should protect .researcherryignore file", () => {
 +		expect(controller.isWriteProtected(".researcherryignore")).toBe(true)
@@ -12882,7 +12882,7 @@ index 0ee6135e8..e165e8965 100644
  
  		it("should handle nested paths correctly", () => {
 -			expect(controller.isWriteProtected(".roo/config.json")).toBe(true) // .roo/** matches at root
--			expect(controller.isWriteProtected("nested/.rooignore")).toBe(true) // .rooignore matches anywhere by default
+-			expect(controller.isWriteProtected("nested/.rsignore")).toBe(true) // .rsignore matches anywhere by default
 -			expect(controller.isWriteProtected("nested/.roomodes")).toBe(true) // .roomodes matches anywhere by default
 -			expect(controller.isWriteProtected("nested/.roorules.md")).toBe(true) // .roorules* matches anywhere by default
 +			expect(controller.isWriteProtected(".researcherry/config.json")).toBe(true) // .researcherry/** matches at root
@@ -12892,7 +12892,7 @@ index 0ee6135e8..e165e8965 100644
  		})
  
  		it("should handle absolute paths by converting to relative", () => {
--			const absolutePath = path.join(TEST_CWD, ".rooignore")
+-			const absolutePath = path.join(TEST_CWD, ".rsignore")
 +			const absolutePath = path.join(TEST_CWD, ".researcherryignore")
  			expect(controller.isWriteProtected(absolutePath)).toBe(true)
  		})
@@ -12907,12 +12907,12 @@ index 0ee6135e8..e165e8965 100644
  
  	describe("getProtectedFiles", () => {
  		it("should return set of protected files from a list", () => {
--			const files = ["src/index.ts", ".rooignore", "package.json", ".roo/config.json", "README.md"]
+-			const files = ["src/index.ts", ".rsignore", "package.json", ".roo/config.json", "README.md"]
 +			const files = ["src/index.ts", ".researcherryignore", "package.json", ".researcherry/config.json", "README.md"]
  
  			const protectedFiles = controller.getProtectedFiles(files)
  
--			expect(protectedFiles).toEqual(new Set([".rooignore", ".roo/config.json"]))
+-			expect(protectedFiles).toEqual(new Set([".rsignore", ".roo/config.json"]))
 +			expect(protectedFiles).toEqual(new Set([".researcherryignore", ".researcherry/config.json"]))
  		})
  
@@ -12921,14 +12921,14 @@ index 0ee6135e8..e165e8965 100644
  
  	describe("annotatePathsWithProtection", () => {
  		it("should annotate paths with protection status", () => {
--			const files = ["src/index.ts", ".rooignore", ".roo/config.json", "package.json"]
+-			const files = ["src/index.ts", ".rsignore", ".roo/config.json", "package.json"]
 +			const files = ["src/index.ts", ".researcherryignore", ".researcherry/config.json", "package.json"]
  
  			const annotated = controller.annotatePathsWithProtection(files)
  
  			expect(annotated).toEqual([
  				{ path: "src/index.ts", isProtected: false },
--				{ path: ".rooignore", isProtected: true },
+-				{ path: ".rsignore", isProtected: true },
 -				{ path: ".roo/config.json", isProtected: true },
 +				{ path: ".researcherryignore", isProtected: true },
 +				{ path: ".researcherry/config.json", isProtected: true },
@@ -12939,7 +12939,7 @@ index 0ee6135e8..e165e8965 100644
  
  			expect(instructions).toContain("# Protected Files")
  			expect(instructions).toContain("write-protected")
--			expect(instructions).toContain(".rooignore")
+-			expect(instructions).toContain(".rsignore")
 -			expect(instructions).toContain(".roo/**")
 +			expect(instructions).toContain(".researcherryignore")
 +			expect(instructions).toContain(".researcherry/**")
@@ -12950,7 +12950,7 @@ index 0ee6135e8..e165e8965 100644
  			const patterns = RooProtectedController.getProtectedPatterns()
  
  			expect(patterns).toEqual([
--				".rooignore",
+-				".rsignore",
 -				".roomodes",
 -				".roorules*",
 +				".researcherryignore",
@@ -16921,7 +16921,7 @@ index c59d47144..389bda542 100644
  				return {
  					path: filePath,
  					status: "skipped" as const,
--					reason: "File is ignored by .rooignore or .gitignore",
+-					reason: "File is ignored by .rsignore or .gitignore",
 +					reason: "File is ignored by .researcherryignore or .gitignore",
  				}
  			}
@@ -16975,7 +16975,7 @@ index 27362b8b7..76f3984f1 100644
  
  		await ignoreController.initialize()
  
--		// Filter paths using .rooignore
+-		// Filter paths using .rsignore
 +		// Filter paths using .researcherryignore
  		const allowedPaths = ignoreController.filterPaths(filePaths)
  
@@ -19961,7 +19961,7 @@ index 3ddd69945..6db965d57 100644
  	enableCheckpoints: boolean
  	maxOpenTabsContext: number // Maximum number of VSCode open tabs to include in context (0-500)
  	maxWorkspaceFiles: number // Maximum number of files to include in current working directory details (0-500)
--	showRooIgnoredFiles: boolean // Whether to show .rooignore'd files in listings
+-	showRooIgnoredFiles: boolean // Whether to show .rsignore'd files in listings
 +	showResearcherryIgnoredFiles: boolean // Whether to show .researcherryignore'd files in listings
  	maxReadFileLine: number // Maximum number of lines to read from a file before truncating
  	maxImageFileSize: number // Maximum size of image files to process in MB
@@ -24108,9 +24108,9 @@ index 88484e1d6..2d774107f 100644
 -						onChange={(e: any) => setCachedStateField("showRooIgnoredFiles", e.target.checked)}
 +						checked={showResearcherryIgnoredFiles}
 +						onChange={(e: any) => setCachedStateField("showResearcherryIgnoredFiles", e.target.checked)}
- 						data-testid="show-rooignored-files-checkbox">
+ 						data-testid="show-rsignored-files-checkbox">
  						<label className="block font-medium mb-1">
- 							{t("settings:contextManagement.rooignore.label")}
+ 							{t("settings:contextManagement.rsignore.label")}
 diff --git a/webview-ui/src/components/settings/ExperimentalSettings.tsx b/webview-ui/src/components/settings/ExperimentalSettings.tsx
 index 53801232e..f2564c9a5 100644
 --- a/webview-ui/src/components/settings/ExperimentalSettings.tsx
@@ -25204,8 +25204,8 @@ index da7ab6335..52a67c209 100644
  		cwd: "",
  		browserToolEnabled: true,
  		telemetrySetting: "unset",
--		showRooIgnoredFiles: true, // Default to showing .rooignore'd files with lock symbol (current behavior).
-+		showResearcherryIgnoredFiles: true, // Default to showing .rooignore'd files with lock symbol (current behavior).
+-		showRooIgnoredFiles: true, // Default to showing .rsignore'd files with lock symbol (current behavior).
++		showResearcherryIgnoredFiles: true, // Default to showing .rsignore'd files with lock symbol (current behavior).
  		renderContext: "sidebar",
  		maxReadFileLine: -1, // Default max read file line limit
  		maxImageFileSize: 5, // Default max image file size in MB
@@ -25241,14 +25241,14 @@ index a688cac88..fe8a1bbc5 100644
  		<div>
  			<div data-testid="allowed-commands">{JSON.stringify(allowedCommands)}</div>
  			<div data-testid="sound-enabled">{JSON.stringify(soundEnabled)}</div>
--			<div data-testid="show-rooignored-files">{JSON.stringify(showRooIgnoredFiles)}</div>
-+			<div data-testid="show-rooignored-files">{JSON.stringify(showResearcherryIgnoredFiles)}</div>
+-			<div data-testid="show-rsignored-files">{JSON.stringify(showRooIgnoredFiles)}</div>
++			<div data-testid="show-rsignored-files">{JSON.stringify(showResearcherryIgnoredFiles)}</div>
  			<button data-testid="update-button" onClick={() => setAllowedCommands(["npm install", "git status"])}>
  				Update Commands
  			</button>
--			<button data-testid="toggle-rooignore-button" onClick={() => setShowRooIgnoredFiles(!showRooIgnoredFiles)}>
+-			<button data-testid="toggle-rsignore-button" onClick={() => setShowRooIgnoredFiles(!showRooIgnoredFiles)}>
 +			<button
-+				data-testid="toggle-rooignore-button"
++				data-testid="toggle-rsignore-button"
 +				onClick={() => setShowRooIgnoredFiles(!showResearcherryIgnoredFiles)}>
  				Update Commands
  			</button>
@@ -25263,7 +25263,7 @@ index a688cac88..fe8a1bbc5 100644
  			<ExtensionStateContextProvider>
  				<TestComponent />
 @@ -74,7 +76,7 @@ describe("ExtensionStateContext", () => {
- 		expect(JSON.parse(screen.getByTestId("show-rooignored-files").textContent!)).toBe(true)
+ 		expect(JSON.parse(screen.getByTestId("show-rsignored-files").textContent!)).toBe(true)
  	})
  
 -	it("updates showRooIgnoredFiles through setShowRooIgnoredFiles", () => {
@@ -26570,7 +26570,7 @@ index 6e0f13750..80cd662b5 100644
 -			},
 -			"protected": {
 -				"label": "Include protected files",
--				"description": "Allow Roo to create and edit protected files (like .rooignore and .roo/ configuration files) without requiring approval."
+-				"description": "Allow Roo to create and edit protected files (like .rsignore and .roo/ configuration files) without requiring approval."
 -			}
 -		},
 -		"browser": {
@@ -26944,9 +26944,9 @@ index 6e0f13750..80cd662b5 100644
 -			"label": "Workspace files context limit",
 -			"description": "Maximum number of files to include in current working directory details. Higher values provide more context but increase token usage."
 -		},
--		"rooignore": {
--			"label": "Show .rooignore'd files in lists and searches",
--			"description": "When enabled, files matching patterns in .rooignore will be shown in lists with a lock symbol. When disabled, these files will be completely hidden from file lists and searches."
+-		"rsignore": {
+-			"label": "Show .rsignore'd files in lists and searches",
+-			"description": "When enabled, files matching patterns in .rsignore will be shown in lists with a lock symbol. When disabled, these files will be completely hidden from file lists and searches."
 -		},
 -		"maxConcurrentFileReads": {
 -			"label": "Concurrent file reads limit",
@@ -27633,7 +27633,7 @@ index 38e986ab8..8d3589c31 100644
  			},
  			"protected": {
  				"label": "Включить защищенные файлы",
--				"description": "Разрешить Roo создавать и редактировать защищенные файлы (такие как .rooignore и файлы конфигурации .roo/) без необходимости одобрения."
+-				"description": "Разрешить Roo создавать и редактировать защищенные файлы (такие как .rsignore и файлы конфигурации .roo/) без необходимости одобрения."
 +				"description": "Разрешить Нейра создавать и редактировать защищенные файлы (такие как .Нейраignore и файлы конфигурации .Нейра/) без необходимости одобрения."
  			}
  		},
@@ -27745,9 +27745,9 @@ index 38e986ab8..8d3589c31 100644
  			"label": "Лимит контекста файлов рабочей области",
  			"description": "Максимальное количество файлов, включаемых в детали текущей рабочей директории. Большее значение даёт больше контекста, но увеличивает расход токенов."
  		},
--		"rooignore": {
--			"label": "Показывать .rooignore-файлы в списках и поиске",
--			"description": "Если включено, файлы, совпадающие с шаблонами в .rooignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."
+-		"rsignore": {
+-			"label": "Показывать .rsignore-файлы в списках и поиске",
+-			"description": "Если включено, файлы, совпадающие с шаблонами в .rsignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."
 +		"Нейраignore": {
 +			"label": "Показывать .Нейраignore-файлы в списках и поиске",
 +			"description": "Если включено, файлы, совпадающие с шаблонами в .Нейраignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."

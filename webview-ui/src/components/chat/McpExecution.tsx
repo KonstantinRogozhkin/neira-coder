@@ -4,7 +4,7 @@ import { useEvent } from "react-use"
 import { useTranslation } from "react-i18next"
 
 import { McpExecutionStatus, mcpExecutionStatusSchema } from "@researcherry/types"
-import { ExtensionMessage, ClineAskUseMcpServer } from "../../../../src/shared/ExtensionMessage"
+import { ExtensionMessage, ClineAskUseMcpServer } from "@roo/ExtensionMessage"
 import { safeJsonParse } from "../../../../src/shared/safeJsonParse"
 import { cn } from "@src/lib/utils"
 import { Button } from "@src/components/ui"

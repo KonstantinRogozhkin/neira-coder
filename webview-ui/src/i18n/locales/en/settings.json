@@ -51,5 +51,278 @@
 			"apiKey": "Enter your API key"
 		}
 	},
-	"importSettings": "Import Settings"
+	"importSettings": "Import Settings",
+	"autoApprove": {
+		"description": "Allow Researcherry to perform certain actions automatically without asking for approval.",
+		"toggleAriaLabel": "Toggle auto-approve",
+		"disabledAriaLabel": "Auto-approve is disabled – select options first",
+		"readOnly": {
+			"label": "Read",
+			"description": "Automatically read files and folders without approval.",
+			"outsideWorkspace": {
+				"label": "Including outside workspace",
+				"description": "Allow reading files outside the current workspace without approval."
+			}
+		},
+		"write": {
+			"label": "Write",
+			"description": "Automatically create and edit files without approval.",
+			"delayLabel": "Delay after write for diagnostics",
+			"outsideWorkspace": {
+				"label": "Including outside workspace",
+				"description": "Allow creating and editing files outside the current workspace without approval."
+			},
+			"protected": {
+				"label": "Include protected files",
+				"description": "Allow creating and editing protected files (like .neiraignore and .neira config files) without approval."
+			}
+		},
+		"browser": {
+			"label": "Browser",
+			"description": "Automatically perform allowed browser actions when the model supports computer use."
+		},
+		"retry": {
+			"label": "Retry",
+			"description": "Automatically retry API requests on server errors.",
+			"delayLabel": "Delay before retry"
+		},
+		"mcp": {
+			"label": "MCP",
+			"description": "Enable auto-approve of specific MCP tools in the MCP Servers view (requires both this option and the tool's 'Always allow' checkbox)."
+		},
+		"modeSwitch": { "label": "Mode", "description": "Automatically switch between modes without approval." },
+		"subtasks": { "label": "Subtasks", "description": "Allow creating and executing subtasks without approval." },
+		"followupQuestions": {
+			"label": "Follow-up",
+			"description": "Automatically pick the first suggested answer after a timeout.",
+			"timeoutLabel": "Timeout before automatically selecting the first answer"
+		},
+		"execute": {
+			"label": "Execute",
+			"description": "Automatically execute allowed terminal commands without approval.",
+			"allowedCommands": "Allowed commands",
+			"allowedCommandsDescription": "Command prefixes that can be executed automatically when 'Always allow execute' is enabled. Add * to allow all commands (use with caution).",
+			"deniedCommands": "Denied commands",
+			"deniedCommandsDescription": "Command prefixes that will be automatically denied without asking. When there is overlap, the longest matching prefix wins. Add * to deny all commands.",
+			"commandPlaceholder": "Enter a command prefix (e.g., 'git ')",
+			"deniedCommandPlaceholder": "Enter a command prefix to deny (e.g., 'rm -rf')",
+			"addButton": "Add",
+			"autoDenied": "Commands with prefix `{{prefix}}` were denied by the user. Do not bypass this by running a different command."
+		},
+		"updateTodoList": { "label": "Todo", "description": "Todo list updates automatically without approval" },
+		"apiRequestLimit": {
+			"title": "Max requests",
+			"description": "Automatically perform up to this many API requests before asking for approval to continue the task.",
+			"unlimited": "Unlimited"
+		},
+		"selectOptionsFirst": "Select at least one option below to enable auto-approve",
+		"apiCostLimit": { "title": "Max cost", "unlimited": "Unlimited" },
+		"maxLimits": {
+			"description": "Automatically proceed until the limits below are reached before requesting approval."
+		}
+	},
+	"browser": {
+		"enable": {
+			"label": "Enable browser tool",
+			"description": "If enabled, Researcherry can use a browser when using models that support computer use. <0>Learn more</0>"
+		},
+		"viewport": {
+			"label": "Viewport size",
+			"description": "Choose a viewport size for browser interactions.",
+			"options": {
+				"largeDesktop": "Large desktop (1280x800)",
+				"smallDesktop": "Small desktop (900x600)",
+				"tablet": "Tablet (768x1024)",
+				"mobile": "Mobile (360x640)"
+			}
+		},
+		"screenshotQuality": {
+			"label": "Screenshot quality",
+			"description": "Adjust WebP quality for browser screenshots. Higher values are clearer but cost more tokens."
+		},
+		"remote": {
+			"label": "Use remote browser connection",
+			"description": "Connect to Chrome with remote debugging enabled (--remote-debugging-port=9222).",
+			"urlPlaceholder": "Custom URL (e.g., http://localhost:9222)",
+			"testButton": "Test connection",
+			"testingButton": "Testing...",
+			"instructions": "Enter a DevTools Protocol address or leave empty to auto-discover local Chrome instances."
+		}
+	},
+	"contextManagement": {
+		"description": "Control what information is included in the AI context window.",
+		"openTabs": {
+			"label": "Open tabs context limit",
+			"description": "Maximum number of VS Code tabs to include in context."
+		},
+		"workspaceFiles": {
+			"label": "Workspace files context limit",
+			"description": "Maximum number of files from the current directory details to include."
+		},
+		"maxConcurrentFileReads": {
+			"label": "Max concurrent file reads",
+			"description": "Maximum concurrent files the read_file tool can process."
+		},
+		"rsignore": {
+			"label": "Show .neiraignore files in lists and search",
+			"description": "If enabled, files matching .neiraignore are shown with a lock icon; if disabled, they are hidden."
+		},
+		"maxReadFile": {
+			"label": "Auto-truncation threshold when reading file",
+			"lines": "lines",
+			"always_full_read": "Always read the whole file",
+			"description": "Default number of lines to read when start/end is not specified. -1 = read whole file; 0 = create minimal index only."
+		},
+		"maxImageFileSize": {
+			"label": "Max image file size",
+			"mb": "MB",
+			"description": "Maximum size (MB) for image files processed by the read_file tool."
+		},
+		"maxTotalImageSize": {
+			"label": "Max total image size",
+			"mb": "MB",
+			"description": "Cumulative size (MB) limit for all images processed in one read_file operation."
+		},
+		"diagnostics": {
+			"includeMessages": {
+				"label": "Automatically include diagnostics in context",
+				"description": "When enabled, diagnostic messages from edited files are included automatically."
+			},
+			"maxMessages": {
+				"label": "Max diagnostic messages",
+				"description": "Maximum number of diagnostic messages to include.",
+				"resetTooltip": "Reset to default (50)",
+				"unlimited": "Unlimited diagnostic messages",
+				"unlimitedLabel": "Unlimited"
+			},
+			"delayAfterWrite": {
+				"label": "Delay after write so diagnostics can detect issues",
+				"description": "Wait time after writing files before proceeding."
+			}
+		},
+		"autoCondenseContext": { "name": "Automatically run intelligent context condensing" },
+		"condensingThreshold": {
+			"label": "Condensing threshold",
+			"selectProfile": "Select profile for threshold",
+			"defaultProfile": "Global default (all profiles)",
+			"defaultDescription": "When context reaches this percent, it will be condensed automatically for all profiles without custom thresholds.",
+			"profileDescription": "Custom threshold for this profile (overrides global default)",
+			"usesGlobal": "(uses global {{threshold}}%)"
+		}
+	},
+	"terminal": {
+		"basic": { "label": "Terminal settings: Basic", "description": "Basic terminal settings" },
+		"advanced": {
+			"label": "Terminal settings: Advanced",
+			"description": "Some options may require restarting the terminal."
+		},
+		"outputLineLimit": {
+			"label": "Terminal output line limit",
+			"description": "Maximum number of lines to include in terminal output. <0>Learn more</0>"
+		},
+		"outputCharacterLimit": {
+			"label": "Terminal output character limit",
+			"description": "Maximum number of characters to include in terminal output. <0>Learn more</0>"
+		},
+		"compressProgressBar": {
+			"label": "Compress progress bar output",
+			"description": "Collapse carriage-return progress output to final state. <0>Learn more</0>"
+		},
+		"inheritEnv": {
+			"label": "Inherit environment variables",
+			"description": "Toggle VS Code setting terminal.integrated.inheritEnv. <0>Learn more</0>"
+		},
+		"shellIntegrationDisabled": {
+			"label": "Disable terminal shell integration",
+			"description": "Use a simpler execution method as a fallback. <0>Learn more</0>"
+		},
+		"shellIntegrationTimeout": {
+			"label": "Terminal shell integration timeout",
+			"description": "Maximum wait time for shell integration initialization. <0>Learn more</0>"
+		},
+		"commandDelay": {
+			"label": "Terminal command delay",
+			"description": "Wait time in milliseconds after executing a command. <0>Learn more</0>"
+		},
+		"powershellCounter": {
+			"label": "Enable PowerShell counter workaround",
+			"description": "Adds a counter to PowerShell commands to improve capture. <0>Learn more</0>"
+		},
+		"zshClearEolMark": {
+			"label": "Clear ZSH end-of-line mark",
+			"description": "Clears PROMPT_EOL_MARK in zsh to avoid parsing issues. <0>Learn more</0>"
+		},
+		"zshOhMy": {
+			"label": "Enable Oh My Zsh integration",
+			"description": "Sets integration env variable. May require IDE restart. <0>Learn more</0>"
+		},
+		"zshP10k": {
+			"label": "Enable Powerlevel10k integration",
+			"description": "Sets integration env variable. <0>Learn more</0>"
+		},
+		"zdotdir": {
+			"label": "Enable ZDOTDIR handling",
+			"description": "Create a temporary dir for ZDOTDIR for proper zsh integration. <0>Learn more</0>"
+		}
+	},
+	"advanced": {
+		"diff": {
+			"label": "Enable diff-based editing",
+			"description": "Allow faster edits via diffs.",
+			"matchPrecision": {
+				"label": "Match precision",
+				"description": "Controls how strictly code blocks must match when applying diffs."
+			}
+		}
+	},
+	"providers": {
+		"apiProvider": "API Provider",
+		"providerDocumentation": "Provider Documentation",
+		"anthropicApiKey": "Anthropic API Key",
+		"apiKeyStorageNotice": "Your API key is stored locally and never sent to our servers.",
+		"getAnthropicApiKey": "Get Anthropic API Key",
+		"useCustomBaseUrl": "Use custom base URL",
+		"model": "Model",
+		"validation": { "apiKey": "API key is required" },
+		"placeholders": { "apiKey": "Enter your API key" },
+		"rateLimitSeconds": { "label": "Rate limit", "description": "Minimum time between API requests." },
+		"consecutiveMistakeLimit": {
+			"label": "Consecutive mistake limit",
+			"description": "Number of consecutive mistakes or repeats before showing the 'Having trouble' dialog",
+			"unlimitedDescription": "Unlimited retries are enabled (auto-continue). The dialog will never appear.",
+			"warning": "Setting 0 allows unlimited retries and may significantly increase API usage"
+		}
+	},
+	"temperature": {
+		"useCustom": "Use custom temperature",
+		"description": "Controls randomness of model responses.",
+		"rangeDescription": "Higher values are more random; lower are more deterministic."
+	},
+	"modelInfo": {
+		"supportsImages": "Supports images",
+		"noImages": "Does not support images",
+		"supportsComputerUse": "Supports computer use",
+		"noComputerUse": "Does not support computer use",
+		"supportsPromptCache": "Supports prompt cache",
+		"noPromptCache": "Does not support prompt cache",
+		"maxOutput": "Max output",
+		"inputPrice": "Input price",
+		"outputPrice": "Output price",
+		"cacheReadsPrice": "Cache reads price",
+		"cacheWritesPrice": "Cache writes price",
+		"enableR1Format": "Enable R1 model parameters",
+		"enableR1FormatTips": "Enable when using R1 models to avoid 400 errors",
+		"gemini": {
+			"freeRequests": "* Free up to {{count}} requests per minute. Then pricing depends on prompt size.",
+			"pricingDetails": "Pricing details.",
+			"billingEstimate": "* Billing is an estimate; exact cost depends on prompt size."
+		}
+	},
+	"modelPicker": {
+		"label": "Model",
+		"searchPlaceholder": "Search",
+		"noMatchFound": "No match found",
+		"useCustomModel": "Use custom: {{modelId}}",
+		"automaticFetch": "The extension automatically fetches the latest models from <serviceLink>{{serviceName}}</serviceLink>. If unsure, Researcherry works best with <defaultModelLink>{{defaultModelId}}</defaultModelLink>. You can also search for 'free'."
+	}
 }

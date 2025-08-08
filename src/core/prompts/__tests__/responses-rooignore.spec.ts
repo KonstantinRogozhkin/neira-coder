@@ -1,4 +1,4 @@
-// npx vitest core/prompts/__tests__/responses-rooignore.spec.ts
+// npx vitest core/prompts/__tests__/responses-rsignore.spec.ts
 
 import type { Mock } from "vitest"
 
@@ -75,7 +75,7 @@ describe("RooIgnore Response Formatting", () => {
 
 	describe("formatResponse.formatFilesList with RooIgnoreController", () => {
 		/**
-		 * Tests file listing with rooignore controller
+		 * Tests file listing with rsignore controller
 		 */
 		it("should format files list with lock symbols for ignored files", async () => {
 			// Create controller

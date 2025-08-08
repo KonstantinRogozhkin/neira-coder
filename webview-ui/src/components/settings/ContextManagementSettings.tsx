@@ -166,13 +166,13 @@ export const ContextManagementSettings = ({
 					<VSCodeCheckbox
 						checked={showResearcherryIgnoredFiles}
 						onChange={(e: any) => setCachedStateField("showResearcherryIgnoredFiles", e.target.checked)}
-						data-testid="show-rooignored-files-checkbox">
+						data-testid="show-rsignored-files-checkbox">
 						<label className="block font-medium mb-1">
-							{t("settings:contextManagement.rooignore.label")}
+							{t("settings:contextManagement.rsignore.label")}
 						</label>
 					</VSCodeCheckbox>
 					<div className="text-vscode-descriptionForeground text-sm mt-1 mb-3">
-						{t("settings:contextManagement.rooignore.description")}
+						{t("settings:contextManagement.rsignore.description")}
 					</div>
 				</div>
 

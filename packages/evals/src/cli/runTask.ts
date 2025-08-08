@@ -213,7 +213,7 @@ export const runTask = async ({ run, task, publish, logger }: RunTaskOptions) =>
 	const loggableSays: ClineSay[] = [
 		"error",
 		"command_output",
-		"rooignore_error",
+		"rsignore_error",
 		"diff_error",
 		"condense_context",
 		"condense_context_error",

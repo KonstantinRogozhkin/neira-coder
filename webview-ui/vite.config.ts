@@ -109,7 +109,6 @@ export default defineConfig(({ mode }) => {
 			alias: {
 				"@": resolve(__dirname, "./src"),
 				"@src": resolve(__dirname, "./src"),
-				"@researcherry": resolve(__dirname, "../src/shared"),
 				"@roo": resolve(__dirname, "../src/shared"),
 				"styled-components": resolve(__dirname, "node_modules/styled-components"),
 			},

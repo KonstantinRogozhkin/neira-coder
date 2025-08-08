@@ -433,6 +433,12 @@
 			"placeholder": "По умолчанию: claude",
 			"maxTokensLabel": "Макс. выходных токенов",
 			"maxTokensDescription": "Максимальное количество выходных токенов для ответов Claude Code. По умолчанию 8000."
+		},
+		"validation": {
+			"apiKey": "Требуется ключ API"
+		},
+		"placeholders": {
+			"apiKey": "Введите ваш API-ключ"
 		}
 	},
 	"browser": {
@@ -511,9 +517,9 @@
 			"label": "Лимит контекста файлов рабочей области",
 			"description": "Максимальное количество файлов, включаемых в детали текущей рабочей директории. Большее значение даёт больше контекста, но увеличивает расход токенов."
 		},
-		"Нейраignore": {
-			"label": "Показывать .Нейраignore-файлы в списках и поиске",
-			"description": "Если включено, файлы, совпадающие с шаблонами в .Нейраignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."
+		"rsignore": {
+			"label": "Показывать .neiraignore в списках и поиске",
+			"description": "Если включено, файлы, совпадающие с шаблонами .neiraignore, показываются со значком замка. Если отключено — скрываются."
 		},
 		"maxReadFile": {
 			"label": "Порог автообрезки при чтении файла",
@@ -727,6 +733,7 @@
 		"noMatchFound": "Совпадений не найдено",
 		"useCustomModel": "Использовать пользовательскую: {{modelId}}"
 	},
+	"importSettings": "Импорт настроек",
 	"footer": {
 		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/ResearcherryCoderInc/researcherry</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/ResearcherryCoder</redditLink> или <discordLink>discord.gg/researcherry</discordLink>",
 		"telemetry": {

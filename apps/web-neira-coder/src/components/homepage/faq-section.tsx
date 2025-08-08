@@ -52,7 +52,7 @@ const faqs: FAQItem[] = [
 			<>
 				Yes. Because Researcherry Code is an extension in your local VS Code, your code never leaves your
 				machine unless you connect to an external AI API. Even then, you control exactly what is sent to the AI
-				model. You can use tools like .rooignore to exclude sensitive files, and you can also run Researcherry
+				model. You can use tools like .rsignore to exclude sensitive files, and you can also run Researcherry
 				Code with offline/local models for full privacy.
 			</>
 		),

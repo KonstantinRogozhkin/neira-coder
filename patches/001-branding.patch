@@ -383,8 +383,8 @@ index c72d2f5f6..538beee20 100644
 +- Add opt-in telemetry to help us improve Researcherry faster (thanks Cline!)
  - Fix terminal overload / gray screen of death, and other terminal issues
  - Add a new experimental diff editing strategy that applies multiple diff edits at once (thanks @qdaxb!)
--- Add support for a .rooignore to prevent Roo Code from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
-+- Add support for a .rooignore to prevent Researcherry from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
+-- Add support for a .rsignore to prevent Roo Code from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
++- Add support for a .rsignore to prevent Researcherry from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
  - Update the new_task tool to return results to the parent task on completion, supporting better orchestration (thanks @shaybc!)
  - Support running Roo in multiple editor windows simultaneously (thanks @samhvw8!)
  - Make checkpoints asynchronous and exclude more files to speed them up
@@ -17038,7 +17038,7 @@ index 000000000..c8b7ca356
 +			<>
 +				Yes. Because Researcherry Code is an extension in your local VS Code, your code never leaves your machine
 +				unless you connect to an external AI API. Even then, you control exactly what is sent to the AI model.
-+				You can use tools like .rooignore to exclude sensitive files, and you can also run Researcherry Code with
++				You can use tools like .rsignore to exclude sensitive files, and you can also run Researcherry Code with
 +				offline/local models for full privacy.
 +			</>
 +		),
@@ -21665,7 +21665,7 @@ index 6e0f13750..80cd662b5 100644
 -			},
 -			"protected": {
 -				"label": "Include protected files",
--				"description": "Allow Roo to create and edit protected files (like .rooignore and .roo/ configuration files) without requiring approval."
+-				"description": "Allow Roo to create and edit protected files (like .rsignore and .roo/ configuration files) without requiring approval."
 -			}
 -		},
 -		"browser": {
@@ -22039,9 +22039,9 @@ index 6e0f13750..80cd662b5 100644
 -			"label": "Workspace files context limit",
 -			"description": "Maximum number of files to include in current working directory details. Higher values provide more context but increase token usage."
 -		},
--		"rooignore": {
--			"label": "Show .rooignore'd files in lists and searches",
--			"description": "When enabled, files matching patterns in .rooignore will be shown in lists with a lock symbol. When disabled, these files will be completely hidden from file lists and searches."
+-		"rsignore": {
+-			"label": "Show .rsignore'd files in lists and searches",
+-			"description": "When enabled, files matching patterns in .rsignore will be shown in lists with a lock symbol. When disabled, these files will be completely hidden from file lists and searches."
 -		},
 -		"maxConcurrentFileReads": {
 -			"label": "Concurrent file reads limit",
@@ -22728,7 +22728,7 @@ index 38e986ab8..8d3589c31 100644
  			},
  			"protected": {
  				"label": "Включить защищенные файлы",
--				"description": "Разрешить Roo создавать и редактировать защищенные файлы (такие как .rooignore и файлы конфигурации .roo/) без необходимости одобрения."
+-				"description": "Разрешить Roo создавать и редактировать защищенные файлы (такие как .rsignore и файлы конфигурации .roo/) без необходимости одобрения."
 +				"description": "Разрешить Нейра создавать и редактировать защищенные файлы (такие как .Нейраignore и файлы конфигурации .Нейра/) без необходимости одобрения."
  			}
  		},
@@ -22840,9 +22840,9 @@ index 38e986ab8..8d3589c31 100644
  			"label": "Лимит контекста файлов рабочей области",
  			"description": "Максимальное количество файлов, включаемых в детали текущей рабочей директории. Большее значение даёт больше контекста, но увеличивает расход токенов."
  		},
--		"rooignore": {
--			"label": "Показывать .rooignore-файлы в списках и поиске",
--			"description": "Если включено, файлы, совпадающие с шаблонами в .rooignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."
+-		"rsignore": {
+-			"label": "Показывать .rsignore-файлы в списках и поиске",
+-			"description": "Если включено, файлы, совпадающие с шаблонами в .rsignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."
 +		"Нейраignore": {
 +			"label": "Показывать .Нейраignore-файлы в списках и поиске",
 +			"description": "Если включено, файлы, совпадающие с шаблонами в .Нейраignore, будут отображаться в списках с символом замка. Если выключено, такие файлы полностью скрываются из списков и поиска."

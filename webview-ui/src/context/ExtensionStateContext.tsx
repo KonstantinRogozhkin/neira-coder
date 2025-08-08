@@ -214,7 +214,7 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		cwd: "",
 		browserToolEnabled: true,
 		telemetrySetting: "unset",
-		showResearcherryIgnoredFiles: true, // Default to showing .rooignore'd files with lock symbol (current behavior).
+		showResearcherryIgnoredFiles: true, // Default to showing .rsignore'd files with lock symbol (current behavior).
 		renderContext: "sidebar",
 		maxReadFileLine: -1, // Default max read file line limit
 		maxImageFileSize: 5, // Default max image file size in MB

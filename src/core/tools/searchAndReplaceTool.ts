@@ -120,7 +120,7 @@ export async function searchAndReplaceTool(
 		const accessAllowed = cline.rooIgnoreController?.validateAccess(validRelPath)
 
 		if (!accessAllowed) {
-			await cline.say("rooignore_error", validRelPath)
+			await cline.say("rsignore_error", validRelPath)
 			pushToolResult(formatResponse.toolError(formatResponse.rooIgnoreError(validRelPath)))
 			return
 		}

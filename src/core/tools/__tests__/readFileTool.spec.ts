@@ -96,7 +96,7 @@ vi.mock("../../prompts/responses", () => ({
 		),
 		rooIgnoreError: vi.fn(
 			(path: string) =>
-				`Access to ${path} is blocked by the .rooignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rooignore file.`,
+				`Access to ${path} is blocked by the .rsignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rsignore file.`,
 		),
 		toolResult: toolResultMock,
 		imageBlocks: imageBlocksMock,
@@ -1322,7 +1322,7 @@ describe("read_file tool XML output structure", () => {
 
 			// Verify
 			expect(result).toBe(
-				`<files>\n<file><path>${testFilePath}</path><error>Access to ${testFilePath} is blocked by the .rooignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rooignore file.</error></file>\n</files>`,
+				`<files>\n<file><path>${testFilePath}</path><error>Access to ${testFilePath} is blocked by the .rsignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rsignore file.</error></file>\n</files>`,
 			)
 		})
 	})

@@ -234,7 +234,7 @@ Original error: ${errorMessage}`
 			// Verify file access is allowed
 			const accessAllowed = cline.rooIgnoreController?.validateAccess(relPath)
 			if (!accessAllowed) {
-				await cline.say("rooignore_error", relPath)
+				await cline.say("rsignore_error", relPath)
 				updateOperationResult(relPath, {
 					status: "blocked",
 					error: formatResponse.rooIgnoreError(relPath),

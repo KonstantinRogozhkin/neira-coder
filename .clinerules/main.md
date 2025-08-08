@@ -145,5 +145,5 @@ The project uses Turbo for monorepo management with parallel builds. The extensi
 
 - Sensitive operations require user approval
 - Command execution has configurable timeouts and allowlists
-- File operations respect .rooignore patterns
+- File operations respect .rsignore patterns
 - No credentials stored in code or committed to repository

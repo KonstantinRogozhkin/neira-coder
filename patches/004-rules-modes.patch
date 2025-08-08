@@ -151,7 +151,7 @@ index 000000000..7213d1f81
 +
 +- Sensitive operations require user approval
 +- Command execution has configurable timeouts and allowlists
-+- File operations respect .rooignore patterns
++- File operations respect .rsignore patterns
 +- No credentials stored in code or committed to repository
 diff --git a/.github/ISSUE_TEMPLATE/bug_report.yml b/.github/ISSUE_TEMPLATE/bug_report.yml
 index 965566a31..16da1350d 100644
@@ -1502,7 +1502,7 @@ index ef1643d8a..000000000
 -
 -**"What if some files are blocked?"**
 -- Roo reads approved files and works with what it has.
--- `.rooignore` files are excluded automatically.
+-- `.rsignore` files are excluded automatically.
 -- Individual files can still be denied in the batch dialog.
 -      ]]></template>
 -    </faq>
@@ -4190,7 +4190,7 @@ index 6b94e88de..000000000
 -
 -**"Some files were denied but others were approved."**
 -- Normal behavior. Roo works with approved files.
--- Files may be blocked by `.rooignore` settings.
+-- Files may be blocked by `.rsignore` settings.
 -
 -**"Does this use more memory?"**
 -- Yes, but the impact is usually minimal.

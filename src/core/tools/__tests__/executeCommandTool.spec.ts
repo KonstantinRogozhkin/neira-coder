@@ -48,7 +48,7 @@ beforeEach(() => {
 
 		const ignoredFileAttemptedToAccess = cline.rooIgnoreController?.validateCommand(block.params.command)
 		if (ignoredFileAttemptedToAccess) {
-			await cline.say("rooignore_error", ignoredFileAttemptedToAccess)
+			await cline.say("rsignore_error", ignoredFileAttemptedToAccess)
 			// Call the mocked formatResponse functions with the correct arguments
 			const mockRooIgnoreError = "RooIgnore error"
 			;(formatResponse.rooIgnoreError as any).mockReturnValue(mockRooIgnoreError)
@@ -240,7 +240,7 @@ describe("executeCommandTool", () => {
 			expect(mockPushToolResult).not.toHaveBeenCalled()
 		})
 
-		it("should handle rooignore validation failures", async () => {
+		it("should handle rsignore validation failures", async () => {
 			// Setup
 			mockToolUse.params.command = "cat .env"
 			// Override the validateCommand mock to return a filename
@@ -265,7 +265,7 @@ describe("executeCommandTool", () => {
 
 			// Verify
 			expect(validateCommandMock).toHaveBeenCalledWith("cat .env")
-			expect(mockCline.say).toHaveBeenCalledWith("rooignore_error", ".env")
+			expect(mockCline.say).toHaveBeenCalledWith("rsignore_error", ".env")
 			expect(formatResponse.rooIgnoreError).toHaveBeenCalledWith(".env")
 			expect(formatResponse.toolError).toHaveBeenCalledWith(mockRooIgnoreError)
 			expect(mockPushToolResult).toHaveBeenCalled()

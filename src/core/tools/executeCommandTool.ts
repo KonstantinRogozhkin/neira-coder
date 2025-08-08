@@ -46,7 +46,7 @@ export async function executeCommandTool(
 			const ignoredFileAttemptedToAccess = task.rooIgnoreController?.validateCommand(command)
 
 			if (ignoredFileAttemptedToAccess) {
-				await task.say("rooignore_error", ignoredFileAttemptedToAccess)
+				await task.say("rsignore_error", ignoredFileAttemptedToAccess)
 				pushToolResult(formatResponse.toolError(formatResponse.rooIgnoreError(ignoredFileAttemptedToAccess)))
 				return
 			}

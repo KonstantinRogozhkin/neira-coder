@@ -897,8 +897,8 @@
 - Skip condense and show error if context grows during condensing
 - Transform Prompts tab into Modes tab and move support prompts to Settings for better organization
 - Add DeepSeek R1 0528 model support to Chutes provider (thanks @zeozeozeo!)
-- Fix @directory not respecting .rooignore files (thanks @xyOz-dev!)
-- Add rooignore checking for insert_content and search_and_replace tools
+- Fix @directory not respecting .rsignore files (thanks @xyOz-dev!)
+- Add rsignore checking for insert_content and search_and_replace tools
 - Fix menu breaking when Roo is moved between primary and secondary sidebars (thanks @chrarnoldus!)
 - Resolve memory leak in ChatView by stabilizing callback props (thanks @samhvw8!)
 - Fix write_to_file to properly create empty files when content is empty (thanks @Ruakij!)
@@ -1571,7 +1571,7 @@
 - Add opt-in telemetry to help us improve Researcherry faster (thanks Cline!)
 - Fix terminal overload / gray screen of death, and other terminal issues
 - Add a new experimental diff editing strategy that applies multiple diff edits at once (thanks @qdaxb!)
-- Add support for a .rooignore to prevent Researcherry from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
+- Add support for a .rsignore to prevent Researcherry from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
 - Update the new_task tool to return results to the parent task on completion, supporting better orchestration (thanks @shaybc!)
 - Support running Roo in multiple editor windows simultaneously (thanks @samhvw8!)
 - Make checkpoints asynchronous and exclude more files to speed them up

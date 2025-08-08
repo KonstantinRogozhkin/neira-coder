@@ -97,7 +97,8 @@
 		},
 		"condense": {
 			"apiConfiguration": "API Configuration for context condensing",
-			"apiConfigDescription": "Select which API configuration to use for context condensing operations. Leave unselected to use the currently active configuration."
+			"apiConfigDescription": "Select which API configuration to use for context condensing operations. Leave unselected to use the currently active configuration.",
+			"useCurrentConfig": "Use current API configuration"
 		}
 	}
 }

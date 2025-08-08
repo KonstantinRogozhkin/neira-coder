@@ -14,12 +14,12 @@ const TestComponent = () => {
 		<div>
 			<div data-testid="allowed-commands">{JSON.stringify(allowedCommands)}</div>
 			<div data-testid="sound-enabled">{JSON.stringify(soundEnabled)}</div>
-			<div data-testid="show-rooignored-files">{JSON.stringify(showResearcherryIgnoredFiles)}</div>
+			<div data-testid="show-rsignored-files">{JSON.stringify(showResearcherryIgnoredFiles)}</div>
 			<button data-testid="update-button" onClick={() => setAllowedCommands(["npm install", "git status"])}>
 				Update Commands
 			</button>
 			<button
-				data-testid="toggle-rooignore-button"
+				data-testid="toggle-rsignore-button"
 				onClick={() => setShowRooIgnoredFiles(!showResearcherryIgnoredFiles)}>
 				Update Commands
 			</button>
@@ -73,7 +73,7 @@ describe("ExtensionStateContext", () => {
 			</ExtensionStateContextProvider>,
 		)
 
-		expect(JSON.parse(screen.getByTestId("show-rooignored-files").textContent!)).toBe(true)
+		expect(JSON.parse(screen.getByTestId("show-rsignored-files").textContent!)).toBe(true)
 	})
 
 	it("updates showResearcherryIgnoredFiles through setShowRooIgnoredFiles", () => {
@@ -84,10 +84,10 @@ describe("ExtensionStateContext", () => {
 		)
 
 		act(() => {
-			screen.getByTestId("toggle-rooignore-button").click()
+			screen.getByTestId("toggle-rsignore-button").click()
 		})
 
-		expect(JSON.parse(screen.getByTestId("show-rooignored-files").textContent!)).toBe(false)
+		expect(JSON.parse(screen.getByTestId("show-rsignored-files").textContent!)).toBe(false)
 	})
 
 	it("updates allowedCommands through setAllowedCommands", () => {

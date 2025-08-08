@@ -249,7 +249,7 @@ export async function readFileTool(
 			if (fileResult.status === "pending") {
 				const accessAllowed = cline.rooIgnoreController?.validateAccess(relPath)
 				if (!accessAllowed) {
-					await cline.say("rooignore_error", relPath)
+					await cline.say("rsignore_error", relPath)
 					const errorMsg = formatResponse.rooIgnoreError(relPath)
 					updateFileResult(relPath, {
 						status: "blocked",
