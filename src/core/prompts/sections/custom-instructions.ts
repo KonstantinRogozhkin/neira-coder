@@ -181,7 +181,6 @@ function formatDirectoryContent(dirPath: string, files: Array<{ filename: string
 /**
  * Load rule files from global and project-local .neira/rules/ directories
  * Global rules are loaded first, then project-local rules which can override global ones
- * Falls back to legacy .neirarules/.clinerules files if .neira/rules/ directories don't exist
  */
 export async function loadRuleFiles(cwd: string): Promise<string> {
 	const rules: string[] = []
@@ -199,22 +198,8 @@ export async function loadRuleFiles(cwd: string): Promise<string> {
 		}
 	}
 
-	// If we found rules in .neira/rules/ directories, return them
-	if (rules.length > 0) {
-		return "\n" + rules.join("\n\n")
-	}
-
-					// Fall back to existing behavior for legacy .neirarules/.clinerules files (deprecated)
-		const ruleFiles = [".neirarules", ".clinerules"]
-
-	for (const file of ruleFiles) {
-		const content = await safeReadFile(path.join(cwd, file))
-		if (content) {
-			return `\n# Rules from ${file}:\n${content}\n`
-		}
-	}
-
-	return ""
+    // Return collected rules or empty string
+    return rules.length > 0 ? "\n" + rules.join("\n\n") : ""
 }
 
 /**
@@ -289,38 +274,13 @@ export async function addCustomInstructions(
             }
         }
 
-        // Backward-compat: also support legacy .neira/rules-${mode}/ if present
-        if (modeRules.length === 0) {
-            for (const neiraDir of neiraDirectories) {
-                const legacyDir = path.join(neiraDir, `rules-${mode}`)
-                if (await directoryExists(legacyDir)) {
-                    const files = await readTextFilesFromDirectory(legacyDir)
-                    if (files.length > 0) {
-                        const content = formatDirectoryContent(legacyDir, files)
-                        modeRules.push(content)
-                    }
-                }
-            }
-        }
+        // No legacy fallbacks
 
         // If we found mode-specific rules, use them
 		if (modeRules.length > 0) {
 			modeRuleContent = "\n" + modeRules.join("\n\n")
             usedRuleFile = `rules/${mode} directories`
-		} else {
-			// Fall back to existing behavior for legacy files
-			const rooModeRuleFile = `.neirarules-${mode}`
-			modeRuleContent = await safeReadFile(path.join(cwd, rooModeRuleFile))
-			if (modeRuleContent) {
-				usedRuleFile = rooModeRuleFile
-			} else {
-				const clineModeRuleFile = `.clinerules-${mode}`
-				modeRuleContent = await safeReadFile(path.join(cwd, clineModeRuleFile))
-				if (modeRuleContent) {
-					usedRuleFile = clineModeRuleFile
-				}
-			}
-		}
+        }
 	}
 
 	// Add language preference if provided
