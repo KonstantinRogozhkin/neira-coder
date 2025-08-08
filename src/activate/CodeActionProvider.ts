@@ -1,17 +1,17 @@
 import * as vscode from "vscode"
 
-import { CodeActionName, CodeActionId } from "@neira-coder/types"
+import { CodeActionName, CodeActionId } from "@researcherry/types"
 import { Package } from "../shared/package"
 
 import { getCodeActionCommand } from "../utils/commands"
 import { EditorUtils } from "../integrations/editor/EditorUtils"
 
 export const TITLES: Record<CodeActionName, string> = {
-	EXPLAIN: "Explain with Neira Coder",
-	FIX: "Fix with Neira Coder",
-	IMPROVE: "Improve with Neira Coder",
-	ADD_TO_CONTEXT: "Add to Neira Coder",
-	NEW_TASK: "New Neira Coder Task",
+	EXPLAIN: "Explain with Researcherry Coder",
+	FIX: "Fix with Researcherry Coder",
+	IMPROVE: "Improve with Researcherry Coder",
+	ADD_TO_CONTEXT: "Add to Researcherry Coder",
+	NEW_TASK: "New Researcherry Coder Task",
 } as const
 
 export class CodeActionProvider implements vscode.CodeActionProvider {

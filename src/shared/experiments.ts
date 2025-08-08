@@ -1,4 +1,4 @@
-import type { AssertEqual, Equals, Keys, Values, ExperimentId, Experiments } from "@neira-coder/types"
+import type { AssertEqual, Equals, Keys, Values, ExperimentId, Experiments } from "@researcherry/types"
 
 export const EXPERIMENT_IDS = {
 	MULTI_FILE_APPLY_DIFF: "multiFileApplyDiff",

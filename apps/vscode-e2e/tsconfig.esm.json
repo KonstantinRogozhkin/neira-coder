@@ -1,5 +1,5 @@
 {
-	"extends": "@neira-coder/config-typescript/base.json",
+	"extends": "@researcherry/config-typescript/base.json",
 	"compilerOptions": {
 		"outDir": "out"
 	},

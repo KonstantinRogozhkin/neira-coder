@@ -2,7 +2,7 @@ import React, { memo, useState } from "react"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { Trans } from "react-i18next"
 
-import type { ClineMessage } from "@neira-coder/types"
+import type { ClineMessage } from "@researcherry/types"
 
 import { vscode } from "@src/utils/vscode"
 

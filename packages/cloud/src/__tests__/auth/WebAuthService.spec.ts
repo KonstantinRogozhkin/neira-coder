@@ -101,8 +101,8 @@ describe("WebAuthService", () => {
 		MockedRefreshTimer.mockImplementation(() => mockTimer as unknown as RefreshTimer)
 
 		// Setup config mocks - use production URL by default to maintain existing test behavior
-		vi.mocked(Config.getClerkBaseUrl).mockReturnValue("https://clerk.neira-coder.com")
-		vi.mocked(Config.getNeiraCoderApiUrl).mockReturnValue("https://api.test.com")
+		vi.mocked(Config.getClerkBaseUrl).mockReturnValue("https://clerk.researcherry.com")
+		vi.mocked(Config.getResearcherryCoderApiUrl).mockReturnValue("https://api.test.com")
 
 		// Setup utils mock
 		vi.mocked(utils.getUserAgent).mockReturnValue("Roo-Code 1.0.0")
@@ -381,7 +381,7 @@ describe("WebAuthService", () => {
 			expect(mockContext.secrets.delete).toHaveBeenCalledWith("clerk-auth-credentials")
 			expect(mockContext.globalState.update).toHaveBeenCalledWith("clerk-auth-state", undefined)
 			expect(mockFetch).toHaveBeenCalledWith(
-				"https://clerk.neira-coder.com/v1/client/sessions/test-session/remove",
+				"https://clerk.researcherry.com/v1/client/sessions/test-session/remove",
 				expect.objectContaining({
 					method: "POST",
 					headers: expect.objectContaining({
@@ -977,7 +977,7 @@ describe("WebAuthService", () => {
 	describe("auth credentials key scoping", () => {
 		it("should use default key when getClerkBaseUrl returns production URL", async () => {
 			// Mock getClerkBaseUrl to return production URL
-			vi.mocked(Config.getClerkBaseUrl).mockReturnValue("https://clerk.neira-coder.com")
+			vi.mocked(Config.getClerkBaseUrl).mockReturnValue("https://clerk.researcherry.com")
 
 			const service = new WebAuthService(mockContext as unknown as vscode.ExtensionContext, mockLog)
 			const credentials = { clientToken: "test-token", sessionId: "test-session" }

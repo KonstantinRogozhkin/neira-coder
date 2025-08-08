@@ -42,15 +42,15 @@ describe("RooConfigService", () => {
 	})
 
 	describe("getGlobalRooDirectory", () => {
-		it("should return correct path for global .neira directory", () => {
+		it("should return correct path for global .researcherry directory", () => {
 			const result = getGlobalRooDirectory()
-			expect(result).toBe(path.join("/mock/home", ".neira"))
+			expect(result).toBe(path.join("/mock/home", ".researcherry"))
 		})
 
 		it("should handle different home directories", () => {
 			mockHomedir.mockReturnValue("/different/home")
 			const result = getGlobalRooDirectory()
-			expect(result).toBe(path.join("/different/home", ".neira"))
+			expect(result).toBe(path.join("/different/home", ".researcherry"))
 		})
 	})
 
@@ -58,7 +58,7 @@ describe("RooConfigService", () => {
 		it("should return correct path for given cwd", () => {
 			const cwd = "/custom/project/path"
 			const result = getProjectRooDirectoryForCwd(cwd)
-			expect(result).toBe(path.join(cwd, ".neira"))
+			expect(result).toBe(path.join(cwd, ".researcherry"))
 		})
 	})
 
@@ -211,7 +211,7 @@ describe("RooConfigService", () => {
 
 			const result = getRooDirectoriesForCwd(cwd)
 
-			expect(result).toEqual([path.join("/mock/home", ".neira"), path.join(cwd, ".neira")])
+			expect(result).toEqual([path.join("/mock/home", ".researcherry"), path.join(cwd, ".researcherry")])
 		})
 	})
 
@@ -294,8 +294,14 @@ describe("RooConfigService", () => {
 
 			await loadConfiguration("rules/rules.md", "/project/path")
 
-					expect(mockReadFile).toHaveBeenCalledWith(path.join("/mock/home", ".neira", "rules/rules.md"), "utf-8")
-		expect(mockReadFile).toHaveBeenCalledWith(path.join("/project/path", ".neira", "rules/rules.md"), "utf-8")
+			expect(mockReadFile).toHaveBeenCalledWith(
+				path.join("/mock/home", ".researcherry", "rules/rules.md"),
+				"utf-8",
+			)
+			expect(mockReadFile).toHaveBeenCalledWith(
+				path.join("/project/path", ".researcherry", "rules/rules.md"),
+				"utf-8",
+			)
 		})
 	})
 })

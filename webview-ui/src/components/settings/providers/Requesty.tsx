@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
 
-import { type ProviderSettings, type OrganizationAllowList, requestyDefaultModelId } from "@neira-coder/types"
+import { type ProviderSettings, type OrganizationAllowList, requestyDefaultModelId } from "@researcherry/types"
 
 import type { RouterModels } from "@roo/api"
 

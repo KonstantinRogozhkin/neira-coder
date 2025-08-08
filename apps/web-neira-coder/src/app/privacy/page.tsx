@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "Privacy Policy - Neira Code",
+	title: "Privacy Policy - Researcherry Code",
 	description:
-		"Privacy policy for Neira Code Cloud and marketing website. Learn how we handle your data and protect your privacy.",
+		"Privacy policy for Researcherry Code Cloud and marketing website. Learn how we handle your data and protect your privacy.",
 }
 
 export default function Privacy() {
@@ -12,36 +12,38 @@ export default function Privacy() {
 			<div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
 				<div className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
 					<h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-						Neira Code Cloud Privacy Policy
+						Researcherry Code Cloud Privacy Policy
 					</h1>
 					<p className="text-muted-foreground">Last Updated: June 19, 2025</p>
 
 					<p className="lead">
-						This Privacy Policy explains how Neira Code, Inc. (&quot;Neira Code,&quot; &quot;we,&quot;
-						&quot;our,&quot; or &quot;us&quot;) collects, uses, and shares information when you:
+						This Privacy Policy explains how Researcherry Code, Inc. (&quot;Researcherry Code,&quot;
+						&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) collects, uses, and shares information when
+						you:
 					</p>
 					<ul className="lead">
 						<li>
-							browse any page under <strong>neira.app</strong> (the <em>Marketing Site</em>); and/or
+							browse any page under <strong>researcherry.app</strong> (the <em>Marketing Site</em>);
+							and/or
 						</li>
 						<li>
-							create an account for, sign in to, or otherwise use <strong>Neira Code Cloud</strong> at{" "}
-							<strong>app.neira.app</strong> or through the Neira Code extension while authenticated to
-							that Cloud account (the <em>Cloud Service</em>).
+							create an account for, sign in to, or otherwise use <strong>Researcherry Code Cloud</strong>{" "}
+							at <strong>app.researcherry.app</strong> or through the Researcherry Code extension while
+							authenticated to that Cloud account (the <em>Cloud Service</em>).
 						</li>
 					</ul>
 
 					<div className="my-8 rounded-lg border border-border bg-muted/50 p-6">
 						<h3 className="mt-0 text-lg font-semibold">Extension‑Only Usage</h3>
 						<p className="mb-0">
-							If you run the Neira Code extension <strong>without</strong> connecting to a Cloud account,
-							your data is governed by the standalone{" "}
+							If you run the Researcherry Code extension <strong>without</strong> connecting to a Cloud
+							account, your data is governed by the standalone{" "}
 							<a
 								href="https://github.com/RooCodeInc/Roo-Code/blob/main/PRIVACY.md"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-primary hover:underline">
-								Neira Code Extension Privacy Policy
+								Researcherry Code Extension Privacy Policy
 							</a>
 							.
 						</p>
@@ -50,18 +52,19 @@ export default function Privacy() {
 					<h2 className="mt-12 text-2xl font-bold">Quick Summary</h2>
 					<ul>
 						<li>
-							<strong>Your source code never transits Neira Code servers.</strong> It stays on your device
-							and is sent <strong>directly</strong>—via a client‑to‑provider TLS connection—to the
-							third‑party AI model you select. Neira Code never stores, inspects, or trains on your code.
+							<strong>Your source code never transits Researcherry Code servers.</strong> It stays on your
+							device and is sent <strong>directly</strong>—via a client‑to‑provider TLS connection—to the
+							third‑party AI model you select. Researcherry Code never stores, inspects, or trains on your
+							code.
 						</li>
 						<li>
-							<strong>Prompts and chat snippets are collected by default</strong> in Neira Code Cloud so
-							you can search and re‑use past conversations. Organization admins can disable this
+							<strong>Prompts and chat snippets are collected by default</strong> in Researcherry Code
+							Cloud so you can search and re‑use past conversations. Organization admins can disable this
 							collection at any time.
 						</li>
 						<li>
-							We collect only the data needed to operate Neira Code Cloud, do <strong>not</strong> sell
-							customer data, and do <strong>not</strong> use your content to train models.
+							We collect only the data needed to operate Researcherry Code Cloud, do <strong>not</strong>{" "}
+							sell customer data, and do <strong>not</strong> use your content to train models.
 						</li>
 					</ul>
 
@@ -134,8 +137,8 @@ export default function Privacy() {
 					<h2 className="mt-12 text-2xl font-bold">2. How We Use Information</h2>
 					<ul>
 						<li>
-							<strong>Operate & secure Neira Code Cloud</strong> (authentication, completions, abuse
-							prevention)
+							<strong>Operate & secure Researcherry Code Cloud</strong> (authentication, completions,
+							abuse prevention)
 						</li>
 						<li>
 							<strong>Provide support & improve features</strong> (debugging, analytics, product
@@ -171,7 +174,7 @@ export default function Privacy() {
 										Your chosen model provider (direct client → provider TLS)
 									</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code servers; ad networks; model‑training pipelines
+										Researcherry Code servers; ad networks; model‑training pipelines
 									</td>
 								</tr>
 								<tr className="bg-muted/25">
@@ -179,7 +182,7 @@ export default function Privacy() {
 										Prompts, chat snippets & token counts (Cloud)
 									</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code Cloud (encrypted at rest)
+										Researcherry Code Cloud (encrypted at rest)
 									</td>
 									<td className="border border-border px-4 py-2">Any third‑party</td>
 								</tr>
@@ -188,7 +191,7 @@ export default function Privacy() {
 										Workspace Configuration
 									</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code Cloud (encrypted at rest)
+										Researcherry Code Cloud (encrypted at rest)
 									</td>
 									<td className="border border-border px-4 py-2">Any third-party</td>
 								</tr>
@@ -203,7 +206,7 @@ export default function Privacy() {
 									<td className="border border-border px-4 py-2 font-medium">Payment Data</td>
 									<td className="border border-border px-4 py-2">Stripe (PCI‑DSS Level 1)</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code servers (we store only the Stripe customer ID)
+										Researcherry Code servers (we store only the Stripe customer ID)
 									</td>
 								</tr>
 							</tbody>
@@ -213,7 +216,7 @@ export default function Privacy() {
 					<h2 className="mt-12 text-2xl font-bold">4. Data Retention</h2>
 					<ul>
 						<li>
-							<strong>Source Code:</strong> Never stored on Neira Code servers.
+							<strong>Source Code:</strong> Never stored on Researcherry Code servers.
 						</li>
 						<li>
 							<strong>Prompts & Chat Snippets:</strong> Persist in your Cloud workspace until you or your
@@ -221,7 +224,7 @@ export default function Privacy() {
 						</li>
 						<li>
 							<strong>Operational Logs & Analytics:</strong> Retained only as needed to operate and secure
-							Neira Code Cloud.
+							Researcherry Code Cloud.
 						</li>
 					</ul>
 
@@ -236,7 +239,7 @@ export default function Privacy() {
 						</li>
 						<li>
 							<strong>Delete your Cloud account</strong> at any time from{" "}
-							<strong>Security Settings</strong> inside Neira Code Cloud.
+							<strong>Security Settings</strong> inside Researcherry Code Cloud.
 						</li>
 					</ul>
 
@@ -256,8 +259,8 @@ export default function Privacy() {
 					<h2 className="mt-12 text-2xl font-bold">8. Contact Us</h2>
 					<p>
 						Questions or concerns? Email{" "}
-						<a href="mailto:privacy@neira.app" className="text-primary hover:underline">
-							privacy@neira.app
+						<a href="mailto:privacy@researcherry.app" className="text-primary hover:underline">
+							privacy@researcherry.app
 						</a>
 						.
 					</p>

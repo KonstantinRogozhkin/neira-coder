@@ -1,4 +1,4 @@
-import { findRun } from "@neira-coder/evals"
+import { findRun } from "@researcherry/evals"
 
 import { Run } from "./run"
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { getPromptComponent } from "../system"
-import type { CustomModePrompts } from "@neira-coder/types"
+import type { CustomModePrompts } from "@researcherry/types"
 
 describe("getPromptComponent", () => {
 	it("should return undefined for empty objects", () => {

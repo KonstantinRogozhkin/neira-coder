@@ -548,7 +548,7 @@ function shouldIncludeRegularDirectory(dirName: string, fullDirPath: string, con
  */
 function shouldIncludeDirectory(dirName: string, fullDirPath: string, context: ScanContext): boolean {
 	// If this is the explicitly targeted directory, allow it even if it's hidden
-			// This preserves the ability to explicitly target hidden directories like .neira-memory
+	// This preserves the ability to explicitly target hidden directories like .researcherry-memory
 	if (context.isTargetDir) {
 		return shouldIncludeTargetDirectory(dirName)
 	}

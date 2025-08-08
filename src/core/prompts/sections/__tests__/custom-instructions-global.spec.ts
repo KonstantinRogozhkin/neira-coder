@@ -133,7 +133,7 @@ describe("custom-instructions global .roo support", () => {
 			expect(globalIndex).toBeLessThan(projectIndex)
 		})
 
-		it("should fall back to legacy .neirarules file when no .neira/rules directories exist", async () => {
+		it("should fall back to legacy .researcherryrules file when no .researcherry/rules directories exist", async () => {
 			// Mock directory existence - neither exist
 			mockStat
 				.mockRejectedValueOnce(new Error("ENOENT")) // global rules dir doesn't exist
@@ -144,7 +144,7 @@ describe("custom-instructions global .roo support", () => {
 
 			const result = await loadRuleFiles(mockCwd)
 
-			expect(result).toContain("# Rules from .neirarules:")
+			expect(result).toContain("# Rules from .researcherryrules:")
 			expect(result).toContain("legacy rule content")
 		})
 
@@ -158,7 +158,7 @@ describe("custom-instructions global .roo support", () => {
 			// The safeReadFile function catches ENOENT errors and returns empty string
 			// So we don't need to mock rejections, just empty responses
 			mockReadFile
-				.mockResolvedValueOnce("") // .neirarules returns empty (simulating ENOENT caught by safeReadFile)
+				.mockResolvedValueOnce("") // .researcherryrules returns empty (simulating ENOENT caught by safeReadFile)
 				.mockResolvedValueOnce("") // .clinerules returns empty (simulating ENOENT caught by safeReadFile)
 
 			const result = await loadRuleFiles(mockCwd)
@@ -194,7 +194,7 @@ describe("custom-instructions global .roo support", () => {
 				.mockResolvedValueOnce("global mode rule content")
 				.mockResolvedValueOnce("project mode rule content")
 				.mockResolvedValueOnce("") // AGENTS.md file (empty)
-				.mockResolvedValueOnce("") // .neirarules legacy file (empty)
+				.mockResolvedValueOnce("") // .researcherryrules legacy file (empty)
 				.mockResolvedValueOnce("") // .clinerules legacy file (empty)
 
 			const result = await addCustomInstructions("", "", mockCwd, mode)
@@ -218,14 +218,14 @@ describe("custom-instructions global .roo support", () => {
 
 			// Mock legacy mode file reading
 			mockReadFile
-				.mockResolvedValueOnce("legacy mode rule content") // .neirarules-code
+				.mockResolvedValueOnce("legacy mode rule content") // .researcherryrules-code
 				.mockResolvedValueOnce("") // AGENTS.md file (empty)
-				.mockResolvedValueOnce("") // generic .neirarules (empty)
+				.mockResolvedValueOnce("") // generic .researcherryrules (empty)
 				.mockResolvedValueOnce("") // generic .clinerules (empty)
 
 			const result = await addCustomInstructions("", "", mockCwd, mode)
 
-			expect(result).toContain("# Rules from .neirarules-code:")
+			expect(result).toContain("# Rules from .researcherryrules-code:")
 			expect(result).toContain("legacy mode rule content")
 		})
 	})

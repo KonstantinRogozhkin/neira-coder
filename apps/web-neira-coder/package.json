@@ -1,5 +1,5 @@
 {
-	"name": "@neira-coder/web-neira-coder",
+	"name": "@researcherry/web-researcherry",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
@@ -13,8 +13,8 @@
 	"dependencies": {
 		"@radix-ui/react-dialog": "^1.1.14",
 		"@radix-ui/react-slot": "^1.2.3",
-		"@neira-coder/evals": "workspace:^",
-		"@neira-coder/types": "workspace:^",
+		"@researcherry/evals": "workspace:^",
+		"@researcherry/types": "workspace:^",
 		"@tanstack/react-query": "^5.79.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -35,8 +35,8 @@
 		"zod": "^3.25.61"
 	},
 	"devDependencies": {
-		"@neira-coder/config-eslint": "workspace:^",
-		"@neira-coder/config-typescript": "workspace:^",
+		"@researcherry/config-eslint": "workspace:^",
+		"@researcherry/config-typescript": "workspace:^",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/node": "20.x",
 		"@types/react": "^18.3.23",

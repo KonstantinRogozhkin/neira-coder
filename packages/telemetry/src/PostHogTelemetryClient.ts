@@ -1,7 +1,7 @@
 import { PostHog } from "posthog-node"
 import * as vscode from "vscode"
 
-import { TelemetryEventName, type TelemetryEvent } from "@neira-coder/types"
+import { TelemetryEventName, type TelemetryEvent } from "@researcherry/types"
 
 import { BaseTelemetryClient } from "./BaseTelemetryClient"
 
@@ -58,7 +58,9 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 		// Skip if client is not initialized
 		if (!this.client) {
 			if (this.debug) {
-				console.info(`[PostHogTelemetryClient#capture] Skipping event: ${event.event} - PostHog client not initialized`)
+				console.info(
+					`[PostHogTelemetryClient#capture] Skipping event: ${event.event} - PostHog client not initialized`,
+				)
 			}
 			return
 		}

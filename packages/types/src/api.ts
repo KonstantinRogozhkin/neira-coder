@@ -1,14 +1,14 @@
 import type { EventEmitter } from "events"
 import type { Socket } from "net"
 
-import type { NeiraCoderSettings } from "./global-settings.js"
+import type { ResearcherryCoderSettings } from "./global-settings.js"
 import type { ProviderSettingsEntry, ProviderSettings } from "./provider-settings.js"
 import type { ClineMessage, TokenUsage } from "./message.js"
 import type { ToolUsage, ToolName } from "./tool.js"
 import type { IpcMessage, IpcServerEvents, IsSubtask } from "./ipc.js"
 
-// TODO: Make sure this matches `NeiraCoderEvents` from `@neira-coder/types`.
-export interface NeiraCoderAPIEvents {
+// TODO: Make sure this matches `ResearcherryCoderEvents` from `@researcherry/types`.
+export interface ResearcherryCoderAPIEvents {
 	message: [data: { taskId: string; action: "created" | "updated"; message: ClineMessage }]
 	taskCreated: [taskId: string]
 	taskStarted: [taskId: string]
@@ -23,7 +23,7 @@ export interface NeiraCoderAPIEvents {
 	taskToolFailed: [taskId: string, toolName: ToolName, error: string]
 }
 
-export interface NeiraCoderAPI extends EventEmitter<NeiraCoderAPIEvents> {
+export interface ResearcherryCoderAPI extends EventEmitter<ResearcherryCoderAPIEvents> {
 	/**
 	 * Starts a new task with an optional initial message and images.
 	 * @param task Optional initial task message.
@@ -36,7 +36,7 @@ export interface NeiraCoderAPI extends EventEmitter<NeiraCoderAPIEvents> {
 		images,
 		newTab,
 	}: {
-		configuration?: NeiraCoderSettings
+		configuration?: ResearcherryCoderSettings
 		text?: string
 		images?: string[]
 		newTab?: boolean
@@ -88,12 +88,12 @@ export interface NeiraCoderAPI extends EventEmitter<NeiraCoderAPIEvents> {
 	 * Returns the current configuration.
 	 * @returns The current configuration.
 	 */
-	getConfiguration(): NeiraCoderSettings
+	getConfiguration(): ResearcherryCoderSettings
 	/**
 	 * Sets the configuration for the current task.
 	 * @param values An object containing key-value pairs to set.
 	 */
-	setConfiguration(values: NeiraCoderSettings): Promise<void>
+	setConfiguration(values: ResearcherryCoderSettings): Promise<void>
 	/**
 	 * Returns a list of all configured profile names
 	 * @returns Array of profile names
@@ -150,7 +150,7 @@ export interface NeiraCoderAPI extends EventEmitter<NeiraCoderAPIEvents> {
 	setActiveProfile(name: string): Promise<string | undefined>
 }
 
-export interface NeiraCoderIpcServer extends EventEmitter<IpcServerEvents> {
+export interface ResearcherryCoderIpcServer extends EventEmitter<IpcServerEvents> {
 	listen(): void
 	broadcast(message: IpcMessage): void
 	send(client: string | Socket, message: IpcMessage): void

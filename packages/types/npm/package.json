@@ -1,24 +1,24 @@
 {
-	"name": "@neira-coder/types",
+	"name": "@researcherry/types",
 	"version": "1.40.0",
-	"description": "TypeScript type definitions for Neira Coder.",
+	"description": "TypeScript type definitions for Researcherry Coder.",
 	"publishConfig": {
 		"access": "public",
-		"name": "@neira-coder/types"
+		"name": "@researcherry/types"
 	},
-	"author": "Neira Coder Team",
+	"author": "Researcherry Coder Team",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NeiraCoderInc/Neira-Coder.git"
+		"url": "git+https://github.com/ResearcherryCoderInc/researcherry.git"
 	},
 	"bugs": {
-		"url": "https://github.com/NeiraCoderInc/Neira-Coder/issues"
+		"url": "https://github.com/ResearcherryCoderInc/researcherry/issues"
 	},
-	"homepage": "https://github.com/NeiraCoderInc/Neira-Coder/tree/main/packages/types",
+	"homepage": "https://github.com/ResearcherryCoderInc/researcherry/tree/main/packages/types",
 	"keywords": [
-		"neira",
-		"neira-coder",
+		"researcherry",
+		"researcherry",
 		"ai"
 	],
 	"main": "./dist/index.cjs",

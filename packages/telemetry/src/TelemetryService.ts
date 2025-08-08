@@ -1,6 +1,6 @@
 import { ZodError } from "zod"
 
-import { type TelemetryClient, type TelemetryPropertiesProvider, TelemetryEventName } from "@neira-coder/types"
+import { type TelemetryClient, type TelemetryPropertiesProvider, TelemetryEventName } from "@researcherry/types"
 
 /**
  * TelemetryService wrapper class that defers initialization.

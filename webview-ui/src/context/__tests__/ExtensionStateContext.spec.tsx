@@ -1,26 +1,26 @@
 import { render, screen, act } from "@/utils/test-utils"
 
-import { ProviderSettings, ExperimentId } from "@neira-coder/types"
+import { ProviderSettings, ExperimentId } from "@researcherry/types"
 
 import { ExtensionState } from "@roo/ExtensionMessage"
 
 import { ExtensionStateContextProvider, useExtensionState, mergeExtensionState } from "../ExtensionStateContext"
 
 const TestComponent = () => {
-	const { allowedCommands, setAllowedCommands, soundEnabled, showNeiraIgnoredFiles, setShowRooIgnoredFiles } =
+	const { allowedCommands, setAllowedCommands, soundEnabled, showResearcherryIgnoredFiles, setShowRooIgnoredFiles } =
 		useExtensionState()
 
 	return (
 		<div>
 			<div data-testid="allowed-commands">{JSON.stringify(allowedCommands)}</div>
 			<div data-testid="sound-enabled">{JSON.stringify(soundEnabled)}</div>
-			<div data-testid="show-rooignored-files">{JSON.stringify(showNeiraIgnoredFiles)}</div>
+			<div data-testid="show-rooignored-files">{JSON.stringify(showResearcherryIgnoredFiles)}</div>
 			<button data-testid="update-button" onClick={() => setAllowedCommands(["npm install", "git status"])}>
 				Update Commands
 			</button>
 			<button
 				data-testid="toggle-rooignore-button"
-				onClick={() => setShowRooIgnoredFiles(!showNeiraIgnoredFiles)}>
+				onClick={() => setShowRooIgnoredFiles(!showResearcherryIgnoredFiles)}>
 				Update Commands
 			</button>
 		</div>
@@ -66,7 +66,7 @@ describe("ExtensionStateContext", () => {
 		expect(JSON.parse(screen.getByTestId("sound-enabled").textContent!)).toBe(false)
 	})
 
-	it("initializes with showNeiraIgnoredFiles set to true", () => {
+	it("initializes with showResearcherryIgnoredFiles set to true", () => {
 		render(
 			<ExtensionStateContextProvider>
 				<TestComponent />
@@ -76,7 +76,7 @@ describe("ExtensionStateContext", () => {
 		expect(JSON.parse(screen.getByTestId("show-rooignored-files").textContent!)).toBe(true)
 	})
 
-	it("updates showNeiraIgnoredFiles through setShowRooIgnoredFiles", () => {
+	it("updates showResearcherryIgnoredFiles through setShowRooIgnoredFiles", () => {
 		render(
 			<ExtensionStateContextProvider>
 				<TestComponent />
@@ -200,7 +200,7 @@ describe("mergeExtensionState", () => {
 			maxWorkspaceFiles: 100,
 			apiConfiguration: { providerId: "openrouter" } as ProviderSettings,
 			telemetrySetting: "unset",
-			showNeiraIgnoredFiles: true,
+			showResearcherryIgnoredFiles: true,
 			renderContext: "sidebar",
 			maxReadFileLine: 500,
 			cloudUserInfo: null,

@@ -1,4 +1,4 @@
-import { ProviderSettings, OrganizationAllowList } from "@neira-coder/types"
+import { ProviderSettings, OrganizationAllowList } from "@researcherry/types"
 import { RouterModels } from "@roo/api"
 
 import { getModelValidationError, validateApiConfigurationExcludingModelErrors } from "../validate"

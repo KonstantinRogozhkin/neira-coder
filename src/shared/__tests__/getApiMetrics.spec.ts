@@ -1,6 +1,6 @@
 // npx vitest run src/shared/__tests__/getApiMetrics.spec.ts
 
-import type { ClineMessage } from "@neira-coder/types"
+import type { ClineMessage } from "@researcherry/types"
 
 import { getApiMetrics } from "../getApiMetrics"
 

@@ -5,7 +5,7 @@ import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import * as vscode from "vscode"
 import * as os from "os"
-import type { MarketplaceItem } from "@neira-coder/types"
+import type { MarketplaceItem } from "@researcherry/types"
 import type { CustomModesManager } from "../../../core/config/CustomModesManager"
 import * as path from "path"
 import { fileExistsAtPath } from "../../../utils/fs"
@@ -80,7 +80,7 @@ describe("SimpleInstaller", () => {
 
 			const result = await installer.installItem(mockModeItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".neira", ".neira-modes"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".researcherry", ".researcherry-modes"))
 			expect(mockCustomModesManager.importModeWithRules).toHaveBeenCalled()
 
 			// Verify the import was called with correct YAML structure
@@ -133,7 +133,7 @@ describe("SimpleInstaller", () => {
 
 			const result = await installerWithoutManager.installItem(mockModeItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".neira", ".neira-modes"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".researcherry", ".researcherry-modes"))
 			expect(mockFs.writeFile).toHaveBeenCalled()
 		})
 	})
@@ -159,7 +159,7 @@ describe("SimpleInstaller", () => {
 
 			const result = await installer.installItem(mockMcpItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".neira", "mcp.json"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".researcherry", "mcp.json"))
 			expect(mockFs.writeFile).toHaveBeenCalled()
 
 			// Verify the written content contains the new server
@@ -173,9 +173,9 @@ describe("SimpleInstaller", () => {
 
 			mockFs.readFile.mockResolvedValueOnce(invalidJson)
 
-			    await expect(installer.installItem(mockMcpItem, { target: "project" })).rejects.toThrow(
-      "Cannot install MCP server: The .neira/mcp.json file contains invalid JSON. Please fix the syntax errors in the file before installing new servers.",
-    )
+			await expect(installer.installItem(mockMcpItem, { target: "project" })).rejects.toThrow(
+				"Cannot install MCP server: The .researcherry/mcp.json file contains invalid JSON. Please fix the syntax errors in the file before installing new servers.",
+			)
 
 			// Should NOT write to file
 			expect(mockFs.writeFile).not.toHaveBeenCalled()

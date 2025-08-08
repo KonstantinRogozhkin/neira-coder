@@ -7,7 +7,7 @@ import * as fs from "fs"
 try {
 	// Specify path to .env file in the project root directory
 	const envPath = path.join(__dirname, "..", ".env")
-	
+
 	// Check if .env file exists before trying to load it
 	if (fs.existsSync(envPath)) {
 		dotenvx.config({ path: envPath })
@@ -19,8 +19,8 @@ try {
 	console.warn("Failed to load environment variables:", e)
 }
 
-import { CloudService } from "@neira-coder/cloud"
-import { TelemetryService, PostHogTelemetryClient } from "@neira-coder/telemetry"
+import { CloudService } from "@researcherry/cloud"
+import { TelemetryService, PostHogTelemetryClient } from "@researcherry/telemetry"
 
 import "./utils/path" // Necessary to have access to String.prototype.toPosix.
 import { createOutputChannelLogger, createDualLogger } from "./utils/outputChannelLogger"
@@ -81,7 +81,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Create logger for cloud services
 	const cloudLogger = createDualLogger(createOutputChannelLogger(outputChannel))
 
-	// Initialize Neira Coder Cloud service.
+	// Initialize Researcherry Coder Cloud service.
 	const cloudService = await CloudService.createInstance(context, cloudLogger)
 	const postStateListener = () => {
 		ClineProvider.getVisibleInstance()?.postStateToWebview()
@@ -190,7 +190,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Allows other extensions to activate once Roo is ready.
 	vscode.commands.executeCommand(`${Package.name}.activationCompleted`)
 
-	// Implements the `NeiraCoderAPI` interface.
+	// Implements the `ResearcherryCoderAPI` interface.
 	const socketPath = process.env.NEIRA_CODE_IPC_SOCKET_PATH
 	const enableLogging = typeof socketPath === "string"
 

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import { VSCodeBadge } from "@vscode/webview-ui-toolkit/react"
 import { CloudUpload, CloudDownload, FoldVertical } from "lucide-react"
 
-import type { ClineMessage } from "@neira-coder/types"
+import type { ClineMessage } from "@researcherry/types"
 
 import { getModelMaxOutputTokens } from "@roo/api"
 

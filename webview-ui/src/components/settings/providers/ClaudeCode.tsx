@@ -1,6 +1,6 @@
 import React from "react"
 import { VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
-import { type ProviderSettings } from "@neira-coder/types"
+import { type ProviderSettings } from "@researcherry/types"
 import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { Slider } from "@src/components/ui"
 

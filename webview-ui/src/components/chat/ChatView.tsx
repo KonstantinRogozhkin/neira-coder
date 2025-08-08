@@ -10,12 +10,12 @@ import { LRUCache } from "lru-cache"
 import { useDebounceEffect } from "@src/utils/useDebounceEffect"
 import { appendImages } from "@src/utils/imageUtils"
 
-import type { ClineAsk, ClineMessage } from "@neira-coder/types"
+import type { ClineAsk, ClineMessage } from "@researcherry/types"
 
 import { ClineSayBrowserAction, ClineSayTool, ExtensionMessage } from "@roo/ExtensionMessage"
 import { McpServer, McpTool } from "@roo/mcp"
 import { findLast } from "@roo/array"
-import { FollowUpData, SuggestionItem } from "@neira-coder/types"
+import { FollowUpData, SuggestionItem } from "@researcherry/types"
 import { combineApiRequests } from "@roo/combineApiRequests"
 import { combineCommandSequences } from "@roo/combineCommandSequences"
 import { getApiMetrics } from "@roo/getApiMetrics"
@@ -54,7 +54,7 @@ import ProfileViolationWarning from "./ProfileViolationWarning"
 import { CheckpointWarning } from "./CheckpointWarning"
 import QueuedMessages from "./QueuedMessages"
 import { getLatestTodo } from "@roo/todo"
-import { QueuedMessage } from "@neira-coder/types"
+import { QueuedMessage } from "@researcherry/types"
 
 export interface ChatViewProps {
 	isHidden: boolean

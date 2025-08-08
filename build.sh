@@ -31,7 +31,7 @@ validate_icons_after_patch() {
                 fi
             elif [[ "$icon_file" == *.svg ]]; then
                 # SVG иконки: проверяем наличие градиента (признак новой иконки)
-                if grep -q "linearGradient\|neiraGradient" "$icon_file"; then
+                if grep -q "linearGradient\|researcherryGradient" "$icon_file"; then
                     echo "      ✅ $icon_file содержит новый градиентный дизайн"
                 else
                     echo "      ❌ $icon_file не содержит новый дизайн - возможно старая иконка!"
@@ -60,7 +60,7 @@ UPSTREAM_BRANCH="main"
 BUILD_DIR="build-src"
 PATCHES_DIR="patches"
 
-echo "=== Подготовка к сборке Neira Coder ==="
+echo "=== Подготовка к сборке Researcherry Coder ==="
 
 # 1. Очистка
 echo "-> Очистка предыдущей сборочной директории..."

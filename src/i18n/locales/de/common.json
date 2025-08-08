@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Neira Coder",
+		"name": "Researcherry Coder",
 		"description": "Ein komplettes Entwicklerteam mit KI in deinem Editor."
 	},
 	"number_format": {
@@ -104,7 +104,7 @@
 	"warnings": {
 		"no_terminal_content": "Kein Terminal-Inhalt ausgewählt",
 		"missing_task_files": "Die Dateien dieser Aufgabe fehlen. Möchtest du sie aus der Aufgabenliste entfernen?",
-		"auto_import_failed": "Fehler beim automatischen Import der NeiraCoder-Einstellungen: {{error}}"
+		"auto_import_failed": "Fehler beim automatischen Import der ResearcherryCoder-Einstellungen: {{error}}"
 	},
 	"info": {
 		"no_changes": "Keine Änderungen gefunden.",
@@ -113,7 +113,7 @@
 		"custom_storage_path_set": "Benutzerdefinierter Speicherpfad festgelegt: {{path}}",
 		"default_storage_path": "Auf Standardspeicherpfad zurückgesetzt",
 		"settings_imported": "Einstellungen erfolgreich importiert.",
-		"auto_import_success": "NeiraCoder-Einstellungen automatisch importiert aus {{filename}}",
+		"auto_import_success": "ResearcherryCoder-Einstellungen automatisch importiert aus {{filename}}",
 		"share_link_copied": "Share-Link in die Zwischenablage kopiert",
 		"image_copied_to_clipboard": "Bild-Daten-URI in die Zwischenablage kopiert",
 		"image_saved": "Bild gespeichert unter {{path}}",
@@ -141,8 +141,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Gib den benutzerdefinierten Speicherpfad für den Gesprächsverlauf ein, leer lassen für Standardspeicherort",
-		"path_placeholder": "D:\\NeiraCoderStorage",
-		"enter_absolute_path": "Bitte gib einen absoluten Pfad ein (z.B. D:\\NeiraCoderStorage oder /home/user/storage)",
+		"path_placeholder": "D:\\ResearcherryCoderStorage",
+		"enter_absolute_path": "Bitte gib einen absoluten Pfad ein (z.B. D:\\ResearcherryCoderStorage oder /home/user/storage)",
 		"enter_valid_path": "Bitte gib einen gültigen Pfad ein"
 	},
 	"input": {
@@ -162,8 +162,8 @@
 	},
 	"customModes": {
 		"errors": {
-					"yamlParseError": "Ungültiges YAML in .neira-modes-Datei in Zeile {{line}}. Bitte überprüfe:\n• Korrekte Einrückung (verwende Leerzeichen, keine Tabs)\n• Passende Anführungszeichen und Klammern\n• Gültige YAML-Syntax",
-		"schemaValidationError": "Ungültiges Format für benutzerdefinierte Modi in .neira-modes:\n{{issues}}",
+			"yamlParseError": "Ungültiges YAML in .researcherry-modes-Datei in Zeile {{line}}. Bitte überprüfe:\n• Korrekte Einrückung (verwende Leerzeichen, keine Tabs)\n• Passende Anführungszeichen und Klammern\n• Gültige YAML-Syntax",
+			"schemaValidationError": "Ungültiges Format für benutzerdefinierte Modi in .researcherry-modes:\n{{issues}}",
 			"invalidFormat": "Ungültiges Format für benutzerdefinierte Modi. Bitte stelle sicher, dass deine Einstellungen dem korrekten YAML-Format folgen.",
 			"updateFailed": "Fehler beim Aktualisieren des benutzerdefinierten Modus: {{error}}",
 			"deleteFailed": "Fehler beim Löschen des benutzerdefinierten Modus: {{error}}",

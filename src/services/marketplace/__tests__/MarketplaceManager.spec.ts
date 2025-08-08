@@ -1,12 +1,12 @@
 // npx vitest services/marketplace/__tests__/MarketplaceManager.spec.ts
 
-import type { MarketplaceItem } from "@neira-coder/types"
+import type { MarketplaceItem } from "@researcherry/types"
 
 import { MarketplaceManager } from "../MarketplaceManager"
 
 // Mock CloudService
-vi.mock("@neira-coder/cloud", () => ({
-	getNeiraCoderApiUrl: () => "https://test.api.com",
+vi.mock("@researcherry/cloud", () => ({
+	getResearcherryCoderApiUrl: () => "https://test.api.com",
 	CloudService: {
 		hasInstance: vi.fn(),
 		instance: {
@@ -189,7 +189,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should return organization MCPs when available", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 
 			// Mock CloudService to return organization settings
 			vi.mocked(CloudService.hasInstance).mockReturnValue(true)
@@ -233,7 +233,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should filter out hidden MCPs from marketplace results", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 
 			// Mock CloudService to return organization settings with hidden MCPs
 			vi.mocked(CloudService.hasInstance).mockReturnValue(true)
@@ -276,7 +276,7 @@ describe("MarketplaceManager", () => {
 		})
 
 		it("should handle CloudService not being available", async () => {
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 
 			// Mock CloudService to not be available
 			vi.mocked(CloudService.hasInstance).mockReturnValue(false)
@@ -315,14 +315,14 @@ describe("MarketplaceManager", () => {
 
 			// Mock the installer
 			vi.spyOn(manager["installer"], "installItem").mockResolvedValue({
-				filePath: "/test/path/.neira/.neira-modes",
+				filePath: "/test/path/.researcherry/.researcherry-modes",
 				line: 5,
 			})
 
 			const result = await manager.installMarketplaceItem(item)
 
 			expect(manager["installer"].installItem).toHaveBeenCalledWith(item, { target: "project" })
-			expect(result).toBe("/test/path/.neira/.neira-modes")
+			expect(result).toBe("/test/path/.researcherry/.researcherry-modes")
 		})
 
 		it("should install an MCP item", async () => {
@@ -337,14 +337,14 @@ describe("MarketplaceManager", () => {
 
 			// Mock the installer
 			vi.spyOn(manager["installer"], "installItem").mockResolvedValue({
-				filePath: "/test/path/.neira/mcp.json",
+				filePath: "/test/path/.researcherry/mcp.json",
 				line: 3,
 			})
 
 			const result = await manager.installMarketplaceItem(item)
 
 			expect(manager["installer"].installItem).toHaveBeenCalledWith(item, { target: "project" })
-			expect(result).toBe("/test/path/.neira/mcp.json")
+			expect(result).toBe("/test/path/.researcherry/mcp.json")
 		})
 	})
 

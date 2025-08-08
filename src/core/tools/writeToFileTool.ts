@@ -14,7 +14,7 @@ import { getReadablePath } from "../../utils/path"
 import { isPathOutsideWorkspace } from "../../utils/pathUtils"
 import { detectCodeOmission } from "../../integrations/editor/detect-omission"
 import { unescapeHtmlEntities } from "../../utils/text-normalization"
-import { DEFAULT_WRITE_DELAY_MS } from "@neira-coder/types"
+import { DEFAULT_WRITE_DELAY_MS } from "@researcherry/types"
 import { EXPERIMENT_IDS, experiments } from "../../shared/experiments"
 
 export async function writeToFileTool(

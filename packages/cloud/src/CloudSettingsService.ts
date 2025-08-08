@@ -6,9 +6,9 @@ import {
 	OrganizationAllowList,
 	OrganizationSettings,
 	organizationSettingsSchema,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
-import { getNeiraCoderApiUrl } from "./Config.js"
+import { getResearcherryCoderApiUrl } from "./Config.js"
 import type { AuthService, AuthState } from "./auth"
 import { RefreshTimer } from "./RefreshTimer"
 import type { SettingsService } from "./SettingsService"
@@ -81,7 +81,7 @@ export class CloudSettingsService extends EventEmitter<SettingsServiceEvents> im
 		}
 
 		try {
-			const response = await fetch(`${getNeiraCoderApiUrl()}/api/organization-settings`, {
+			const response = await fetch(`${getResearcherryCoderApiUrl()}/api/organization-settings`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

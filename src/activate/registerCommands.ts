@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
 import delay from "delay"
 
-import type { CommandId } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { CommandId } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { Package } from "../shared/package"
 import { getCommand } from "../utils/commands"
@@ -23,7 +23,7 @@ import { t } from "../i18n"
 export function getVisibleProviderOrLog(outputChannel: vscode.OutputChannel): ClineProvider | undefined {
 	const visibleProvider = ClineProvider.getVisibleInstance()
 	if (!visibleProvider) {
-		outputChannel.appendLine("Cannot find any visible Neira Coder instances.")
+		outputChannel.appendLine("Cannot find any visible Researcherry Coder instances.")
 		return undefined
 	}
 	return visibleProvider
@@ -222,13 +222,13 @@ const getCommandsMap = ({ context, outputChannel, provider }: RegisterCommandOpt
 		try {
 			// Clear CustomModesManager cache
 			provider.customModesManager.clearCache()
-			
+
 			// Clear global state cache
 			await context.globalState.update("customModes", undefined)
-			
+
 			// Force refresh webview
 			await provider.postStateToWebview()
-			
+
 			vscode.window.showInformationMessage("Modes cache cleared successfully!")
 		} catch (error) {
 			vscode.window.showErrorMessage(`Failed to clear modes cache: ${error}`)
@@ -266,7 +266,7 @@ export const openClineInNewTab = async ({ context, outputChannel }: Omit<Registe
 
 	const targetCol = hasVisibleEditors ? Math.max(lastCol + 1, 1) : vscode.ViewColumn.Two
 
-	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Neira Coder", targetCol, {
+	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Researcherry Coder", targetCol, {
 		enableScripts: true,
 		retainContextWhenHidden: true,
 		localResourceRoots: [context.extensionUri],

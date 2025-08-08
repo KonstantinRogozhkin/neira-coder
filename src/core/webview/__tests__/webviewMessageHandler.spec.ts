@@ -88,7 +88,7 @@ import * as path from "path"
 import * as fsUtils from "../../../utils/fs"
 import { getWorkspacePath } from "../../../utils/path"
 import { ensureSettingsDirectoryExists } from "../../../utils/globalContext"
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry/types"
 
 vi.mock("../../../utils/fs")
 vi.mock("../../../utils/path")
@@ -426,7 +426,7 @@ describe("webviewMessageHandler - deleteCustomMode", () => {
 
 	it("should delete a project mode and its rules folder", async () => {
 		const slug = "test-project-mode"
-		const rulesFolderPath = path.join("/mock/workspace", ".neira", `rules-${slug}`)
+		const rulesFolderPath = path.join("/mock/workspace", ".researcherry", `rules-${slug}`)
 
 		vi.mocked(mockClineProvider.customModesManager.getCustomModes).mockResolvedValue([
 			{
@@ -451,7 +451,7 @@ describe("webviewMessageHandler - deleteCustomMode", () => {
 	it("should delete a global mode and its rules folder", async () => {
 		const slug = "test-global-mode"
 		const homeDir = os.homedir()
-		const rulesFolderPath = path.join(homeDir, ".neira", `rules-${slug}`)
+		const rulesFolderPath = path.join(homeDir, ".researcherry", `rules-${slug}`)
 
 		vi.mocked(mockClineProvider.customModesManager.getCustomModes).mockResolvedValue([
 			{
@@ -497,7 +497,7 @@ describe("webviewMessageHandler - deleteCustomMode", () => {
 
 	it("should handle errors when deleting rules folder", async () => {
 		const slug = "test-mode-error"
-		const rulesFolderPath = path.join("/mock/workspace", ".neira", `rules-${slug}`)
+		const rulesFolderPath = path.join("/mock/workspace", ".researcherry", `rules-${slug}`)
 		const error = new Error("Permission denied")
 
 		vi.mocked(mockClineProvider.customModesManager.getCustomModes).mockResolvedValue([

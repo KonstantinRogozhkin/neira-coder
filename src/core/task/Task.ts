@@ -25,9 +25,9 @@ import {
 	TodoItem,
 	getApiProtocol,
 	getModelId,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService } from "@neira-coder/cloud"
+} from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { CloudService } from "@researcherry/cloud"
 
 // api
 import { ApiHandler, ApiHandlerCreateMessageMetadata, buildApiHandler } from "../../api"
@@ -623,7 +623,7 @@ export class Task extends EventEmitter<TaskEvents> {
 		// simply removes the reference to this instance, but the instance is
 		// still alive until this promise resolves or rejects.)
 		if (this.abort) {
-			throw new Error(`[NeiraCoder#ask] task ${this.taskId}.${this.instanceId} aborted`)
+			throw new Error(`[ResearcherryCoder#ask] task ${this.taskId}.${this.instanceId} aborted`)
 		}
 
 		let askTs: number
@@ -815,7 +815,7 @@ export class Task extends EventEmitter<TaskEvents> {
 		contextCondense?: ContextCondense,
 	): Promise<undefined> {
 		if (this.abort) {
-			throw new Error(`[NeiraCoder#say] task ${this.taskId}.${this.instanceId} aborted`)
+			throw new Error(`[ResearcherryCoder#say] task ${this.taskId}.${this.instanceId} aborted`)
 		}
 
 		if (partial !== undefined) {
@@ -1336,7 +1336,9 @@ export class Task extends EventEmitter<TaskEvents> {
 		includeFileDetails: boolean = false,
 	): Promise<boolean> {
 		if (this.abort) {
-			throw new Error(`[NeiraCoder#recursivelyMakeRooRequests] task ${this.taskId}.${this.instanceId} aborted`)
+			throw new Error(
+				`[ResearcherryCoder#recursivelyMakeRooRequests] task ${this.taskId}.${this.instanceId} aborted`,
+			)
 		}
 
 		if (this.consecutiveMistakeLimit > 0 && this.consecutiveMistakeCount >= this.consecutiveMistakeLimit) {
@@ -1404,7 +1406,7 @@ export class Task extends EventEmitter<TaskEvents> {
 		)
 
 		const {
-			showNeiraIgnoredFiles = true,
+			showResearcherryIgnoredFiles = true,
 			includeDiagnosticMessages = true,
 			maxDiagnosticMessages = 50,
 			maxReadFileLine = -1,
@@ -1416,7 +1418,7 @@ export class Task extends EventEmitter<TaskEvents> {
 			urlContentFetcher: this.urlContentFetcher,
 			fileContextTracker: this.fileContextTracker,
 			rooIgnoreController: this.rooIgnoreController,
-			showNeiraIgnoredFiles,
+			showResearcherryIgnoredFiles,
 			includeDiagnosticMessages,
 			maxDiagnosticMessages,
 			maxReadFileLine,
@@ -1673,7 +1675,7 @@ export class Task extends EventEmitter<TaskEvents> {
 			// Need to call here in case the stream was aborted.
 			if (this.abort || this.abandoned) {
 				throw new Error(
-					`[NeiraCoder#recursivelyMakeRooRequests] task ${this.taskId}.${this.instanceId} aborted`,
+					`[ResearcherryCoder#recursivelyMakeRooRequests] task ${this.taskId}.${this.instanceId} aborted`,
 				)
 			}
 

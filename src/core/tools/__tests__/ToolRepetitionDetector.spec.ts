@@ -1,6 +1,6 @@
 // npx vitest run src/core/tools/__tests__/ToolRepetitionDetector.spec.ts
 
-import type { ToolName } from "@neira-coder/types"
+import type { ToolName } from "@researcherry/types"
 
 import type { ToolUse } from "../../../shared/tools"
 

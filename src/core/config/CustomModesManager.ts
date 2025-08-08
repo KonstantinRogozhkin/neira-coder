@@ -6,7 +6,7 @@ import * as os from "os"
 import * as yaml from "yaml"
 import stripBom from "strip-bom"
 
-import { type ModeConfig, type PromptComponent, customModesSettingsSchema, modeConfigSchema } from "@neira-coder/types"
+import { type ModeConfig, type PromptComponent, customModesSettingsSchema, modeConfigSchema } from "@researcherry/types"
 
 import { fileExistsAtPath } from "../../utils/fs"
 import { getWorkspacePath } from "../../utils/path"
@@ -16,7 +16,7 @@ import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
 import { t } from "../../i18n"
 
-const ROOMODES_FILENAME = ".neira-modes"
+const ROOMODES_FILENAME = ".researcherry-modes"
 
 // Type definitions for import/export functionality
 interface RuleFile {
@@ -97,8 +97,8 @@ export class CustomModesManager {
 		}
 
 		const workspaceRoot = getWorkspacePath()
-		const neiraDir = path.join(workspaceRoot, ".neira")
-		const roomodesPath = path.join(neiraDir, ROOMODES_FILENAME)
+		const researcherryDir = path.join(workspaceRoot, ".researcherry")
+		const roomodesPath = path.join(researcherryDir, ROOMODES_FILENAME)
 		const exists = await fileExistsAtPath(roomodesPath)
 		return exists ? roomodesPath : undefined
 	}
@@ -154,7 +154,7 @@ export class CustomModesManager {
 			// Ensure we never return null or undefined
 			return parsed ?? {}
 		} catch (yamlError) {
-			// For .neira-modes files, try JSON as fallback
+			// For .researcherry-modes files, try JSON as fallback
 			if (filePath.endsWith(ROOMODES_FILENAME)) {
 				try {
 					// Try parsing the original content as JSON (not the cleaned content)
@@ -173,7 +173,7 @@ export class CustomModesManager {
 				}
 			}
 
-			// For non-.neira-modes files, just log and return empty object
+			// For non-.researcherry-modes files, just log and return empty object
 			const errorMsg = yamlError instanceof Error ? yamlError.message : String(yamlError)
 			console.error(`[CustomModesManager] Failed to parse YAML from ${filePath}:`, errorMsg)
 			return {}
@@ -195,7 +195,7 @@ export class CustomModesManager {
 			if (!result.success) {
 				console.error(`[CustomModesManager] Schema validation failed for ${filePath}:`, result.error)
 
-				// Show user-friendly error for .neira-modes files
+				// Show user-friendly error for .researcherry-modes files
 				if (filePath.endsWith(ROOMODES_FILENAME)) {
 					const issues = result.error.issues
 						.map((issue) => `• ${issue.path.join(".")}: ${issue.message}`)
@@ -294,11 +294,11 @@ export class CustomModesManager {
 					return
 				}
 
-				// Get modes from .neira-modes if it exists (takes precedence)
+				// Get modes from .researcherry-modes if it exists (takes precedence)
 				const roomodesPath = await this.getWorkspaceRoomodes()
 				const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
-				// Merge modes from both sources (.neira-modes takes precedence)
+				// Merge modes from both sources (.researcherry-modes takes precedence)
 				const mergedModes = await this.mergeCustomModes(roomodesModes, result.data.customModes)
 				await this.context.globalState.update("customModes", mergedModes)
 				this.clearCache()
@@ -313,7 +313,7 @@ export class CustomModesManager {
 		this.disposables.push(settingsWatcher.onDidDelete(handleSettingsChange))
 		this.disposables.push(settingsWatcher)
 
-		// Watch .neira-modes file - watch the path even if it doesn't exist yet
+		// Watch .researcherry-modes file - watch the path even if it doesn't exist yet
 		const workspaceFolders = vscode.workspace.workspaceFolders
 		if (workspaceFolders && workspaceFolders.length > 0) {
 			const workspaceRoot = getWorkspacePath()
@@ -324,13 +324,13 @@ export class CustomModesManager {
 				try {
 					const settingsModes = await this.loadModesFromFile(settingsPath)
 					const roomodesModes = await this.loadModesFromFile(roomodesPath)
-					// .neira-modes takes precedence
+					// .researcherry-modes takes precedence
 					const mergedModes = await this.mergeCustomModes(roomodesModes, settingsModes)
 					await this.context.globalState.update("customModes", mergedModes)
 					this.clearCache()
 					await this.onUpdate()
 				} catch (error) {
-					console.error(`[CustomModesManager] Error handling .neira-modes file change:`, error)
+					console.error(`[CustomModesManager] Error handling .researcherry-modes file change:`, error)
 				}
 			}
 
@@ -338,14 +338,14 @@ export class CustomModesManager {
 			this.disposables.push(roomodesWatcher.onDidCreate(handleRoomodesChange))
 			this.disposables.push(
 				roomodesWatcher.onDidDelete(async () => {
-					// When .neira-modes is deleted, refresh with only settings modes
+					// When .researcherry-modes is deleted, refresh with only settings modes
 					try {
 						const settingsModes = await this.loadModesFromFile(settingsPath)
 						await this.context.globalState.update("customModes", settingsModes)
 						this.clearCache()
 						await this.onUpdate()
 					} catch (error) {
-						console.error(`[CustomModesManager] Error handling .neira-modes file deletion:`, error)
+						console.error(`[CustomModesManager] Error handling .researcherry-modes file deletion:`, error)
 					}
 				}),
 			)
@@ -365,7 +365,7 @@ export class CustomModesManager {
 		const settingsPath = await this.getCustomModesFilePath()
 		const settingsModes = await this.loadModesFromFile(settingsPath)
 
-		// Get modes from .neira-modes if it exists.
+		// Get modes from .researcherry-modes if it exists.
 		const roomodesPath = await this.getWorkspaceRoomodes()
 		const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
@@ -563,14 +563,14 @@ export class CustomModesManager {
 			if (scope === "project") {
 				const workspacePath = getWorkspacePath()
 				if (workspacePath) {
-					rulesFolderPath = path.join(workspacePath, ".neira", `rules-${slug}`)
+					rulesFolderPath = path.join(workspacePath, ".researcherry", `rules-${slug}`)
 				} else {
 					return // No workspace, can't delete project rules
 				}
 			} else {
 				// Global scope - use OS home directory
 				const homeDir = os.homedir()
-				rulesFolderPath = path.join(homeDir, ".neira", `rules-${slug}`)
+				rulesFolderPath = path.join(homeDir, ".researcherry", `rules-${slug}`)
 			}
 
 			// Check if the rules folder exists and delete it
@@ -635,16 +635,16 @@ export class CustomModesManager {
 						const roomodesData = yaml.parse(roomodesContent)
 						const roomodesModes = roomodesData?.customModes || []
 
-						// Check if this specific mode exists in .neira-modes
+						// Check if this specific mode exists in .researcherry-modes
 						const modeInRoomodes = roomodesModes.find((m: any) => m.slug === slug)
 						if (!modeInRoomodes) {
 							return false // Mode not found anywhere
 						}
 					} else {
-						return false // No .neira-modes file and not in custom modes
+						return false // No .researcherry-modes file and not in custom modes
 					}
 				} catch (error) {
-					return false // Cannot read .neira-modes and not in custom modes
+					return false // Cannot read .researcherry-modes and not in custom modes
 				}
 			}
 
@@ -662,7 +662,7 @@ export class CustomModesManager {
 				if (!workspacePath) {
 					return false
 				}
-				modeRulesDir = path.join(workspacePath, ".neira", `rules-${slug}`)
+				modeRulesDir = path.join(workspacePath, ".researcherry", `rules-${slug}`)
 			}
 
 			try {
@@ -730,7 +730,7 @@ export class CustomModesManager {
 							const roomodesData = yaml.parse(roomodesContent)
 							const roomodesModes = roomodesData?.customModes || []
 
-							// Find the mode in .neira-modes
+							// Find the mode in .researcherry-modes
 							mode = roomodesModes.find((m: any) => m.slug === slug)
 						}
 					} catch (error) {
@@ -768,7 +768,7 @@ export class CustomModesManager {
 			// Check for .roo/rules-{slug}/ directory (or rules-{slug}/ for global)
 			const modeRulesDir = isGlobalMode
 				? path.join(baseDir, `rules-${slug}`)
-				: path.join(baseDir, ".neira", `rules-${slug}`)
+				: path.join(baseDir, ".researcherry", `rules-${slug}`)
 
 			let rulesFiles: RuleFile[] = []
 			try {
@@ -852,7 +852,7 @@ export class CustomModesManager {
 			rulesFolderPath = path.join(baseDir, `rules-${importMode.slug}`)
 		} else {
 			const workspacePath = getWorkspacePath()
-			baseDir = path.join(workspacePath, ".neira")
+			baseDir = path.join(workspacePath, ".researcherry")
 			rulesFolderPath = path.join(baseDir, `rules-${importMode.slug}`)
 		}
 

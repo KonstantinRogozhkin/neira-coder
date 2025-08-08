@@ -1,4 +1,4 @@
-import { getRuns } from "@neira-coder/evals"
+import { getRuns } from "@researcherry/evals"
 
 import { Runs } from "@/components/home/runs"
 

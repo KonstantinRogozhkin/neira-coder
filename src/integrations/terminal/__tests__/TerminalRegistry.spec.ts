@@ -18,7 +18,7 @@ describe("TerminalRegistry", () => {
 			(...args: any[]) =>
 				({
 					exitStatus: undefined,
-					name: "Neira Coder",
+					name: "Researcherry Coder",
 					processId: Promise.resolve(123),
 					creationOptions: {},
 					state: {
@@ -42,7 +42,7 @@ describe("TerminalRegistry", () => {
 
 			expect(mockCreateTerminal).toHaveBeenCalledWith({
 				cwd: "/test/path",
-				name: "Neira Coder",
+				name: "Researcherry Coder",
 				iconPath: expect.any(Object),
 				env: {
 					PAGER,
@@ -62,7 +62,7 @@ describe("TerminalRegistry", () => {
 
 				expect(mockCreateTerminal).toHaveBeenCalledWith({
 					cwd: "/test/path",
-					name: "Neira Coder",
+					name: "Researcherry Coder",
 					iconPath: expect.any(Object),
 					env: {
 						PAGER,
@@ -84,7 +84,7 @@ describe("TerminalRegistry", () => {
 
 				expect(mockCreateTerminal).toHaveBeenCalledWith({
 					cwd: "/test/path",
-					name: "Neira Coder",
+					name: "Researcherry Coder",
 					iconPath: expect.any(Object),
 					env: {
 						PAGER,
@@ -105,7 +105,7 @@ describe("TerminalRegistry", () => {
 
 				expect(mockCreateTerminal).toHaveBeenCalledWith({
 					cwd: "/test/path",
-					name: "Neira Coder",
+					name: "Researcherry Coder",
 					iconPath: expect.any(Object),
 					env: {
 						PAGER,

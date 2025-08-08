@@ -3,7 +3,7 @@ import {
 	OrganizationAllowList,
 	OrganizationSettings,
 	organizationSettingsSchema,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import type { SettingsService } from "./SettingsService"
 

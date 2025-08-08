@@ -1,12 +1,12 @@
 import {
 	TelemetryEventName,
 	type TelemetryEvent,
-	neiraCoderTelemetryEventSchema,
+	researcherryCoderTelemetryEventSchema,
 	type ClineMessage,
-} from "@neira-coder/types"
-import { BaseTelemetryClient } from "@neira-coder/telemetry"
+} from "@researcherry/types"
+import { BaseTelemetryClient } from "@researcherry/telemetry"
 
-import { getNeiraCoderApiUrl } from "./Config.js"
+import { getResearcherryCoderApiUrl } from "./Config.js"
 import type { AuthService } from "./auth"
 import type { SettingsService } from "./SettingsService"
 
@@ -37,7 +37,7 @@ export class TelemetryClient extends BaseTelemetryClient {
 			return
 		}
 
-		const response = await fetch(`${getNeiraCoderApiUrl()}/api/${path}`, {
+		const response = await fetch(`${getResearcherryCoderApiUrl()}/api/${path}`, {
 			...options,
 			headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
 		})
@@ -67,7 +67,7 @@ export class TelemetryClient extends BaseTelemetryClient {
 			console.info(`[TelemetryClient#capture] ${JSON.stringify(payload)}`)
 		}
 
-		const result = neiraCoderTelemetryEventSchema.safeParse(payload)
+		const result = researcherryCoderTelemetryEventSchema.safeParse(payload)
 
 		if (!result.success) {
 			console.error(
@@ -123,7 +123,7 @@ export class TelemetryClient extends BaseTelemetryClient {
 			}
 
 			// Custom fetch for multipart - don't set Content-Type header (let browser set it)
-			const response = await fetch(`${getNeiraCoderApiUrl()}/api/events/backfill`, {
+			const response = await fetch(`${getResearcherryCoderApiUrl()}/api/events/backfill`, {
 				method: "POST",
 				headers: {
 					Authorization: `Bearer ${token}`,

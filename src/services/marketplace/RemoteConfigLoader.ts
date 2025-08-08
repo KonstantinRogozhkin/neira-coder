@@ -1,9 +1,9 @@
 import axios from "axios"
 import * as yaml from "yaml"
 import { z } from "zod"
-import { getNeiraCoderApiUrl } from "@neira-coder/cloud"
-import type { MarketplaceItem, MarketplaceItemType } from "@neira-coder/types"
-import { modeMarketplaceItemSchema, mcpMarketplaceItemSchema } from "@neira-coder/types"
+import { getResearcherryCoderApiUrl } from "@researcherry/cloud"
+import type { MarketplaceItem, MarketplaceItemType } from "@researcherry/types"
+import { modeMarketplaceItemSchema, mcpMarketplaceItemSchema } from "@researcherry/types"
 
 // Response schemas for YAML API responses
 const modeMarketplaceResponse = z.object({
@@ -20,7 +20,7 @@ export class RemoteConfigLoader {
 	private cacheDuration = 5 * 60 * 1000 // 5 minutes
 
 	constructor() {
-		this.apiBaseUrl = getNeiraCoderApiUrl()
+		this.apiBaseUrl = getResearcherryCoderApiUrl()
 	}
 
 	async loadAllItems(hideMarketplaceMcps = false): Promise<MarketplaceItem[]> {

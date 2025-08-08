@@ -1,4 +1,4 @@
-import type { ExperimentId } from "@neira-coder/types"
+import type { ExperimentId } from "@researcherry/types"
 
 import { ExtensionStateContextType } from "@/context/ExtensionStateContext"
 

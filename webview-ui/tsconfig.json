@@ -22,8 +22,9 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@src/*": ["./src/*"],
-			"@neira/*": ["../src/shared/*"],
-			"@roo/*": ["../src/shared/*"]
+			"@researcherry/*": ["../src/shared/*"],
+			"@roo/*": ["../src/shared/*"],
+			"@researcherry/types": ["../../packages/types/dist"]
 		}
 	},
 	"include": ["src", "../src/shared", "vitest.setup.ts"]

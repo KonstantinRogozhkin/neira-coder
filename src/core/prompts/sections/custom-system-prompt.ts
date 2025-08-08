@@ -46,11 +46,11 @@ async function safeReadFile(filePath: string): Promise<string> {
  * Получает путь к файлу системного промпта для конкретного режима
  */
 export function getSystemPromptFilePath(cwd: string, mode: Mode): string {
-	return path.join(cwd, ".neira", `system-prompt-${mode}`)
+	return path.join(cwd, ".researcherry", `system-prompt-${mode}`)
 }
 
 /**
- * Загружает пользовательский системный промпт из файла по пути .neira/system-prompt-[slug режима]
+ * Загружает пользовательский системный промпт из файла по пути .researcherry/system-prompt-[slug режима]
  * Если файл не существует, возвращает пустую строку
  */
 export async function loadSystemPromptFile(cwd: string, mode: Mode, variables: PromptVariables): Promise<string> {
@@ -64,10 +64,10 @@ export async function loadSystemPromptFile(cwd: string, mode: Mode, variables: P
 }
 
 /**
- * Обеспечивает существование директории .neira, создавая ее при необходимости
+ * Обеспечивает существование директории .researcherry, создавая ее при необходимости
  */
 export async function ensureRooDirectory(cwd: string): Promise<void> {
-	const rooDir = path.join(cwd, ".neira")
+	const rooDir = path.join(cwd, ".researcherry")
 
 	// Проверяем, существует ли директория уже
 	if (await fileExistsAtPath(rooDir)) {

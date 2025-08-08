@@ -7,8 +7,8 @@ import type {
 	InstallMarketplaceItemOptions,
 	MarketplaceItem,
 	ShareVisibility,
-} from "@neira-coder/types"
-import { marketplaceItemSchema } from "@neira-coder/types"
+} from "@researcherry/types"
+import { marketplaceItemSchema } from "@researcherry/types"
 
 import { Mode } from "./modes"
 
@@ -158,7 +158,7 @@ export interface WebviewMessage {
 		| "browserToolEnabled"
 		| "codebaseIndexEnabled"
 		| "telemetrySetting"
-		| "showNeiraIgnoredFiles"
+		| "showResearcherryIgnoredFiles"
 		| "testBrowserConnection"
 		| "browserConnectionResult"
 		| "remoteBrowserEnabled"

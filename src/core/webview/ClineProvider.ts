@@ -13,7 +13,7 @@ import {
 	type GlobalState,
 	type ProviderName,
 	type ProviderSettings,
-	type NeiraCoderSettings,
+	type ResearcherryCoderSettings,
 	type ProviderSettingsEntry,
 	type TelemetryProperties,
 	type TelemetryPropertiesProvider,
@@ -29,9 +29,9 @@ import {
 	ORGANIZATION_ALLOW_ALL,
 	DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT,
 	DEFAULT_WRITE_DELAY_MS,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService, getNeiraCoderApiUrl } from "@neira-coder/cloud"
+} from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { CloudService, getResearcherryCoderApiUrl } from "@researcherry/cloud"
 
 import { t } from "../../i18n"
 import { setPanel } from "../../activate/registerCommands"
@@ -759,7 +759,7 @@ export class ClineProvider
 						window.AUDIO_BASE_URI = "${audioUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 					</script>
-					<title>Neira Coder</title>
+					<title>Researcherry Coder</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -832,7 +832,7 @@ export class ClineProvider
 				window.AUDIO_BASE_URI = "${audioUri}"
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 			</script>
-            <title>Neira Coder</title>
+            <title>Researcherry Coder</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1512,7 +1512,7 @@ export class ClineProvider
 			maxWorkspaceFiles,
 			browserToolEnabled,
 			telemetrySetting,
-			showNeiraIgnoredFiles,
+			showResearcherryIgnoredFiles,
 			language,
 			maxReadFileLine,
 			maxImageFileSize,
@@ -1623,7 +1623,7 @@ export class ClineProvider
 			telemetrySetting,
 			telemetryKey,
 			machineId,
-			showNeiraIgnoredFiles: showNeiraIgnoredFiles ?? true,
+			showResearcherryIgnoredFiles: showResearcherryIgnoredFiles ?? true,
 			language: language ?? formatLanguage(vscode.env.language),
 			renderContext: this.renderContext,
 			maxReadFileLine: maxReadFileLine ?? -1,
@@ -1655,7 +1655,7 @@ export class ClineProvider
 			},
 			mdmCompliant: this.checkMdmCompliance(),
 			profileThresholds: profileThresholds ?? {},
-			cloudApiUrl: getNeiraCoderApiUrl(),
+			cloudApiUrl: getResearcherryCoderApiUrl(),
 			hasOpenedModeSelector: this.getGlobalState("hasOpenedModeSelector") ?? false,
 			alwaysAllowFollowupQuestions: alwaysAllowFollowupQuestions ?? false,
 			followupAutoApproveTimeoutMs: followupAutoApproveTimeoutMs ?? 60000,
@@ -1813,7 +1813,7 @@ export class ClineProvider
 			openRouterUseMiddleOutTransform: stateValues.openRouterUseMiddleOutTransform ?? true,
 			browserToolEnabled: stateValues.browserToolEnabled ?? true,
 			telemetrySetting: stateValues.telemetrySetting || "unset",
-			showNeiraIgnoredFiles: stateValues.showNeiraIgnoredFiles ?? true,
+			showResearcherryIgnoredFiles: stateValues.showResearcherryIgnoredFiles ?? true,
 			maxReadFileLine: stateValues.maxReadFileLine ?? -1,
 			maxImageFileSize: stateValues.maxImageFileSize ?? 5,
 			maxTotalImageSize: stateValues.maxTotalImageSize ?? 20,
@@ -1878,11 +1878,11 @@ export class ClineProvider
 		return this.contextProxy.getValue(key)
 	}
 
-	public async setValue<K extends keyof NeiraCoderSettings>(key: K, value: NeiraCoderSettings[K]) {
+	public async setValue<K extends keyof ResearcherryCoderSettings>(key: K, value: ResearcherryCoderSettings[K]) {
 		await this.contextProxy.setValue(key, value)
 	}
 
-	public getValue<K extends keyof NeiraCoderSettings>(key: K) {
+	public getValue<K extends keyof ResearcherryCoderSettings>(key: K) {
 		return this.contextProxy.getValue(key)
 	}
 
@@ -1890,7 +1890,7 @@ export class ClineProvider
 		return this.contextProxy.getValues()
 	}
 
-	public async setValues(values: NeiraCoderSettings) {
+	public async setValues(values: ResearcherryCoderSettings) {
 		await this.contextProxy.setValues(values)
 	}
 
@@ -1972,7 +1972,7 @@ export class ClineProvider
 
 		const packageJSON = this.context.extension?.packageJSON
 
-		// Get Neira Coder Cloud authentication state
+		// Get Researcherry Coder Cloud authentication state
 		let cloudIsAuthenticated: boolean | undefined
 
 		try {
@@ -2001,7 +2001,7 @@ export class ClineProvider
 		}
 
 		// Ensure all required fields have fallback values to prevent telemetry errors
-		const appName = packageJSON?.name ?? Package.name ?? "neira-coder"
+		const appName = packageJSON?.name ?? Package.name ?? "researcherry"
 		const appVersion = packageJSON?.version ?? Package.version ?? "unknown"
 		const vscodeVersion = vscode.version ?? "unknown"
 		const platform = process.platform ?? "unknown"

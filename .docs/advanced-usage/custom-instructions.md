@@ -1,12 +1,12 @@
 # Пользовательские инструкции
 
-Пользовательские инструкции позволяют настроить поведение Neira Coder под ваши предпочтения и рабочие процессы.
+Пользовательские инструкции позволяют настроить поведение Researcherry Coder под ваши предпочтения и рабочие процессы.
 
 ## Что такое пользовательские инструкции?
 
 Пользовательские инструкции - это настройки, которые определяют:
 
-- Стиль общения Neira Coder
+- Стиль общения Researcherry Coder
 - Предпочтения в коде
 - Рабочие процессы
 - Специфичные требования
@@ -16,7 +16,7 @@
 ### Открытие настроек
 
 1. Откройте Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-2. Введите "Neira Coder: Open Settings"
+2. Введите "Researcherry Coder: Open Settings"
 3. Перейдите в раздел "Custom Instructions"
 
 ### Основные разделы
@@ -233,10 +233,10 @@ google_style:
 
 ```bash
 # Создание резервной копии
-cp ~/.neira/instructions.json ~/.neira/instructions.backup.json
+cp ~/.researcherry/instructions.json ~/.researcherry/instructions.backup.json
 
 # Восстановление из резервной копии
-cp ~/.neira/instructions.backup.json ~/.neira/instructions.json
+cp ~/.researcherry/instructions.backup.json ~/.researcherry/instructions.json
 ```
 
 ## Советы по настройке
@@ -251,7 +251,7 @@ cp ~/.neira/instructions.backup.json ~/.neira/instructions.json
 
 ### 2. Итеративно улучшайте
 
-По мере использования Neira Coder:
+По мере использования Researcherry Coder:
 
 - Отмечайте, что работает хорошо
 - Определяйте, что можно улучшить

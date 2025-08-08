@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@/utils/test-utils"
 import { vi, describe, it, expect, beforeEach } from "vitest"
 import { TaskActions } from "../TaskActions"
-import type { HistoryItem } from "@neira-coder/types"
+import type { HistoryItem } from "@researcherry/types"
 import { vscode } from "@/utils/vscode"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 

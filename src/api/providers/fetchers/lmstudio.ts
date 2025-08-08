@@ -1,4 +1,4 @@
-import { ModelInfo, lMStudioDefaultModelInfo } from "@neira-coder/types"
+import { ModelInfo, lMStudioDefaultModelInfo } from "@researcherry/types"
 import { LLM, LLMInfo, LLMInstanceInfo, LMStudioClient } from "@lmstudio/sdk"
 import axios from "axios"
 import { flushModels, getModels } from "./modelCache"

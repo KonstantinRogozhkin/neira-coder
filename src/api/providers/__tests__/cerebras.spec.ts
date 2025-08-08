@@ -15,13 +15,13 @@ vi.mock("../../i18n", () => ({
 vi.mock("../constants", () => ({
 	DEFAULT_HEADERS: {
 		"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-		"X-Title": "Neira Coder",
-		"User-Agent": "NeiraCoder/1.0.0",
+		"X-Title": "Researcherry Coder",
+		"User-Agent": "ResearcherryCoder/1.0.0",
 	},
 }))
 
 import { CerebrasHandler } from "../cerebras"
-import { cerebrasModels, type CerebrasModelId } from "@neira-coder/types"
+import { cerebrasModels, type CerebrasModelId } from "@researcherry/types"
 
 // Mock fetch globally
 global.fetch = vi.fn()
@@ -105,8 +105,8 @@ describe("CerebrasHandler", () => {
 						"Content-Type": "application/json",
 						Authorization: "Bearer test-api-key",
 						"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-						"X-Title": "Neira Coder",
-						"User-Agent": "NeiraCoder/1.0.0",
+						"X-Title": "Researcherry Coder",
+						"User-Agent": "ResearcherryCoder/1.0.0",
 					}),
 				}),
 			)

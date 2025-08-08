@@ -4,9 +4,9 @@ import EventEmitter from "events"
 import * as vscode from "vscode"
 import { z } from "zod"
 
-import type { CloudUserInfo, CloudOrganizationMembership } from "@neira-coder/types"
+import type { CloudUserInfo, CloudOrganizationMembership } from "@researcherry/types"
 
-import { getClerkBaseUrl, getNeiraCoderApiUrl, PRODUCTION_CLERK_BASE_URL } from "../Config.js"
+import { getClerkBaseUrl, getResearcherryCoderApiUrl, PRODUCTION_CLERK_BASE_URL } from "../Config.js"
 import { RefreshTimer } from "../RefreshTimer"
 import { getUserAgent } from "../utils"
 import type { AuthService, AuthServiceEvents, AuthState } from "./AuthService"
@@ -251,7 +251,7 @@ export class WebAuthService extends EventEmitter<AuthServiceEvents> implements A
 				state,
 				auth_redirect: `${vscode.env.uriScheme}://${publisher}.${name}`,
 			})
-			const url = `${getNeiraCoderApiUrl()}/extension/sign-in?${params.toString()}`
+			const url = `${getResearcherryCoderApiUrl()}/extension/sign-in?${params.toString()}`
 			await vscode.env.openExternal(vscode.Uri.parse(url))
 		} catch (error) {
 			this.log(`[auth] Error initiating Roo Code Cloud auth: ${error}`)

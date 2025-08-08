@@ -2,7 +2,7 @@
 
 import { ZodError } from "zod"
 
-import { type ModeConfig, customModesSettingsSchema } from "@neira-coder/types"
+import { type ModeConfig, customModesSettingsSchema } from "@researcherry/types"
 
 describe("CustomModesSettings", () => {
 	const validMode = {

@@ -80,7 +80,7 @@ export async function parseMentions(
 	urlContentFetcher: UrlContentFetcher,
 	fileContextTracker?: FileContextTracker,
 	rooIgnoreController?: RooIgnoreController,
-	showNeiraIgnoredFiles: boolean = true,
+	showResearcherryIgnoredFiles: boolean = true,
 	includeDiagnosticMessages: boolean = true,
 	maxDiagnosticMessages: number = 50,
 	maxReadFileLine?: number,
@@ -189,7 +189,7 @@ export async function parseMentions(
 					mentionPath,
 					cwd,
 					rooIgnoreController,
-					showNeiraIgnoredFiles,
+					showResearcherryIgnoredFiles,
 					maxReadFileLine,
 				)
 				if (mention.endsWith("/")) {
@@ -267,7 +267,7 @@ async function getFileOrFolderContent(
 	mentionPath: string,
 	cwd: string,
 	rooIgnoreController?: any,
-	showNeiraIgnoredFiles: boolean = true,
+	showResearcherryIgnoredFiles: boolean = true,
 	maxReadFileLine?: number,
 ): Promise<string> {
 	const unescapedPath = unescapeSpaces(mentionPath)
@@ -278,7 +278,7 @@ async function getFileOrFolderContent(
 
 		if (stats.isFile()) {
 			if (rooIgnoreController && !rooIgnoreController.validateAccess(absPath)) {
-				return `(File ${mentionPath} is ignored by .neiraignore)`
+				return `(File ${mentionPath} is ignored by .researcherryignore)`
 			}
 			try {
 				const content = await extractTextFromFile(absPath, maxReadFileLine)
@@ -303,7 +303,7 @@ async function getFileOrFolderContent(
 					isIgnored = !rooIgnoreController.validateAccess(entryPath)
 				}
 
-				if (isIgnored && !showNeiraIgnoredFiles) {
+				if (isIgnored && !showResearcherryIgnoredFiles) {
 					continue
 				}
 

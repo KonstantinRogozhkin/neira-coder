@@ -4,7 +4,7 @@ import * as path from "path"
 import * as os from "os"
 import * as vscode from "vscode"
 
-import type { ClineMessage } from "@neira-coder/types"
+import type { ClineMessage } from "@researcherry/types"
 
 import { waitFor, sleep } from "../utils"
 import { setDefaultSuiteTimeout } from "../test-utils"
@@ -30,15 +30,15 @@ suite.skip("Roo Code use_mcp_tool Tool", function () {
 		testFiles = {
 			simple: path.join(workspaceDir, `mcp-test-${Date.now()}.txt`),
 			testData: path.join(workspaceDir, `mcp-data-${Date.now()}.json`),
-			mcpConfig: path.join(workspaceDir, ".neira", "mcp.json"),
+			mcpConfig: path.join(workspaceDir, ".researcherry", "mcp.json"),
 		}
 
 		// Create initial test files
 		await fs.writeFile(testFiles.simple, "Initial content for MCP test")
 		await fs.writeFile(testFiles.testData, JSON.stringify({ test: "data", value: 42 }, null, 2))
 
-		// Create .neira directory and MCP configuration file
-		const rooDir = path.join(workspaceDir, ".neira")
+		// Create .researcherry directory and MCP configuration file
+		const rooDir = path.join(workspaceDir, ".researcherry")
 		await fs.mkdir(rooDir, { recursive: true })
 
 		const mcpConfig = {
@@ -74,9 +74,9 @@ suite.skip("Roo Code use_mcp_tool Tool", function () {
 			}
 		}
 
-		// Clean up .neira directory
+		// Clean up .researcherry directory
 		const workspaceDir = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || tempDir
-		const rooDir = path.join(workspaceDir, ".neira")
+		const rooDir = path.join(workspaceDir, ".researcherry")
 		try {
 			await fs.rm(rooDir, { recursive: true, force: true })
 		} catch {
@@ -515,12 +515,12 @@ suite.skip("Roo Code use_mcp_tool Tool", function () {
 				responseText.includes("mcp-test-") || responseText.includes(path.basename(testFiles.simple))
 			const hasDataFile =
 				responseText.includes("mcp-data-") || responseText.includes(path.basename(testFiles.testData))
-			const hasNeiraDir = responseText.includes(".neira")
+			const hasResearcherryDir = responseText.includes(".researcherry")
 
-			// At least one of our test files or the .neira directory should be present
+			// At least one of our test files or the .researcherry directory should be present
 			assert.ok(
-				hasTestFile || hasDataFile || hasNeiraDir,
-				`MCP server response should contain our test files or .neira directory. Expected to find: '${path.basename(testFiles.simple)}', '${path.basename(testFiles.testData)}', or '.neira'. Got: ${responseText.substring(0, 200)}...`,
+				hasTestFile || hasDataFile || hasResearcherryDir,
+				`MCP server response should contain our test files or .researcherry directory. Expected to find: '${path.basename(testFiles.simple)}', '${path.basename(testFiles.testData)}', or '.researcherry'. Got: ${responseText.substring(0, 200)}...`,
 			)
 
 			// Check for typical directory listing indicators
@@ -661,7 +661,7 @@ suite.skip("Roo Code use_mcp_tool Tool", function () {
 			const hasTestFiles =
 				responseText.includes("mcp-test-") ||
 				responseText.includes("mcp-data-") ||
-				responseText.includes(".neira") ||
+				responseText.includes(".researcherry") ||
 				responseText.includes(".txt") ||
 				responseText.includes(".json") ||
 				responseText.length > 10 // At least some content indicating directory structure

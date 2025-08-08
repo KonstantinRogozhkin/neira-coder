@@ -66,7 +66,7 @@ export default defineConfig(({ mode }) => {
 		...(gitSha ? { "process.env.PKG_SHA": JSON.stringify(gitSha) } : {}),
 	}
 
-	// TODO: We can use `@neira-coder/build` to generate `define` once the
+	// TODO: We can use `@researcherry/build` to generate `define` once the
 	// monorepo is deployed.
 	if (mode === "nightly") {
 		outDir = "../apps/vscode-nightly/build/webview-ui/build"
@@ -109,7 +109,7 @@ export default defineConfig(({ mode }) => {
 			alias: {
 				"@": resolve(__dirname, "./src"),
 				"@src": resolve(__dirname, "./src"),
-				"@neira": resolve(__dirname, "../src/shared"),
+				"@researcherry": resolve(__dirname, "../src/shared"),
 				"@roo": resolve(__dirname, "../src/shared"),
 				"styled-components": resolve(__dirname, "node_modules/styled-components"),
 			},

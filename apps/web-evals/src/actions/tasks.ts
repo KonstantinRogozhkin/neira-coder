@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache"
 
-import { getTasks as _getTasks } from "@neira-coder/evals"
+import { getTasks as _getTasks } from "@researcherry/evals"
 
 export async function getTasks(runId: number) {
 	const tasks = await _getTasks(runId)

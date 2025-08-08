@@ -10,27 +10,27 @@ describe("RooProtectedController", () => {
 	})
 
 	describe("isWriteProtected", () => {
-			it("should protect .neiraignore file", () => {
-		expect(controller.isWriteProtected(".neiraignore")).toBe(true)
-	})
-
-		it("should protect files in .neira directory", () => {
-			expect(controller.isWriteProtected(".neira/config.json")).toBe(true)
-			expect(controller.isWriteProtected(".neira/settings/user.json")).toBe(true)
-			expect(controller.isWriteProtected(".neira/modes/custom.json")).toBe(true)
+		it("should protect .researcherryignore file", () => {
+			expect(controller.isWriteProtected(".researcherryignore")).toBe(true)
 		})
 
-			it("should protect .neiraprotected file", () => {
-		expect(controller.isWriteProtected(".neiraprotected")).toBe(true)
-	})
+		it("should protect files in .researcherry directory", () => {
+			expect(controller.isWriteProtected(".researcherry/config.json")).toBe(true)
+			expect(controller.isWriteProtected(".researcherry/settings/user.json")).toBe(true)
+			expect(controller.isWriteProtected(".researcherry/modes/custom.json")).toBe(true)
+		})
 
-			it("should protect .neira-modes files", () => {
-		expect(controller.isWriteProtected(".neira-modes")).toBe(true)
-	})
+		it("should protect .researcherryprotected file", () => {
+			expect(controller.isWriteProtected(".researcherryprotected")).toBe(true)
+		})
 
-		it("should protect .neirarules* files", () => {
-			expect(controller.isWriteProtected(".neirarules")).toBe(true)
-			expect(controller.isWriteProtected(".neirarules.md")).toBe(true)
+		it("should protect .researcherry-modes files", () => {
+			expect(controller.isWriteProtected(".researcherry-modes")).toBe(true)
+		})
+
+		it("should protect .researcherryrules* files", () => {
+			expect(controller.isWriteProtected(".researcherryrules")).toBe(true)
+			expect(controller.isWriteProtected(".researcherryrules.md")).toBe(true)
 		})
 
 		it("should protect .clinerules* files", () => {
@@ -48,10 +48,10 @@ describe("RooProtectedController", () => {
 			expect(controller.isWriteProtected("AGENTS.md")).toBe(true)
 		})
 
-			it("should not protect other files starting with .neira", () => {
-		expect(controller.isWriteProtected(".neirasettings")).toBe(false)
-		expect(controller.isWriteProtected(".neiraconfig")).toBe(false)
-	})
+		it("should not protect other files starting with .researcherry", () => {
+			expect(controller.isWriteProtected(".researcherrysettings")).toBe(false)
+			expect(controller.isWriteProtected(".researcherryconfig")).toBe(false)
+		})
 
 		it("should not protect regular files", () => {
 			expect(controller.isWriteProtected("src/index.ts")).toBe(false)
@@ -59,36 +59,42 @@ describe("RooProtectedController", () => {
 			expect(controller.isWriteProtected("README.md")).toBe(false)
 		})
 
-		it("should not protect files that contain 'neira' but don't start with .neira", () => {
+		it("should not protect files that contain 'researcherry' but don't start with .researcherry", () => {
 			expect(controller.isWriteProtected("src/roo-utils.ts")).toBe(false)
 			expect(controller.isWriteProtected("config/roo.config.js")).toBe(false)
 		})
 
 		it("should handle nested paths correctly", () => {
-			expect(controller.isWriteProtected(".neira/config.json")).toBe(true) // .neira/** matches at root
-			expect(controller.isWriteProtected("nested/.neiraignore")).toBe(true) // .neiraignore matches anywhere by default
-			expect(controller.isWriteProtected("nested/.neira-modes")).toBe(true) // .neira-modes matches anywhere by default
-			expect(controller.isWriteProtected("nested/.neirarules.md")).toBe(true) // .neirarules* matches anywhere by default
+			expect(controller.isWriteProtected(".researcherry/config.json")).toBe(true) // .researcherry/** matches at root
+			expect(controller.isWriteProtected("nested/.researcherryignore")).toBe(true) // .researcherryignore matches anywhere by default
+			expect(controller.isWriteProtected("nested/.researcherry-modes")).toBe(true) // .researcherry-modes matches anywhere by default
+			expect(controller.isWriteProtected("nested/.researcherryrules.md")).toBe(true) // .researcherryrules* matches anywhere by default
 		})
 
 		it("should handle absolute paths by converting to relative", () => {
-			const absolutePath = path.join(TEST_CWD, ".neiraignore")
+			const absolutePath = path.join(TEST_CWD, ".researcherryignore")
 			expect(controller.isWriteProtected(absolutePath)).toBe(true)
 		})
 
 		it("should handle paths with different separators", () => {
-			expect(controller.isWriteProtected(".neira\\config.json")).toBe(true)
-			expect(controller.isWriteProtected(".neira/config.json")).toBe(true)
+			expect(controller.isWriteProtected(".researcherry\\config.json")).toBe(true)
+			expect(controller.isWriteProtected(".researcherry/config.json")).toBe(true)
 		})
 	})
 
 	describe("getProtectedFiles", () => {
 		it("should return set of protected files from a list", () => {
-			const files = ["src/index.ts", ".neiraignore", "package.json", ".neira/config.json", "README.md"]
+			const files = [
+				"src/index.ts",
+				".researcherryignore",
+				"package.json",
+				".researcherry/config.json",
+				"README.md",
+			]
 
 			const protectedFiles = controller.getProtectedFiles(files)
 
-			expect(protectedFiles).toEqual(new Set([".neiraignore", ".neira/config.json"]))
+			expect(protectedFiles).toEqual(new Set([".researcherryignore", ".researcherry/config.json"]))
 		})
 
 		it("should return empty set when no files are protected", () => {
@@ -102,14 +108,14 @@ describe("RooProtectedController", () => {
 
 	describe("annotatePathsWithProtection", () => {
 		it("should annotate paths with protection status", () => {
-			const files = ["src/index.ts", ".neiraignore", ".neira/config.json", "package.json"]
+			const files = ["src/index.ts", ".researcherryignore", ".researcherry/config.json", "package.json"]
 
 			const annotated = controller.annotatePathsWithProtection(files)
 
 			expect(annotated).toEqual([
 				{ path: "src/index.ts", isProtected: false },
-				{ path: ".neiraignore", isProtected: true },
-				{ path: ".neira/config.json", isProtected: true },
+				{ path: ".researcherryignore", isProtected: true },
+				{ path: ".researcherry/config.json", isProtected: true },
 				{ path: "package.json", isProtected: false },
 			])
 		})
@@ -128,8 +134,8 @@ describe("RooProtectedController", () => {
 
 			expect(instructions).toContain("# Protected Files")
 			expect(instructions).toContain("write-protected")
-			expect(instructions).toContain(".neiraignore")
-			expect(instructions).toContain(".neira/**")
+			expect(instructions).toContain(".researcherryignore")
+			expect(instructions).toContain(".researcherry/**")
 			expect(instructions).toContain("\u{1F6E1}") // Shield symbol
 		})
 	})
@@ -139,13 +145,13 @@ describe("RooProtectedController", () => {
 			const patterns = RooProtectedController.getProtectedPatterns()
 
 			expect(patterns).toEqual([
-				".neiraignore",
-				".neira-modes",
-				".neirarules*",
+				".researcherryignore",
+				".researcherry-modes",
+				".researcherryrules*",
 				".clinerules*",
-				".neira/**",
+				".researcherry/**",
 				".vscode/**",
-				".neiraprotected",
+				".researcherryprotected",
 				"AGENTS.md",
 			])
 		})

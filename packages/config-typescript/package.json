@@ -1,5 +1,5 @@
 {
-	"name": "@neira-coder/config-typescript",
+	"name": "@researcherry/config-typescript",
 	"private": true,
 	"publishConfig": {
 		"access": "public"

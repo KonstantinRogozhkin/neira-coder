@@ -1,6 +1,6 @@
 import { render, screen } from "@/utils/test-utils"
 import { HuggingFace } from "../HuggingFace"
-import { ProviderSettings } from "@neira-coder/types"
+import { ProviderSettings } from "@researcherry/types"
 
 // Mock the VSCode components
 vi.mock("@vscode/webview-ui-toolkit/react", () => ({

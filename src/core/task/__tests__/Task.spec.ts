@@ -6,8 +6,8 @@ import * as path from "path"
 import * as vscode from "vscode"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import type { GlobalState, ProviderSettings, ModelInfo } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { GlobalState, ProviderSettings, ModelInfo } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { Task } from "../Task"
 import { ClineProvider } from "../../webview/ClineProvider"

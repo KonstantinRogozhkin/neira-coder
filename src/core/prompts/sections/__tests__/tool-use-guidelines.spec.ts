@@ -22,25 +22,23 @@ describe("getToolUseGuidelinesSection", () => {
 
 			// Check that the guidelines include the codebase_search enforcement
 			expect(guidelines).toContain(
-				"CRITICAL: For ANY exploration of code you haven't examined yet in this conversation, you MUST use the `codebase_search` tool FIRST",
+				"КРИТИЧЕСКИ ВАЖНО: Для ЛЮБОГО исследования кода, который вы еще не изучили в этом разговоре, вы ОБЯЗАТЕЛЬНО должны сначала использовать инструмент `codebase_search`",
 			)
-			expect(guidelines).toContain("before any other search or file exploration tools")
-			expect(guidelines).toContain(
-				"semantic search to find relevant code based on meaning rather than just keywords",
-			)
+			expect(guidelines).toContain("ПЕРЕД любыми другими инструментами поиска или исследования файлов")
+			expect(guidelines).toContain("Это применяется на протяжении всего разговора, а не только в начале")
 		})
 
 		it("should maintain proper numbering with codebase_search", () => {
 			const guidelines = getToolUseGuidelinesSection(mockCodeIndexManagerEnabled)
 
 			// Check that all numbered items are present
-			expect(guidelines).toContain("1. In <thinking> tags")
-			expect(guidelines).toContain("2. **CRITICAL:")
-			expect(guidelines).toContain("3. Choose the most appropriate tool")
-			expect(guidelines).toContain("4. If multiple actions are needed")
-			expect(guidelines).toContain("5. Formulate your tool use")
-			expect(guidelines).toContain("6. After each tool use")
-			expect(guidelines).toContain("7. ALWAYS wait for user confirmation")
+			expect(guidelines).toContain("1. В тегах <thinking>")
+			expect(guidelines).toContain("2. **КРИТИЧЕСКИ ВАЖНО:")
+			expect(guidelines).toContain("3. Выберите наиболее подходящий инструмент")
+			expect(guidelines).toContain("4. Если требуется несколько действий")
+			expect(guidelines).toContain("5. Сформулируйте ваше использование инструмента")
+			expect(guidelines).toContain("6. После каждого использования инструмента")
+			expect(guidelines).toContain("7. ВСЕГДА ждите подтверждения")
 		})
 	})
 
@@ -49,22 +47,20 @@ describe("getToolUseGuidelinesSection", () => {
 			const guidelines = getToolUseGuidelinesSection(mockCodeIndexManagerDisabled)
 
 			// Check that the guidelines do not include the codebase_search enforcement
-			expect(guidelines).not.toContain(
-				"CRITICAL: For ANY exploration of code you haven't examined yet in this conversation, you MUST use the `codebase_search` tool FIRST",
-			)
-			expect(guidelines).not.toContain("semantic search to find relevant code based on meaning")
+			expect(guidelines).not.toContain("КРИТИЧЕСКИ ВАЖНО: Для ЛЮБОГО исследования кода")
+			expect(guidelines).not.toContain("ПЕРЕД любыми другими инструментами поиска")
 		})
 
 		it("should maintain proper numbering without codebase_search", () => {
 			const guidelines = getToolUseGuidelinesSection(mockCodeIndexManagerDisabled)
 
 			// Check that all numbered items are present with correct numbering
-			expect(guidelines).toContain("1. In <thinking> tags")
-			expect(guidelines).toContain("2. Choose the most appropriate tool")
-			expect(guidelines).toContain("3. If multiple actions are needed")
-			expect(guidelines).toContain("4. Formulate your tool use")
-			expect(guidelines).toContain("5. After each tool use")
-			expect(guidelines).toContain("6. ALWAYS wait for user confirmation")
+			expect(guidelines).toContain("1. В тегах <thinking>")
+			expect(guidelines).toContain("2. Выберите наиболее подходящий инструмент")
+			expect(guidelines).toContain("3. Если требуется несколько действий")
+			expect(guidelines).toContain("4. Сформулируйте ваше использование инструмента")
+			expect(guidelines).toContain("5. После каждого использования инструмента")
+			expect(guidelines).toContain("6. ВСЕГДА ждите подтверждения")
 		})
 	})
 
@@ -74,11 +70,13 @@ describe("getToolUseGuidelinesSection", () => {
 
 		// Check that the iterative process section is included in both cases
 		for (const guidelines of [guidelinesEnabled, guidelinesDisabled]) {
-			expect(guidelines).toContain("It is crucial to proceed step-by-step")
-			expect(guidelines).toContain("1. Confirm the success of each step before proceeding")
-			expect(guidelines).toContain("2. Address any issues or errors that arise immediately")
-			expect(guidelines).toContain("3. Adapt your approach based on new information")
-			expect(guidelines).toContain("4. Ensure that each action builds correctly")
+			expect(guidelines).toContain("Критически важно действовать пошагово")
+			expect(guidelines).toContain("1. Подтвердить успех каждого шага перед продолжением")
+			expect(guidelines).toContain("2. Решить любые проблемы или ошибки, которые возникают немедленно")
+			expect(guidelines).toContain(
+				"3. Адаптировать ваш подход на основе новой информации или неожиданных результатов",
+			)
+			expect(guidelines).toContain("4. Обеспечить, чтобы каждое действие правильно строилось на предыдущих")
 		}
 	})
 })

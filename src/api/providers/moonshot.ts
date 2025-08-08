@@ -1,4 +1,4 @@
-import { moonshotModels, moonshotDefaultModelId } from "@neira-coder/types"
+import { moonshotModels, moonshotDefaultModelId } from "@researcherry/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

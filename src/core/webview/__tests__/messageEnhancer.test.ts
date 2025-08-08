@@ -1,13 +1,13 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import { MessageEnhancer } from "../messageEnhancer"
-import { ProviderSettings, ClineMessage } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { ProviderSettings, ClineMessage } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 import * as singleCompletionHandlerModule from "../../../utils/single-completion-handler"
 import { ProviderSettingsManager } from "../../config/ProviderSettingsManager"
 
 // Mock dependencies
 vi.mock("../../../utils/single-completion-handler")
-vi.mock("@neira-coder/telemetry")
+vi.mock("@researcherry/telemetry")
 
 describe("MessageEnhancer", () => {
 	let mockProviderSettingsManager: ProviderSettingsManager

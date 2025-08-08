@@ -2,22 +2,15 @@ import { getAttemptCompletionDescription } from "../attempt-completion"
 
 describe("getAttemptCompletionDescription", () => {
 	it("should NOT include command parameter in the description", () => {
-		const args = {
-			cwd: "/test/path",
-			supportsComputerUse: false,
-		}
+		const description = getAttemptCompletionDescription()
 
-		const description = getAttemptCompletionDescription(args)
-
-		// Check that command parameter is NOT included (permanently disabled)
-		expect(description).not.toContain("- command: (optional)")
-		expect(description).not.toContain("A CLI command to execute to show a live demo")
-		expect(description).not.toContain("<command>Command to demonstrate result (optional)</command>")
-		expect(description).not.toContain("<command>open index.html</command>")
+		// Should not contain command parameter
+		expect(description).not.toContain("- command:")
+		expect(description).not.toContain("command parameter")
 
 		// But should still have the basic structure
 		expect(description).toContain("## attempt_completion")
-		expect(description).toContain("- result: (required)")
+		expect(description).toContain("- result: (обязательно)")
 		expect(description).toContain("<attempt_completion>")
 		expect(description).toContain("</attempt_completion>")
 	})
@@ -25,30 +18,23 @@ describe("getAttemptCompletionDescription", () => {
 	it("should work when no args provided", () => {
 		const description = getAttemptCompletionDescription()
 
-		// Check that command parameter is NOT included (permanently disabled)
-		expect(description).not.toContain("- command: (optional)")
-		expect(description).not.toContain("A CLI command to execute to show a live demo")
-		expect(description).not.toContain("<command>Command to demonstrate result (optional)</command>")
-		expect(description).not.toContain("<command>open index.html</command>")
+		// Should contain core functionality
+		expect(description).toContain("После каждого использования инструмента пользователь ответит результатом")
+		expect(description).toContain("Как только вы получили результаты использования инструментов")
 
 		// But should still have the basic structure
 		expect(description).toContain("## attempt_completion")
-		expect(description).toContain("- result: (required)")
+		expect(description).toContain("- result: (обязательно)")
 		expect(description).toContain("<attempt_completion>")
 		expect(description).toContain("</attempt_completion>")
 	})
 
 	it("should show example without command", () => {
-		const args = {
-			cwd: "/test/path",
-			supportsComputerUse: false,
-		}
-
-		const description = getAttemptCompletionDescription(args)
+		const description = getAttemptCompletionDescription()
 
 		// Check example format
-		expect(description).toContain("Example: Requesting to attempt completion with a result")
-		expect(description).toContain("I've updated the CSS")
+		expect(description).toContain("Пример: Запрос на попытку завершения с результатом")
+		expect(description).toContain("Я обновил CSS")
 		expect(description).not.toContain("Example: Requesting to attempt completion with a result and command")
 	})
 
@@ -56,14 +42,13 @@ describe("getAttemptCompletionDescription", () => {
 		const description = getAttemptCompletionDescription()
 
 		// Should contain core functionality
-		const coreText = "After each tool use, the user will respond with the result of that tool use"
+		const coreText = "После каждого использования инструмента пользователь ответит результатом"
 		expect(description).toContain(coreText)
 
 		// Should contain the important note
-		const importantNote = "IMPORTANT NOTE: This tool CANNOT be used until you've confirmed"
-		expect(description).toContain(importantNote)
-
-		// Should contain result parameter
-		expect(description).toContain("- result: (required)")
+		expect(description).toContain("ВАЖНОЕ ПРИМЕЧАНИЕ: Этот инструмент НЕ МОЖЕТ быть использован")
+		expect(description).toContain(
+			"подтвердили ли вы от пользователя, что любые предыдущие использования инструментов были успешными",
+		)
 	})
 })

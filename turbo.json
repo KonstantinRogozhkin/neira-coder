@@ -4,7 +4,7 @@
 		"lint": {},
 		"check-types": {},
 		"test": {
-			"dependsOn": ["@neira-coder/types#build"]
+			"dependsOn": ["@researcherry/types#build"]
 		},
 		"format": {},
 		"clean": {

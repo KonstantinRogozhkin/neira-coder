@@ -6,8 +6,8 @@ import { getCommand, getCommands } from "../commands"
 // Mock fs and path modules
 vi.mock("fs/promises")
 vi.mock("../roo-config", () => ({
-	getGlobalRooDirectory: vi.fn(() => "/mock/global/.neira"),
-	getProjectRooDirectoryForCwd: vi.fn(() => "/mock/project/.neira"),
+	getGlobalRooDirectory: vi.fn(() => "/mock/global/.researcherry"),
+	getProjectRooDirectoryForCwd: vi.fn(() => "/mock/project/.researcherry"),
 }))
 
 const mockFs = vi.mocked(fs)
@@ -41,7 +41,7 @@ npm run build
 				name: "setup",
 				content: "# Setup Command\n\nRun the following commands:\n```bash\nnpm install\nnpm run build\n```",
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "setup.md"),
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "setup.md"),
 				description: "Sets up the development environment",
 				argumentHint: undefined,
 			})
@@ -65,7 +65,7 @@ npm run build
 				name: "setup",
 				content: "# Setup Command\n\nRun the following commands:\n```bash\nnpm install\nnpm run build\n```",
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "setup.md"),
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "setup.md"),
 				description: undefined,
 				argumentHint: undefined,
 			})
@@ -108,7 +108,7 @@ Command content here.`
 				name: "setup",
 				content: commandContent.trim(),
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "setup.md"),
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "setup.md"),
 				description: undefined,
 				argumentHint: undefined,
 			})
@@ -143,7 +143,7 @@ Global setup instructions.`
 				name: "setup",
 				content: "# Project Setup\n\nProject-specific setup instructions.",
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "setup.md"),
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "setup.md"),
 				description: "Project-specific setup",
 				argumentHint: undefined,
 			})
@@ -170,7 +170,7 @@ Global setup instructions.`
 				name: "setup",
 				content: "# Global Setup\n\nGlobal setup instructions.",
 				source: "global",
-				filePath: expect.stringContaining(path.join(".neira", "commands", "setup.md")),
+				filePath: expect.stringContaining(path.join(".researcherry", "commands", "setup.md")),
 				description: "Global setup command",
 				argumentHint: undefined,
 			})
@@ -180,7 +180,7 @@ Global setup instructions.`
 	describe("argument-hint functionality", () => {
 		it("should load command with argument-hint from frontmatter", async () => {
 			const commandContent = `---
-description: Create a new release of the Neira Coder extension
+description: Create a new release of the Researcherry Coder extension
 argument-hint: patch | minor | major
 ---
 
@@ -197,8 +197,8 @@ Create a new release.`
 				name: "release",
 				content: "# Release Command\n\nCreate a new release.",
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "release.md"),
-				description: "Create a new release of the Neira Coder extension",
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "release.md"),
+				description: "Create a new release of the Researcherry Coder extension",
 				argumentHint: "patch | minor | major",
 			})
 		})
@@ -223,7 +223,7 @@ Deploy the application.`
 				name: "deploy",
 				content: "# Deploy Command\n\nDeploy the application.",
 				source: "project",
-				filePath: path.join("/test/cwd", ".neira", "commands", "deploy.md"),
+				filePath: path.join("/test/cwd", ".researcherry", "commands", "deploy.md"),
 				description: "Deploy application to environment",
 				argumentHint: "staging | production",
 			})

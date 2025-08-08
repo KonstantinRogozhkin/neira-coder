@@ -2,7 +2,7 @@ import { z } from "zod"
 
 import { clineMessageSchema, tokenUsageSchema } from "./message.js"
 import { toolNamesSchema, toolUsageSchema } from "./tool.js"
-import { neiraCoderSettingsSchema } from "./global-settings.js"
+import { researcherryCoderSettingsSchema } from "./global-settings.js"
 
 /**
  * isSubtaskSchema
@@ -13,10 +13,10 @@ export const isSubtaskSchema = z.object({
 export type IsSubtask = z.infer<typeof isSubtaskSchema>
 
 /**
- * NeiraCoderEvent
+ * ResearcherryCoderEvent
  */
 
-export enum NeiraCoderEventName {
+export enum ResearcherryCoderEventName {
 	Message = "message",
 	TaskCreated = "taskCreated",
 	TaskStarted = "taskStarted",
@@ -33,28 +33,33 @@ export enum NeiraCoderEventName {
 	EvalFail = "evalFail",
 }
 
-export const neiraCoderEventsSchema = z.object({
-	[NeiraCoderEventName.Message]: z.tuple([
+export const researcherryCoderEventsSchema = z.object({
+	[ResearcherryCoderEventName.Message]: z.tuple([
 		z.object({
 			taskId: z.string(),
 			action: z.union([z.literal("created"), z.literal("updated")]),
 			message: clineMessageSchema,
 		}),
 	]),
-	[NeiraCoderEventName.TaskCreated]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskStarted]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskModeSwitched]: z.tuple([z.string(), z.string()]),
-	[NeiraCoderEventName.TaskPaused]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskUnpaused]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskAskResponded]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskAborted]: z.tuple([z.string()]),
-	[NeiraCoderEventName.TaskSpawned]: z.tuple([z.string(), z.string()]),
-	[NeiraCoderEventName.TaskCompleted]: z.tuple([z.string(), tokenUsageSchema, toolUsageSchema, isSubtaskSchema]),
-	[NeiraCoderEventName.TaskTokenUsageUpdated]: z.tuple([z.string(), tokenUsageSchema]),
-	[NeiraCoderEventName.TaskToolFailed]: z.tuple([z.string(), toolNamesSchema, z.string()]),
+	[ResearcherryCoderEventName.TaskCreated]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskStarted]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskModeSwitched]: z.tuple([z.string(), z.string()]),
+	[ResearcherryCoderEventName.TaskPaused]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskUnpaused]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskAskResponded]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskAborted]: z.tuple([z.string()]),
+	[ResearcherryCoderEventName.TaskSpawned]: z.tuple([z.string(), z.string()]),
+	[ResearcherryCoderEventName.TaskCompleted]: z.tuple([
+		z.string(),
+		tokenUsageSchema,
+		toolUsageSchema,
+		isSubtaskSchema,
+	]),
+	[ResearcherryCoderEventName.TaskTokenUsageUpdated]: z.tuple([z.string(), tokenUsageSchema]),
+	[ResearcherryCoderEventName.TaskToolFailed]: z.tuple([z.string(), toolNamesSchema, z.string()]),
 })
 
-export type NeiraCoderEvents = z.infer<typeof neiraCoderEventsSchema>
+export type ResearcherryCoderEvents = z.infer<typeof researcherryCoderEventsSchema>
 
 /**
  * Ack
@@ -82,7 +87,7 @@ export const taskCommandSchema = z.discriminatedUnion("commandName", [
 	z.object({
 		commandName: z.literal(TaskCommandName.StartNewTask),
 		data: z.object({
-			configuration: neiraCoderSettingsSchema,
+			configuration: researcherryCoderSettingsSchema,
 			text: z.string(),
 			images: z.array(z.string()).optional(),
 			newTab: z.boolean().optional(),
@@ -106,72 +111,72 @@ export type TaskCommand = z.infer<typeof taskCommandSchema>
 
 export const taskEventSchema = z.discriminatedUnion("eventName", [
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.Message),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.Message],
+		eventName: z.literal(ResearcherryCoderEventName.Message),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.Message],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskCreated),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskCreated],
+		eventName: z.literal(ResearcherryCoderEventName.TaskCreated),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskCreated],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskStarted),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskStarted],
+		eventName: z.literal(ResearcherryCoderEventName.TaskStarted),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskStarted],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskModeSwitched),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskModeSwitched],
+		eventName: z.literal(ResearcherryCoderEventName.TaskModeSwitched),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskModeSwitched],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskPaused),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskPaused],
+		eventName: z.literal(ResearcherryCoderEventName.TaskPaused),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskPaused],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskUnpaused),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskUnpaused],
+		eventName: z.literal(ResearcherryCoderEventName.TaskUnpaused),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskUnpaused],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskAskResponded),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskAskResponded],
+		eventName: z.literal(ResearcherryCoderEventName.TaskAskResponded),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskAskResponded],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskAborted),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskAborted],
+		eventName: z.literal(ResearcherryCoderEventName.TaskAborted),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskAborted],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskSpawned),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskSpawned],
+		eventName: z.literal(ResearcherryCoderEventName.TaskSpawned),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskSpawned],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskCompleted),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskCompleted],
+		eventName: z.literal(ResearcherryCoderEventName.TaskCompleted),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskCompleted],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskTokenUsageUpdated),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskTokenUsageUpdated],
+		eventName: z.literal(ResearcherryCoderEventName.TaskTokenUsageUpdated),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskTokenUsageUpdated],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.TaskToolFailed),
-		payload: neiraCoderEventsSchema.shape[NeiraCoderEventName.TaskToolFailed],
+		eventName: z.literal(ResearcherryCoderEventName.TaskToolFailed),
+		payload: researcherryCoderEventsSchema.shape[ResearcherryCoderEventName.TaskToolFailed],
 		taskId: z.number().optional(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.EvalPass),
+		eventName: z.literal(ResearcherryCoderEventName.EvalPass),
 		payload: z.undefined(),
 		taskId: z.number(),
 	}),
 	z.object({
-		eventName: z.literal(NeiraCoderEventName.EvalFail),
+		eventName: z.literal(ResearcherryCoderEventName.EvalFail),
 		payload: z.undefined(),
 		taskId: z.number(),
 	}),

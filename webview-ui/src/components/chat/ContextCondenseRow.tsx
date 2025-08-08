@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { VSCodeBadge } from "@vscode/webview-ui-toolkit/react"
 
-import type { ContextCondense } from "@neira-coder/types"
+import type { ContextCondense } from "@researcherry/types"
 
 import { Markdown } from "./Markdown"
 import { ProgressIndicator } from "./ProgressIndicator"

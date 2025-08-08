@@ -44,7 +44,7 @@ describe("RooIgnore Response Formatting", () => {
 		mockReadFile.mockResolvedValue("node_modules\n.git\nsecrets/**\n*.log")
 	})
 
-	describe("formatResponse.neiraIgnoreError", () => {
+	describe("formatResponse.researcherryIgnoreError", () => {
 		/**
 		 * Tests the error message format for ignored files
 		 */
@@ -53,10 +53,10 @@ describe("RooIgnore Response Formatting", () => {
 
 			// Verify error message format
 			expect(errorMessage).toContain(
-				"Access to secrets/api-keys.json is blocked by the .neiraignore file settings",
+				"Access to secrets/api-keys.json is blocked by the .researcherryignore file settings",
 			)
 			expect(errorMessage).toContain("continue in the task without using this file")
-			expect(errorMessage).toContain("ask the user to update the .neiraignore file")
+			expect(errorMessage).toContain("ask the user to update the .researcherryignore file")
 		})
 
 		/**
@@ -119,9 +119,9 @@ describe("RooIgnore Response Formatting", () => {
 		})
 
 		/**
-		 * Tests formatFilesList when showNeiraIgnoredFiles is set to false
+		 * Tests formatFilesList when showResearcherryIgnoredFiles is set to false
 		 */
-		it("should hide ignored files when showNeiraIgnoredFiles is false", async () => {
+		it("should hide ignored files when showResearcherryIgnoredFiles is false", async () => {
 			// Create controller
 			const controller = new RooIgnoreController(TEST_CWD)
 			await controller.initialize()
@@ -145,13 +145,13 @@ describe("RooIgnore Response Formatting", () => {
 				"secrets/keys.json", // ignored
 			]
 
-			// Format with controller and showNeiraIgnoredFiles = false
+			// Format with controller and showResearcherryIgnoredFiles = false
 			const result = formatResponse.formatFilesList(
 				TEST_CWD,
 				files,
 				false,
 				controller as any,
-				false, // showNeiraIgnoredFiles = false
+				false, // showResearcherryIgnoredFiles = false
 			)
 
 			// Should contain allowed files
@@ -211,7 +211,7 @@ describe("RooIgnore Response Formatting", () => {
 		/**
 		 * Tests the instructions format
 		 */
-		it("should format .neiraignore instructions for the LLM", async () => {
+		it("should format .researcherryignore instructions for the LLM", async () => {
 			// Create controller
 			const controller = new RooIgnoreController(TEST_CWD)
 			await controller.initialize()
@@ -220,7 +220,7 @@ describe("RooIgnore Response Formatting", () => {
 			const instructions = controller.getInstructions()
 
 			// Verify format and content
-			expect(instructions).toContain("# .neiraignore")
+			expect(instructions).toContain("# .researcherryignore")
 			expect(instructions).toContain(LOCK_TEXT_SYMBOL)
 			expect(instructions).toContain("node_modules")
 			expect(instructions).toContain(".git")
@@ -235,11 +235,11 @@ describe("RooIgnore Response Formatting", () => {
 		/**
 		 * Tests null/undefined case
 		 */
-		it("should return undefined when no .neiraignore exists", async () => {
-			// Set up no .neiraignore
+		it("should return undefined when no .researcherryignore exists", async () => {
+			// Set up no .researcherryignore
 			mockFileExists.mockResolvedValue(false)
 
-			// Create controller without .neiraignore
+			// Create controller without .researcherryignore
 			const controller = new RooIgnoreController(TEST_CWD)
 			await controller.initialize()
 

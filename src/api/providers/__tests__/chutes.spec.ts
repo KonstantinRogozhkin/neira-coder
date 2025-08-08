@@ -8,7 +8,7 @@ import {
 	chutesDefaultModelId,
 	chutesModels,
 	DEEP_SEEK_DEFAULT_TEMPERATURE,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import { ChutesHandler } from "../chutes"
 

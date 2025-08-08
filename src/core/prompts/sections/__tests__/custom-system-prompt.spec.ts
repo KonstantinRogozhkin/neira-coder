@@ -37,7 +37,10 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Updated test: should re-throw unexpected errors
@@ -50,7 +53,10 @@ describe("loadSystemPromptFile", () => {
 
 		// Verify readFile was still called correctly
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	it("should return an empty string if the file content is empty", async () => {
@@ -61,7 +67,10 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Updated test to only check workspace interpolation
@@ -74,7 +83,10 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("Workspace is: /path/to/workspace")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Updated test for multiple occurrences of workspace
@@ -87,7 +99,10 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("Path: /path/to/workspace//path/to/workspace")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Updated test for mixed used/unused
@@ -101,7 +116,10 @@ describe("loadSystemPromptFile", () => {
 		// Unused variables should remain untouched
 		expect(result).toBe("Workspace: /path/to/workspace, Unused: {{unusedVar}}, Another: {{another}}")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Test remains valid, just needs the mode argument and updated template
@@ -114,7 +132,10 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("Workspace: /path/to/workspace, Missing: {{missingPlaceholder}}")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 
 	// Removed the test for extra keys as PromptVariables is simple now
@@ -129,6 +150,9 @@ describe("loadSystemPromptFile", () => {
 
 		expect(result).toBe("This is a static prompt.")
 		expect(mockedReadFile).toHaveBeenCalledTimes(1)
-		expect(mockedReadFile).toHaveBeenCalledWith(path.join("/mock/cwd", ".neira", "system-prompt-test"), "utf-8")
+		expect(mockedReadFile).toHaveBeenCalledWith(
+			path.join("/mock/cwd", ".researcherry", "system-prompt-test"),
+			"utf-8",
+		)
 	})
 })

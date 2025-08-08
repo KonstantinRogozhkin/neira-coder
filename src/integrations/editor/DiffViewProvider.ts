@@ -12,7 +12,7 @@ import { formatResponse } from "../../core/prompts/responses"
 import { diagnosticsToProblemsString, getNewDiagnostics } from "../diagnostics"
 import { ClineSayTool } from "../../shared/ExtensionMessage"
 import { Task } from "../../core/task/Task"
-import { DEFAULT_WRITE_DELAY_MS } from "@neira-coder/types"
+import { DEFAULT_WRITE_DELAY_MS } from "@researcherry/types"
 
 import { DecorationController } from "./DecorationController"
 

@@ -8,12 +8,12 @@ export const revalidate = 300
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-	title: "Neira Code Evals",
+	title: "Researcherry Code Evals",
 	openGraph: {
-		title: "Neira Code Evals",
+		title: "Researcherry Code Evals",
 		description: "Quantitative evals of LLM coding skills.",
-		url: "https://neira.app/evals",
-		siteName: "Neira Code",
+		url: "https://researcherry.app/evals",
+		siteName: "Researcherry Code",
 		images: {
 			url: "https://i.imgur.com/ijP7aZm.png",
 			width: 1954,

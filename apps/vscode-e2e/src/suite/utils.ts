@@ -1,4 +1,4 @@
-import type { NeiraCoderAPI } from "@neira-coder/types"
+import type { ResearcherryCoderAPI } from "@researcherry/types"
 
 type WaitForOptions = {
 	timeout?: number
@@ -40,7 +40,7 @@ export const waitFor = (
 }
 
 type WaitUntilAbortedOptions = WaitForOptions & {
-	api: NeiraCoderAPI
+	api: ResearcherryCoderAPI
 	taskId: string
 }
 
@@ -51,7 +51,7 @@ export const waitUntilAborted = async ({ api, taskId, ...options }: WaitUntilAbo
 }
 
 type WaitUntilCompletedOptions = WaitForOptions & {
-	api: NeiraCoderAPI
+	api: ResearcherryCoderAPI
 	taskId: string
 }
 

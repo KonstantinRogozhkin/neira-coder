@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
 
-import { TelemetryService } from "@neira-coder/telemetry"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { Task } from "../task/Task"
 import {

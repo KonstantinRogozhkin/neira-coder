@@ -1,7 +1,7 @@
-import type { NeiraCoderAPI } from "@neira-coder/types"
+import type { ResearcherryCoderAPI } from "@researcherry/types"
 
 declare global {
-	var api: NeiraCoderAPI
+	var api: ResearcherryCoderAPI
 }
 
 export {}

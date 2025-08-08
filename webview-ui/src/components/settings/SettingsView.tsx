@@ -25,7 +25,7 @@ import {
 	LucideIcon,
 } from "lucide-react"
 
-import type { ProviderSettings, ExperimentId } from "@neira-coder/types"
+import type { ProviderSettings, ExperimentId } from "@researcherry/types"
 
 import { TelemetrySetting } from "@roo/TelemetrySetting"
 
@@ -166,7 +166,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 		terminalZshP10k,
 		terminalZdotdir,
 		writeDelayMs,
-		showNeiraIgnoredFiles,
+		showResearcherryIgnoredFiles,
 		remoteBrowserEnabled,
 		maxReadFileLine,
 		maxImageFileSize,
@@ -324,7 +324,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 			vscode.postMessage({ type: "requestDelaySeconds", value: requestDelaySeconds })
 			vscode.postMessage({ type: "maxOpenTabsContext", value: maxOpenTabsContext })
 			vscode.postMessage({ type: "maxWorkspaceFiles", value: maxWorkspaceFiles ?? 200 })
-			vscode.postMessage({ type: "showNeiraIgnoredFiles", bool: showNeiraIgnoredFiles })
+			vscode.postMessage({ type: "showResearcherryIgnoredFiles", bool: showResearcherryIgnoredFiles })
 			vscode.postMessage({ type: "maxReadFileLine", value: maxReadFileLine ?? -1 })
 			vscode.postMessage({ type: "maxImageFileSize", value: maxImageFileSize ?? 5 })
 			vscode.postMessage({ type: "maxTotalImageSize", value: maxTotalImageSize ?? 20 })
@@ -673,7 +673,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 							listApiConfigMeta={listApiConfigMeta ?? []}
 							maxOpenTabsContext={maxOpenTabsContext}
 							maxWorkspaceFiles={maxWorkspaceFiles ?? 200}
-							showNeiraIgnoredFiles={showNeiraIgnoredFiles}
+							showResearcherryIgnoredFiles={showResearcherryIgnoredFiles}
 							maxReadFileLine={maxReadFileLine}
 							maxImageFileSize={maxImageFileSize}
 							maxTotalImageSize={maxTotalImageSize}

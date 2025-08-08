@@ -8,7 +8,7 @@ import { MAX_BATCH_TOKENS, MAX_ITEM_TOKENS, MAX_BATCH_RETRIES, INITIAL_RETRY_DEL
 vitest.mock("openai")
 
 // Mock TelemetryService
-vitest.mock("@neira-coder/telemetry", () => ({
+vitest.mock("@researcherry/telemetry", () => ({
 	TelemetryService: {
 		instance: {
 			captureEvent: vitest.fn(),

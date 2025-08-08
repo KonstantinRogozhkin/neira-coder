@@ -1,4 +1,23 @@
-# Neira Coder Changelog
+# Researcherry Coder Changelog
+
+## 3.31.17
+
+### Bug Fixes
+
+- fix: исправлены ошибки с TelemetryService.hasInstance в cache-manager.ts
+- fix: обновлены тесты промптов для соответствия русской локализации
+- fix: исправлены проблемы с линтером в web-researcherry-coder
+
+### Code Quality
+
+- test: обновлены снапшоты тестов для соответствия текущей реализации
+- test: исправлены тесты для objective, tool-use-guidelines и attempt-completion
+
+### Release Notes
+
+- Исправлены критические ошибки в системе телеметрии
+- Улучшена стабильность кода и тестов
+- Обновлена документация изменений
 
 ## 3.31.16
 
@@ -27,7 +46,7 @@
 ### Release Notes
 
 - Восстановлены все важные изменения из предыдущих коммитов
-- Добавлено описание возможностей Neira Coder в интерфейсе
+- Добавлено описание возможностей Researcherry Coder в интерфейсе
 - Улучшена визуальная презентация продукта
 
 ## 3.31.10
@@ -115,17 +134,17 @@
 
 ### Domain Migration
 
-- **BREAKING**: All roocode.com links updated to neira.app domain
-- feat: privacy policy links now point to https://neira.app/privacy
-- feat: documentation links updated to https://docs.neira.app
-- feat: blog links updated to https://blog.neira.app
-- feat: enterprise links updated to https://neira.app/enterprise
+- **BREAKING**: All roocode.com links updated to researcherry.app domain
+- feat: privacy policy links now point to https://researcherry.app/privacy
+- feat: documentation links updated to https://docs.researcherry.app
+- feat: blog links updated to https://blog.researcherry.app
+- feat: enterprise links updated to https://researcherry.app/enterprise
 
 ### Contact Information Updates
 
-- support email: support@roocode.com → support@neira.app
-- privacy email: privacy@roocode.com → privacy@neira.app
-- security email: security@roocode.com → security@neira.app
+- support email: support@roocode.com → support@researcherry.app
+- privacy email: privacy@roocode.com → privacy@researcherry.app
+- security email: security@roocode.com → security@researcherry.app
 
 ### Technical Updates
 
@@ -137,7 +156,7 @@
 
 ### Release Notes
 
-- Complete migration from roocode.com to neira.app branding
+- Complete migration from roocode.com to researcherry.app branding
 - All external links now point to new domain structure
 - Email addresses updated for support, privacy, and security
 - No functional changes - purely domain migration update
@@ -147,14 +166,14 @@
 
 ### Visual Updates
 
-- feat: updated application logo from single "N" to full "Neira" branding
-- design: replaced roo-logo.svg with comprehensive Neira Coder logo
+- feat: updated application logo from single "N" to full "Researcherry" branding
+- design: replaced roo-logo.svg with comprehensive Researcherry Coder logo
 - ui: enhanced welcome screen and account panel with new logo design
 - branding: improved visual consistency across all interface elements
 
 ### Release Notes
 
-- Logo now displays full "Neira" text instead of just "N" character
+- Logo now displays full "Researcherry" text instead of just "N" character
 - Updated logo appears in welcome screen, account panel, and chat interface
 - Logo automatically adapts to VS Code theme (dark/light mode)
 - No functional changes - purely visual branding update
@@ -182,7 +201,7 @@
 - fix: add proper type imports (Variants) for framer-motion animations
 - fix: replace ease arrays with string literals for better compatibility
 - fix: correct workspace package dependencies across all applications
-- fix: ensure all @roo-code/_ references are updated to @neira-coder/_
+- fix: ensure all @roo-code/_ references are updated to @researcherry/_
 - fix: restore and properly configure Config.ts in cloud package
 - fix: update TypeScript configurations with correct extends paths
 
@@ -197,15 +216,15 @@
 
 ### Bug Fixes
 
-- fix: resolve build issues after project rebranding from Roo Code to Neira Coder
-- fix: update all package references from @roo-code/_ to @neira-coder/_
+- fix: resolve build issues after project rebranding from Roo Code to Researcherry Coder
+- fix: update all package references from @roo-code/_ to @researcherry/_
 - fix: correct TypeScript configuration paths after rebranding
 - fix: restore missing Config.ts file in cloud package
 - fix: update import statements to use correct package names
 - fix: resolve workspace dependency conflicts
-- fix: update webview message types for showNeiraIgnoredFiles
-- fix: correct event name references (RooCodeEventName → NeiraCoderEventName)
-- fix: update settings schema references (rooCodeSettingsSchema → neiraCoderSettingsSchema)
+- fix: update webview message types for showResearcherryIgnoredFiles
+- fix: correct event name references (RooCodeEventName → ResearcherryCoderEventName)
+- fix: update settings schema references (rooCodeSettingsSchema → researcherryCoderSettingsSchema)
 
 ### Technical Improvements
 
@@ -217,15 +236,15 @@
 
 ### Features
 
-- feat: migrate .roomodes file path to .neira/.neira-modes for better organization
-- feat: update all file paths from .roomodes to .neira-modes throughout the codebase
-- feat: improve file organization by placing configuration files in .neira subdirectory
+- feat: migrate .roomodes file path to .researcherry/.researcherry-modes for better organization
+- feat: update all file paths from .roomodes to .researcherry-modes throughout the codebase
+- feat: improve file organization by placing configuration files in .researcherry subdirectory
 
 ### Bug Fixes
 
-- fix: update all test files to use new .neira/.neira-modes file paths
-- fix: correct localization messages to reference .neira-modes instead of .roomodes
-- fix: update protected file patterns to include .neira-modes
+- fix: update all test files to use new .researcherry/.researcherry-modes file paths
+- fix: correct localization messages to reference .researcherry-modes instead of .roomodes
+- fix: update protected file patterns to include .researcherry-modes
 - fix: ensure all marketplace installations use the new file path structure
 - fix: update clear-modes-cache script to handle new file paths
 
@@ -233,14 +252,14 @@
 
 ### Bug Fixes
 
-- fix: resolve MCP server creation issue where .roo folder was created instead of .neira folder
-- fix: update all file paths from .roo to .neira for consistent branding
+- fix: resolve MCP server creation issue where .roo folder was created instead of .researcherry folder
+- fix: update all file paths from .roo to .researcherry for consistent branding
 - fix: correct MCP server configuration paths in SimpleInstaller, McpHub, and MarketplaceManager
-- fix: update system prompt file paths to use .neira directory
-- fix: correct custom instructions and rules file paths to use .neira directory
-- fix: update all test files to use .neira paths instead of .roo paths
-- fix: correct localization files to reference .neira/mcp.json instead of .roo/mcp.json
-- fix: ensure all configuration directories use .neira naming convention
+- fix: update system prompt file paths to use .researcherry directory
+- fix: correct custom instructions and rules file paths to use .researcherry directory
+- fix: update all test files to use .researcherry paths instead of .roo paths
+- fix: correct localization files to reference .researcherry/mcp.json instead of .roo/mcp.json
+- fix: ensure all configuration directories use .researcherry naming convention
 
 ## 3.30.5
 
@@ -256,8 +275,8 @@
 
 ### Features
 
-- feat: change rules directory from .roo/rules/ to .neira/rules/ for better branding consistency
-- feat: add new neira-config service for managing .neira directory paths
+- feat: change rules directory from .roo/rules/ to .researcherry/rules/ for better branding consistency
+- feat: add new researcherry-config service for managing .researcherry directory paths
 - feat: maintain backward compatibility with legacy .roorules/.clinerules files
 
 ### Bug Fixes
@@ -288,7 +307,7 @@
 ### Minor Changes
 
 - fix: resolve command reference errors by aligning menu commands with defined commands
-- fix: correct command prefixes from neira-coder._ to neira._ in context menus
+- fix: correct command prefixes from researcherry._ to researcherry._ in context menus
 - fix: eliminate "Menu item references a command which is not defined" warnings
 
 ## 3.29.0
@@ -321,7 +340,7 @@
 
 ### Minor Changes
 
-- feat: complete rename from Roo Code to Neira Coder
+- feat: complete rename from Roo Code to Researcherry Coder
 
 ## [3.25.4] - 2025-07-30
 
@@ -348,7 +367,7 @@
 - Fix: Prevent input clearing when clicking chat buttons (thanks @hassoncs!)
 - Update PR reviewer rules and mode configuration (thanks @daniel-lxs!)
 - Add translation check action to pull_request.opened event (thanks @app/roomote!)
-- Remove "(prev Neira Cline)" from extension title in all languages (thanks @app/roomote!)
+- Remove "(prev Researcherry Cline)" from extension title in all languages (thanks @app/roomote!)
 - Remove event types mention from PR reviewer rules (thanks @daniel-lxs!)
 
 ## [3.25.2] - 2025-07-29
@@ -401,7 +420,7 @@
 
 ## [3.23.19] - 2025-07-23
 
-- Add Neira Coder Cloud Waitlist CTAs (thanks @brunobergher!)
+- Add Researcherry Coder Cloud Waitlist CTAs (thanks @brunobergher!)
 - Split commands on newlines when evaluating auto-approve
 - Smarter auto-deny of commands
 
@@ -701,7 +720,7 @@
 
 ## [3.21.0] - 2025-06-17
 
-- Add Neira Marketplace to make it easy to discover and install great MCPs and modes!
+- Add Researcherry Marketplace to make it easy to discover and install great MCPs and modes!
 - Add Gemini 2.5 models (Pro, Flash and Flash Lite) (thanks @daniel-lxs!)
 - Add support for Excel (.xlsx) files in tools (thanks @chrarnoldus!)
 - Add max tokens checkbox option for OpenAI compatible provider (thanks @AlexandruSmirnov!)
@@ -712,7 +731,7 @@
 - Fix codebase indexing alignment with list-files hidden directory filtering (thanks @daniel-lxs!)
 - Fix subtask completion mismatch (thanks @feifei325!)
 - Fix Windows path normalization in MCP variable injection (thanks @daniel-lxs!)
-- Update marketplace branding to 'Neira Marketplace' (thanks @SannidhyaSah!)
+- Update marketplace branding to 'Researcherry Marketplace' (thanks @SannidhyaSah!)
 - Refactor to more consistent history UI (thanks @elianiva!)
 - Adjust context menu positioning to be near Copilot
 - Update evals Docker setup to work on Windows (thanks @StevenTCramer!)
@@ -764,7 +783,7 @@
 - Update O3 model pricing
 - Add manual OpenAI-compatible format specification and parsing (thanks @dflatline!)
 - Add core tools integration tests for comprehensive coverage
-- Add JSDoc documentation for Neira ClineAsk and Neira ClineSay types (thanks @hannesrudolph!)
+- Add JSDoc documentation for Researcherry ClineAsk and Researcherry ClineSay types (thanks @hannesrudolph!)
 - Populate whenToUse descriptions for built-in modes
 - Fix file write tool with early relPath & newContent validation checks (thanks @Ruakij!)
 - Fix TaskItem display and copy issues with HTML tags in task messages (thanks @forestyoo!)
@@ -932,7 +951,7 @@
 
 ## [3.17.2] - 2025-05-15
 
-- Revert "Switch to the new Neira message parser" (appears to cause a tool parsing bug)
+- Revert "Switch to the new Researcherry message parser" (appears to cause a tool parsing bug)
 - Lock the versions of vsce and ovsx
 
 ## [3.17.1] - 2025-05-15
@@ -947,14 +966,14 @@
 - Add experimental feature to intelligently condense the task context instead of truncating it
 - Fix one of the causes of the gray screen issue (thanks @xyOz-dev!)
 - Focus improvements for better UI interactions (thanks Cline!)
-- Switch to the new Neira message parser for improved performance (thanks Cline!)
+- Switch to the new Researcherry message parser for improved performance (thanks Cline!)
 - Enable source maps for improved debugging (thanks @KJ7LNW!)
 - Update OpenRouter provider to use provider-specific model info (thanks @daniel-lxs!)
 - Fix Requesty cost/token reporting (thanks @dtrugman!)
 - Improve command execution UI
 - Add more in-app links to relevant documentation
 - Update the new task tool description and the ask mode custom instructions in the system prompt
-- Add IPC types to neira-coder.d.ts
+- Add IPC types to researcherry.d.ts
 - Add build VSIX workflow to pull requests (thanks @SmartManoj!)
 - Improve apply_diff tool to intelligently deduce line numbers (thanks @samhvw8!)
 - Fix command validation for shell array indexing (thanks @KJ7LNW!)
@@ -1021,7 +1040,7 @@
 - Fix display issue of the programming language dropdown in the code block component (thanks @zhangtony239)
 - MCP server errors are now captured and shown in a new "Errors" tab (thanks @robertheadley)
 - Error logging will no longer break MCP functionality if the server is properly connected (thanks @ksze)
-- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Neira Coder settings (thanks @KJ7LNW)
+- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Researcherry Coder settings (thanks @KJ7LNW)
 - Add `gemini-2.5-pro-preview-05-06` to the Vertex and Gemini providers (thanks @zetaloop)
 - Ensure evals exercises are up-to-date before running evals (thanks @shariqriazz)
 - Lots of general UI improvements (thanks @elianiva)
@@ -1038,7 +1057,7 @@
 
 ## [3.15.4] - 2025-05-04
 
-- Fix a nasty bug that would cause Neira Coder to hang, particularly in orchestrator mode
+- Fix a nasty bug that would cause Researcherry Coder to hang, particularly in orchestrator mode
 - Improve Gemini caching efficiency
 
 ## [3.15.3] - 2025-05-02
@@ -1077,8 +1096,8 @@
 - Improve the auto-approve toggle buttons for some high-contrast VSCode themes
 - Offload expensive count token operations to a web worker (thanks @samhvw8)
 - Improve support for mult-root workspaces (thanks @snoyiatk)
-- Simplify and streamline Neira Coder's quick actions
-- Allow Neira Coder settings to be imported from the welcome screen (thanks @julionav)
+- Simplify and streamline Researcherry Coder's quick actions
+- Allow Researcherry Coder settings to be imported from the welcome screen (thanks @julionav)
 - Remove unused types (thanks @wkordalski)
 - Improve the performance of mode switching (thanks @dlab-anton)
 - Fix importing & exporting of custom modes (thanks @julionav)
@@ -1092,7 +1111,7 @@
 - Clean up settings data model
 - Omit reasoning params for non-reasoning models
 - Clearer documentation for adding settings (thanks @shariqriazz!)
-- Fix word wrapping in Neira message title (thanks @zhangtony239!)
+- Fix word wrapping in Researcherry message title (thanks @zhangtony239!)
 - Update default model id for Unbound from claude 3.5 to 3.7 (thanks @pugazhendhi-m!)
 
 ## [3.14.2] - 2025-04-24
@@ -1115,26 +1134,26 @@
 - Fix file drag and drop on Windows and when using SSH tunnels (thanks @NyxJae!)
 - Correctly revert changes and suggest alternative tools when write_to_file fails on a missing line count
 - Allow interpolation of `workspace`, `mode`, `language`, `shell`, and `operatingSystem` into custom system prompt overrides (thanks @daniel-lxs!)
-- Fix interpolation bug in the “add to context” code action (thanks @elianiva!)
+- Fix interpolation bug in the "add to context" code action (thanks @elianiva!)
 - Preserve editor state and prevent tab unpinning during diffs (thanks @seedlord!)
 - Improvements to icon rendering on Linux (thanks @elianiva!)
 - Improvements to Requesty model list fetching (thanks @dtrugman!)
-- Fix user feedback not being added to conversation history in API error state, redundant ‘TASK RESUMPTION’ prompts, and error messages not showing after cancelling API requests (thanks @System233!)
+- Fix user feedback not being added to conversation history in API error state, redundant 'TASK RESUMPTION' prompts, and error messages not showing after cancelling API requests (thanks @System233!)
 - Track tool use errors in evals
 - Fix MCP hub error when dragging extension to another sidebar
 - Improve display of long MCP tool arguments
-- Fix redundant ‘TASK RESUMPTION’ prompts (thanks @System233!)
+- Fix redundant 'TASK RESUMPTION' prompts (thanks @System233!)
 - Fix bug opening files when editor has no workspace root
 - Make the VS Code LM provider show the correct model information (thanks @QuinsZouls!)
 - Fixes to make the focusInput command more reliable (thanks @hongzio!)
 - Better handling of aftercursor content in context mentions (thanks @elianiva!)
 - Support injecting environment variables in MCP config (thanks @NamesMT!)
-- Better handling of FakeAI “controller” object (thanks @wkordalski)
+- Better handling of FakeAI "controller" object (thanks @wkordalski)
 - Remove unnecessary calculation from VS Code LM provider (thanks @d-oit!)
 - Allow Amazon Bedrock Marketplace ARNs (thanks @mlopezr!)
 - Give better loading feedback on chat rows (thanks @elianiva!)
 - Performance improvements to task size calculations
-- Don’t immediately show a model ID error when changing API providers
+- Don't immediately show a model ID error when changing API providers
 - Fix apply_diff edge cases
 - Use a more sensible task export icon
 - Use path aliases in webview source files
@@ -1242,7 +1261,7 @@
 - Improve readFileTool XML output format (thanks @KJ7LNW!)
 - Add o1-pro support (thanks @arthurauffray!)
 - Follow symlinked rules files/directories to allow for more flexible rule setups
-- Focus Neira Coder in the sidebar when running tasks in the sidebar via the API
+- Focus Researcherry Coder in the sidebar when running tasks in the sidebar via the API
 - Improve subtasks UI
 
 ## [3.11.10] - 2025-04-08
@@ -1264,7 +1283,7 @@
 - Enhance Rust tree-sitter parser with advanced language structures (thanks @KJ7LNW!)
 - Persist settings on api.setConfiguration (thanks @gtaylor!)
 - Add deep links to settings sections
-- Add command to focus Neira Coder input field (thanks @axkirillov!)
+- Add command to focus Researcherry Coder input field (thanks @axkirillov!)
 - Add resize and hover actions to the browser (thanks @SplittyDev!)
 - Add resumeTask and isTaskInHistory to the API (thanks @franekp!)
 - Fix bug displaying boolean/numeric suggested answers
@@ -1313,7 +1332,7 @@
 - Fix issue where prompts and settings tabs were not scrollable when accessed from dropdown menus
 - Update AWS region dropdown menu to the most recent data (thanks @Smartsheet-JB-Brown!)
 - Fix prompt enhancement for Bedrock (thanks @Smartsheet-JB-Brown!)
-- Allow processes to access the Neira Coder API via a unix socket
+- Allow processes to access the Researcherry Coder API via a unix socket
 - Improve zh-TW Traditional Chinese translations (thanks @PeterDaveHello!)
 - Add support for Azure AI Inference Service with DeepSeek-V3 model (thanks @thomasjeung!)
 - Fix off-by-one error in tree-sitter line numbers
@@ -1349,8 +1368,8 @@
 - Improvements to partial file reads (thanks @KJ7LNW!)
 - Fix list_code_definition_names to support files (thanks @KJ7LNW!)
 - Refactor tool-calling logic to make the code a lot easier to work with (thanks @diarmidmackenzie, @bramburn, @KJ7LNW, and everyone else who helped!)
-- Prioritize “Add to Context” in the code actions and include line numbers (thanks @samhvw8!)
-- Add an activation command that other extensions can use to interface with Neira Coder (thanks @gtaylor!)
+- Prioritize "Add to Context" in the code actions and include line numbers (thanks @samhvw8!)
+- Add an activation command that other extensions can use to interface with Researcherry Coder (thanks @gtaylor!)
 - Preserve language characters in file @-mentions (thanks @aheizi!)
 - Browser tool improvements (thanks @afshawnlotfi!)
 - Display info about partial reads in the chat row
@@ -1382,18 +1401,18 @@
 - Add taskCreated event to API and subscribe to Cline events earlier (thanks @wkordalski!)
 - Fixes to numeric formatting suffix internationalization (thanks @feifei325!)
 - Fix open tab support in the context mention suggestions (thanks @aheizi!)
-- Better display of OpenRouter “overloaded” error messages
+- Better display of OpenRouter "overloaded" error messages
 - Fix browser tool visibility in system prompt preview (thanks @cannuri!)
 - Fix the supportsPromptCache value for OpenAI models (thanks @PeterDaveHello!)
 - Fix readme links to docs (thanks @kvokka!)
-- Run ‘npm audit fix’ on all of our libraries
+- Run 'npm audit fix' on all of our libraries
 
 ## [3.10.3] - 2025-03-23
 
 - Update the welcome page to provide 1-click OAuth flows with LLM routers (thanks @dtrugman!)
 - Switch to a more direct method of tracking OpenRouter tokens/spend
 - Make partial file reads backwards-compatible with custom system prompts and give users more control over the chunk size
-- Fix issues where questions and suggestions weren’t showing up for non-streaming models and were hard to read in some themes
+- Fix issues where questions and suggestions weren't showing up for non-streaming models and were hard to read in some themes
 - A variety of fixes and improvements to experimental multi-block diff (thanks @KJ7LNW!)
 - Fix opacity of drop-down menus in settings (thanks @KJ7LNW!)
 - Fix bugs with reading and mentioning binary files like PDFs
@@ -1442,7 +1461,7 @@
 
 ## [3.9.0] - 2025-03-18
 
-- Internationalize Neira Coder into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
+- Internationalize Researcherry Coder into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
 - Bring back support for MCP over SSE (thanks @aheizi!)
 - Add a text-to-speech option to have Roo talk to you as it works (thanks @heyseth!)
 - Choose a specific provider when using OpenRouter (thanks PhunkyBob!)
@@ -1456,8 +1475,8 @@
 - Improve task deletion when underlying files are missing (thanks @GitlyHallows!)
 - Improve support for NixOS & direnv (thanks @wkordalski!)
 - Fix wheel scrolling when Roo is opened in editor tabs (thanks @GitlyHallows!)
-- Don’t automatically mention the file when using the "Add to context" code action (thanks @qdaxb!)
-- Expose task stack in `NeiraCodeAPI` (thanks @franekp!)
+- Don't automatically mention the file when using the "Add to context" code action (thanks @qdaxb!)
+- Expose task stack in `ResearcherryCodeAPI` (thanks @franekp!)
 - Give the models visibility into the current task's API cost
 
 ## [3.8.6] - 2025-03-13
@@ -1522,17 +1541,17 @@
 
 ## [3.8.0] - 2025-03-07
 
-- Add opt-in telemetry to help us improve Neira Coder faster (thanks Cline!)
+- Add opt-in telemetry to help us improve Researcherry Coder faster (thanks Cline!)
 - Fix terminal overload / gray screen of death, and other terminal issues
 - Add a new experimental diff editing strategy that applies multiple diff edits at once (thanks @qdaxb!)
-- Add support for a .rooignore to prevent Neira Coder from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
+- Add support for a .rooignore to prevent Researcherry Coder from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
 - Update the new_task tool to return results to the parent task on completion, supporting better orchestration (thanks @shaybc!)
 - Support running Roo in multiple editor windows simultaneously (thanks @samhvw8!)
 - Make checkpoints asynchronous and exclude more files to speed them up
 - Redesign the settings page to make it easier to navigate
 - Add credential-based authentication for Vertex AI, enabling users to easily switch between Google Cloud accounts (thanks @eonghk!)
 - Update the DeepSeek provider with the correct baseUrl and track caching correctly (thanks @olweraltuve!)
-- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Neira Coder (thanks @NyxJae)!
+- Add a new "Human Relay" provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Researcherry Coder (thanks @NyxJae)!
 - Add observability for OpenAI providers (thanks @refactorthis!)
 - Support speculative decoding for LM Studio local models (thanks @adamwlarson!)
 - Improve UI for mode/provider selectors in chat
@@ -1595,7 +1614,7 @@
 
 ## [3.7.5] - 2025-02-26
 
-- Fix context window truncation math (see [#1173](https://github.com/NeiraCoderInc/Neira-Coder/issues/1173))
+- Fix context window truncation math (see [#1173](https://github.com/ResearcherryCoderInc/researcherry/issues/1173))
 - Fix various issues with the model picker (thanks @System233!)
 - Fix model input / output cost parsing (thanks @System233!)
 - Add drag-and-drop for files
@@ -1621,7 +1640,7 @@
 
 ## [3.7.0] - 2025-02-24
 
-- Introducing Neira Coder 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
+- Introducing Researcherry Coder 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
 
 ## [3.3.26] - 2025-02-27
 
@@ -1810,7 +1829,7 @@
 - Ask and Architect modes can now edit markdown files
 - Custom modes can now be restricted to specific file patterns (for example, a technical writer who can only edit markdown files 👋)
 - Support for configuring the Bedrock provider with AWS Profiles
-- New Neira Coder community Discord at https://neiracoder.com/discord!
+- New Researcherry Coder community Discord at https://researcherrycoder.com/discord!
 
 ## [3.2.8] - 2025-02-17
 
@@ -1842,15 +1861,15 @@
 
 ## [3.2.0 - 3.2.2] - 2025-02-17
 
-- **Name Change From Neira Cline to Neira Coder:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Neira Cline to Neira Coder to better reflect our identity as we chart our own course.
+- **Name Change From Researcherry Cline to Researcherry Coder:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Researcherry Cline to Researcherry Coder to better reflect our identity as we chart our own course.
 
-- **Custom Modes:** Create your own personas for Neira Coder! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
+- **Custom Modes:** Create your own personas for Researcherry Coder! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
     - Define custom prompts
     - Choose which tools each mode can access
     - Create specialized assistants for any workflow
     - Just type "Create a new mode for <X>" or visit the Prompts tab in the top menu to get started
 
-Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be part of our next chapter!
+Join us at https://www.reddit.com/r/ResearcherryCoder to share your custom modes and be part of our next chapter!
 
 ## [3.1.7] - 2025-02-17
 
@@ -1903,7 +1922,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [3.0.0] - 2025-02-17
 
-- This release adds chat modes! Now you can ask Neira Coder questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Neira Coder Reddit! https://www.reddit.com/r/NeiraCoder
+- This release adds chat modes! Now you can ask Researcherry Coder questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Researcherry Coder Reddit! https://www.reddit.com/r/ResearcherryCoder
 
 ## [2.2.46] - 2025-02-17
 
@@ -2024,7 +2043,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.2.16] - 2025-02-17
 
-- Incorporate Premshay's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
+- Incorporate Premshay's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
 
 ## [2.2.14 - 2.2.15] - 2025-02-17
 
@@ -2068,7 +2087,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.2.0] - 2025-02-17
 
-- Incorporate MCP changes from Neira Cline 2.2.0
+- Incorporate MCP changes from Researcherry Cline 2.2.0
 
 ## [2.1.21] - 2025-02-17
 
@@ -2096,7 +2115,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.15] - 2025-02-17
 
-- Incorporate dbasclpy's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/54) to add support for gemini-exp-1206
+- Incorporate dbasclpy's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/54) to add support for gemini-exp-1206
 - Make it clear that diff editing is very experimental
 
 ## [2.1.14] - 2025-02-17
@@ -2106,7 +2125,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.13] - 2025-02-17
 
-- Fix https://github.com/NeiraCoderInc/Neira-Coder/issues/50 where sound effects were not respecting settings
+- Fix https://github.com/ResearcherryCoderInc/researcherry/issues/50 where sound effects were not respecting settings
 
 ## [2.1.12] - 2025-02-17
 
@@ -2114,7 +2133,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.11] - 2025-02-17
 
-- Incorporate lloydchang's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/42) to add support for OpenRouter compression
+- Incorporate lloydchang's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/42) to add support for OpenRouter compression
 
 ## [2.1.10] - 2025-02-17
 
@@ -2126,7 +2145,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.8] - 2025-02-17
 
-- Neira Cline now allows configuration of which commands are allowed without approval!
+- Researcherry Cline now allows configuration of which commands are allowed without approval!
 
 ## [2.1.7] - 2025-02-17
 
@@ -2140,7 +2159,7 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.6] - 2025-02-17
 
-- Neira Cline now runs in all VSCode-compatible editors
+- Researcherry Cline now runs in all VSCode-compatible editors
 
 ## [2.1.5] - 2025-02-17
 
@@ -2148,11 +2167,11 @@ Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be
 
 ## [2.1.4] - 2025-02-17
 
-- Neira Cline now can run side-by-side with Cline
+- Researcherry Cline now can run side-by-side with Cline
 
 ## [2.1.3] - 2025-02-17
 
-- Neira Cline now allows browser actions without approval when `alwaysAllowBrowser` is true
+- Researcherry Cline now allows browser actions without approval when `alwaysAllowBrowser` is true
 
 ## [2.1.2] - 2025-02-17
 

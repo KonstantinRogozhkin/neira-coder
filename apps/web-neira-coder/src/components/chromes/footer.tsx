@@ -35,21 +35,27 @@ export function Footer() {
 				<div className="xl:grid xl:grid-cols-3 xl:gap-8">
 					<div className="space-y-8">
 						<div className="flex items-center">
-							<Image src={logoSrc} alt="Neira Code Logo" width={120} height={40} className="h-6 w-auto" />
+							<Image
+								src={logoSrc}
+								alt="Researcherry Code Logo"
+								width={120}
+								height={40}
+								className="h-6 w-auto"
+							/>
 						</div>
 						<p className="max-w-md text-sm leading-6 text-muted-foreground md:pr-16 lg:pr-32">
 							Empowering developers to build better software faster with AI-powered tools and insights.
 						</p>
 
-						{/* Made with Neira Code */}
+						{/* Made with Researcherry Code */}
 						<a
-							href="https://neira.app"
+							href="https://researcherry.app"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center space-x-2 group">
 							<Image
 								src={resolvedTheme === "light" ? "/RooCode-Badge-blk.svg" : "/RooCode-Badge-white.svg"}
-								alt="Made with Neira Code"
+								alt="Made with Researcherry Code"
 								width={120}
 								height={40}
 								className="h-8 w-auto opacity-70 transition-opacity group-hover:opacity-100"
@@ -180,7 +186,7 @@ export function Footer() {
 								<ul className="mt-6 space-y-4">
 									<li>
 										<a
-											href="mailto:support@neira.app"
+											href="mailto:support@researcherry.app"
 											className="text-sm leading-6 text-muted-foreground transition-colors hover:text-foreground">
 											Contact
 										</a>
@@ -249,7 +255,7 @@ export function Footer() {
 															href={INTERNAL_LINKS.PRIVACY_POLICY_WEBSITE}
 															onClick={() => setPrivacyDropdownOpen(false)}
 															className="rounded-md px-3 py-2 transition-colors hover:bg-accent/50 hover:text-foreground">
-															Neira Code Cloud
+															Researcherry Code Cloud
 														</Link>
 													</div>
 												</div>
@@ -341,7 +347,7 @@ export function Footer() {
 
 				<div className="mt-16 flex border-t border-border pt-8 sm:mt-20 lg:mt-24">
 					<p className="mx-auto text-sm leading-5 text-muted-foreground">
-						&copy; {new Date().getFullYear()} Neira Code. All rights reserved.
+						&copy; {new Date().getFullYear()} Researcherry Code. All rights reserved.
 					</p>
 				</div>
 			</div>

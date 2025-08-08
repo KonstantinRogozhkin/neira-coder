@@ -17,55 +17,55 @@ export const features: Feature[] = [
 		icon: <Bot className="h-6 w-6 text-white" />,
 		title: "Your AI Dev Team in VS Code",
 		description:
-			"Neira Code puts a team of agentic AI assistants directly in your editor, with the power to plan, write, and fix code across multiple files.",
+			"Researcherry Code puts a team of agentic AI assistants directly in your editor, with the power to plan, write, and fix code across multiple files.",
 	},
 	{
 		icon: <Code className="h-6 w-6 text-white" />,
 		title: "Multiple Specialized Modes",
 		description:
-			"From coding to debugging to architecture, Neira Code has a mode for every dev scenario—just switch on the fly.",
+			"From coding to debugging to architecture, Researcherry Code has a mode for every dev scenario—just switch on the fly.",
 	},
 	{
 		icon: <Brain className="h-6 w-6 text-white" />,
 		title: "Deep Project-wide Context",
 		description:
-			"Neira Code reads your entire codebase, preserving valid code through diff-based edits for seamless multi-file refactors.",
+			"Researcherry Code reads your entire codebase, preserving valid code through diff-based edits for seamless multi-file refactors.",
 	},
 	{
 		icon: <Wrench className="h-6 w-6 text-white" />,
 		title: "Open-Source and Model-Agnostic",
 		description:
-			"Bring your own model or use local AI—no vendor lock-in. Neira Code is free, open, and adaptable to your needs.",
+			"Bring your own model or use local AI—no vendor lock-in. Researcherry Code is free, open, and adaptable to your needs.",
 	},
 	{
 		icon: <Terminal className="h-6 w-6 text-white" />,
 		title: "Guarded Command Execution",
 		description:
-			"Approve or deny commands as needed. Neira Code automates your dev workflow while keeping oversight firmly in your hands.",
+			"Approve or deny commands as needed. Researcherry Code automates your dev workflow while keeping oversight firmly in your hands.",
 	},
 	{
 		icon: <Puzzle className="h-6 w-6 text-white" />,
 		title: "Fully Customizable",
 		description:
-			"Create or tweak modes, define usage rules, and shape Neira Code's behavior precisely—your code, your way.",
+			"Create or tweak modes, define usage rules, and shape Researcherry Code's behavior precisely—your code, your way.",
 	},
 	{
 		icon: <Globe className="h-6 w-6 text-white" />,
 		title: "Automated Browser Actions",
 		description:
-			"Seamlessly test and verify your web app directly from VS Code—Neira Code can open a browser, run checks, and more.",
+			"Seamlessly test and verify your web app directly from VS Code—Researcherry Code can open a browser, run checks, and more.",
 	},
 	{
 		icon: <Shield className="h-6 w-6 text-white" />,
 		title: "Secure by Design",
 		description:
-			"Security-first from the ground up, Neira Code meets rigorous standards without slowing you down. Monitoring and strict policies keep your code safe at scale.",
+			"Security-first from the ground up, Researcherry Code meets rigorous standards without slowing you down. Monitoring and strict policies keep your code safe at scale.",
 	},
 	{
 		icon: <Zap className="h-6 w-6 text-white" />,
 		title: "Seamless Setup and Workflows",
 		description:
-			"Get started in minutes—no heavy configs. Neira Code fits alongside your existing tools and dev flow, while supercharging your productivity.",
+			"Get started in minutes—no heavy configs. Researcherry Code fits alongside your existing tools and dev flow, while supercharging your productivity.",
 	},
 ]
 

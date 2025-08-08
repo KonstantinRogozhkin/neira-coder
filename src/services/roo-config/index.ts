@@ -3,50 +3,50 @@ import * as os from "os"
 import fs from "fs/promises"
 
 /**
- * Gets the global .neira directory path based on the current platform
+ * Gets the global .researcherry directory path based on the current platform
  *
- * @returns The absolute path to the global .neira directory
+ * @returns The absolute path to the global .researcherry directory
  *
  * @example Platform-specific paths:
  * ```
- * // macOS/Linux: ~/.neira/
- * // Example: /Users/john/.neira
+ * // macOS/Linux: ~/.researcherry/
+ * // Example: /Users/john/.researcherry
  *
- * // Windows: %USERPROFILE%\.neira\
- * // Example: C:\Users\john\.neira
+ * // Windows: %USERPROFILE%\.researcherry\
+ * // Example: C:\Users\john\.researcherry
  * ```
  *
  * @example Usage:
  * ```typescript
  * const globalDir = getGlobalRooDirectory()
- * // Returns: "/Users/john/.neira" (on macOS/Linux)
- * // Returns: "C:\\Users\\john\\.neira" (on Windows)
+ * // Returns: "/Users/john/.researcherry" (on macOS/Linux)
+ * // Returns: "C:\\Users\\john\\.researcherry" (on Windows)
  * ```
  */
 export function getGlobalRooDirectory(): string {
 	const homeDir = os.homedir()
-	return path.join(homeDir, ".neira")
+	return path.join(homeDir, ".researcherry")
 }
 
 /**
- * Gets the project-local .neira directory path for a given cwd
+ * Gets the project-local .researcherry directory path for a given cwd
  *
  * @param cwd - Current working directory (project path)
- * @returns The absolute path to the project-local .neira directory
+ * @returns The absolute path to the project-local .researcherry directory
  *
  * @example
  * ```typescript
  * const projectDir = getProjectRooDirectoryForCwd('/Users/john/my-project')
- * // Returns: "/Users/john/my-project/.neira"
+ * // Returns: "/Users/john/my-project/.researcherry"
  *
  * const windowsProjectDir = getProjectRooDirectoryForCwd('C:\\Users\\john\\my-project')
- * // Returns: "C:\\Users\\john\\my-project\\.neira"
+ * // Returns: "C:\\Users\\john\\my-project\\.researcherry"
  * ```
  *
  * @example Directory structure:
  * ```
  * /Users/john/my-project/
- * ├── .neira/                    # Project-local configuration directory
+ * ├── .researcherry/                    # Project-local configuration directory
  * │   ├── rules/
  * │   │   └── rules.md
  * │   ├── custom-instructions.md
@@ -58,7 +58,7 @@ export function getGlobalRooDirectory(): string {
  * ```
  */
 export function getProjectRooDirectoryForCwd(cwd: string): string {
-	return path.join(cwd, ".neira")
+	return path.join(cwd, ".researcherry")
 }
 
 /**
@@ -112,7 +112,7 @@ export async function readFileIfExists(filePath: string): Promise<string | null>
 }
 
 /**
- * Gets the ordered list of .neira directories to check (global first, then project-local)
+ * Gets the ordered list of .researcherry directories to check (global first, then project-local)
  *
  * @param cwd - Current working directory (project path)
  * @returns Array of directory paths to check in order [global, project-local]
@@ -123,20 +123,20 @@ export async function readFileIfExists(filePath: string): Promise<string | null>
  * const directories = getRooDirectoriesForCwd('/Users/john/my-project')
  * // Returns:
  * // [
- * //   '/Users/john/.neira',           // Global directory
- * //   '/Users/john/my-project/.neira' // Project-local directory
+ * //   '/Users/john/.researcherry',           // Global directory
+ * //   '/Users/john/my-project/.researcherry' // Project-local directory
  * // ]
  * ```
  *
  * @example Directory structure:
  * ```
  * /Users/john/
- * ├── .neira/                    # Global configuration
+ * ├── .researcherry/                    # Global configuration
  * │   ├── rules/
  * │   │   └── rules.md
  * │   └── custom-instructions.md
  * └── my-project/
- *     ├── .neira/                # Project-specific configuration
+ *     ├── .researcherry/                # Project-specific configuration
  *     │   ├── rules/
  *     │   │   └── rules.md     # Overrides global rules
  *     │   └── project-notes.md
@@ -157,9 +157,9 @@ export function getRooDirectoriesForCwd(cwd: string): string[] {
 }
 
 /**
- * Loads configuration from multiple .neira directories with project overriding global
+ * Loads configuration from multiple .researcherry directories with project overriding global
  *
- * @param relativePath - The relative path within each .neira directory (e.g., 'rules/rules.md')
+ * @param relativePath - The relative path within each .researcherry directory (e.g., 'rules/rules.md')
  * @param cwd - Current working directory (project path)
  * @returns Object with global and project content, plus merged content
  *
@@ -170,8 +170,8 @@ export function getRooDirectoriesForCwd(cwd: string): string[] {
  *
  * // Returns:
  * // {
- * //   global: "Global rules content...",     // From ~/.neira/rules/rules.md
- * //   project: "Project rules content...",   // From /Users/john/my-project/.neira/rules/rules.md
+ * //   global: "Global rules content...",     // From ~/.researcherry/rules/rules.md
+ * //   project: "Project rules content...",   // From /Users/john/my-project/.researcherry/rules/rules.md
  * //   merged: "Global rules content...\n\n# Project-specific rules (override global):\n\nProject rules content..."
  * // }
  * ```
@@ -182,8 +182,8 @@ export function getRooDirectoriesForCwd(cwd: string): string[] {
  * cwd: '/Users/john/my-project'
  *
  * Reads from:
- * - Global: /Users/john/.neira/rules/rules.md
- * - Project: /Users/john/my-project/.neira/rules/rules.md
+ * - Global: /Users/john/.researcherry/rules/rules.md
+ * - Project: /Users/john/my-project/.researcherry/rules/rules.md
  *
  * Other common relativePath examples:
  * - 'custom-instructions.md'

@@ -31,7 +31,7 @@ We take reasonable measures to secure your data, but no system is 100% secure. I
 
 ### **Contact Us**
 
-For any privacy-related questions, reach out to us at support@neira.app.
+For any privacy-related questions, reach out to us at support@researcherry.app.
 
 ---
 

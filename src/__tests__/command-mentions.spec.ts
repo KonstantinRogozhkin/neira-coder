@@ -34,7 +34,7 @@ describe("Command Mentions", () => {
 			mockUrlContentFetcher, // urlContentFetcher
 			undefined, // fileContextTracker
 			undefined, // rooIgnoreController
-			true, // showNeiraIgnoredFiles
+			true, // showResearcherryIgnoredFiles
 			true, // includeDiagnosticMessages
 			50, // maxDiagnosticMessages
 			undefined, // maxReadFileLine
@@ -48,7 +48,7 @@ describe("Command Mentions", () => {
 				name: "setup",
 				content: commandContent,
 				source: "project",
-				filePath: "/project/.neira/commands/setup.md",
+				filePath: "/project/.researcherry/commands/setup.md",
 			})
 
 			const input = "/setup Please help me set up the project"
@@ -70,25 +70,25 @@ describe("Command Mentions", () => {
 					name: "setup",
 					content: setupContent,
 					source: "project",
-					filePath: "/project/.neira/commands/setup.md",
+					filePath: "/project/.researcherry/commands/setup.md",
 				})
 				.mockResolvedValueOnce({
 					name: "deploy",
 					content: deployContent,
 					source: "project",
-					filePath: "/project/.neira/commands/deploy.md",
+					filePath: "/project/.researcherry/commands/deploy.md",
 				})
 				.mockResolvedValueOnce({
 					name: "setup",
 					content: setupContent,
 					source: "project",
-					filePath: "/project/.neira/commands/setup.md",
+					filePath: "/project/.researcherry/commands/setup.md",
 				})
 				.mockResolvedValueOnce({
 					name: "deploy",
 					content: deployContent,
 					source: "project",
-					filePath: "/project/.neira/commands/deploy.md",
+					filePath: "/project/.researcherry/commands/deploy.md",
 				})
 
 			// Both commands should be recognized
@@ -138,7 +138,7 @@ describe("Command Mentions", () => {
 				name: "error-command",
 				content: "# Error command",
 				source: "project",
-				filePath: "/project/.neira/commands/error-command.md",
+				filePath: "/project/.researcherry/commands/error-command.md",
 			})
 
 			const input = "/error-command test"
@@ -154,7 +154,7 @@ describe("Command Mentions", () => {
 				name: "setup-dev",
 				content: "# Dev setup",
 				source: "project",
-				filePath: "/project/.neira/commands/setup-dev.md",
+				filePath: "/project/.researcherry/commands/setup-dev.md",
 			})
 
 			const input = "/setup-dev for the project"
@@ -185,7 +185,7 @@ npm install
 				name: "complex",
 				content: commandContent,
 				source: "project",
-				filePath: "/project/.neira/commands/complex.md",
+				filePath: "/project/.researcherry/commands/complex.md",
 			})
 
 			const input = "/complex command"
@@ -205,7 +205,7 @@ npm install
 				name: "empty",
 				content: "",
 				source: "project",
-				filePath: "/project/.neira/commands/empty.md",
+				filePath: "/project/.researcherry/commands/empty.md",
 			})
 
 			const input = "/empty command"
@@ -288,7 +288,7 @@ npm install
 				name: "setup",
 				content: "# Setup instructions",
 				source: "project",
-				filePath: "/project/.neira/commands/setup.md",
+				filePath: "/project/.researcherry/commands/setup.md",
 			})
 
 			const input = "/setup the project"
@@ -312,13 +312,13 @@ npm install
 					name: "setup",
 					content: "# Setup instructions",
 					source: "project",
-					filePath: "/project/.neira/commands/setup.md",
+					filePath: "/project/.researcherry/commands/setup.md",
 				})
 				.mockResolvedValueOnce({
 					name: "deploy",
 					content: "# Deploy instructions",
 					source: "project",
-					filePath: "/project/.neira/commands/deploy.md",
+					filePath: "/project/.researcherry/commands/deploy.md",
 				})
 
 			const input = "/setup the project\nThen /deploy later"
@@ -333,7 +333,7 @@ npm install
 				name: "build",
 				content: "# Build instructions",
 				source: "project",
-				filePath: "/project/.neira/commands/build.md",
+				filePath: "/project/.researcherry/commands/build.md",
 			})
 
 			// At the beginning - should match

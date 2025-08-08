@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Neira Coder",
+		"name": "Researcherry Coder",
 		"description": "A whole dev team of AI agents in your editor."
 	},
 	"number_format": {
@@ -104,7 +104,7 @@
 	"warnings": {
 		"no_terminal_content": "No terminal content selected",
 		"missing_task_files": "This task's files are missing. Would you like to remove it from the task list?",
-		"auto_import_failed": "Failed to auto-import NeiraCoder settings: {{error}}"
+		"auto_import_failed": "Failed to auto-import ResearcherryCoder settings: {{error}}"
 	},
 	"info": {
 		"no_changes": "No changes found.",
@@ -113,7 +113,7 @@
 		"custom_storage_path_set": "Custom storage path set: {{path}}",
 		"default_storage_path": "Reverted to using default storage path",
 		"settings_imported": "Settings imported successfully.",
-		"auto_import_success": "NeiraCoder settings automatically imported from {{filename}}",
+		"auto_import_success": "ResearcherryCoder settings automatically imported from {{filename}}",
 		"share_link_copied": "Share link copied to clipboard",
 		"organization_share_link_copied": "Organization share link copied to clipboard!",
 		"public_share_link_copied": "Public share link copied to clipboard!",
@@ -141,8 +141,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Enter custom conversation history storage path, leave empty to use default location",
-		"path_placeholder": "D:\\NeiraCoderStorage",
-		"enter_absolute_path": "Please enter an absolute path (e.g. D:\\NeiraCoderStorage or /home/user/storage)",
+		"path_placeholder": "D:\\ResearcherryCoderStorage",
+		"enter_absolute_path": "Please enter an absolute path (e.g. D:\\ResearcherryCoderStorage or /home/user/storage)",
 		"enter_valid_path": "Please enter a valid path"
 	},
 	"input": {
@@ -151,8 +151,8 @@
 	},
 	"customModes": {
 		"errors": {
-					"yamlParseError": "Invalid YAML in .neira-modes file at line {{line}}. Please check for:\n• Proper indentation (use spaces, not tabs)\n• Matching quotes and brackets\n• Valid YAML syntax",
-		"schemaValidationError": "Invalid custom modes format in .neira-modes:\n{{issues}}",
+			"yamlParseError": "Invalid YAML in .researcherry-modes file at line {{line}}. Please check for:\n• Proper indentation (use spaces, not tabs)\n• Matching quotes and brackets\n• Valid YAML syntax",
+			"schemaValidationError": "Invalid custom modes format in .researcherry-modes:\n{{issues}}",
 			"invalidFormat": "Invalid custom modes format. Please ensure your settings follow the correct YAML format.",
 			"updateFailed": "Failed to update custom mode: {{error}}",
 			"deleteFailed": "Failed to delete custom mode: {{error}}",

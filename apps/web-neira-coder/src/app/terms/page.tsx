@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "Terms of Service - Neira Code",
+	title: "Terms of Service - Researcherry Code",
 	description:
-		"Terms of Service for Neira Code Cloud. Learn about our service terms, commercial conditions, and legal framework.",
+		"Terms of Service for Researcherry Code Cloud. Learn about our service terms, commercial conditions, and legal framework.",
 }
 
 export default function Terms() {
@@ -12,7 +12,7 @@ export default function Terms() {
 			<div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
 				<div className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
 					<h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-						Neira Code Cloud Terms of Service
+						Researcherry Code Cloud Terms of Service
 					</h1>
 					<p className="text-muted-foreground">
 						<em>(Version 1.0 – Effective June 19, 2025)</em>
@@ -25,7 +25,8 @@ export default function Terms() {
 					<ul className="lead">
 						<li>
 							<strong>(a)</strong> every <strong>Sales Order Form</strong> or similar document mutually
-							executed by Neira Code and the customer that references these TOS; <strong>and</strong>
+							executed by Researcherry Code and the customer that references these TOS;{" "}
+							<strong>and</strong>
 						</li>
 						<li>
 							<strong>(b)</strong> any{" "}
@@ -42,7 +43,7 @@ export default function Terms() {
 					</p>
 
 					<p>
-						If Neira Code and Customer later execute a Master Subscription Agreement (&quot;
+						If Researcherry Code and Customer later execute a Master Subscription Agreement (&quot;
 						<strong>MSA</strong>&quot;), the MSA governs; otherwise, these TOS and the applicable Order Form
 						together form the entire agreement (the &quot;<strong>Agreement</strong>&quot;).
 					</p>
@@ -157,15 +158,15 @@ export default function Terms() {
 								<tr className="bg-muted/25">
 									<td className="border border-border px-4 py-2 font-medium">Security Standard</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code maintains commercially reasonable administrative, physical, and
-										technical safeguards
+										Researcherry Code maintains commercially reasonable administrative, physical,
+										and technical safeguards
 									</td>
 								</tr>
 								<tr>
 									<td className="border border-border px-4 py-2 font-medium">Machine-Learning Use</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code <strong>does not</strong> use Customer Content to train, fine-tune,
-										or improve any ML or AI models
+										Researcherry Code <strong>does not</strong> use Customer Content to train,
+										fine-tune, or improve any ML or AI models
 									</td>
 								</tr>
 								<tr className="bg-muted/25">
@@ -181,8 +182,8 @@ export default function Terms() {
 										Publicity / Logo Rights
 									</td>
 									<td className="border border-border px-4 py-2">
-										Neira Code may identify Customer (name & logo) in marketing materials unless
-										Customer opts out in writing
+										Researcherry Code may identify Customer (name & logo) in marketing materials
+										unless Customer opts out in writing
 									</td>
 								</tr>
 							</tbody>
@@ -215,7 +216,7 @@ export default function Terms() {
 						<li>
 							<strong>Sections 7 (Trials / Betas) and any SLA references.</strong>
 							<br />
-							Deleted – Neira Code offers no trials, pilots, betas, or SLA credits under these TOS.
+							Deleted – Researcherry Code offers no trials, pilots, betas, or SLA credits under these TOS.
 						</li>
 						<li>
 							<strong>Section 12.12 (Publicity).</strong>
@@ -246,17 +247,17 @@ export default function Terms() {
 
 					<h2 className="mt-12 text-2xl font-bold">6. Privacy & Data</h2>
 					<p>
-						Neira Code&apos;s Privacy Notice (
+						Researcherry Code&apos;s Privacy Notice (
 						<a
-							href="https://neira.app/privacy"
+							href="https://researcherry.app/privacy"
 							rel="noopener noreferrer"
 							className="text-primary hover:underline">
-							https://neira.app/privacy
+							https://researcherry.app/privacy
 						</a>
-						) explains how Neira Code collects and handles personal information. If Customer requires a DPA,
-						email{" "}
-						<a href="mailto:support@neira.app" className="text-primary hover:underline">
-							support@neira.app
+						) explains how Researcherry Code collects and handles personal information. If Customer requires
+						a DPA, email{" "}
+						<a href="mailto:support@researcherry.app" className="text-primary hover:underline">
+							support@researcherry.app
 						</a>
 						.
 					</p>
@@ -279,8 +280,8 @@ export default function Terms() {
 						<li>
 							<strong>Assignment.</strong>
 							<br />
-							Customer may not assign the Agreement without Neira Code&apos;s prior written consent,
-							except to a successor in a merger or sale of substantially all assets.
+							Customer may not assign the Agreement without Researcherry Code&apos;s prior written
+							consent, except to a successor in a merger or sale of substantially all assets.
 						</li>
 						<li>
 							<strong>Export Compliance.</strong>
@@ -296,21 +297,21 @@ export default function Terms() {
 						<li>
 							<strong>Amendments.</strong>
 							<br />
-							Neira Code may update these TOS by posting a revised version at the same URL and emailing or
-							in-app notifying Customer at least 30 days before changes take effect. Continued use after
-							the effective date constitutes acceptance.
+							Researcherry Code may update these TOS by posting a revised version at the same URL and
+							emailing or in-app notifying Customer at least 30 days before changes take effect. Continued
+							use after the effective date constitutes acceptance.
 						</li>
 					</ol>
 
 					<h2 className="mt-12 text-2xl font-bold">10. Contact</h2>
 					<p>
-						<strong>Neira Code, Inc.</strong>
+						<strong>Researcherry Code, Inc.</strong>
 						<br />
 						98 Graceland Dr, San Rafael, CA 94901 USA
 						<br />
 						Email:{" "}
-						<a href="mailto:support@neira.app" className="text-primary hover:underline">
-							support@neira.app
+						<a href="mailto:support@researcherry.app" className="text-primary hover:underline">
+							support@researcherry.app
 						</a>
 					</p>
 				</div>

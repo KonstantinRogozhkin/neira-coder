@@ -3,8 +3,8 @@ import { createHash } from "crypto"
 import { ICacheManager } from "./interfaces/cache"
 import debounce from "lodash.debounce"
 import { safeWriteJson } from "../../utils/safeWriteJson"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { TelemetryEventName } from "@researcherry/types"
 
 /**
  * Manages the cache for code indexing
@@ -42,7 +42,7 @@ export class CacheManager implements ICacheManager {
 		} catch (error) {
 			this.fileHashes = {}
 			// Only capture telemetry if the service is available
-			if (TelemetryService.hasInstance()) {
+			if (TelemetryService.hasInstance && TelemetryService.hasInstance()) {
 				TelemetryService.instance.captureEvent(TelemetryEventName.CODE_INDEX_ERROR, {
 					error: error instanceof Error ? error.message : String(error),
 					stack: error instanceof Error ? error.stack : undefined,
@@ -63,7 +63,7 @@ export class CacheManager implements ICacheManager {
 		} catch (error) {
 			console.error("Failed to save cache:", error)
 			// Only capture telemetry if the service is available
-			if (TelemetryService.hasInstance()) {
+			if (TelemetryService.hasInstance && TelemetryService.hasInstance()) {
 				TelemetryService.instance.captureEvent(TelemetryEventName.CODE_INDEX_ERROR, {
 					error: error instanceof Error ? error.message : String(error),
 					stack: error instanceof Error ? error.stack : undefined,
@@ -83,7 +83,7 @@ export class CacheManager implements ICacheManager {
 		} catch (error) {
 			console.error("Failed to clear cache file:", error, this.cachePath)
 			// Only capture telemetry if the service is available
-			if (TelemetryService.hasInstance()) {
+			if (TelemetryService.hasInstance && TelemetryService.hasInstance()) {
 				TelemetryService.instance.captureEvent(TelemetryEventName.CODE_INDEX_ERROR, {
 					error: error instanceof Error ? error.message : String(error),
 					stack: error instanceof Error ? error.stack : undefined,

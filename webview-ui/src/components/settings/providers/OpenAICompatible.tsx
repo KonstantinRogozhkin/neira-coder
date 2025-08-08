@@ -10,7 +10,7 @@ import {
 	type OrganizationAllowList,
 	azureOpenAiDefaultApiVersion,
 	openAiModelInfoSaneDefaults,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import { ExtensionMessage } from "@roo/ExtensionMessage"
 

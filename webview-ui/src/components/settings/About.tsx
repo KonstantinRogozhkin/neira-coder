@@ -51,7 +51,7 @@ export const About = ({ telemetrySetting, setTelemetrySetting, className, ...pro
 						<Trans
 							i18nKey="settings:footer.telemetry.description"
 							components={{
-								privacyLink: <VSCodeLink href="https://neira.app/privacy" />,
+								privacyLink: <VSCodeLink href="https://researcherry.app/privacy" />,
 							}}
 						/>
 					</p>

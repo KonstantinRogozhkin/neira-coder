@@ -1,6 +1,6 @@
 import { memo, useMemo } from "react"
 import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react"
-import { type ToolProgressStatus } from "@neira-coder/types"
+import { type ToolProgressStatus } from "@researcherry/types"
 import { getLanguageFromPath } from "@src/utils/getLanguageFromPath"
 import { removeLeadingNonAlphanumeric } from "@src/utils/removeLeadingNonAlphanumeric"
 

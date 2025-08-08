@@ -1,8 +1,8 @@
 import cloneDeep from "clone-deep"
 import { serializeError } from "serialize-error"
 
-import type { ToolName, ClineAsk, ToolProgressStatus } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { ToolName, ClineAsk, ToolProgressStatus } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { defaultModeSlug, getModeBySlug } from "../../shared/modes"
 import type { ToolParamName, ToolResponse } from "../../shared/tools"

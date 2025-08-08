@@ -1,8 +1,8 @@
 import { useState, useCallback, useRef } from "react"
 import { useQuery, keepPreviousData } from "@tanstack/react-query"
 
-import { type TokenUsage, NeiraCoderEventName, taskEventSchema } from "@neira-coder/types"
-import type { Run, Task, TaskMetrics } from "@neira-coder/evals"
+import { type TokenUsage, ResearcherryCoderEventName, taskEventSchema } from "@researcherry/types"
+import type { Run, Task, TaskMetrics } from "@researcherry/evals"
 
 import { getHeartbeat } from "@/actions/heartbeat"
 import { getRunners } from "@/actions/runners"
@@ -71,18 +71,18 @@ export const useRunStatus = (run: Run): RunStatus => {
 		}
 
 		switch (eventName) {
-			case NeiraCoderEventName.TaskStarted:
+			case ResearcherryCoderEventName.TaskStarted:
 				startTimes.current.set(taskId, Date.now())
 				break
-			case NeiraCoderEventName.TaskTokenUsageUpdated: {
+			case ResearcherryCoderEventName.TaskTokenUsageUpdated: {
 				const startTime = startTimes.current.get(taskId)
 				const duration = startTime ? Date.now() - startTime : undefined
 				tokenUsage.current.set(taskId, { ...payload[1], duration })
 				setUsageUpdatedAt(Date.now())
 				break
 			}
-			case NeiraCoderEventName.EvalPass:
-			case NeiraCoderEventName.EvalFail:
+			case ResearcherryCoderEventName.EvalPass:
+			case ResearcherryCoderEventName.EvalFail:
 				setTasksUpdatedAt(Date.now())
 				break
 		}

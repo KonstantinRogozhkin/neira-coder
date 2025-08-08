@@ -24,7 +24,7 @@ describe("TerminalProcess", () => {
 			shellIntegration: {
 				executeCommand: vi.fn(),
 			},
-			name: "Neira Coder",
+			name: "Researcherry Coder",
 			processId: Promise.resolve(123),
 			creationOptions: {},
 			exitStatus: undefined,

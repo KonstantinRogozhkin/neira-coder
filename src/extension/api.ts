@@ -5,10 +5,10 @@ import * as path from "path"
 import * as os from "os"
 
 import {
-	NeiraCoderAPI,
-	NeiraCoderSettings,
-	NeiraCoderEvents,
-	NeiraCoderEventName,
+	ResearcherryCoderAPI,
+	ResearcherryCoderSettings,
+	ResearcherryCoderEvents,
+	ResearcherryCoderEventName,
 	ProviderSettings,
 	ProviderSettingsEntry,
 	isSecretStateKey,
@@ -16,15 +16,15 @@ import {
 	IpcMessageType,
 	TaskCommandName,
 	TaskEvent,
-} from "@neira-coder/types"
-import { IpcServer } from "@neira-coder/ipc"
+} from "@researcherry/types"
+import { IpcServer } from "@researcherry/ipc"
 
 import { Package } from "../shared/package"
 import { getWorkspacePath } from "../utils/path"
 import { ClineProvider } from "../core/webview/ClineProvider"
 import { openClineInNewTab } from "../activate/registerCommands"
 
-export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI {
+export class API extends EventEmitter<ResearcherryCoderEvents> implements ResearcherryCoderAPI {
 	private readonly outputChannel: vscode.OutputChannel
 	private readonly sidebarProvider: ClineProvider
 	private readonly context: vscode.ExtensionContext
@@ -84,11 +84,11 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 		}
 	}
 
-	public override emit<K extends keyof NeiraCoderEvents>(
+	public override emit<K extends keyof ResearcherryCoderEvents>(
 		eventName: K,
-		...args: K extends keyof NeiraCoderEvents ? NeiraCoderEvents[K] : never
+		...args: K extends keyof ResearcherryCoderEvents ? ResearcherryCoderEvents[K] : never
 	) {
-		const data = { eventName: eventName as NeiraCoderEventName, payload: args } as TaskEvent
+		const data = { eventName: eventName as ResearcherryCoderEventName, payload: args } as TaskEvent
 		this.ipc?.broadcast({ type: IpcMessageType.TaskEvent, origin: IpcOrigin.Server, data })
 		return super.emit(eventName, ...args)
 	}
@@ -99,7 +99,7 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 		images,
 		newTab,
 	}: {
-		configuration: NeiraCoderSettings
+		configuration: ResearcherryCoderSettings
 		text?: string
 		images?: string[]
 		newTab?: boolean
@@ -216,13 +216,13 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 	private registerListeners(provider: ClineProvider) {
 		provider.on("taskCreated", (cline) => {
 			cline.on("taskStarted", async () => {
-				this.emit(NeiraCoderEventName.TaskStarted, cline.taskId)
+				this.emit(ResearcherryCoderEventName.TaskStarted, cline.taskId)
 				this.taskMap.set(cline.taskId, provider)
 				await this.fileLog(`[${new Date().toISOString()}] taskStarted -> ${cline.taskId}\n`)
 			})
 
 			cline.on("message", async (message) => {
-				this.emit(NeiraCoderEventName.Message, { taskId: cline.taskId, ...message })
+				this.emit(ResearcherryCoderEventName.Message, { taskId: cline.taskId, ...message })
 
 				if (message.message.partial !== true) {
 					await this.fileLog(`[${new Date().toISOString()}] ${JSON.stringify(message.message, null, 2)}\n`)
@@ -230,13 +230,13 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 			})
 
 			cline.on("taskModeSwitched", (taskId, mode) =>
-				this.emit(NeiraCoderEventName.TaskModeSwitched, taskId, mode),
+				this.emit(ResearcherryCoderEventName.TaskModeSwitched, taskId, mode),
 			)
 
-			cline.on("taskAskResponded", () => this.emit(NeiraCoderEventName.TaskAskResponded, cline.taskId))
+			cline.on("taskAskResponded", () => this.emit(ResearcherryCoderEventName.TaskAskResponded, cline.taskId))
 
 			cline.on("taskAborted", () => {
-				this.emit(NeiraCoderEventName.TaskAborted, cline.taskId)
+				this.emit(ResearcherryCoderEventName.TaskAborted, cline.taskId)
 				this.taskMap.delete(cline.taskId)
 			})
 
@@ -247,7 +247,7 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 					isSubtask = true
 				}
 
-				this.emit(NeiraCoderEventName.TaskCompleted, cline.taskId, tokenUsage, toolUsage, {
+				this.emit(ResearcherryCoderEventName.TaskCompleted, cline.taskId, tokenUsage, toolUsage, {
 					isSubtask: isSubtask,
 				})
 				this.taskMap.delete(cline.taskId)
@@ -258,20 +258,20 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 			})
 
 			cline.on("taskSpawned", (childTaskId) =>
-				this.emit(NeiraCoderEventName.TaskSpawned, cline.taskId, childTaskId),
+				this.emit(ResearcherryCoderEventName.TaskSpawned, cline.taskId, childTaskId),
 			)
-			cline.on("taskPaused", () => this.emit(NeiraCoderEventName.TaskPaused, cline.taskId))
-			cline.on("taskUnpaused", () => this.emit(NeiraCoderEventName.TaskUnpaused, cline.taskId))
+			cline.on("taskPaused", () => this.emit(ResearcherryCoderEventName.TaskPaused, cline.taskId))
+			cline.on("taskUnpaused", () => this.emit(ResearcherryCoderEventName.TaskUnpaused, cline.taskId))
 
 			cline.on("taskTokenUsageUpdated", (_, usage) =>
-				this.emit(NeiraCoderEventName.TaskTokenUsageUpdated, cline.taskId, usage),
+				this.emit(ResearcherryCoderEventName.TaskTokenUsageUpdated, cline.taskId, usage),
 			)
 
 			cline.on("taskToolFailed", (taskId, tool, error) =>
-				this.emit(NeiraCoderEventName.TaskToolFailed, taskId, tool, error),
+				this.emit(ResearcherryCoderEventName.TaskToolFailed, taskId, tool, error),
 			)
 
-			this.emit(NeiraCoderEventName.TaskCreated, cline.taskId)
+			this.emit(ResearcherryCoderEventName.TaskCreated, cline.taskId)
 		})
 	}
 
@@ -322,13 +322,13 @@ export class API extends EventEmitter<NeiraCoderEvents> implements NeiraCoderAPI
 
 	// Global Settings Management
 
-	public getConfiguration(): NeiraCoderSettings {
+	public getConfiguration(): ResearcherryCoderSettings {
 		return Object.fromEntries(
 			Object.entries(this.sidebarProvider.getValues()).filter(([key]) => !isSecretStateKey(key)),
 		)
 	}
 
-	public async setConfiguration(values: NeiraCoderSettings) {
+	public async setConfiguration(values: ResearcherryCoderSettings) {
 		await this.sidebarProvider.contextProxy.setValues(values)
 		await this.sidebarProvider.providerSettingsManager.saveConfig(values.currentApiConfigName || "default", values)
 		await this.sidebarProvider.postStateToWebview()

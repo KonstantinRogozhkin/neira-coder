@@ -292,8 +292,8 @@ describe("processUserContentMentions", () => {
 		})
 	})
 
-	describe("showNeiraIgnoredFiles parameter", () => {
-		it("should default showNeiraIgnoredFiles to true", async () => {
+	describe("showResearcherryIgnoredFiles parameter", () => {
+		it("should default showResearcherryIgnoredFiles to true", async () => {
 			const userContent = [
 				{
 					type: "text" as const,
@@ -314,14 +314,14 @@ describe("processUserContentMentions", () => {
 				mockUrlContentFetcher,
 				mockFileContextTracker,
 				undefined,
-				true, // showNeiraIgnoredFiles should default to true
+				true, // showResearcherryIgnoredFiles should default to true
 				true, // includeDiagnosticMessages
 				50, // maxDiagnosticMessages
 				undefined,
 			)
 		})
 
-		it("should respect showNeiraIgnoredFiles when explicitly set to false", async () => {
+		it("should respect showResearcherryIgnoredFiles when explicitly set to false", async () => {
 			const userContent = [
 				{
 					type: "text" as const,
@@ -334,7 +334,7 @@ describe("processUserContentMentions", () => {
 				cwd: "/test",
 				urlContentFetcher: mockUrlContentFetcher,
 				fileContextTracker: mockFileContextTracker,
-				showNeiraIgnoredFiles: false,
+				showResearcherryIgnoredFiles: false,
 			})
 
 			expect(parseMentions).toHaveBeenCalledWith(

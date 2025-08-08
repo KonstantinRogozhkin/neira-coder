@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Neira Coder",
+		"name": "Researcherry Coder",
 		"description": "Düzenleyicinizde tam bir AI geliştirici ekibi."
 	},
 	"number_format": {
@@ -104,7 +104,7 @@
 	"warnings": {
 		"no_terminal_content": "Seçili terminal içeriği yok",
 		"missing_task_files": "Bu görevin dosyaları eksik. Görev listesinden kaldırmak istiyor musunuz?",
-		"auto_import_failed": "NeiraCoder ayarları otomatik olarak içe aktarılamadı: {{error}}"
+		"auto_import_failed": "ResearcherryCoder ayarları otomatik olarak içe aktarılamadı: {{error}}"
 	},
 	"info": {
 		"no_changes": "Değişiklik bulunamadı.",
@@ -113,7 +113,7 @@
 		"custom_storage_path_set": "Özel depolama yolu ayarlandı: {{path}}",
 		"default_storage_path": "Varsayılan depolama yoluna geri dönüldü",
 		"settings_imported": "Ayarlar başarıyla içe aktarıldı.",
-		"auto_import_success": "NeiraCoder ayarları {{filename}} dosyasından otomatik olarak içe aktarıldı",
+		"auto_import_success": "ResearcherryCoder ayarları {{filename}} dosyasından otomatik olarak içe aktarıldı",
 		"share_link_copied": "Paylaşım bağlantısı panoya kopyalandı",
 		"image_copied_to_clipboard": "Resim veri URI'si panoya kopyalandı",
 		"image_saved": "Resim {{path}} konumuna kaydedildi",
@@ -141,8 +141,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Konuşma geçmişi için özel depolama yolunu girin, varsayılan konumu kullanmak için boş bırakın",
-		"path_placeholder": "D:\\NeiraCoderStorage",
-		"enter_absolute_path": "Lütfen mutlak bir yol girin (örn. D:\\NeiraCoderStorage veya /home/user/storage)",
+		"path_placeholder": "D:\\ResearcherryCoderStorage",
+		"enter_absolute_path": "Lütfen mutlak bir yol girin (örn. D:\\ResearcherryCoderStorage veya /home/user/storage)",
 		"enter_valid_path": "Lütfen geçerli bir yol girin"
 	},
 	"input": {
@@ -162,8 +162,8 @@
 	},
 	"customModes": {
 		"errors": {
-					"yamlParseError": ".neira-modes dosyasının {{line}}. satırında geçersiz YAML. Kontrol et:\n• Doğru girinti (tab değil boşluk kullan)\n• Eşleşen tırnak işaretleri ve parantezler\n• Geçerli YAML sözdizimi",
-		"schemaValidationError": ".neira-modes'ta geçersiz özel mod formatı:\n{{issues}}",
+			"yamlParseError": ".researcherry-modes dosyasının {{line}}. satırında geçersiz YAML. Kontrol et:\n• Doğru girinti (tab değil boşluk kullan)\n• Eşleşen tırnak işaretleri ve parantezler\n• Geçerli YAML sözdizimi",
+			"schemaValidationError": ".researcherry-modes'ta geçersiz özel mod formatı:\n{{issues}}",
 			"invalidFormat": "Geçersiz özel mod formatı. Ayarlarının doğru YAML formatını takip ettiğinden emin ol.",
 			"updateFailed": "Özel mod güncellemesi başarısız: {{error}}",
 			"deleteFailed": "Özel mod silme başarısız: {{error}}",

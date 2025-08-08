@@ -4,7 +4,7 @@ import * as os from "os"
 import * as vscode from "vscode"
 import { z } from "zod"
 
-import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@neira-coder/cloud"
+import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@researcherry/cloud"
 import { Package } from "../../shared/package"
 import { t } from "../../i18n"
 
@@ -149,14 +149,14 @@ export class MdmService {
 
 		switch (platform) {
 			case "win32": {
-				// Windows: %ProgramData%\NeiraCoder\mdm.json or mdm.dev.json
+				// Windows: %ProgramData%\ResearcherryCoder\mdm.json or mdm.dev.json
 				const programData = process.env.PROGRAMDATA || "C:\\ProgramData"
-				return path.join(programData, "NeiraCoder", configFileName)
+				return path.join(programData, "ResearcherryCoder", configFileName)
 			}
 
 			case "darwin":
-				// macOS: /Library/Application Support/NeiraCoder/mdm.json or mdm.dev.json
-				return `/Library/Application Support/NeiraCoder/${configFileName}`
+				// macOS: /Library/Application Support/ResearcherryCoder/mdm.json or mdm.dev.json
+				return `/Library/Application Support/ResearcherryCoder/${configFileName}`
 
 			case "linux":
 			default:

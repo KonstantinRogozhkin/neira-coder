@@ -1,4 +1,4 @@
-import { SECRET_STATE_KEYS, ProviderSettings } from "@neira-coder/types"
+import { SECRET_STATE_KEYS, ProviderSettings } from "@researcherry/types"
 
 export function checkExistKey(config: ProviderSettings | undefined) {
 	if (!config) {

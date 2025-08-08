@@ -57,7 +57,7 @@ const TelemetryBanner = () => {
 					<Trans
 						i18nKey="welcome:telemetry.anonymousTelemetry"
 						components={{
-							privacyLink: <VSCodeLink href="https://neira.app/privacy" />,
+							privacyLink: <VSCodeLink href="https://researcherry.app/privacy" />,
 						}}
 					/>
 					<div className="mt-1">

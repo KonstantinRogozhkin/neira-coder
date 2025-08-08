@@ -1,5 +1,5 @@
 {
-	"greeting": "Welcome to Neira Coder",
+	"greeting": "Welcome to Researcherry Coder",
 	"task": {
 		"title": "Task",
 		"seeMore": "Show more",
@@ -18,7 +18,7 @@
 		"sharePublicly": "Share publicly",
 		"sharePubliclyDescription": "Anyone with the link can access",
 		"connectToCloud": "Connect to cloud",
-		"connectToCloudDescription": "Sign in to Neira Coder Cloud to share tasks",
+		"connectToCloudDescription": "Sign in to Researcherry Coder Cloud to share tasks",
 		"sharingDisabledByOrganization": "Sharing disabled by organization",
 		"shareSuccessOrganization": "Organization link copied to clipboard",
 		"shareSuccessPublic": "Public link copied to clipboard"
@@ -99,4 +99,4 @@
 			"description": "Specialized personas with their own behavior and assigned models"
 		}
 	}
-} 
+}

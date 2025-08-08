@@ -5,7 +5,7 @@
 import * as vscode from "vscode"
 import { PostHog } from "posthog-node"
 
-import { type TelemetryPropertiesProvider, TelemetryEventName } from "@neira-coder/types"
+import { type TelemetryPropertiesProvider, TelemetryEventName } from "@researcherry/types"
 
 import { PostHogTelemetryClient } from "../PostHogTelemetryClient"
 
@@ -133,7 +133,7 @@ describe("PostHogTelemetryClient", () => {
 			})
 
 			expect(result).toEqual({
-				appName: "neira-coder",
+				appName: "researcherry",
 				appVersion: "1.0.0",
 				vscodeVersion: "1.60.0",
 				platform: "darwin",
@@ -184,7 +184,7 @@ describe("PostHogTelemetryClient", () => {
 
 			// Other properties should be included
 			expect(result).toEqual({
-				appName: "neira-coder",
+				appName: "researcherry",
 				appVersion: "1.0.0",
 				vscodeVersion: "1.60.0",
 				platform: "darwin",
@@ -215,7 +215,7 @@ describe("PostHogTelemetryClient", () => {
 			})
 
 			expect(result).toEqual({
-				appName: "neira-coder",
+				appName: "researcherry",
 				appVersion: "unknown",
 				vscodeVersion: "unknown",
 				platform: "unknown",
@@ -244,7 +244,7 @@ describe("PostHogTelemetryClient", () => {
 			})
 
 			expect(result).toEqual({
-				appName: "neira-coder",
+				appName: "researcherry",
 				appVersion: "unknown",
 				vscodeVersion: "unknown",
 				platform: "unknown",

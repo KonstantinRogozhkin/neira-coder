@@ -13,35 +13,36 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
 	{
-		question: "What exactly is Neira Code?",
+		question: "What exactly is Researcherry Code?",
 		answer: (
 			<>
-				Neira Code is an open-source, AI-powered coding assistant that runs in VS Code. It goes beyond simple
-				autocompletion by reading and writing across multiple files, executing commands, and adapting to your
-				workflow—like having a whole dev team right inside your editor.
+				Researcherry Code is an open-source, AI-powered coding assistant that runs in VS Code. It goes beyond
+				simple autocompletion by reading and writing across multiple files, executing commands, and adapting to
+				your workflow—like having a whole dev team right inside your editor.
 			</>
 		),
 	},
 	{
-		question: "How does Neira Code differ from Copilot, Cursor, or Windsurf?",
+		question: "How does Researcherry Code differ from Copilot, Cursor, or Windsurf?",
 		answer: (
 			<>
-				Neira Code is <strong>open-source and fully customizable</strong>, letting you integrate any AI model
-				you choose (e.g, OpenAI, Anthropic, local LLMs, etc.). It&apos;s built for{" "}
+				Researcherry Code is <strong>open-source and fully customizable</strong>, letting you integrate any AI
+				model you choose (e.g, OpenAI, Anthropic, local LLMs, etc.). It&apos;s built for{" "}
 				<strong>multi-file edits</strong>, so it can read, refactor, and update multiple files at once for
 				holistic code changes. Its <strong>agentic abilities</strong> go beyond a typical AI autocomplete,
 				enabling it to run tests, open a browser, and handle deeper tasks. And you&apos;re always in control:
-				Neira Code is <strong>permission-based</strong>, meaning you can control and approve any file changes or
-				command executions.
+				Researcherry Code is <strong>permission-based</strong>, meaning you can control and approve any file
+				changes or command executions.
 			</>
 		),
 	},
 	{
-		question: "Is Neira Code really free?",
+		question: "Is Researcherry Code really free?",
 		answer: (
 			<>
-				Yes! Neira Code is completely free and open-source. You&apos;ll only pay for the AI model usage if you
-				use a paid API (like OpenAI). If you choose free or self-hosted models, there&apos;s no cost at all.
+				Yes! Researcherry Code is completely free and open-source. You&apos;ll only pay for the AI model usage
+				if you use a paid API (like OpenAI). If you choose free or self-hosted models, there&apos;s no cost at
+				all.
 			</>
 		),
 	},
@@ -49,31 +50,31 @@ const faqs: FAQItem[] = [
 		question: "Will my code stay private?",
 		answer: (
 			<>
-				Yes. Because Neira Code is an extension in your local VS Code, your code never leaves your machine
-				unless you connect to an external AI API. Even then, you control exactly what is sent to the AI model.
-				You can use tools like .rooignore to exclude sensitive files, and you can also run Neira Code with
-				offline/local models for full privacy.
+				Yes. Because Researcherry Code is an extension in your local VS Code, your code never leaves your
+				machine unless you connect to an external AI API. Even then, you control exactly what is sent to the AI
+				model. You can use tools like .rooignore to exclude sensitive files, and you can also run Researcherry
+				Code with offline/local models for full privacy.
 			</>
 		),
 	},
 	{
-		question: "Which AI models does Neira Code support?",
+		question: "Which AI models does Researcherry Code support?",
 		answer: (
 			<>
-				Neira Code is fully model-agnostic, giving you the flexibility to work with whatever AI models you
-				prefer. It supports OpenAI models (like GPT-4o, GPT-4, and o1), Anthropic&apos;s Claude (including
+				Researcherry Code is fully model-agnostic, giving you the flexibility to work with whatever AI models
+				you prefer. It supports OpenAI models (like GPT-4o, GPT-4, and o1), Anthropic&apos;s Claude (including
 				Claude 3.5 Sonnet), Google&apos;s Gemini models, and local LLMs via APIs or specialized plugins. You can
-				even connect any other model that follows Neira Code&apos;s Model Context Protocol (MCP).
+				even connect any other model that follows Researcherry Code&apos;s Model Context Protocol (MCP).
 			</>
 		),
 	},
 	{
-		question: "Does Neira Code support my programming language?",
+		question: "Does Researcherry Code support my programming language?",
 		answer: (
 			<>
-				Likely yes! Neira Code supports a wide range of languages—Python, Java, C#, JavaScript/TypeScript, Go,
-				Rust, etc. Since it leverages the AI model&apos;s understanding, new or lesser-known languages may also
-				work, depending on model support.
+				Likely yes! Researcherry Code supports a wide range of languages—Python, Java, C#,
+				JavaScript/TypeScript, Go, Rust, etc. Since it leverages the AI model&apos;s understanding, new or
+				lesser-known languages may also work, depending on model support.
 			</>
 		),
 	},
@@ -81,7 +82,7 @@ const faqs: FAQItem[] = [
 		question: "How do I install and get started?",
 		answer: (
 			<>
-				Install Neira Code from the{" "}
+				Install Researcherry Code from the{" "}
 				<a
 					href="https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline"
 					target="_blank"
@@ -92,7 +93,7 @@ const faqs: FAQItem[] = [
 				(or GitHub). Add your AI keys (OpenAI, Anthropic, or other) in the extension settings. Open the Roo
 				panel (the rocket icon) in VS Code, and start typing commands in plain English!{" "}
 				<a
-					href="https://docs.neira.app/tutorial-videos"
+					href="https://docs.researcherry.app/tutorial-videos"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-primary underline-offset-4 hover:underline">
@@ -105,11 +106,11 @@ const faqs: FAQItem[] = [
 		question: "Can it handle large, enterprise-scale projects?",
 		answer: (
 			<>
-				Absolutely. Neira Code uses efficient strategies (like partial-file analysis, summarization, or
+				Absolutely. Researcherry Code uses efficient strategies (like partial-file analysis, summarization, or
 				user-specified context) to handle large codebases. Enterprises especially appreciate the on-prem or
 				self-hosted model option for compliance and security needs.{" "}
 				<Link href="/enterprise" className="text-primary underline-offset-4 hover:underline">
-					Learn more about Neira Code for enterprise.
+					Learn more about Researcherry Code for enterprise.
 				</Link>
 			</>
 		),
@@ -118,27 +119,27 @@ const faqs: FAQItem[] = [
 		question: "Is it safe for enterprise use?",
 		answer: (
 			<>
-				Yes. Neira Code was built for enterprise environments. You can self-host AI models or use your own
-				trusted provider. All file changes and commands go through permission gating, so nothing runs without
-				your approval. And because Neira Code is fully open-source, it&apos;s auditable—you can review exactly
-				how it works before deploying it.{" "}
+				Yes. Researcherry Code was built for enterprise environments. You can self-host AI models or use your
+				own trusted provider. All file changes and commands go through permission gating, so nothing runs
+				without your approval. And because Researcherry Code is fully open-source, it&apos;s auditable—you can
+				review exactly how it works before deploying it.{" "}
 				<a
-					href="https://neira.app/enterprise"
+					href="https://researcherry.app/enterprise"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-primary underline-offset-4 hover:underline">
-					Learn more about Neira Code for enterprise.
+					Learn more about Researcherry Code for enterprise.
 				</a>
 			</>
 		),
 	},
 	{
-		question: "Can Neira Code run commands and tests automatically?",
+		question: "Can Researcherry Code run commands and tests automatically?",
 		answer: (
 			<>
-				Yes! One of Neira Code&apos;s biggest strengths is its ability to execute commands—always optional and
-				fully permission-based. It can run terminal commands like npm install, execute your test suites, and
-				even open a web browser for integration testing when you approve it.
+				Yes! One of Researcherry Code&apos;s biggest strengths is its ability to execute commands—always
+				optional and fully permission-based. It can run terminal commands like npm install, execute your test
+				suites, and even open a web browser for integration testing when you approve it.
 			</>
 		),
 	},
@@ -146,17 +147,17 @@ const faqs: FAQItem[] = [
 		question: "What if I just want a casual coding 'vibe'?",
 		answer: (
 			<>
-				Neira Code shines for both serious enterprise development and casual &quot;vibe coding.&quot; You can
-				ask it to quickly prototype ideas, refactor on the fly, or provide design suggestions—without a rigid,
-				step-by-step process.
+				Researcherry Code shines for both serious enterprise development and casual &quot;vibe coding.&quot; You
+				can ask it to quickly prototype ideas, refactor on the fly, or provide design suggestions—without a
+				rigid, step-by-step process.
 			</>
 		),
 	},
 	{
-		question: "Can I contribute to Neira Code?",
+		question: "Can I contribute to Researcherry Code?",
 		answer: (
 			<>
-				Yes, please do! Neira Code is open-source on{" "}
+				Yes, please do! Researcherry Code is open-source on{" "}
 				<a
 					href="https://github.com/RooCodeInc/Roo-Code"
 					target="_blank"
@@ -190,7 +191,7 @@ const faqs: FAQItem[] = [
 			<>
 				Check out our{" "}
 				<a
-					href="https://docs.neira.app"
+					href="https://docs.researcherry.app"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-primary underline-offset-4 hover:underline">
@@ -222,7 +223,7 @@ const faqs: FAQItem[] = [
 				</a>{" "}
 				tutorials and{" "}
 				<a
-					href="https://blog.neira.app"
+					href="https://blog.researcherry.app"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-primary underline-offset-4 hover:underline">
@@ -255,8 +256,8 @@ export function FAQSection() {
 						}}>
 						<h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Frequently Asked Questions</h2>
 						<p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-							Everything you need to know about Neira Code and how it can transform your development
-							workflow.
+							Everything you need to know about Researcherry Code and how it can transform your
+							development workflow.
 						</p>
 					</motion.div>
 				</div>

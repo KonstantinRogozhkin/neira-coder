@@ -125,10 +125,10 @@ export type TelemetryEvent = {
 }
 
 /**
- * NeiraCoderTelemetryEvent
+ * ResearcherryCoderTelemetryEvent
  */
 
-export const neiraCoderTelemetryEventSchema = z.discriminatedUnion("type", [
+export const researcherryCoderTelemetryEventSchema = z.discriminatedUnion("type", [
 	z.object({
 		type: z.enum([
 			TelemetryEventName.TASK_CREATED,
@@ -191,7 +191,7 @@ export const neiraCoderTelemetryEventSchema = z.discriminatedUnion("type", [
 	}),
 ])
 
-export type NeiraCoderTelemetryEvent = z.infer<typeof neiraCoderTelemetryEventSchema>
+export type ResearcherryCoderTelemetryEvent = z.infer<typeof researcherryCoderTelemetryEventSchema>
 
 /**
  * TelemetryEventSubscription

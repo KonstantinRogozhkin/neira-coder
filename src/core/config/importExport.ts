@@ -6,8 +6,8 @@ import fs from "fs/promises"
 import * as vscode from "vscode"
 import { z, ZodError } from "zod"
 
-import { globalSettingsSchema } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { globalSettingsSchema } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { ProviderSettingsManager, providerProfilesSchema } from "./ProviderSettingsManager"
 import { ContextProxy } from "./ContextProxy"

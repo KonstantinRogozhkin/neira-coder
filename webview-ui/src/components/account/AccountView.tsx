@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 
-import type { CloudUserInfo } from "@neira-coder/types"
-import { TelemetryEventName } from "@neira-coder/types"
+import type { CloudUserInfo } from "@researcherry/types"
+import { TelemetryEventName } from "@researcherry/types"
 
 import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { vscode } from "@src/utils/vscode"
@@ -47,7 +47,7 @@ export const AccountView = ({ userInfo, isAuthenticated, cloudApiUrl, onDone }: 
 	const handleVisitCloudWebsite = () => {
 		// Send telemetry for cloud website visit
 		telemetryClient.capture(TelemetryEventName.ACCOUNT_CONNECT_CLICKED)
-		const cloudUrl = cloudApiUrl || "https://app.neira.app"
+		const cloudUrl = cloudApiUrl || "https://app.researcherry.app"
 		vscode.postMessage({ type: "openExternal", url: cloudUrl })
 	}
 

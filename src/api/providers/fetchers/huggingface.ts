@@ -1,12 +1,12 @@
 import axios from "axios"
 import { z } from "zod"
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry/types"
 import {
 	HUGGINGFACE_API_URL,
 	HUGGINGFACE_CACHE_DURATION,
 	HUGGINGFACE_DEFAULT_MAX_TOKENS,
 	HUGGINGFACE_DEFAULT_CONTEXT_WINDOW,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 import type { ModelRecord } from "../../../shared/api"
 
 /**

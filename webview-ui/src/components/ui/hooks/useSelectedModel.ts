@@ -40,7 +40,7 @@ import {
 	sambaNovaDefaultModelId,
 	doubaoModels,
 	doubaoDefaultModelId,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import type { ModelRecord, RouterModels } from "@roo/api"
 

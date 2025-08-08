@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Скрипт для отката переименования проекта neira-coder → roo-code
+# Скрипт для отката переименования проекта researcherry → roo-code
 # Использование: ./scripts/rollback-rename.sh [--backup-dir=path]
 
 set -e
@@ -13,13 +13,13 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Переменные
-OLD_NAME="neira-coder"
+OLD_NAME="researcherry"
 NEW_NAME="roo-code"
-OLD_ORG="neira-coder"
+OLD_ORG="researcherry"
 NEW_ORG="roo-code"
-OLD_DOMAIN="neira-coder.com"
+OLD_DOMAIN="researcherry.com"
 NEW_DOMAIN="roocode.com"
-OLD_EMAIL="neira-coder.com"
+OLD_EMAIL="researcherry.com"
 NEW_EMAIL="roocode.com"
 
 BACKUP_DIR=""

@@ -1,4 +1,4 @@
-import { type ModelInfo, type VertexModelId, vertexDefaultModelId, vertexModels } from "@neira-coder/types"
+import { type ModelInfo, type VertexModelId, vertexDefaultModelId, vertexModels } from "@researcherry/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

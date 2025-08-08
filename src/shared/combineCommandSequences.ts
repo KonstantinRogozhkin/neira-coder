@@ -1,4 +1,4 @@
-import { ClineMessage } from "@neira-coder/types"
+import { ClineMessage } from "@researcherry/types"
 import { safeJsonParse } from "./safeJsonParse"
 
 export const COMMAND_OUTPUT_STRING = "Output:"

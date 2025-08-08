@@ -11,7 +11,7 @@ vi.mock("os", () => ({
 	platform: vi.fn(),
 }))
 
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry/cloud", () => ({
 	CloudService: {
 		hasInstance: vi.fn(),
 		instance: {
@@ -21,7 +21,7 @@ vi.mock("@neira-coder/cloud", () => ({
 		},
 	},
 	getClerkBaseUrl: vi.fn(),
-	PRODUCTION_CLERK_BASE_URL: "https://clerk.neiracoder.com",
+	PRODUCTION_CLERK_BASE_URL: "https://clerk.researcherrycoder.com",
 }))
 
 vi.mock("vscode", () => ({
@@ -47,9 +47,9 @@ vi.mock("../../../i18n", () => ({
 	t: vi.fn((key: string) => {
 		const translations: Record<string, string> = {
 			"mdm.errors.cloud_auth_required":
-				"Your organization requires Neira Coder Cloud authentication. Please sign in to continue.",
+				"Your organization requires Researcherry Coder Cloud authentication. Please sign in to continue.",
 			"mdm.errors.organization_mismatch":
-				"You must be authenticated with your organization's Neira Coder Cloud account.",
+				"You must be authenticated with your organization's Researcherry Coder Cloud account.",
 			"mdm.errors.verification_failed": "Unable to verify organization authentication.",
 		}
 		return translations[key] || key
@@ -60,7 +60,7 @@ import * as fs from "fs"
 import * as os from "os"
 import * as vscode from "vscode"
 import { MdmService } from "../MdmService"
-import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@neira-coder/cloud"
+import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@researcherry/cloud"
 
 const mockFs = fs as any
 const mockOs = os as any
@@ -82,7 +82,7 @@ describe("MdmService", () => {
 		mockOs.platform.mockReturnValue("darwin")
 
 		// Setup default mock for getClerkBaseUrl to return development URL
-		mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+		mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 
 		// Setup VSCode mocks
 		const mockConfig = {
@@ -94,7 +94,7 @@ describe("MdmService", () => {
 		// Reset mocks
 		vi.clearAllMocks()
 		// Re-setup the default after clearing
-		mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+		mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 	})
 
 	afterEach(() => {
@@ -170,19 +170,23 @@ describe("MdmService", () => {
 
 			await MdmService.createInstance()
 
-			expect(mockFs.existsSync).toHaveBeenCalledWith(path.join("C:\\ProgramData", "NeiraCoder", "mdm.json"))
+			expect(mockFs.existsSync).toHaveBeenCalledWith(
+				path.join("C:\\ProgramData", "ResearcherryCoder", "mdm.json"),
+			)
 		})
 
 		it("should use correct path for Windows in development", async () => {
 			mockOs.platform.mockReturnValue("win32")
 			process.env.PROGRAMDATA = "C:\\ProgramData"
-			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 
 			mockFs.existsSync.mockReturnValue(false)
 
 			await MdmService.createInstance()
 
-			expect(mockFs.existsSync).toHaveBeenCalledWith(path.join("C:\\ProgramData", "NeiraCoder", "mdm.dev.json"))
+			expect(mockFs.existsSync).toHaveBeenCalledWith(
+				path.join("C:\\ProgramData", "ResearcherryCoder", "mdm.dev.json"),
+			)
 		})
 
 		it("should use correct path for macOS in production", async () => {
@@ -193,18 +197,20 @@ describe("MdmService", () => {
 
 			await MdmService.createInstance()
 
-			expect(mockFs.existsSync).toHaveBeenCalledWith("/Library/Application Support/NeiraCoder/mdm.json")
+			expect(mockFs.existsSync).toHaveBeenCalledWith("/Library/Application Support/ResearcherryCoder/mdm.json")
 		})
 
 		it("should use correct path for macOS in development", async () => {
 			mockOs.platform.mockReturnValue("darwin")
-			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 
 			mockFs.existsSync.mockReturnValue(false)
 
 			await MdmService.createInstance()
 
-			expect(mockFs.existsSync).toHaveBeenCalledWith("/Library/Application Support/NeiraCoder/mdm.dev.json")
+			expect(mockFs.existsSync).toHaveBeenCalledWith(
+				"/Library/Application Support/ResearcherryCoder/mdm.dev.json",
+			)
 		})
 
 		it("should use correct path for Linux in production", async () => {
@@ -220,7 +226,7 @@ describe("MdmService", () => {
 
 		it("should use correct path for Linux in development", async () => {
 			mockOs.platform.mockReturnValue("linux")
-			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 
 			mockFs.existsSync.mockReturnValue(false)
 
@@ -231,13 +237,15 @@ describe("MdmService", () => {
 
 		it("should default to dev config when NODE_ENV is not set", async () => {
 			mockOs.platform.mockReturnValue("darwin")
-			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.neiracoder.com")
+			mockGetClerkBaseUrl.mockReturnValue("https://dev.clerk.researcherrycoder.com")
 
 			mockFs.existsSync.mockReturnValue(false)
 
 			await MdmService.createInstance()
 
-			expect(mockFs.existsSync).toHaveBeenCalledWith("/Library/Application Support/NeiraCoder/mdm.dev.json")
+			expect(mockFs.existsSync).toHaveBeenCalledWith(
+				"/Library/Application Support/ResearcherryCoder/mdm.dev.json",
+			)
 		})
 	})
 
@@ -278,7 +286,9 @@ describe("MdmService", () => {
 
 			expect(compliance.compliant).toBe(false)
 			if (!compliance.compliant) {
-				expect(compliance.reason).toContain("Your organization requires Neira Coder Cloud authentication")
+				expect(compliance.reason).toContain(
+					"Your organization requires Researcherry Coder Cloud authentication",
+				)
 			}
 		})
 
@@ -301,7 +311,7 @@ describe("MdmService", () => {
 			expect(compliance.compliant).toBe(false)
 			if (!compliance.compliant) {
 				expect(compliance.reason).toContain(
-					"You must be authenticated with your organization's Neira Coder Cloud account",
+					"You must be authenticated with your organization's Researcherry Coder Cloud account",
 				)
 			}
 		})

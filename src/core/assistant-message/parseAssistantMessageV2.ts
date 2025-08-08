@@ -1,4 +1,4 @@
-import { type ToolName, toolNames } from "@neira-coder/types"
+import { type ToolName, toolNames } from "@researcherry/types"
 
 import { TextContent, ToolUse, ToolParamName, toolParamNames } from "../../shared/tools"
 

@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo, useEffect } from "react"
 import { useEvent } from "react-use"
 import { VSCodeTextField, VSCodeRadioGroup, VSCodeRadio } from "@vscode/webview-ui-toolkit/react"
 
-import type { ProviderSettings } from "@neira-coder/types"
+import type { ProviderSettings } from "@researcherry/types"
 
 import { ExtensionMessage } from "@roo/ExtensionMessage"
 

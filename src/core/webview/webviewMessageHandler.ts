@@ -12,9 +12,9 @@ import {
 	type GlobalState,
 	type ClineMessage,
 	TelemetryEventName,
-} from "@neira-coder/types"
-import { CloudService } from "@neira-coder/cloud"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry/types"
+import { CloudService } from "@researcherry/cloud"
+import { TelemetryService } from "@researcherry/telemetry"
 import { type ApiMessage } from "../task-persistence/apiMessages"
 
 import { ClineProvider } from "./ClineProvider"
@@ -800,7 +800,7 @@ export const webviewMessageHandler = async (
 			}
 
 			const workspaceFolder = vscode.workspace.workspaceFolders[0]
-			const rooDir = path.join(workspaceFolder.uri.fsPath, ".neira")
+			const rooDir = path.join(workspaceFolder.uri.fsPath, ".researcherry")
 			const mcpPath = path.join(rooDir, "mcp.json")
 
 			try {
@@ -1257,8 +1257,8 @@ export const webviewMessageHandler = async (
 			await updateGlobalState("language", message.text as Language)
 			await provider.postStateToWebview()
 			break
-		case "showNeiraIgnoredFiles":
-			await updateGlobalState("showNeiraIgnoredFiles", message.bool ?? true)
+		case "showResearcherryIgnoredFiles":
+			await updateGlobalState("showResearcherryIgnoredFiles", message.bool ?? true)
 			await provider.postStateToWebview()
 			break
 		case "hasOpenedModeSelector":
@@ -1696,14 +1696,14 @@ export const webviewMessageHandler = async (
 				if (scope === "project") {
 					const workspacePath = getWorkspacePath()
 					if (workspacePath) {
-						rulesFolderPath = path.join(workspacePath, ".neira", `rules-${message.slug}`)
+						rulesFolderPath = path.join(workspacePath, ".researcherry", `rules-${message.slug}`)
 					} else {
-						rulesFolderPath = path.join(".neira", `rules-${message.slug}`)
+						rulesFolderPath = path.join(".researcherry", `rules-${message.slug}`)
 					}
 				} else {
 					// Global scope - use OS home directory
 					const homeDir = os.homedir()
-					rulesFolderPath = path.join(homeDir, ".neira", `rules-${message.slug}`)
+					rulesFolderPath = path.join(homeDir, ".researcherry", `rules-${message.slug}`)
 				}
 
 				// Check if the rules folder exists
@@ -2455,7 +2455,7 @@ export const webviewMessageHandler = async (
 				// Determine the commands directory based on source
 				let commandsDir: string
 				if (source === "global") {
-					const globalConfigDir = path.join(os.homedir(), ".neira")
+					const globalConfigDir = path.join(os.homedir(), ".researcherry")
 					commandsDir = path.join(globalConfigDir, "commands")
 				} else {
 					// Project commands
@@ -2464,7 +2464,7 @@ export const webviewMessageHandler = async (
 						vscode.window.showErrorMessage(t("common:errors.no_workspace_for_project_command"))
 						break
 					}
-					commandsDir = path.join(workspaceRoot, ".neira", "commands")
+					commandsDir = path.join(workspaceRoot, ".researcherry", "commands")
 				}
 
 				// Ensure the commands directory exists

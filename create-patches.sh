@@ -6,9 +6,9 @@ set -e
 
 PATCHES_DIR="patches"
 MAIN_BRANCH="main"
-DEV_BRANCH="neira-coder"
+DEV_BRANCH="researcherry"
 
-echo "=== Создание патчей Neira Coder (только ru/en локализация) ==="
+echo "=== Создание патчей Researcherry Coder (только ru/en локализация) ==="
 
 # Очищаем старые патчи
 echo "-> Очистка старых патчей..."
@@ -28,7 +28,7 @@ git diff $MAIN_BRANCH..$DEV_BRANCH -- \
     "package.json" \
     "src/package.json" \
     "webview-ui/package.json" \
-    "apps/web-neira-coder/**" \
+    "apps/web-researcherry/**" \
     "src/assets/icons/**" \
     "webview-ui/public/**" \
     "src/i18n/locales/en/**" \
@@ -67,8 +67,8 @@ git diff $MAIN_BRANCH..$DEV_BRANCH -- \
 echo "   - Создание патча для правил и режимов..."
 git diff $MAIN_BRANCH..$DEV_BRANCH -- \
     ".clinerules/**" \
-    ".neira/plan.md" \
-    ".neiramodes" \
+    ".researcherry/plan.md" \
+    ".researcherrymodes" \
     "scripts/**" \
     ".github/**" \
     ".roo/**" \
@@ -141,7 +141,7 @@ git diff $MAIN_BRANCH..$DEV_BRANCH -- \
 # 7. Общий патч для всего остального (исключая уже обработанные файлы)
 echo "   - Создание общего патча (только ru/en, без экспортов, документации, правил)..."
 git diff $MAIN_BRANCH..$DEV_BRANCH \
-    ":(exclude).neira/export_code" \
+    ":(exclude).researcherry/export_code" \
     ":(exclude).docs" \
     ":(exclude).github" \
     ":(exclude).clinerules" \
@@ -160,7 +160,7 @@ if [ -s /tmp/full-general.patch ]; then
     grep -v -E "(src|webview-ui)/src/i18n/locales/(ca|de|es|fr|hi|id|it|ja|ko|nl|pl|pt-BR|tr|vi|zh-CN|zh-TW)/" /tmp/full-general.patch | \
     grep -v -E "src/package\.nls\.(ca|de|es|fr|hi|id|it|ja|ko|nl|pl|pt-BR|tr|vi|zh-CN|zh-TW)\.json" | \
     grep -v -E "locales/(ca|de|es|fr|hi|id|it|ja|ko|nl|pl|pt-BR|tr|vi|zh-CN|zh-TW)/" | \
-    grep -v -E "\\.neira/export_code/" | \
+    grep -v -E "\\.researcherry/export_code/" | \
     grep -v -E "\.docs/" | \
     grep -v -E "\.github/" | \
     grep -v -E "\.clinerules/" | \
@@ -170,7 +170,7 @@ if [ -s /tmp/full-general.patch ]; then
     grep -v -E "src/" | \
     grep -v -E "webview-ui/" | \
     grep -v -E "packages/" | \
-    grep -v -E "\.neiramodes" | \
+    grep -v -E "\.researcherrymodes" | \
     grep -v -E "scripts/" | \
     grep -v -E "pnpm-lock\.yaml|package-lock\.json|yarn\.lock" | \
     grep -v -E "\\.(png|jpg|jpeg|gif|ico|ttf|woff|woff2|bin|exe)$" | \
@@ -194,7 +194,7 @@ echo "Добавленных строк: $(git diff --stat $MAIN_BRANCH..$DEV_BR
 echo "Удаленных строк: $(git diff --stat $MAIN_BRANCH..$DEV_BRANCH | tail -1 | grep -o '[0-9]\+ deletion' | grep -o '[0-9]\+' || echo '0')"
 echo ""
 echo "🌐 Включены только локализации: English (en), Русский (ru)"
-echo "📦 Исключены экспорты кода (.neira/export_code/) для экономии места"
+echo "📦 Исключены экспорты кода (.researcherry/export_code/) для экономии места"
 echo ""
 echo "⚠️  ВНИМАНИЕ: 007-general.patch очень большой ($(ls -lh $PATCHES_DIR/007-general.patch | awk '{print $5}'))"
 echo "   Рекомендуется использовать только специфические патчи для сборки."

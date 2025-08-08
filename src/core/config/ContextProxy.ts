@@ -10,18 +10,18 @@ import {
 	type GlobalSettings,
 	type SecretState,
 	type GlobalState,
-	type NeiraCoderSettings,
+	type ResearcherryCoderSettings,
 	providerSettingsSchema,
 	globalSettingsSchema,
 	isSecretStateKey,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { logger } from "../../utils/logging"
 
 type GlobalStateKey = keyof GlobalState
 type SecretStateKey = keyof SecretState
-type NeiraCoderSettingsKey = keyof NeiraCoderSettings
+type ResearcherryCoderSettingsKey = keyof ResearcherryCoderSettings
 
 const PASS_THROUGH_STATE_KEYS = ["taskHistory"]
 
@@ -229,25 +229,25 @@ export class ContextProxy {
 	}
 
 	/**
-	 * NeiraCoderSettings
+	 * ResearcherryCoderSettings
 	 */
 
-	public setValue<K extends NeiraCoderSettingsKey>(key: K, value: NeiraCoderSettings[K]) {
+	public setValue<K extends ResearcherryCoderSettingsKey>(key: K, value: ResearcherryCoderSettings[K]) {
 		return isSecretStateKey(key) ? this.storeSecret(key, value as string) : this.updateGlobalState(key, value)
 	}
 
-	public getValue<K extends NeiraCoderSettingsKey>(key: K): NeiraCoderSettings[K] {
+	public getValue<K extends ResearcherryCoderSettingsKey>(key: K): ResearcherryCoderSettings[K] {
 		return isSecretStateKey(key)
-			? (this.getSecret(key) as NeiraCoderSettings[K])
-			: (this.getGlobalState(key) as NeiraCoderSettings[K])
+			? (this.getSecret(key) as ResearcherryCoderSettings[K])
+			: (this.getGlobalState(key) as ResearcherryCoderSettings[K])
 	}
 
-	public getValues(): NeiraCoderSettings {
+	public getValues(): ResearcherryCoderSettings {
 		return { ...this.getAllGlobalState(), ...this.getAllSecretState() }
 	}
 
-	public async setValues(values: NeiraCoderSettings) {
-		const entries = Object.entries(values) as [NeiraCoderSettingsKey, unknown][]
+	public async setValues(values: ResearcherryCoderSettings) {
+		const entries = Object.entries(values) as [ResearcherryCoderSettingsKey, unknown][]
 		await Promise.all(entries.map(([key, value]) => this.setValue(key, value)))
 	}
 

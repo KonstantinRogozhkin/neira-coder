@@ -14,9 +14,9 @@ NC='\033[0m' # No Color
 
 # Переменные
 OLD_NAME="roo-code"
-NEW_NAME="neira-coder"
+NEW_NAME="researcherry"
 OLD_ORG="roo-code"
-NEW_ORG="neira-coder"
+NEW_ORG="researcherry"
 
 # Функции
 log_info() {
@@ -104,14 +104,14 @@ for pkg in "${packages[@]}"; do
 done
 
 # Проверка приложений
-check_file "apps/web-neira-coder/package.json" "\"name\": \"@$NEW_ORG/web-neira-coder\"" "Новое имя приложения web-neira-coder" || ((errors++))
+check_file "apps/web-researcherry/package.json" "\"name\": \"@$NEW_ORG/web-researcherry\"" "Новое имя приложения web-researcherry" || ((errors++))
 check_file "apps/web-evals/package.json" "\"name\": \"@$NEW_ORG/web-evals\"" "Новое имя приложения web-evals" || ((errors++))
 check_file "webview-ui/package.json" "\"name\": \"@$NEW_ORG/vscode-webview\"" "Новое имя пакета vscode-webview" || ((errors++))
 
 log_info "=== Проверка директорий ==="
 
 # Проверка переименованных директорий
-check_directory "apps/web-neira-coder" "Переименованное приложение" || ((errors++))
+check_directory "apps/web-researcherry" "Переименованное приложение" || ((errors++))
 check_directory "apps/web-roo-code" "Старое приложение (должно быть удалено)" && ((errors++))
 
 log_info "=== Проверка конфигурационных файлов ==="

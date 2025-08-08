@@ -7,7 +7,7 @@ import {
 	OpenAiNativeModelId,
 	openAiNativeModels,
 	OPENAI_NATIVE_DEFAULT_TEMPERATURE,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

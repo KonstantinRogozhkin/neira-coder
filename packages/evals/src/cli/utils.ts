@@ -20,7 +20,7 @@ export const isDockerContainer = () => {
 
 export const resetEvalsRepo = async ({ run, cwd }: { run: Run; cwd: string }) => {
 	await execa({ cwd })`git config user.name "Roo Code"`
-	await execa({ cwd })`git config user.email "support@neira.app"`
+	await execa({ cwd })`git config user.email "support@researcherry.app"`
 	await execa({ cwd })`git checkout -f`
 	await execa({ cwd })`git clean -fd`
 	await execa({ cwd })`git checkout -b runs/${run.id}-${crypto.randomUUID().slice(0, 8)} main`

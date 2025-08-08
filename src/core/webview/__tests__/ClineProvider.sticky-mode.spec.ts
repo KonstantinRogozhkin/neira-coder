@@ -1,11 +1,11 @@
 // npx vitest core/webview/__tests__/ClineProvider.sticky-mode.spec.ts
 
 import * as vscode from "vscode"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { TelemetryService } from "@researcherry/telemetry"
 import { ClineProvider } from "../ClineProvider"
 import { ContextProxy } from "../../config/ContextProxy"
 import { Task } from "../../task/Task"
-import type { HistoryItem, ProviderName } from "@neira-coder/types"
+import type { HistoryItem, ProviderName } from "@researcherry/types"
 
 // Mock setup
 vi.mock("vscode", () => ({
@@ -97,7 +97,7 @@ vi.mock("../../diff/strategies/multi-search-replace", () => ({
 		applyDiff: vi.fn(),
 	})),
 }))
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry/cloud", () => ({
 	CloudService: {
 		hasInstance: vi.fn().mockReturnValue(true),
 		get instance() {
@@ -106,7 +106,7 @@ vi.mock("@neira-coder/cloud", () => ({
 			}
 		},
 	},
-	getNeiraCoderApiUrl: vi.fn().mockReturnValue("https://app.neiracoder.com"),
+	getResearcherryCoderApiUrl: vi.fn().mockReturnValue("https://app.researcherrycoder.com"),
 }))
 vi.mock("../../../shared/modes", () => ({
 	modes: [
@@ -152,7 +152,7 @@ vi.mock("fs/promises", () => ({
 	unlink: vi.fn().mockResolvedValue(undefined),
 	rmdir: vi.fn().mockResolvedValue(undefined),
 }))
-vi.mock("@neira-coder/telemetry", () => ({
+vi.mock("@researcherry/telemetry", () => ({
 	TelemetryService: {
 		hasInstance: vi.fn().mockReturnValue(true),
 		createInstance: vi.fn(),

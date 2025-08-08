@@ -8,7 +8,7 @@
 - Создан главный файл документации `.docs/README.md`
 - Добавлены разделы:
     - **Getting Started** (Начало работы)
-        - `installing.md` - Установка Neira Coder
+        - `installing.md` - Установка Researcherry Coder
         - `connecting-api-provider.md` - Подключение API провайдера
         - `your-first-task.md` - Первая задача
     - **Basic Usage** (Базовое использование)
@@ -26,7 +26,7 @@
 ### Изменено
 
 - Обновлены все ссылки в `README.md` и `src/README.md`
-- Заменены внешние ссылки `https://docs.neiracoder.com/` на локальные `.docs/`
+- Заменены внешние ссылки `https://docs.researcherrycoder.com/` на локальные `.docs/`
 - Все ссылки теперь указывают на локальные файлы документации
 
 ### Структура документации

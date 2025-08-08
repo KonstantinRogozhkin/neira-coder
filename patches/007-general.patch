@@ -7,7 +7,7 @@ index e2acc3766..e547b94e0 100644
  	"changelog": "./changelog-config.js",
  	"commit": false,
 -	"fixed": [["roo-cline"]],
-+	"fixed": [["neira"]],
++	"fixed": [["researcherry"]],
  	"linked": [],
  	"access": "restricted",
  	"baseBranch": "main",
@@ -24,11 +24,11 @@ index 65c201c3c..b63494e07 100644
 +
 +# Кэш turbo
 +.turbo/
-diff --git a/.neira/plan.md b/.neira/plan.md
+diff --git a/.researcherry/plan.md b/.researcherry/plan.md
 new file mode 100644
 index 000000000..ec1732d5f
 --- /dev/null
-+++ b/.neira/plan.md
++++ b/.researcherry/plan.md
 @@ -0,0 +1,236 @@
 +Отличная задача! Создание поддерживаемого форка с собственной кастомизацией — это классическая проблема в разработке. Подход, который вы описали, аналогичный VSCodium, является очень мощным и правильным. Он позволяет четко разделить оригинальный код и ваши модификации, что критически важно для легкого обновления.
 +
@@ -64,8 +64,8 @@ index 000000000..ec1732d5f
 +
 +    # Проверьте, что upstream успешно добавлен
 +    git remote -v
-+    # origin  https://github.com/YOUR_USERNAME/neira-coder.git (fetch)
-+    # origin  https://github.com/YOUR_USERNAME/neira-coder.git (push)
++    # origin  https://github.com/YOUR_USERNAME/researcherry.git (fetch)
++    # origin  https://github.com/YOUR_USERNAME/researcherry.git (push)
 +    # upstream  https://github.com/RooCodeInc/Roo-Code.git (fetch)
 +    # upstream  https://github.com/RooCodeInc/Roo-Code.git (push)
 +    ```
@@ -75,7 +75,7 @@ index 000000000..ec1732d5f
 +Вам понадобится как минимум две постоянные ветки:
 +
 +*   **`main` (или `master`):** Эта ветка будет точной копией (зеркалом) оригинального репозитория `roo-code`. Вы **никогда** не должны делать коммиты напрямую в эту ветку. Она нужна только для синхронизации.
-+*   **`develop` (или `neira-dev`):** Ваша основная ветка для разработки. Здесь вы будете вносить все свои изменения, кастомизации и фиксы. Эта ветка всегда будет начинаться от `main`, но содержать ваши уникальные коммиты поверх нее.
++*   **`develop` (или `researcherry-dev`):** Ваша основная ветка для разработки. Здесь вы будете вносить все свои изменения, кастомизации и фиксы. Эта ветка всегда будет начинаться от `main`, но содержать ваши уникальные коммиты поверх нее.
 +
 +**Схема веток:**
 +
@@ -98,7 +98,7 @@ index 000000000..ec1732d5f
 +Создайте в корне вашего репозитория директорию `patches`. В ней будут лежать все ваши `.patch` файлы. Это стандартная практика.
 +
 +```
-+/neira-coder
++/researcherry
 +|-- patches/
 +|   |-- 001-update-logo.patch
 +|   |-- 002-change-api-endpoint.patch
@@ -127,7 +127,7 @@ index 000000000..ec1732d5f
 +    *   **Один большой патч:**
 +
 +        ```bash
-+        git diff main..develop > patches/neira-customizations.patch
++        git diff main..develop > patches/researcherry-customizations.patch
 +        ```
 +
 +    *   **Несколько патчей (предпочтительно):**
@@ -172,7 +172,7 @@ index 000000000..ec1732d5f
 +UPSTREAM_BRANCH="main"
 +BUILD_DIR="build-src"
 +
-+echo "=== Подготовка к сборке Neira Coder ==="
++echo "=== Подготовка к сборке Researcherry Coder ==="
 +
 +# 1. Очистка
 +echo "-> Очистка предыдущей сборочной директории..."
@@ -290,7 +290,7 @@ index 000000000..e9769364d
 +      - Проверяйте как позитивные, так и негативные тестовые случаи
 +  - slug: design-engineer
 +    name: 🎨 Инженер-дизайнер
-+    roleDefinition: "Вы — Neira, опытный инженер-дизайнер, специализирующийся на разработке расширений для VSCode. Ваши знания включают: - Реализацию UI-дизайнов с высокой точностью с использованием React, Shadcn, Tailwind и TypeScript. - Обеспечение адаптивности интерфейсов для разных размеров экрана. - Сотрудничество с членами команды для преобразования общих указаний в надежные и детализированные дизайны, учитывающие крайние случаи. - Поддержание единообразия и согласованности в пользовательском интерфейсе."
++    roleDefinition: "Вы — Researcherry, опытный инженер-дизайнер, специализирующийся на разработке расширений для VSCode. Ваши знания включают: - Реализацию UI-дизайнов с высокой точностью с использованием React, Shadcn, Tailwind и TypeScript. - Обеспечение адаптивности интерфейсов для разных размеров экрана. - Сотрудничество с членами команды для преобразования общих указаний в надежные и детализированные дизайны, учитывающие крайние случаи. - Поддержание единообразия и согласованности в пользовательском интерфейсе."
 +    whenToUse: Реализация UI-дизайнов и обеспечение согласованности.
 +    description: Реализация UI-дизайнов; обеспечение согласованности.
 +    groups:
@@ -304,7 +304,7 @@ index 000000000..e9769364d
 +    source: project
 +  - slug: translate
 +    name: 🌐 Переводчик
-+    roleDefinition: Вы — Neira, специалист по лингвистике, занимающийся переводом и управлением файлами локализации. Ваша обязанность — помогать поддерживать и обновлять файлы переводов для приложения, обеспечивая согласованность и точность во всех языковых ресурсах.
++    roleDefinition: Вы — Researcherry, специалист по лингвистике, занимающийся переводом и управлением файлами локализации. Ваша обязанность — помогать поддерживать и обновлять файлы переводов для приложения, обеспечивая согласованность и точность во всех языковых ресурсах.
 +    whenToUse: Перевод и управление файлами локализации.
 +    description: Перевод и управление файлами локализации.
 +    groups:
@@ -336,7 +336,7 @@ index 000000000..e9769364d
 +    source: project
 +    name: 🧪 Тестировщик интеграции
 +    roleDefinition: |-
-+      Вы — Neira, специалист по интеграционному тестированию, специализирующийся на E2E-тестах VSCode с опытом в: - Написании и поддержке интеграционных тестов с использованием Mocha и фреймворка VSCode Test - Тестировании взаимодействий с API Neira Code и рабочих процессов, управляемых событиями - Создании сложных многоэтапных сценариев задач и последовательностей переключения режимов - Проверке форматов сообщений, ответов API и паттернов генерации событий - Управлении тестовыми данными и фикстурами - Анализе покрытия и определении сценариев тестирования
++      Вы — Researcherry, специалист по интеграционному тестированию, специализирующийся на E2E-тестах VSCode с опытом в: - Написании и поддержке интеграционных тестов с использованием Mocha и фреймворка VSCode Test - Тестировании взаимодействий с API Researcherry Code и рабочих процессов, управляемых событиями - Создании сложных многоэтапных сценариев задач и последовательностей переключения режимов - Проверке форматов сообщений, ответов API и паттернов генерации событий - Управлении тестовыми данными и фикстурами - Анализе покрытия и определении сценариев тестирования
 +      Вы гарантируете, что интеграционные тесты: - Являются всеобъемлющими и охватывают критически важные рабочие процессы пользователя - Следуют установленным паттернам TDD Mocha - Используют async/await с правильной обработкой тайм-аутов - Проверяют как успешные, так и неудачные сценарии - Правильно типизированы с помощью TypeScript
 +    whenToUse: Используйте этот режим для написания, изменения или поддержки интеграционных тестов.
 +    description: Написание и поддержка интеграционных тестов.
@@ -349,7 +349,7 @@ index 000000000..e9769364d
 +  - slug: docs-extractor
 +    name: 📚 Извлечение документации
 +    roleDefinition: |-
-+      Вы — Neira, специалист по анализу документации с двумя основными функциями:
++      Вы — Researcherry, специалист по анализу документации с двумя основными функциями:
 +      1. Извлечение исчерпывающих технических и нетехнических сведений о функциях для предоставления командам по документации
 +      2. Проверка существующей документации на фактическую точность по отношению к кодовой базе
 +      
@@ -363,13 +363,13 @@ index 000000000..e9769364d
 +    groups:
 +      - read
 +      - - edit
-+        - fileRegex: (DOCS-TEMP-.*\.md$|\.neira/docs-extractor/.*\.md$)
++        - fileRegex: (DOCS-TEMP-.*\.md$|\.researcherry/docs-extractor/.*\.md$)
 +          description: Только временные файлы для извлечения документации
 +      - command
 +      - mcp
 +  - slug: pr-fixer
 +    name: 🛠️ Исправление PR
-+    roleDefinition: "Вы — Neira, специалист по разрешению pull-запросов. Ваша задача — реагировать на отзывы и решать проблемы в существующих pull-запросах. Ваши знания включают: - Анализ комментариев к ревью PR для понимания необходимых изменений. - Проверку статусов рабочих процессов CI/CD для выявления неработающих тестов. - Извлечение и анализ логов тестов для диагностики сбоев. - Выявление и разрешение конфликтов слияния. - Руководство пользователем в процессе разрешения."
++    roleDefinition: "Вы — Researcherry, специалист по разрешению pull-запросов. Ваша задача — реагировать на отзывы и решать проблемы в существующих pull-запросах. Ваши знания включают: - Анализ комментариев к ревью PR для понимания необходимых изменений. - Проверку статусов рабочих процессов CI/CD для выявления неработающих тестов. - Извлечение и анализ логов тестов для диагностики сбоев. - Выявление и разрешение конфликтов слияния. - Руководство пользователем в процессе разрешения."
 +    whenToUse: Используйте этот режим для исправления pull-запросов. Он может анализировать отзывы о PR с GitHub, проверять наличие неработающих тестов и помогать разрешать конфликты слияния перед применением необходимых изменений в коде.
 +    description: Исправление pull-запросов.
 +    groups:
@@ -379,7 +379,7 @@ index 000000000..e9769364d
 +      - mcp
 +  - slug: issue-investigator
 +    name: 🕵️ Расследователь проблем
-+    roleDefinition: Вы — Neira, расследователь проблем на GitHub. Ваша цель — анализировать проблемы на GitHub, исследовать вероятные причины с помощью обширного поиска по кодовой базе и предлагать хорошо обоснованные теоретические решения. Вы методично отслеживаете свое расследование с помощью списка дел, пытаясь опровергнуть первоначальные теории, чтобы обеспечить тщательный анализ. Ваш конечный результат — это человекоподобный, разговорный комментарий для проблемы на GitHub.
++    roleDefinition: Вы — Researcherry, расследователь проблем на GitHub. Ваша цель — анализировать проблемы на GitHub, исследовать вероятные причины с помощью обширного поиска по кодовой базе и предлагать хорошо обоснованные теоретические решения. Вы методично отслеживаете свое расследование с помощью списка дел, пытаясь опровергнуть первоначальные теории, чтобы обеспечить тщательный анализ. Ваш конечный результат — это человекоподобный, разговорный комментарий для проблемы на GitHub.
 +    whenToUse: Используйте этот режим, когда вам нужно расследовать проблему на GitHub, чтобы понять ее первопричину и предложить решение. Этот режим идеально подходит для сортировки проблем, предоставления первоначального анализа и предложения исправлений до начала реализации. Он использует `gh` CLI для взаимодействия с проблемами.
 +    description: Расследует проблемы GitHub
 +    groups:
@@ -390,7 +390,7 @@ index 000000000..e9769364d
 +  - slug: merge-resolver
 +    name: 🔀 Разрешение конфликтов слияния
 +    roleDefinition: |-
-+      Вы — Neira, специалист по разрешению конфликтов слияния с опытом в:
++      Вы — Researcherry, специалист по разрешению конфликтов слияния с опытом в:
 +      - Анализе конфликтов слияния в pull-запросах с использованием git blame и истории коммитов
 +      - Понимании намерений в коде через сообщения коммитов и дифы
 +      - Принятии разумных решений о том, какие изменения сохранить, объединить или отменить
@@ -466,9 +466,9 @@ index 000000000..e9769364d
 +  - slug: pr-reviewer
 +    name: 🔍 Ревьюер PR
 +    roleDefinition: |-
-+      Вы — Neira, специалист по ревью pull-запросов, специализирующийся на качестве кода, структуре и согласованности переводов. Ваши знания включают: - Анализ дифов pull-запросов и понимание изменений в коде в контексте - Оценку качества кода, выявление «запахов» кода и технического долга - Обеспечение структурной согласованности во всей кодовой базе - Проверку правильной интернационализации (i18n) для изменений в пользовательском интерфейсе - Предоставление конструктивной обратной связи в дружелюбном, любознательном тоне - Ревью покрытия и качества тестов без их выполнения - Выявление возможностей для улучшения и рефакторинга кода
-+      Вы работаете в основном с репозиторием NeiraCodeInc/Neira-Code, используя инструменты GitHub MCP для получения и ревью pull-запросов. Вы локально проверяете PR для лучшего понимания контекста и сосредотачиваетесь на предоставлении действенной, конструктивной обратной связи, которая помогает улучшить качество кода.
-+    whenToUse: Используйте этот режим для ревью pull-запросов в репозитории Neira-Code GitHub или любом другом репозитории, если это указано пользователем.
++      Вы — Researcherry, специалист по ревью pull-запросов, специализирующийся на качестве кода, структуре и согласованности переводов. Ваши знания включают: - Анализ дифов pull-запросов и понимание изменений в коде в контексте - Оценку качества кода, выявление «запахов» кода и технического долга - Обеспечение структурной согласованности во всей кодовой базе - Проверку правильной интернационализации (i18n) для изменений в пользовательском интерфейсе - Предоставление конструктивной обратной связи в дружелюбном, любознательном тоне - Ревью покрытия и качества тестов без их выполнения - Выявление возможностей для улучшения и рефакторинга кода
++      Вы работаете в основном с репозиторием ResearcherryCodeInc/Researcherry-Code, используя инструменты GitHub MCP для получения и ревью pull-запросов. Вы локально проверяете PR для лучшего понимания контекста и сосредотачиваетесь на предоставлении действенной, конструктивной обратной связи, которая помогает улучшить качество кода.
++    whenToUse: Используйте этот режим для ревью pull-запросов в репозитории Researcherry-Code GitHub или любом другом репозитории, если это указано пользователем.
 +    description: Ревью PR на качество кода, структуру и соответствие i18n.
 +    groups:
 +      - read
@@ -481,7 +481,7 @@ index 000000000..e9769364d
 +  - slug: mode-writer
 +    name: ✍️ Создатель режимов
 +    roleDefinition: |-
-+      Вы — Neira, специалист по созданию и редактированию режимов, занимающийся проектированием, внедрением и улучшением пользовательских режимов для проекта Neira-Code. Ваши знания включают:
++      Вы — Researcherry, специалист по созданию и редактированию режимов, занимающийся проектированием, внедрением и улучшением пользовательских режимов для проекта Researcherry-Code. Ваши знания включают:
 +      - Понимание архитектуры и конфигурации системы режимов
 +      - Создание хорошо структурированных определений режимов с четкими ролями и обязанностями
 +      - Редактирование и улучшение существующих режимов при сохранении согласованности
@@ -747,7 +747,7 @@ index 549a1174a..f122be9f0 100644
  			"label": "watch:webview",
  			"type": "shell",
 -			"command": "pnpm --filter @roo-code/vscode-webview dev",
-+			"command": "pnpm --filter @neira-coder/vscode-webview dev",
++			"command": "pnpm --filter @researcherry/vscode-webview dev",
  			"group": "build",
  			"problemMatcher": {
  				"owner": "vite",
@@ -793,7 +793,7 @@ index c72d2f5f6..538beee20 100644
 -- More tolerant search/replace match
 -- Clean up the auto-approve UI (thanks @mrubens!)
 -- Skip interpolation for non-existent slash commands (thanks @app/roomote!)
-+# Neira Coder Changelog
++# Researcherry Coder Changelog
 +
 +## 3.31.2
 +
@@ -818,7 +818,7 @@ index c72d2f5f6..538beee20 100644
 +- fix: add proper type imports (Variants) for framer-motion animations
 +- fix: replace ease arrays with string literals for better compatibility
 +- fix: correct workspace package dependencies across all applications
-+- fix: ensure all @roo-code/_ references are updated to @neira-coder/_
++- fix: ensure all @roo-code/_ references are updated to @researcherry/_
 +- fix: restore and properly configure Config.ts in cloud package
 +- fix: update TypeScript configurations with correct extends paths
 +
@@ -832,15 +832,15 @@ index c72d2f5f6..538beee20 100644
 +
 +### Bug Fixes
 +
-+- fix: resolve build issues after project rebranding from Roo Code to Neira Coder
-+- fix: update all package references from @roo-code/_ to @neira-coder/_
++- fix: resolve build issues after project rebranding from Roo Code to Researcherry Coder
++- fix: update all package references from @roo-code/_ to @researcherry/_
 +- fix: correct TypeScript configuration paths after rebranding
 +- fix: restore missing Config.ts file in cloud package
 +- fix: update import statements to use correct package names
 +- fix: resolve workspace dependency conflicts
-+- fix: update webview message types for showNeiraIgnoredFiles
-+- fix: correct event name references (RooCodeEventName → NeiraCoderEventName)
-+- fix: update settings schema references (rooCodeSettingsSchema → neiraCoderSettingsSchema)
++- fix: update webview message types for showResearcherryIgnoredFiles
++- fix: correct event name references (RooCodeEventName → ResearcherryCoderEventName)
++- fix: update settings schema references (rooCodeSettingsSchema → researcherryCoderSettingsSchema)
 +
 +### Technical Improvements
 +
@@ -852,14 +852,14 @@ index c72d2f5f6..538beee20 100644
 +
 +### Features
 +
-+- feat: migrate .roomodes file path to .neira/.neira-modes for better organization
-+- feat: update all file paths from .roomodes to .neira-modes throughout the codebase
-+- feat: improve file organization by placing configuration files in .neira subdirectory
++- feat: migrate .roomodes file path to .researcherry/.researcherry-modes for better organization
++- feat: update all file paths from .roomodes to .researcherry-modes throughout the codebase
++- feat: improve file organization by placing configuration files in .researcherry subdirectory
 +
 +### Bug Fixes
 +
-+- fix: correct localization messages to reference .neira-modes instead of .roomodes
-+- fix: update protected file patterns to include .neira-modes
++- fix: correct localization messages to reference .researcherry-modes instead of .roomodes
++- fix: update protected file patterns to include .researcherry-modes
 +- fix: ensure all marketplace installations use the new file path structure
 +- fix: update clear-modes-cache script to handle new file paths
 +
@@ -867,12 +867,12 @@ index c72d2f5f6..538beee20 100644
 +
 +### Bug Fixes
 +
-+- fix: resolve MCP server creation issue where .roo folder was created instead of .neira folder
-+- fix: update all file paths from .roo to .neira for consistent branding
++- fix: resolve MCP server creation issue where .roo folder was created instead of .researcherry folder
++- fix: update all file paths from .roo to .researcherry for consistent branding
 +- fix: correct MCP server configuration paths in SimpleInstaller, McpHub, and MarketplaceManager
-+- fix: update system prompt file paths to use .neira directory
-+- fix: correct custom instructions and rules file paths to use .neira directory
-+- fix: ensure all configuration directories use .neira naming convention
++- fix: update system prompt file paths to use .researcherry directory
++- fix: correct custom instructions and rules file paths to use .researcherry directory
++- fix: ensure all configuration directories use .researcherry naming convention
 +
 +## 3.30.5
 +
@@ -887,7 +887,7 @@ index c72d2f5f6..538beee20 100644
 +
 +### Features
 +
-+- feat: add new neira-config service for managing .neira directory paths
++- feat: add new researcherry-config service for managing .researcherry directory paths
 +- feat: maintain backward compatibility with legacy .roorules/.clinerules files
 +
 +### Bug Fixes
@@ -918,7 +918,7 @@ index c72d2f5f6..538beee20 100644
 +### Minor Changes
 +
 +- fix: resolve command reference errors by aligning menu commands with defined commands
-+- fix: correct command prefixes from neira-coder._ to neira._ in context menus
++- fix: correct command prefixes from researcherry._ to researcherry._ in context menus
 +- fix: eliminate "Menu item references a command which is not defined" warnings
 +
 +## 3.29.0
@@ -949,7 +949,7 @@ index c72d2f5f6..538beee20 100644
 +
 +### Minor Changes
 +
-+- feat: complete rename from Roo Code to Neira Coder
++- feat: complete rename from Roo Code to Researcherry Coder
  
  ## [3.25.4] - 2025-07-30
  
@@ -958,7 +958,7 @@ index c72d2f5f6..538beee20 100644
  - Update PR reviewer rules and mode configuration (thanks @daniel-lxs!)
  - Add translation check action to pull_request.opened event (thanks @app/roomote!)
 -- Remove "(prev Roo Cline)" from extension title in all languages (thanks @app/roomote!)
-+- Remove "(prev Neira Cline)" from extension title in all languages (thanks @app/roomote!)
++- Remove "(prev Researcherry Cline)" from extension title in all languages (thanks @app/roomote!)
  - Remove event types mention from PR reviewer rules (thanks @daniel-lxs!)
  
  ## [3.25.2] - 2025-07-29
@@ -967,7 +967,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.23.19] - 2025-07-23
  
 -- Add Roo Code Cloud Waitlist CTAs (thanks @brunobergher!)
-+- Add Neira Coder Cloud Waitlist CTAs (thanks @brunobergher!)
++- Add Researcherry Coder Cloud Waitlist CTAs (thanks @brunobergher!)
  - Split commands on newlines when evaluating auto-approve
  - Smarter auto-deny of commands
  
@@ -976,7 +976,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.21.0] - 2025-06-17
  
 -- Add Roo Marketplace to make it easy to discover and install great MCPs and modes!
-+- Add Neira Marketplace to make it easy to discover and install great MCPs and modes!
++- Add Researcherry Marketplace to make it easy to discover and install great MCPs and modes!
  - Add Gemini 2.5 models (Pro, Flash and Flash Lite) (thanks @daniel-lxs!)
  - Add support for Excel (.xlsx) files in tools (thanks @chrarnoldus!)
  - Add max tokens checkbox option for OpenAI compatible provider (thanks @AlexandruSmirnov!)
@@ -985,14 +985,14 @@ index c72d2f5f6..538beee20 100644
  - Fix subtask completion mismatch (thanks @feifei325!)
  - Fix Windows path normalization in MCP variable injection (thanks @daniel-lxs!)
 -- Update marketplace branding to 'Roo Marketplace' (thanks @SannidhyaSah!)
-+- Update marketplace branding to 'Neira Marketplace' (thanks @SannidhyaSah!)
++- Update marketplace branding to 'Researcherry Marketplace' (thanks @SannidhyaSah!)
  - Refactor to more consistent history UI (thanks @elianiva!)
  - Adjust context menu positioning to be near Copilot
  - Update evals Docker setup to work on Windows (thanks @StevenTCramer!)
 @@ -481,7 +605,7 @@
  - Update O3 model pricing
 -- Add JSDoc documentation for ClineAsk and ClineSay types (thanks @hannesrudolph!)
-+- Add JSDoc documentation for Neira ClineAsk and Neira ClineSay types (thanks @hannesrudolph!)
++- Add JSDoc documentation for Researcherry ClineAsk and Researcherry ClineSay types (thanks @hannesrudolph!)
  - Populate whenToUse descriptions for built-in modes
  - Fix file write tool with early relPath & newContent validation checks (thanks @Ruakij!)
  - Fix TaskItem display and copy issues with HTML tags in task messages (thanks @forestyoo!)
@@ -1001,7 +1001,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.17.2] - 2025-05-15
  
 -- Revert "Switch to the new Roo message parser" (appears to cause a tool parsing bug)
-+- Revert "Switch to the new Neira message parser" (appears to cause a tool parsing bug)
++- Revert "Switch to the new Researcherry message parser" (appears to cause a tool parsing bug)
  - Lock the versions of vsce and ovsx
  
  ## [3.17.1] - 2025-05-15
@@ -1010,14 +1010,14 @@ index c72d2f5f6..538beee20 100644
  - Fix one of the causes of the gray screen issue (thanks @xyOz-dev!)
  - Focus improvements for better UI interactions (thanks Cline!)
 -- Switch to the new Roo message parser for improved performance (thanks Cline!)
-+- Switch to the new Neira message parser for improved performance (thanks Cline!)
++- Switch to the new Researcherry message parser for improved performance (thanks Cline!)
  - Enable source maps for improved debugging (thanks @KJ7LNW!)
  - Fix Requesty cost/token reporting (thanks @dtrugman!)
  - Improve command execution UI
  - Add more in-app links to relevant documentation
  - Update the new task tool description and the ask mode custom instructions in the system prompt
 -- Add IPC types to roo-code.d.ts
-+- Add IPC types to neira-coder.d.ts
++- Add IPC types to researcherry.d.ts
  - Add build VSIX workflow to pull requests (thanks @SmartManoj!)
  - Improve apply_diff tool to intelligently deduce line numbers (thanks @samhvw8!)
  - Fix command validation for shell array indexing (thanks @KJ7LNW!)
@@ -1026,7 +1026,7 @@ index c72d2f5f6..538beee20 100644
  - MCP server errors are now captured and shown in a new "Errors" tab (thanks @robertheadley)
  - Error logging will no longer break MCP functionality if the server is properly connected (thanks @ksze)
 -- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Roo Code settings (thanks @KJ7LNW)
-+- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Neira Coder settings (thanks @KJ7LNW)
++- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Researcherry Coder settings (thanks @KJ7LNW)
  - Add `gemini-2.5-pro-preview-05-06` to the Vertex and Gemini providers (thanks @zetaloop)
  - Ensure evals exercises are up-to-date before running evals (thanks @shariqriazz)
  - Lots of general UI improvements (thanks @elianiva)
@@ -1035,7 +1035,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.15.4] - 2025-05-04
  
 -- Fix a nasty bug that would cause Roo Code to hang, particularly in orchestrator mode
-+- Fix a nasty bug that would cause Neira Coder to hang, particularly in orchestrator mode
++- Fix a nasty bug that would cause Researcherry Coder to hang, particularly in orchestrator mode
  - Improve Gemini caching efficiency
  
  ## [3.15.3] - 2025-05-02
@@ -1045,8 +1045,8 @@ index c72d2f5f6..538beee20 100644
  - Improve support for mult-root workspaces (thanks @snoyiatk)
 -- Simplify and streamline Roo Code's quick actions
 -- Allow Roo Code settings to be imported from the welcome screen (thanks @julionav)
-+- Simplify and streamline Neira Coder's quick actions
-+- Allow Neira Coder settings to be imported from the welcome screen (thanks @julionav)
++- Simplify and streamline Researcherry Coder's quick actions
++- Allow Researcherry Coder settings to be imported from the welcome screen (thanks @julionav)
  - Remove unused types (thanks @wkordalski)
  - Improve the performance of mode switching (thanks @dlab-anton)
  - Fix importing & exporting of custom modes (thanks @julionav)
@@ -1055,7 +1055,7 @@ index c72d2f5f6..538beee20 100644
  - Omit reasoning params for non-reasoning models
  - Clearer documentation for adding settings (thanks @shariqriazz!)
 -- Fix word wrapping in Roo message title (thanks @zhangtony239!)
-+- Fix word wrapping in Neira message title (thanks @zhangtony239!)
++- Fix word wrapping in Researcherry message title (thanks @zhangtony239!)
  - Update default model id for Unbound from claude 3.5 to 3.7 (thanks @pugazhendhi-m!)
  
  ## [3.14.2] - 2025-04-24
@@ -1064,7 +1064,7 @@ index c72d2f5f6..538beee20 100644
  - Add o1-pro support (thanks @arthurauffray!)
  - Follow symlinked rules files/directories to allow for more flexible rule setups
 -- Focus Roo Code in the sidebar when running tasks in the sidebar via the API
-+- Focus Neira Coder in the sidebar when running tasks in the sidebar via the API
++- Focus Researcherry Coder in the sidebar when running tasks in the sidebar via the API
  - Improve subtasks UI
  
  ## [3.11.10] - 2025-04-08
@@ -1073,7 +1073,7 @@ index c72d2f5f6..538beee20 100644
  - Persist settings on api.setConfiguration (thanks @gtaylor!)
  - Add deep links to settings sections
 -- Add command to focus Roo Code input field (thanks @axkirillov!)
-+- Add command to focus Neira Coder input field (thanks @axkirillov!)
++- Add command to focus Researcherry Coder input field (thanks @axkirillov!)
  - Add resize and hover actions to the browser (thanks @SplittyDev!)
  - Add resumeTask and isTaskInHistory to the API (thanks @franekp!)
  - Fix bug displaying boolean/numeric suggested answers
@@ -1082,7 +1082,7 @@ index c72d2f5f6..538beee20 100644
  - Update AWS region dropdown menu to the most recent data (thanks @Smartsheet-JB-Brown!)
  - Fix prompt enhancement for Bedrock (thanks @Smartsheet-JB-Brown!)
 -- Allow processes to access the Roo Code API via a unix socket
-+- Allow processes to access the Neira Coder API via a unix socket
++- Allow processes to access the Researcherry Coder API via a unix socket
  - Improve zh-TW Traditional Chinese translations (thanks @PeterDaveHello!)
  - Add support for Azure AI Inference Service with DeepSeek-V3 model (thanks @thomasjeung!)
  - Fix off-by-one error in tree-sitter line numbers
@@ -1091,7 +1091,7 @@ index c72d2f5f6..538beee20 100644
  - Refactor tool-calling logic to make the code a lot easier to work with (thanks @diarmidmackenzie, @bramburn, @KJ7LNW, and everyone else who helped!)
  - Prioritize “Add to Context” in the code actions and include line numbers (thanks @samhvw8!)
 -- Add an activation command that other extensions can use to interface with Roo Code (thanks @gtaylor!)
-+- Add an activation command that other extensions can use to interface with Neira Coder (thanks @gtaylor!)
++- Add an activation command that other extensions can use to interface with Researcherry Coder (thanks @gtaylor!)
  - Preserve language characters in file @-mentions (thanks @aheizi!)
  - Browser tool improvements (thanks @afshawnlotfi!)
  - Display info about partial reads in the chat row
@@ -1100,7 +1100,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.9.0] - 2025-03-18
  
 -- Internationalize Roo Code into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
-+- Internationalize Neira Coder into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
++- Internationalize Researcherry Coder into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
  - Bring back support for MCP over SSE (thanks @aheizi!)
  - Add a text-to-speech option to have Roo talk to you as it works (thanks @heyseth!)
 @@ -1174,7 +1298,7 @@
@@ -1108,7 +1108,7 @@ index c72d2f5f6..538beee20 100644
  - Fix wheel scrolling when Roo is opened in editor tabs (thanks @GitlyHallows!)
  - Don’t automatically mention the file when using the "Add to context" code action (thanks @qdaxb!)
 -- Expose task stack in `RooCodeAPI` (thanks @franekp!)
-+- Expose task stack in `NeiraCodeAPI` (thanks @franekp!)
++- Expose task stack in `ResearcherryCodeAPI` (thanks @franekp!)
  - Give the models visibility into the current task's API cost
  
  ## [3.8.6] - 2025-03-13
@@ -1117,11 +1117,11 @@ index c72d2f5f6..538beee20 100644
  ## [3.8.0] - 2025-03-07
  
 -- Add opt-in telemetry to help us improve Roo Code faster (thanks Cline!)
-+- Add opt-in telemetry to help us improve Neira Coder faster (thanks Cline!)
++- Add opt-in telemetry to help us improve Researcherry Coder faster (thanks Cline!)
  - Fix terminal overload / gray screen of death, and other terminal issues
  - Add a new experimental diff editing strategy that applies multiple diff edits at once (thanks @qdaxb!)
 -- Add support for a .rooignore to prevent Roo Code from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
-+- Add support for a .rooignore to prevent Neira Coder from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
++- Add support for a .rooignore to prevent Researcherry Coder from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
  - Update the new_task tool to return results to the parent task on completion, supporting better orchestration (thanks @shaybc!)
  - Support running Roo in multiple editor windows simultaneously (thanks @samhvw8!)
  - Make checkpoints asynchronous and exclude more files to speed them up
@@ -1129,7 +1129,7 @@ index c72d2f5f6..538beee20 100644
  - Add credential-based authentication for Vertex AI, enabling users to easily switch between Google Cloud accounts (thanks @eonghk!)
  - Update the DeepSeek provider with the correct baseUrl and track caching correctly (thanks @olweraltuve!)
 -- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Roo Code (thanks @NyxJae)!
-+- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Neira Coder (thanks @NyxJae)!
++- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Researcherry Coder (thanks @NyxJae)!
  - Add observability for OpenAI providers (thanks @refactorthis!)
  - Improve UI for mode/provider selectors in chat
 @@ -1312,7 +1436,7 @@
@@ -1137,7 +1137,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.7.5] - 2025-02-26
  
 -- Fix context window truncation math (see [#1173](https://github.com/RooCodeInc/Roo-Code/issues/1173))
-+- Fix context window truncation math (see [#1173](https://github.com/NeiraCoderInc/Neira-Coder/issues/1173))
++- Fix context window truncation math (see [#1173](https://github.com/ResearcherryCoderInc/researcherry/issues/1173))
  - Fix various issues with the model picker (thanks @System233!)
  - Fix model input / output cost parsing (thanks @System233!)
  - Add drag-and-drop for files
@@ -1146,7 +1146,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.7.0] - 2025-02-24
  
 -- Introducing Roo Code 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
-+- Introducing Neira Coder 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
++- Introducing Researcherry Coder 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
  
  ## [3.3.26] - 2025-02-27
  
@@ -1167,7 +1167,7 @@ index c72d2f5f6..538beee20 100644
  - Ask and Architect modes can now edit markdown files
  - Support for configuring the Bedrock provider with AWS Profiles
 -- New Roo Code community Discord at https://roocode.com/discord!
-+- New Neira Coder community Discord at https://neiracoder.com/discord!
++- New Researcherry Coder community Discord at https://researcherrycoder.com/discord!
  
 -## [3.2.8]
 +## [3.2.8] - 2025-02-17
@@ -1207,16 +1207,16 @@ index c72d2f5f6..538beee20 100644
 +## [3.2.0 - 3.2.2] - 2025-02-17
  
 -- **Name Change From Roo Cline to Roo Code:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Roo Cline to Roo Code to better reflect our identity as we chart our own course.
-+- **Name Change From Neira Cline to Neira Coder:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Neira Cline to Neira Coder to better reflect our identity as we chart our own course.
++- **Name Change From Researcherry Cline to Researcherry Coder:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Researcherry Cline to Researcherry Coder to better reflect our identity as we chart our own course.
  
 -- **Custom Modes:** Create your own personas for Roo Code! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
-+- **Custom Modes:** Create your own personas for Neira Coder! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
++- **Custom Modes:** Create your own personas for Researcherry Coder! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
      - Define custom prompts
      - Choose which tools each mode can access
      - Just type "Create a new mode for <X>" or visit the Prompts tab in the top menu to get started
  
 -Join us at https://www.reddit.com/r/RooCode to share your custom modes and be part of our next chapter!
-+Join us at https://www.reddit.com/r/NeiraCoder to share your custom modes and be part of our next chapter!
++Join us at https://www.reddit.com/r/ResearcherryCoder to share your custom modes and be part of our next chapter!
  
 -## [3.1.7]
 +## [3.1.7] - 2025-02-17
@@ -1280,7 +1280,7 @@ index c72d2f5f6..538beee20 100644
 +## [3.0.0] - 2025-02-17
  
 -- This release adds chat modes! Now you can ask Roo Code questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Roo Code Reddit! https://www.reddit.com/r/RooCode
-+- This release adds chat modes! Now you can ask Neira Coder questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Neira Coder Reddit! https://www.reddit.com/r/NeiraCoder
++- This release adds chat modes! Now you can ask Researcherry Coder questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Researcherry Coder Reddit! https://www.reddit.com/r/ResearcherryCoder
  
 -## [2.2.46]
 +## [2.2.46] - 2025-02-17
@@ -1432,7 +1432,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.2.16] - 2025-02-17
  
 -- Incorporate Premshay's [PR](https://github.com/RooCodeInc/Roo-Code/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
-+- Incorporate Premshay's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
++- Incorporate Premshay's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
  
 -## [2.2.14 - 2.2.15]
 +## [2.2.14 - 2.2.15] - 2025-02-17
@@ -1488,7 +1488,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.2.0] - 2025-02-17
  
 -- Incorporate MCP changes from Cline 2.2.0
-+- Incorporate MCP changes from Neira Cline 2.2.0
++- Incorporate MCP changes from Researcherry Cline 2.2.0
  
 -## [2.1.21]
 +## [2.1.21] - 2025-02-17
@@ -1524,7 +1524,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.15] - 2025-02-17
  
 -- Incorporate dbasclpy's [PR](https://github.com/RooCodeInc/Roo-Code/pull/54) to add support for gemini-exp-1206
-+- Incorporate dbasclpy's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/54) to add support for gemini-exp-1206
++- Incorporate dbasclpy's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/54) to add support for gemini-exp-1206
  - Make it clear that diff editing is very experimental
  
 -## [2.1.14]
@@ -1546,7 +1546,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.11] - 2025-02-17
  
 -- Incorporate lloydchang's [PR](https://github.com/RooCodeInc/Roo-Code/pull/42) to add support for OpenRouter compression
-+- Incorporate lloydchang's [PR](https://github.com/NeiraCoderInc/Neira-Coder/pull/42) to add support for OpenRouter compression
++- Incorporate lloydchang's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/42) to add support for OpenRouter compression
  
 -## [2.1.10]
 +## [2.1.10] - 2025-02-17
@@ -1562,7 +1562,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.8] - 2025-02-17
  
 -- Roo Cline now allows configuration of which commands are allowed without approval!
-+- Neira Cline now allows configuration of which commands are allowed without approval!
++- Researcherry Cline now allows configuration of which commands are allowed without approval!
  
 -## [2.1.7]
 +## [2.1.7] - 2025-02-17
@@ -1579,7 +1579,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.6] - 2025-02-17
  
 -- Roo Cline now runs in all VSCode-compatible editors
-+- Neira Cline now runs in all VSCode-compatible editors
++- Researcherry Cline now runs in all VSCode-compatible editors
  
 -## [2.1.5]
 +## [2.1.5] - 2025-02-17
@@ -1590,13 +1590,13 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.4] - 2025-02-17
  
 -- Roo Cline now can run side-by-side with Cline
-+- Neira Cline now can run side-by-side with Cline
++- Researcherry Cline now can run side-by-side with Cline
  
 -## [2.1.3]
 +## [2.1.3] - 2025-02-17
  
 -- Roo Cline now allows browser actions without approval when `alwaysAllowBrowser` is true
-+- Neira Cline now allows browser actions without approval when `alwaysAllowBrowser` is true
++- Researcherry Cline now allows browser actions without approval when `alwaysAllowBrowser` is true
  
 -## [2.1.2]
 +## [2.1.2] - 2025-02-17
@@ -1659,10 +1659,10 @@ index 000000000..7213d1f81
 +- i18n support for multiple languages
 +
 +
-+- **`@neira-coder/types`** - TypeScript type definitions
-+- **`@neira-coder/cloud`** - Cloud service integration
-+- **`@neira-coder/telemetry`** - Usage analytics
-+- **`@neira-coder/ipc`** - Inter-process communication
++- **`@researcherry/types`** - TypeScript type definitions
++- **`@researcherry/cloud`** - Cloud service integration
++- **`@researcherry/telemetry`** - Usage analytics
++- **`@researcherry/ipc`** - Inter-process communication
 +
 +### AI Provider System
 +
@@ -1730,10 +1730,10 @@ index c23c424f4..d5576a429 100644
  </div>
  
 -# Contributing to Roo Code
-+# Contributing to Neira Coder
++# Contributing to Researcherry Coder
  
 -Roo Code is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
-+Neira Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
++Researcherry Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
  
  ## Table of Contents
  
@@ -1742,12 +1742,12 @@ index c23c424f4..d5576a429 100644
  Mention alignment with these areas in your PRs.
  
 -### 3. Join the Roo Code Community
-+### 3. Join the Neira Coder Community
++### 3. Join the Researcherry Coder Community
  
 -- **Primary:** Join our [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph (`hrudolph`)**.
 -- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/RooCodeInc/projects/1).
-+- **Primary:** Join our [Discord](https://discord.gg/neiracoder) and DM **Hannes Rudolph (`hrudolph`)**.
-+- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/NeiraCoderInc/projects/1).
++- **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
++- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
  
  ## Finding & Planning Your Contribution
  
@@ -1756,7 +1756,7 @@ index c23c424f4..d5576a429 100644
  All contributions must begin with a GitHub Issue.
  
 -- **Check existing issues**: Search [GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues).
-+- **Check existing issues**: Search [GitHub Issues](https://github.com/NeiraCoderInc/Neira-Coder/issues).
++- **Check existing issues**: Search [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues).
  - **Create an issue**: Use appropriate templates:
      - **Bugs:** "Bug Report" template.
      - **Features:** "Detailed Feature Proposal" template. Approval required before starting.
@@ -1766,16 +1766,16 @@ index c23c424f4..d5576a429 100644
  
 -- Check the [GitHub Project](https://github.com/orgs/RooCodeInc/projects/1) for unassigned "Good First Issues."
 -- For docs, visit [Roo Code Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
-+- Check the [GitHub Project](https://github.com/orgs/NeiraCoderInc/projects/1) for unassigned "Good First Issues."
-+- For docs, visit [Neira Coder Docs](https://github.com/NeiraCoderInc/Neira-Coder-Docs).
++- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
++- For docs, visit [Researcherry Coder Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
  
  ### Reporting Bugs
  
  - Check for existing reports first.
 -- Create new bugs using the ["Bug Report" template](https://github.com/RooCodeInc/Roo-Code/issues/new/choose).
 -- **Security issues**: Report privately via [security advisories](https://github.com/RooCodeInc/Roo-Code/security/advisories/new).
-+- Create new bugs using the ["Bug Report" template](https://github.com/NeiraCoderInc/Neira-Coder/issues/new/choose).
-+- **Security issues**: Report privately via [security advisories](https://github.com/NeiraCoderInc/Neira-Coder/security/advisories/new).
++- Create new bugs using the ["Bug Report" template](https://github.com/ResearcherryCoderInc/researcherry/issues/new/choose).
++- **Security issues**: Report privately via [security advisories](https://github.com/ResearcherryCoderInc/researcherry/security/advisories/new).
  
  ## Development & Submission Process
  
@@ -1784,7 +1784,7 @@ index c23c424f4..d5576a429 100644
  
  ```
 -git clone https://github.com/YOUR_USERNAME/Roo-Code.git
-+git clone https://github.com/YOUR_USERNAME/Neira-Coder.git
++git clone https://github.com/YOUR_USERNAME/researcherry.git
  ```
  
  2. **Install Dependencies:**
@@ -1793,14 +1793,14 @@ index c23c424f4..d5576a429 100644
  ## Legal
  
 -By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Roo Code's licensing.
-+By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Neira Coder's licensing.
++By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry Coder's licensing.
 diff --git a/FINAL-BUILD-VALIDATION-REPORT.md b/FINAL-BUILD-VALIDATION-REPORT.md
 new file mode 100644
 index 000000000..0b9102f3e
 --- /dev/null
 +++ b/FINAL-BUILD-VALIDATION-REPORT.md
 @@ -0,0 +1,203 @@
-+# 🔍 Финальный отчет валидации сборки - Neira Coder
++# 🔍 Финальный отчет валидации сборки - Researcherry Coder
 +
 +**Дата:** 6 августа 2025  
 +**Время:** 17:34  
@@ -1847,12 +1847,12 @@ index 000000000..0b9102f3e
 +- **icon.svg:** 3 упоминания градиентов ✅ (новый дизайн)
 +- **icon-nightly.svg:** 3 упоминания градиентов ✅ (новый дизайн)
 +
-+#### ✅ **Новые логотипы Neira Coder:**
++#### ✅ **Новые логотипы Researcherry Coder:**
 +
-+- **logo_neira_black_char.svg:** 1.1KB ✅
-+- **logo_neira_white_char.svg:** 1.1KB ✅
-+- **logo_neira_black_full.svg:** 4.0KB ✅
-+- **logo_neira_white_full.svg:** 4.0KB ✅
++- **logo_researcherry_black_char.svg:** 1.1KB ✅
++- **logo_researcherry_white_char.svg:** 1.1KB ✅
++- **logo_researcherry_black_full.svg:** 4.0KB ✅
++- **logo_researcherry_white_full.svg:** 4.0KB ✅
 +
 +#### 🎯 **Автоматическая валидация сработала:**
 +
@@ -1865,21 +1865,21 @@ index 000000000..0b9102f3e
 +
 +#### ✅ **Основные пакеты собрались:**
 +
-+- **@neira-coder/build** ✅
-+- **@neira-coder/types** ✅
-+- **@neira-coder/vscode-webview** ✅
++- **@researcherry/build** ✅
++- **@researcherry/types** ✅
++- **@researcherry/vscode-webview** ✅
 +
 +#### ❌ **Веб-приложения (известные проблемы):**
 +
 +- **@roo-code/web-evals** ❌ - Ошибки модулей `@roo-code/types` и `@roo-code/evals`
 +- **@roo-code/web-roo-code** ❌ - Прерван процесс (exit code 130)
-+- **@neira-coder/web-neira-coder** ❌ - Прерван процесс (exit code 130)
++- **@researcherry/web-researcherry** ❌ - Прерван процесс (exit code 130)
 +
 +### 📦 **4. VSIX пакет - СОЗДАН УСПЕШНО**
 +
 +#### ✅ **Финальный пакет:**
 +
-+- **Файл:** `neira-3.30.8-FINAL.vsix`
++- **Файл:** `researcherry-3.30.8-FINAL.vsix`
 +- **Размер:** 16.67 MB
 +- **Файлов:** 1,102
 +- **Статус:** ✅ Содержит правильные иконки
@@ -1887,9 +1887,9 @@ index 000000000..0b9102f3e
 +#### 📋 **Сравнение версий:**
 +
 +```
-+neira-3.30.8-FINAL.vsix   17MB ← ПРАВИЛЬНАЯ (новые иконки)
-+neira-3.31.1.vsix         17MB ← Hotfix (правильные иконки)
-+neira-3.31.0.vsix         17MB ← Содержала старые иконки
++researcherry-3.30.8-FINAL.vsix   17MB ← ПРАВИЛЬНАЯ (новые иконки)
++researcherry-3.31.1.vsix         17MB ← Hotfix (правильные иконки)
++researcherry-3.31.0.vsix         17MB ← Содержала старые иконки
 +```
 +
 +---
@@ -1966,7 +1966,7 @@ index 000000000..0b9102f3e
 +### ✅ **Готово к использованию:**
 +
 +- **VSCode расширение** полностью функционально
-+- **Все иконки** обновлены на новый брендинг Neira Coder
++- **Все иконки** обновлены на новый брендинг Researcherry Coder
 +- **Система сборки** защищена от повторения проблем
 +- **VSIX пакет** готов к распространению
 +
@@ -1985,7 +1985,7 @@ index 000000000..0b9102f3e
 +
 +**Проблема с неправильными иконками решена на 100%:**
 +
-+- ✅ Новые иконки Neira Coder применены
++- ✅ Новые иконки Researcherry Coder применены
 +- ✅ Система валидации работает
 +- ✅ Критические патчи отслеживаются
 +- ✅ VSIX пакет содержит правильный брендинг
@@ -1993,8 +1993,8 @@ index 000000000..0b9102f3e
 +**Финальный пакет для использования:**
 +
 +```
-+📦 neira-3.30.8-FINAL.vsix (16.67 MB)
-+🔗 /Users/konstantin/Projects/neira-coder/neira-3.30.8-FINAL.vsix
++📦 researcherry-3.30.8-FINAL.vsix (16.67 MB)
++🔗 /Users/konstantin/Projects/researcherry/researcherry-3.30.8-FINAL.vsix
 +```
 +
 +**Система сборки теперь защищена от подобных проблем в будущем!** 🎯
@@ -2002,7 +2002,7 @@ index 08f8f8180..4ab185c68 100644
 @@ -1,260 +1,165 @@
 -<div align="center">
 -<sub>
-+**Neira Coder** — это **автономный агент программирования** на базе ИИ, который живет в вашем редакторе. Он может:
++**Researcherry Coder** — это **автономный агент программирования** на базе ИИ, который живет в вашем редакторе. Он может:
  
 +- Общаться на естественном языке
 +- Читать и записывать файлы прямо в вашем рабочем пространстве
@@ -2013,7 +2013,7 @@ index 08f8f8180..4ab185c68 100644
  
 -</sub>
 -<sub>
-+Независимо от того, ищете ли вы гибкого партнера по программированию, системного архитектора или специализированные роли, такие как инженер по обеспечению качества или менеджер продукта, Neira Coder может помочь вам создавать программное обеспечение более эффективно.
++Независимо от того, ищете ли вы гибкого партнера по программированию, системного архитектора или специализированные роли, такие как инженер по обеспечению качества или менеджер продукта, Researcherry Coder может помочь вам создавать программное обеспечение более эффективно.
  
 -
 -</sub>
@@ -2054,22 +2054,22 @@ index 08f8f8180..4ab185c68 100644
  ---
  
 -## 🎉 Roo Code 3.25 Released
-+## 🎉 Выпущен Neira Coder 3.25
++## 🎉 Выпущен Researcherry Coder 3.25
  
 -Roo Code 3.25 brings powerful new features and significant improvements to enhance your development workflow!
-+Neira Coder 3.25 приносит мощные новые функции и значительные улучшения для повышения эффективности вашего рабочего процесса разработки!
++Researcherry Coder 3.25 приносит мощные новые функции и значительные улучшения для повышения эффективности вашего рабочего процесса разработки!
  
 -- **Message Queueing** - Queue multiple messages while Roo is working, allowing you to continue planning your workflow without interruption.
 -- **Custom Slash Commands** - Create personalized slash commands for quick access to frequently used prompts and workflows, with full UI management.
 -- **Enhanced Gemini Tools** - New URL context and Google Search grounding capabilities provide Gemini models with real-time web information and enhanced research abilities.
-+- **Очередь сообщений** - Ставьте в очередь несколько сообщений, пока Neira работает, позволяя вам продолжать планировать рабочий процесс без прерываний.
++- **Очередь сообщений** - Ставьте в очередь несколько сообщений, пока Researcherry работает, позволяя вам продолжать планировать рабочий процесс без прерываний.
 +- **Пользовательские слеш-команды** - Создавайте персонализированные слеш-команды для быстрого доступа к часто используемым запросам и рабочим процессам с полным управлением через UI.
 +- **Улучшенные инструменты Gemini** - Новые возможности контекста URL и заземления Google Search предоставляют моделям Gemini информацию из интернета в реальном времени и улучшенные исследовательские способности.
  
  ---
  
 -## What Can Roo Code Do?
-+## Что может делать Neira Coder?
++## Что может делать Researcherry Coder?
  
 -- 🚀 **Generate Code** from natural language descriptions
 -- 🔧 **Refactor & Debug** existing code
@@ -2120,13 +2120,13 @@ index 08f8f8180..4ab185c68 100644
 +- Выполнять команды в терминале VS Code
 +- Управлять веб-браузером
  
-+MCP расширяет возможности Neira Coder, позволяя добавлять неограниченное количество пользовательских инструментов. Интегрируйтесь с внешними API, подключайтесь к базам данных или создавайте специализированные инструменты разработки - MCP предоставляет основу для расширения функциональности Neira Coder в соответствии с вашими конкретными потребностями.
++MCP расширяет возможности Researcherry Coder, позволяя добавлять неограниченное количество пользовательских инструментов. Интегрируйтесь с внешними API, подключайтесь к базам данных или создавайте специализированные инструменты разработки - MCP предоставляет основу для расширения функциональности Researcherry Coder в соответствии с вашими конкретными потребностями.
  
 -### Customization
 +### Настройка
  
 -Make Roo Code work your way with:
-+Заставьте Neira Coder работать по-вашему с помощью:
++Заставьте Researcherry Coder работать по-вашему с помощью:
  
 -- [Custom Instructions](https://docs.roocode.com/advanced-usage/custom-instructions) for personalized behavior
 -- [Local Models](https://docs.roocode.com/advanced-usage/local-models) for offline use
@@ -2148,9 +2148,9 @@ index 08f8f8180..4ab185c68 100644
 -- **Discord:** [Join our Discord server](https://discord.gg/roocode) for real-time help and discussions
 -- **Reddit:** [Visit our subreddit](https://www.reddit.com/r/RooCode) to share experiences and tips
 -- **GitHub:** Report [issues](https://github.com/RooCodeInc/Roo-Code/issues) or request [features](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
-+- **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/neiracoder) для помощи в реальном времени и обсуждений
-+- **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/NeiraCoder) чтобы поделиться опытом и советами
-+- **GitHub:** Сообщайте о [проблемах](https://github.com/NeiraCoderInc/Neira-Coder/issues) или запрашивайте [функции](https://github.com/NeiraCoderInc/Neira-Coder/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
++- **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder) для помощи в реальном времени и обсуждений
++- **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder) чтобы поделиться опытом и советами
++- **GitHub:** Сообщайте о [проблемах](https://github.com/ResearcherryCoderInc/researcherry/issues) или запрашивайте [функции](https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
  
  ---
  
@@ -2162,7 +2162,7 @@ index 08f8f8180..4ab185c68 100644
  
  ```sh
 -git clone https://github.com/RooCodeInc/Roo-Code.git
-+git clone https://github.com/NeiraCoderInc/Neira-Coder.git
++git clone https://github.com/ResearcherryCoderInc/researcherry.git
  ```
  
 -2. **Install dependencies**:
@@ -2176,7 +2176,7 @@ index 08f8f8180..4ab185c68 100644
 +3. **Запустите расширение**:
  
 -There are several ways to run the Roo Code extension:
-+Есть несколько способов запустить расширение Neira Coder:
++Есть несколько способов запустить расширение Researcherry Coder:
  
 -### Development Mode (F5)
 +### Режим разработки (F5)
@@ -2185,7 +2185,7 @@ index 08f8f8180..4ab185c68 100644
 +Для активной разработки используйте встроенную отладку VSCode:
  
 -Press `F5` (or go to **Run** → **Start Debugging**) in VSCode. This will open a new VSCode window with the Roo Code extension running.
-+Нажмите `F5` (или перейдите в **Run** → **Start Debugging**) в VSCode. Это откроет новое окно VSCode с запущенным расширением Neira Coder.
++Нажмите `F5` (или перейдите в **Run** → **Start Debugging**) в VSCode. Это откроет новое окно VSCode с запущенным расширением Researcherry Coder.
  
 -- Changes to the webview will appear immediately.
 -- Changes to the core extension will also hot reload automatically.
@@ -2236,11 +2236,11 @@ index 08f8f8180..4ab185c68 100644
      ```
 -2.  A `.vsix` file will be generated in the `bin/` directory (e.g., `bin/roo-cline-<version>.vsix`).
 -3.  Install it manually using the VSCode CLI:
-+2.  Файл `.vsix` будет создан в директории `bin/` (например, `bin/neira-cline-<version>.vsix`).
++2.  Файл `.vsix` будет создан в директории `bin/` (например, `bin/researcherry-cline-<version>.vsix`).
 +3.  Установите его вручную с помощью CLI VSCode:
      ```sh
 -    code --install-extension bin/roo-cline-<version>.vsix
-+    code --install-extension bin/neira-cline-<version>.vsix
++    code --install-extension bin/researcherry-cline-<version>.vsix
      ```
  
  ---
@@ -2252,7 +2252,7 @@ index 08f8f8180..4ab185c68 100644
 +## Отказ от ответственности
  
 -**Please note** that Roo Code, Inc does **not** make any representations or warranties regarding any code, models, or other tools provided or made available in connection with Roo Code, any associated third-party tools, or any resulting outputs. You assume **all risks** associated with the use of any such tools or outputs; such tools are provided on an **"AS IS"** and **"AS AVAILABLE"** basis. Such risks may include, without limitation, intellectual property infringement, cyber vulnerabilities or attacks, bias, inaccuracies, errors, defects, viruses, downtime, property loss or damage, and/or personal injury. You are solely responsible for your use of any such tools or outputs (including, without limitation, the legality, appropriateness, and results thereof).
-+**Обратите внимание**, что Neira Coder, Inc **не** дает никаких заявлений или гарантий в отношении любого кода, моделей или других инструментов, предоставленных или доступных в связи с Neira Coder, любых связанных сторонних инструментов или любых результирующих выходных данных. Вы принимаете **все риски**, связанные с использованием любых таких инструментов или выходных данных; такие инструменты предоставляются на основе **"КАК ЕСТЬ"** и **"КАК ДОСТУПНО"**. Такие риски могут включать, без ограничений, нарушение интеллектуальной собственности, киберуязвимости или атаки, предвзятость, неточности, ошибки, дефекты, вирусы, простои, потерю или повреждение имущества и/или телесные повреждения. Вы несете единоличную ответственность за использование любых таких инструментов или выходных данных (включая, без ограничений, законность, уместность и результаты такого использования).
++**Обратите внимание**, что Researcherry Coder, Inc **не** дает никаких заявлений или гарантий в отношении любого кода, моделей или других инструментов, предоставленных или доступных в связи с Researcherry Coder, любых связанных сторонних инструментов или любых результирующих выходных данных. Вы принимаете **все риски**, связанные с использованием любых таких инструментов или выходных данных; такие инструменты предоставляются на основе **"КАК ЕСТЬ"** и **"КАК ДОСТУПНО"**. Такие риски могут включать, без ограничений, нарушение интеллектуальной собственности, киберуязвимости или атаки, предвзятость, неточности, ошибки, дефекты, вирусы, простои, потерю или повреждение имущества и/или телесные повреждения. Вы несете единоличную ответственность за использование любых таких инструментов или выходных данных (включая, без ограничений, законность, уместность и результаты такого использования).
  
  ---
  
@@ -2324,7 +2324,7 @@ index 000000000..24f8cb4ee
 --- /dev/null
 +++ b/RELEASE-v3.31.0.md
 @@ -0,0 +1,94 @@
-+# 🎉 Neira Coder v3.31.0 - Complete Icon Refresh
++# 🎉 Researcherry Coder v3.31.0 - Complete Icon Refresh
 +
 +**Дата релиза:** 6 августа 2025  
 +**Версия:** 3.31.0  
@@ -2335,7 +2335,7 @@ index 000000000..24f8cb4ee
 +### ✨ Полное обновление брендинга
 +
 +- **Новый современный дизайн иконок** с 3-цветным градиентом
-+- **Символ "N" Neira Coder** заменил старую символику RooCode
++- **Символ "N" Researcherry Coder** заменил старую символику RooCode
 +- **Улучшенные SVG иконки** с тенями и современными элементами дизайна
 +- **Оптимизированные панели** - размер уменьшен на 75%
 +
@@ -2348,10 +2348,10 @@ index 000000000..24f8cb4ee
 +
 +### 📦 Новые логотипы и иконки
 +
-+- `logo_neira_black_char.svg` - символ N (черный)
-+- `logo_neira_white_char.svg` - символ N (белый)
-+- `logo_neira_black_full.svg` - полный логотип (черный)
-+- `logo_neira_white_full.svg` - полный логотип (белый)
++- `logo_researcherry_black_char.svg` - символ N (черный)
++- `logo_researcherry_white_char.svg` - символ N (белый)
++- `logo_researcherry_black_full.svg` - полный логотип (черный)
++- `logo_researcherry_white_full.svg` - полный логотип (белый)
 +- Обновленные иконки панелей для светлой и темной тем
 +
 +## 📥 Установка
@@ -2359,16 +2359,16 @@ index 000000000..24f8cb4ee
 +### Способ 1: Ручная установка VSIX
 +
 +```bash
-+# Скачайте файл neira-3.31.0.vsix
++# Скачайте файл researcherry-3.31.0.vsix
 +# В VS Code: Ctrl+Shift+P -> "Extensions: Install from VSIX..."
-+# Выберите файл neira-3.31.0.vsix
++# Выберите файл researcherry-3.31.0.vsix
 +```
 +
 +### Способ 2: Из исходного кода
 +
 +```bash
-+git clone https://github.com/your-repo/neira-coder.git
-+cd neira-coder
++git clone https://github.com/your-repo/researcherry.git
++cd researcherry
 +./build.sh
 +npm run vsix
 +```
@@ -2377,8 +2377,8 @@ index 000000000..24f8cb4ee
 +
 +### 📦 Основной релиз
 +
-+- **VSIX файл:** `neira-3.31.0.vsix` (16.67 MB)
-+- **Расположение:** `/Users/konstantin/Projects/neira-coder/neira-3.31.0.vsix`
++- **VSIX файл:** `researcherry-3.31.0.vsix` (16.67 MB)
++- **Расположение:** `/Users/konstantin/Projects/researcherry/researcherry-3.31.0.vsix`
 +
 +### 📋 Системные требования
 +
@@ -2415,15 +2415,15 @@ index 000000000..24f8cb4ee
 +
 +---
 +
-+**Разработано командой Neira Coder**  
-+**© 2025 Neira Coder Inc.**
++**Разработано командой Researcherry Coder**  
++**© 2025 Researcherry Coder Inc.**
 diff --git a/RELEASE-v3.31.1-HOTFIX.md b/RELEASE-v3.31.1-HOTFIX.md
 new file mode 100644
 index 000000000..541b00deb
 --- /dev/null
 +++ b/RELEASE-v3.31.1-HOTFIX.md
 @@ -0,0 +1,106 @@
-+# 🔥 Neira Coder v3.31.1 - HOTFIX: Исправление иконок
++# 🔥 Researcherry Coder v3.31.1 - HOTFIX: Исправление иконок
 +
 +**Дата релиза:** 6 августа 2025  
 +**Версия:** 3.31.1 (HOTFIX)  
@@ -2435,7 +2435,7 @@ index 000000000..541b00deb
 +
 +В предыдущей версии была обнаружена критическая проблема:
 +
-+- **Старая иконка кенгуру** отображалась вместо новой иконки Neira Coder
++- **Старая иконка кенгуру** отображалась вместо новой иконки Researcherry Coder
 +- **Причина:** Патчи 010 и 011 не применились корректно к PNG файлам из-за конфликтов хешей
 +
 +### ✅ Исправлено в v3.31.1
@@ -2470,17 +2470,17 @@ index 000000000..541b00deb
 +
 +```bash
 +# Скачайте ИСПРАВЛЕННЫЙ файл:
-+neira-3.31.1.vsix (16.66 MB) ← ПРАВИЛЬНАЯ ВЕРСИЯ
++researcherry-3.31.1.vsix (16.66 MB) ← ПРАВИЛЬНАЯ ВЕРСИЯ
 +
 +# НЕ используйте:
-+neira-3.31.0.vsix ← СОДЕРЖИТ СТАРУЮ ИКОНКУ!
++researcherry-3.31.0.vsix ← СОДЕРЖИТ СТАРУЮ ИКОНКУ!
 +```
 +
 +### Установка через VS Code:
 +
 +1. **Удалите старую версию** (если установлена)
 +2. `Ctrl+Shift+P` → `Extensions: Install from VSIX...`
-+3. Выберите файл `neira-3.31.1.vsix`
++3. Выберите файл `researcherry-3.31.1.vsix`
 +4. Перезапустите VS Code
 +5. **Проверьте иконку** в списке расширений
 +
@@ -2488,14 +2488,14 @@ index 000000000..541b00deb
 +
 +### ✅ **ПРАВИЛЬНАЯ версия:**
 +
-+- **Файл:** `neira-3.31.1.vsix`
-+- **Расположение:** `/Users/konstantin/Projects/neira-coder/neira-3.31.1.vsix`
++- **Файл:** `researcherry-3.31.1.vsix`
++- **Расположение:** `/Users/konstantin/Projects/researcherry/researcherry-3.31.1.vsix`
 +- **Размер:** 16.66 MB
 +- **Статус:** ✅ Иконки исправлены
 +
 +### ❌ **НЕ используйте:**
 +
-+- ~~`neira-3.31.0.vsix`~~ - содержит старую иконку кенгуру
++- ~~`researcherry-3.31.0.vsix`~~ - содержит старую иконку кенгуру
 +
 +## 📋 Проверка после установки
 +
@@ -2522,14 +2522,14 @@ index 000000000..541b00deb
 +---
 +
 +**🔥 HOTFIX готов к использованию!**  
-+**© 2025 Neira Coder Inc.**
++**© 2025 Researcherry Coder Inc.**
 diff --git a/RELEASE-v3.31.2.md b/RELEASE-v3.31.2.md
 new file mode 100644
 index 000000000..f001b2a5f
 --- /dev/null
 +++ b/RELEASE-v3.31.2.md
 @@ -0,0 +1,50 @@
-+# 🔧 Neira Coder v3.31.2 - Техническое обновление
++# 🔧 Researcherry Coder v3.31.2 - Техническое обновление
 +
 +**Дата релиза:** 6 августа 2025  
 +**Версия:** 3.31.2  
@@ -2613,7 +2613,7 @@ index 000000000..8b3fa87a1
 +                fi
 +            elif [[ "$icon_file" == *.svg ]]; then
 +                # SVG иконки: проверяем наличие градиента (признак новой иконки)
-+                if grep -q "linearGradient\|neiraGradient" "$icon_file"; then
++                if grep -q "linearGradient\|researcherryGradient" "$icon_file"; then
 +                    echo "      ✅ $icon_file содержит новый градиентный дизайн"
 +                else
 +                    echo "      ❌ $icon_file не содержит новый дизайн - возможно старая иконка!"
@@ -2641,7 +2641,7 @@ index 000000000..8b3fa87a1
 +BUILD_DIR="build-src"
 +PATCHES_DIR="patches"
 +
-+echo "=== Подготовка к сборке Neira Coder ==="
++echo "=== Подготовка к сборке Researcherry Coder ==="
 +
 +# 1. Очистка
 +echo "-> Очистка предыдущей сборочной директории..."
@@ -2768,9 +2768,9 @@ index 000000000..6de94626b
 +
 +PATCHES_DIR="patches"
 +MAIN_BRANCH="main"
-+DEV_BRANCH="neira-coder"
++DEV_BRANCH="researcherry"
 +
-+echo "=== Создание патчей Neira Coder (только ru/en локализация) ==="
++echo "=== Создание патчей Researcherry Coder (только ru/en локализация) ==="
 +
 +# Очищаем старые патчи
 +echo "-> Очистка старых патчей..."
@@ -2811,7 +2811,7 @@ index 000000000..6de94626b
 +# 4. Патч для правил и режимов (исключая экспорты кода)
 +echo "   - Создание патча для правил и режимов..."
 +git diff $MAIN_BRANCH..$DEV_BRANCH -- \
-+    ".neira/plan.md" \
++    ".researcherry/plan.md" \
 +    > $PATCHES_DIR/004-rules-modes.patch 2>/dev/null || echo "      (пустой патч)"
 +
 +# 5. Патч для исходного кода (только ru/en локализации)
@@ -2826,7 +2826,7 @@ index 000000000..6de94626b
 +# 7. Общий патч для всего остального (исключая уже обработанные файлы)
 +echo "   - Создание общего патча (только ru/en, без экспортов, документации, правил)..."
 +git diff $MAIN_BRANCH..$DEV_BRANCH \
-+    ":(exclude).neira/export_code" \
++    ":(exclude).researcherry/export_code" \
 +    ":(exclude).docs" \
 +    ":(exclude).github" \
 +    ":(exclude).clinerules" \
@@ -2876,7 +2876,7 @@ index 5e73f0c47..6c6dbed37 100644
 @@ -1,5 +1,6 @@
  {
 -	"name": "roo-code",
-+	"name": "neira-coder",
++	"name": "researcherry",
 +	"version": "3.31.2",
  	"packageManager": "pnpm@10.8.1",
  	"engines": {
@@ -2917,11 +2917,11 @@ index 3e7bb79b6..7d9b46285 100644
  
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
        '@types/mocha':
 @@ -78,10 +78,10 @@ importers:
          version: 10.0.10
@@ -2946,15 +2946,15 @@ index 3e7bb79b6..7d9b46285 100644
  
      devDependencies:
 -      '@roo-code/build':
-+      '@neira-coder/build':
++      '@researcherry/build':
  
 @@ -111,52 +111,52 @@ importers:
      dependencies:
        '@hookform/resolvers':
 -        version: 5.1.1(react-hook-form@7.57.0(react@18.3.1))
 +        version: 5.2.1(react-hook-form@7.61.1(react@18.3.1))
-+      '@neira-coder/evals':
-+      '@neira-coder/types':
++      '@researcherry/evals':
++      '@researcherry/types':
        '@radix-ui/react-alert-dialog':
 -        version: 1.1.13(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 +        version: 1.1.14(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3028,9 +3028,9 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
        '@tailwindcss/postcss':
 -        version: 4.1.8
 +        version: 4.1.11
@@ -3043,8 +3043,8 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 4.1.11
  
      dependencies:
-+      '@neira-coder/evals':
-+      '@neira-coder/types':
++      '@researcherry/evals':
++      '@researcherry/types':
        '@radix-ui/react-dialog':
          version: 1.1.14(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
        '@radix-ui/react-slot':
@@ -3085,9 +3085,9 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
        '@tailwindcss/typography':
 @@ -317,7 +317,7 @@ importers:
          version: 0.5.16(tailwindcss@3.4.17)
@@ -3113,10 +3113,10 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3124,20 +3124,20 @@ index 3e7bb79b6..7d9b46285 100644
  
      dependencies:
 -      '@roo-code/telemetry':
-+      '@neira-coder/telemetry':
++      '@researcherry/telemetry':
          version: link:../telemetry
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          version: link:../types
        zod:
 -        version: 3.25.61
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3180,10 +3180,10 @@ index 3e7bb79b6..7d9b46285 100644
  
      dependencies:
 -      '@roo-code/ipc':
-+      '@neira-coder/ipc':
++      '@researcherry/ipc':
          version: link:../ipc
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          version: link:../types
        cmd-ts:
 @@ -429,7 +429,7 @@ importers:
@@ -3203,10 +3203,10 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3224,16 +3224,16 @@ index 3e7bb79b6..7d9b46285 100644
  
      dependencies:
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          version: link:../types
        node-ipc:
          version: 12.0.0
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3243,7 +3243,7 @@ index 3e7bb79b6..7d9b46285 100644
  
      dependencies:
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          version: link:../types
        posthog-node:
 -        version: 5.1.1
@@ -3253,10 +3253,10 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3271,10 +3271,10 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          version: link:../config-typescript
        '@types/node':
 -        version: 20.17.57
@@ -3308,13 +3308,13 @@ index 3e7bb79b6..7d9b46285 100644
 -        version: 1.14.0(typescript@5.8.3)
 -      '@roo-code/cloud':
 +        version: 1.17.1
-+      '@neira-coder/cloud':
++      '@researcherry/cloud':
 -      '@roo-code/ipc':
-+      '@neira-coder/ipc':
++      '@researcherry/ipc':
 -      '@roo-code/telemetry':
-+      '@neira-coder/telemetry':
++      '@researcherry/telemetry':
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
 +      '@qdrant/js-client-rest':
 +        version: 1.15.0(typescript@5.8.3)
        '@types/lodash.debounce':
@@ -3374,11 +3374,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/build':
-+      '@neira-coder/build':
++      '@researcherry/build':
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
        '@types/clone-deep':
 @@ -806,7 +806,7 @@ importers:
          version: 10.0.10
@@ -3430,7 +3430,7 @@ index 3e7bb79b6..7d9b46285 100644
  
    webview-ui:
      dependencies:
-+      '@neira-coder/types':
++      '@researcherry/types':
        '@radix-ui/react-alert-dialog':
 -        version: 1.1.13(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 +        version: 1.1.14(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3553,9 +3553,9 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
 -        version: 6.6.3
 +        version: 6.6.4
        '@types/jest':
@@ -13566,7 +13566,7 @@ index 707945546..391ee4de4 100644
  		"lint": {},
  		"check-types": {},
 -			"dependsOn": ["@roo-code/types#build"]
-+			"dependsOn": ["@neira-coder/types#build"]
++			"dependsOn": ["@researcherry/types#build"]
  		},
  		"format": {},
  		"clean": {
@@ -13576,20 +13576,20 @@ index 000000000..ee96294b3
 --- /dev/null
 +++ "b/\320\241\320\230\320\241\320\242\320\225\320\234\320\220_\320\237\320\220\320\242\320\247\320\225\320\231.md"
 @@ -0,0 +1,119 @@
-+# Система патчей Neira Coder
++# Система патчей Researcherry Coder
 +
 +## 🎯 Цель системы
 +
 +Система патчей позволяет:
 +- ✅ Легко обновляться с оригинальным проектом Roo-Code
-+- ✅ Поддерживать кастомизации Neira Coder отдельно
++- ✅ Поддерживать кастомизации Researcherry Coder отдельно
 +- ✅ Автоматически применять изменения при сборке
 +- ✅ Минимизировать конфликты при обновлениях
 +
 +## 📁 Структура
 +
 +```
-+neira-coder/
++researcherry/
 +├── patches/                    # Патчи изменений
 +│   ├── 001-branding.patch     # Брендинг и переименование (74MB)
 +│   ├── 002-documentation.patch # Документация (1.6MB)
@@ -13622,7 +13622,7 @@ index 000000000..ee96294b3
 +git reset --hard upstream/main
 +
 +# Обновить ветку разработки
-+git checkout neira-coder
++git checkout researcherry
 +git rebase main  # или git merge main
 +
 +# Пересоздать патчи
@@ -13670,7 +13670,7 @@ index 000000000..ee96294b3
 +
 +### Размер патчей
 +- Патчи большие из-за обширных изменений
-+- Основной размер: .neira/ директория с экспортами кода
++- Основной размер: .researcherry/ директория с экспортами кода
 +- При необходимости можно исключить экспорты из патчей
 +
 +## 🎯 Результаты тестирования
@@ -13678,7 +13678,7 @@ index 000000000..ee96294b3
 +✅ **Синхронизация**: Успешно обновлен main с upstream  
 +✅ **Создание патчей**: 7 патчей созданы без ошибок  
 +✅ **Применение патчей**: Патчи применяются с минимальными конфликтами  
-+✅ **Брендинг**: Neira Coder корректно применяется в собранном проекте  
++✅ **Брендинг**: Researcherry Coder корректно применяется в собранном проекте  
 +
 +## 📝 Следующие шаги
 +

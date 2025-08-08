@@ -1,10 +1,10 @@
 # Автоматическое одобрение действий
 
-Автоматическое одобрение действий позволяет Neira Coder выполнять определенные операции без вашего подтверждения, ускоряя рабочий процесс.
+Автоматическое одобрение действий позволяет Researcherry Coder выполнять определенные операции без вашего подтверждения, ускоряя рабочий процесс.
 
 ## Что такое автоматическое одобрение?
 
-Автоматическое одобрение - это настройка, которая позволяет Neira Coder:
+Автоматическое одобрение - это настройка, которая позволяет Researcherry Coder:
 
 - Выполнять безопасные действия без подтверждения
 - Ускорить рабочий процесс
@@ -16,7 +16,7 @@
 ### Открытие настроек
 
 1. Откройте Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-2. Введите "Neira Coder: Open Settings"
+2. Введите "Researcherry Coder: Open Settings"
 3. Перейдите в раздел "Auto-Approval"
 
 ### Типы действий
@@ -196,17 +196,17 @@ logging:
     enabled: true
     level: "info"
     auto_approved_actions: true
-    file: "~/.neira/auto-approval.log"
+    file: "~/.researcherry/auto-approval.log"
 ```
 
 ### Просмотр логов
 
 ```bash
 # Просмотр последних действий
-tail -f ~/.neira/auto-approval.log
+tail -f ~/.researcherry/auto-approval.log
 
 # Поиск конкретных действий
-grep "file_created" ~/.neira/auto-approval.log
+grep "file_created" ~/.researcherry/auto-approval.log
 ```
 
 ## Безопасность
@@ -223,10 +223,10 @@ grep "file_created" ~/.neira/auto-approval.log
 
 ```bash
 # Проверка настроек
-neira-coder check-security
+researcherry check-security
 
 # Аудит действий
-neira-coder audit-actions
+researcherry audit-actions
 ```
 
 ## Устранение неполадок
@@ -273,10 +273,10 @@ neira-coder audit-actions
 
 ```bash
 # Создание резервной копии настроек
-cp ~/.neira/auto-approval.json ~/.neira/auto-approval.backup.json
+cp ~/.researcherry/auto-approval.json ~/.researcherry/auto-approval.backup.json
 
 # Восстановление настроек
-cp ~/.neira/auto-approval.backup.json ~/.neira/auto-approval.json
+cp ~/.researcherry/auto-approval.backup.json ~/.researcherry/auto-approval.json
 ```
 
 ## Следующие шаги

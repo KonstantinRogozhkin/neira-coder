@@ -1,4 +1,4 @@
-import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@neira-coder/types"
+import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@researcherry/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 

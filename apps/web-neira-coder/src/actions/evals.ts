@@ -1,7 +1,7 @@
 "use server"
 
-import { getModelId, neiraCoderSettingsSchema } from "@neira-coder/types"
-import { getRuns, getLanguageScores } from "@neira-coder/evals"
+import { getModelId, researcherryCoderSettingsSchema } from "@researcherry/types"
+import { getRuns, getLanguageScores } from "@researcherry/evals"
 
 import { formatScore } from "@/lib"
 
@@ -10,10 +10,10 @@ export async function getEvalRuns() {
 
 	const runs = (await getRuns())
 		.filter((run) => !!run.taskMetrics)
-		.filter(({ settings }) => neiraCoderSettingsSchema.safeParse(settings).success)
+		.filter(({ settings }) => researcherryCoderSettingsSchema.safeParse(settings).success)
 		.sort((a, b) => b.passed - a.passed)
 		.map((run) => {
-			const settings = neiraCoderSettingsSchema.parse(run.settings)
+			const settings = researcherryCoderSettingsSchema.parse(run.settings)
 
 			return {
 				...run,

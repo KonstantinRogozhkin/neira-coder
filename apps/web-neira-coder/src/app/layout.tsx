@@ -12,11 +12,11 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-	title: "Neira Coder – Your AI-Powered Dev Team in VS Code",
+	title: "Researcherry Coder – Your AI-Powered Dev Team in VS Code",
 	description:
-		"Neira Coder puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
+		"Researcherry Coder puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
 	alternates: {
-		canonical: "https://neiracoder.com",
+		canonical: "https://researcherrycoder.com",
 	},
 	icons: {
 		icon: [
@@ -64,8 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					`}
 				</Script>
 				<div itemScope itemType="https://schema.org/WebSite">
-					<link itemProp="url" href="https://neiracoder.com" />
-					<meta itemProp="name" content="Neira Coder" />
+					<link itemProp="url" href="https://researcherrycoder.com" />
+					<meta itemProp="name" content="Researcherry Coder" />
 				</div>
 				<Providers>
 					<Shell>{children}</Shell>

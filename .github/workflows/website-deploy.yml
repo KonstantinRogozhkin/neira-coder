@@ -1,11 +1,11 @@
-name: Deploy neira-coder.com
+name: Deploy researcherry.com
 
 on:
     push:
         branches:
             - main
         paths:
-            - 'apps/web-neira-coder/**'
+            - 'apps/web-researcherry/**'
     workflow_dispatch:
 
 env:

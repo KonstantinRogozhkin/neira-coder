@@ -1,6 +1,6 @@
 // npx vitest run src/core/tools/__tests__/validateToolUse.spec.ts
 
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry/types"
 
 import { isToolAllowedForMode, modes } from "../../../shared/modes"
 import { TOOL_GROUPS } from "../../../shared/tools"

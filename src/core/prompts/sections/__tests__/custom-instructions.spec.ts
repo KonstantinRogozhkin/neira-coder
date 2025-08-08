@@ -79,16 +79,16 @@ describe("loadRuleFiles", () => {
 	})
 
 	it("should read and trim file content", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockResolvedValue("  content with spaces  ")
 		const result = await loadRuleFiles("/fake/path")
 		expect(readFileMock).toHaveBeenCalled()
-		expect(result).toBe("\n# Rules from .neirarules:\ncontent with spaces\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\ncontent with spaces\n")
 	})
 
 	it("should handle ENOENT error", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
 		const result = await loadRuleFiles("/fake/path")
@@ -96,7 +96,7 @@ describe("loadRuleFiles", () => {
 	})
 
 	it("should handle EISDIR error", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockRejectedValue({ code: "EISDIR" })
 		const result = await loadRuleFiles("/fake/path")
@@ -104,7 +104,7 @@ describe("loadRuleFiles", () => {
 	})
 
 	it("should throw on unexpected errors", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		const error = new Error("Permission denied") as NodeJS.ErrnoException
 		error.code = "EPERM"
@@ -116,10 +116,10 @@ describe("loadRuleFiles", () => {
 	})
 
 	it("should not combine content from multiple rule files when they exist", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().endsWith(".neirarules")) {
+			if (filePath.toString().endsWith(".researcherryrules")) {
 				return Promise.resolve("roo rules content")
 			}
 			if (filePath.toString().endsWith(".clinerules")) {
@@ -129,11 +129,11 @@ describe("loadRuleFiles", () => {
 		})
 
 		const result = await loadRuleFiles("/fake/path")
-		expect(result).toBe("\n# Rules from .neirarules:\nroo rules content\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\nroo rules content\n")
 	})
 
 	it("should handle when no rule files exist", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
 
@@ -142,10 +142,10 @@ describe("loadRuleFiles", () => {
 	})
 
 	it("should skip directories with same name as rule files", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().endsWith(".neirarules")) {
+			if (filePath.toString().endsWith(".researcherryrules")) {
 				return Promise.reject({ code: "EISDIR" })
 			}
 			if (filePath.toString().endsWith(".clinerules")) {
@@ -158,24 +158,34 @@ describe("loadRuleFiles", () => {
 		expect(result).toBe("")
 	})
 
-	it("should use .neira/rules/ directory when it exists and has files", async () => {
-		// Simulate .neira/rules directory exists
+	it("should use .researcherry/rules/ directory when it exists and has files", async () => {
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
 
 		// Simulate listing files
 		readdirMock.mockResolvedValueOnce([
-			{ name: "file1.txt", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
-			{ name: "file2.txt", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
+			{
+				name: "file1.txt",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
+			{
+				name: "file2.txt",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
 		] as any)
 
 		statMock.mockImplementation((path) => {
 			// Handle both Unix and Windows path separators
 			const normalizedPath = path.toString().replace(/\\/g, "/")
 			if (
-				normalizedPath.includes("/fake/path/.neira/rules/file1.txt") ||
-				normalizedPath.includes("/fake/path/.neira/rules/file2.txt")
+				normalizedPath.includes("/fake/path/.researcherry/rules/file1.txt") ||
+				normalizedPath.includes("/fake/path/.researcherry/rules/file2.txt")
 			) {
 				return Promise.resolve({
 					isFile: vi.fn().mockReturnValue(true),
@@ -190,10 +200,10 @@ describe("loadRuleFiles", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules/file1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/file1.txt") {
 				return Promise.resolve("content of file1")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/file2.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/file2.txt") {
 				return Promise.resolve("content of file2")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -201,20 +211,29 @@ describe("loadRuleFiles", () => {
 
 		const result = await loadRuleFiles("/fake/path")
 		const expectedPath1 =
-			process.platform === "win32" ? "\\fake\\path\\.neira\\rules\\file1.txt" : "/fake/path/.neira/rules/file1.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.researcherry\\rules\\file1.txt"
+				: "/fake/path/.researcherry/rules/file1.txt"
 		const expectedPath2 =
-			process.platform === "win32" ? "\\fake\\path\\.neira\\rules\\file2.txt" : "/fake/path/.neira/rules/file2.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.researcherry\\rules\\file2.txt"
+				: "/fake/path/.researcherry/rules/file2.txt"
 		expect(result).toContain(`# Rules from ${expectedPath1}:`)
 		expect(result).toContain("content of file1")
 		expect(result).toContain(`# Rules from ${expectedPath2}:`)
 		expect(result).toContain("content of file2")
 
 		// We expect both checks because our new implementation checks the files again for validation
-		const expectedRulesDir = process.platform === "win32" ? "\\fake\\path\\.neira\\rules" : "/fake/path/.neira/rules"
+		const expectedRulesDir =
+			process.platform === "win32" ? "\\fake\\path\\.researcherry\\rules" : "/fake/path/.researcherry/rules"
 		const expectedFile1Path =
-			process.platform === "win32" ? "\\fake\\path\\.neira\\rules\\file1.txt" : "/fake/path/.neira/rules/file1.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.researcherry\\rules\\file1.txt"
+				: "/fake/path/.researcherry/rules/file1.txt"
 		const expectedFile2Path =
-			process.platform === "win32" ? "\\fake\\path\\.neira\\rules\\file2.txt" : "/fake/path/.neira/rules/file2.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.researcherry\\rules\\file2.txt"
+				: "/fake/path/.researcherry/rules/file2.txt"
 
 		expect(statMock).toHaveBeenCalledWith(expectedRulesDir)
 		expect(statMock).toHaveBeenCalledWith(expectedFile1Path)
@@ -223,31 +242,61 @@ describe("loadRuleFiles", () => {
 		expect(readFileMock).toHaveBeenCalledWith(expectedFile2Path, "utf-8")
 	})
 
-	it("should filter out cache files from .neira/rules/ directory", async () => {
-		// Simulate .neira/rules directory exists
+	it("should filter out cache files from .researcherry/rules/ directory", async () => {
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
 
 		// Simulate listing files including cache files
 		readdirMock.mockResolvedValueOnce([
-			{ name: "rule1.txt", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
-			{ name: ".DS_Store", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
-			{ name: "Thumbs.db", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
-			{ name: "rule2.md", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
-			{ name: "cache.log", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
+			{
+				name: "rule1.txt",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
+			{
+				name: ".DS_Store",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
+			{
+				name: "Thumbs.db",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
+			{
+				name: "rule2.md",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
+			{
+				name: "cache.log",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
 			{
 				name: "backup.bak",
 				isFile: () => true,
 				isSymbolicLink: () => false,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
-			{ name: "temp.tmp", isFile: () => true, isSymbolicLink: () => false, parentPath: "/fake/path/.neira/rules" },
+			{
+				name: "temp.tmp",
+				isFile: () => true,
+				isSymbolicLink: () => false,
+				parentPath: "/fake/path/.researcherry/rules",
+			},
 			{
 				name: "script.pyc",
 				isFile: () => true,
 				isSymbolicLink: () => false,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 		] as any)
 
@@ -262,31 +311,31 @@ describe("loadRuleFiles", () => {
 			const normalizedPath = pathStr.replace(/\\/g, "/")
 
 			// Only rule files should be read - cache files should be skipped
-			if (normalizedPath === "/fake/path/.neira/rules/rule1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/rule1.txt") {
 				return Promise.resolve("rule 1 content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/rule2.md") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/rule2.md") {
 				return Promise.resolve("rule 2 content")
 			}
 
 			// Cache files should not be read due to filtering
 			// If they somehow are read, return recognizable content
-			if (normalizedPath === "/fake/path/.neira/rules/.DS_Store") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/.DS_Store") {
 				return Promise.resolve("DS_STORE_BINARY_CONTENT")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/Thumbs.db") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/Thumbs.db") {
 				return Promise.resolve("THUMBS_DB_CONTENT")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/backup.bak") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/backup.bak") {
 				return Promise.resolve("BACKUP_CONTENT")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/cache.log") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/cache.log") {
 				return Promise.resolve("LOG_CONTENT")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/temp.tmp") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/temp.tmp") {
 				return Promise.resolve("TEMP_CONTENT")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/script.pyc") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/script.pyc") {
 				return Promise.resolve("PYTHON_BYTECODE")
 			}
 
@@ -309,12 +358,12 @@ describe("loadRuleFiles", () => {
 
 		// Verify cache files are not read at all
 		const expectedCacheFiles = [
-			"/fake/path/.neira/rules/.DS_Store",
-			"/fake/path/.neira/rules/Thumbs.db",
-			"/fake/path/.neira/rules/backup.bak",
-			"/fake/path/.neira/rules/cache.log",
-			"/fake/path/.neira/rules/temp.tmp",
-			"/fake/path/.neira/rules/script.pyc",
+			"/fake/path/.researcherry/rules/.DS_Store",
+			"/fake/path/.researcherry/rules/Thumbs.db",
+			"/fake/path/.researcherry/rules/backup.bak",
+			"/fake/path/.researcherry/rules/cache.log",
+			"/fake/path/.researcherry/rules/temp.tmp",
+			"/fake/path/.researcherry/rules/script.pyc",
 		]
 
 		for (const cacheFile of expectedCacheFiles) {
@@ -323,8 +372,8 @@ describe("loadRuleFiles", () => {
 		}
 	})
 
-	it("should fall back to .neirarules when .neira/rules/ is empty", async () => {
-		// Simulate .neira/rules directory exists
+	it("should fall back to .researcherryrules when .researcherry/rules/ is empty", async () => {
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -332,20 +381,20 @@ describe("loadRuleFiles", () => {
 		// Simulate empty directory
 		readdirMock.mockResolvedValueOnce([])
 
-		// Simulate .neirarules exists
+		// Simulate .researcherryrules exists
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().endsWith(".neirarules")) {
+			if (filePath.toString().endsWith(".researcherryrules")) {
 				return Promise.resolve("roo rules content")
 			}
 			return Promise.reject({ code: "ENOENT" })
 		})
 
 		const result = await loadRuleFiles("/fake/path")
-		expect(result).toBe("\n# Rules from .neirarules:\nroo rules content\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\nroo rules content\n")
 	})
 
 	it("should handle errors when reading directory", async () => {
-		// Simulate .neira/rules directory exists
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -353,20 +402,20 @@ describe("loadRuleFiles", () => {
 		// Simulate error reading directory
 		readdirMock.mockRejectedValueOnce(new Error("Failed to read directory"))
 
-		// Simulate .neirarules exists
+		// Simulate .researcherryrules exists
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().endsWith(".neirarules")) {
+			if (filePath.toString().endsWith(".researcherryrules")) {
 				return Promise.resolve("roo rules content")
 			}
 			return Promise.reject({ code: "ENOENT" })
 		})
 
 		const result = await loadRuleFiles("/fake/path")
-		expect(result).toBe("\n# Rules from .neirarules:\nroo rules content\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\nroo rules content\n")
 	})
 
-	it("should read files from nested subdirectories in .neira/rules/", async () => {
-		// Simulate .neira/rules directory exists
+	it("should read files from nested subdirectories in .researcherry/rules/", async () => {
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -378,28 +427,28 @@ describe("loadRuleFiles", () => {
 				isFile: () => false,
 				isSymbolicLink: () => false,
 				isDirectory: () => true,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 			{
 				name: "root.txt",
 				isFile: () => true,
 				isSymbolicLink: () => false,
 				isDirectory: () => false,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 			{
 				name: "nested1.txt",
 				isFile: () => true,
 				isSymbolicLink: () => false,
 				isDirectory: () => false,
-				parentPath: "/fake/path/.neira/rules/subdir",
+				parentPath: "/fake/path/.researcherry/rules/subdir",
 			},
 			{
 				name: "nested2.txt",
 				isFile: () => true,
 				isSymbolicLink: () => false,
 				isDirectory: () => false,
-				parentPath: "/fake/path/.neira/rules/subdir/subdir2",
+				parentPath: "/fake/path/.researcherry/rules/subdir/subdir2",
 			},
 		] as any)
 
@@ -422,13 +471,13 @@ describe("loadRuleFiles", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules/root.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/root.txt") {
 				return Promise.resolve("root file content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/subdir/nested1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/subdir/nested1.txt") {
 				return Promise.resolve("nested file 1 content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/subdir/subdir2/nested2.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/subdir/subdir2/nested2.txt") {
 				return Promise.resolve("nested file 2 content")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -438,15 +487,17 @@ describe("loadRuleFiles", () => {
 
 		// Check root file content
 		const expectedRootPath =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\root.txt" : "/fake/path/.neira/rules/root.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\root.txt"
+				: "/fake/path/.researcherry/rules/root.txt"
 		const expectedNested1Path =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\subdir\\nested1.txt"
-				: "/fake/path/.neira/rules/subdir/nested1.txt"
+				: "/fake/path/.researcherry/rules/subdir/nested1.txt"
 		const expectedNested2Path =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\subdir\\subdir2\\nested2.txt"
-				: "/fake/path/.neira/rules/subdir/subdir2/nested2.txt"
+				: "/fake/path/.researcherry/rules/subdir/subdir2/nested2.txt"
 
 		expect(result).toContain(`# Rules from ${expectedRootPath}:`)
 		expect(result).toContain("root file content")
@@ -459,15 +510,17 @@ describe("loadRuleFiles", () => {
 
 		// Verify correct paths were checked
 		const expectedRootPath2 =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\root.txt" : "/fake/path/.neira/rules/root.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\root.txt"
+				: "/fake/path/.researcherry/rules/root.txt"
 		const expectedNested1Path2 =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\subdir\\nested1.txt"
-				: "/fake/path/.neira/rules/subdir/nested1.txt"
+				: "/fake/path/.researcherry/rules/subdir/nested1.txt"
 		const expectedNested2Path2 =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\subdir\\subdir2\\nested2.txt"
-				: "/fake/path/.neira/rules/subdir/subdir2/nested2.txt"
+				: "/fake/path/.researcherry/rules/subdir/subdir2/nested2.txt"
 
 		expect(statMock).toHaveBeenCalledWith(expectedRootPath2)
 		expect(statMock).toHaveBeenCalledWith(expectedNested1Path2)
@@ -486,7 +539,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should combine all instruction types when provided", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockResolvedValue("mode specific rules")
@@ -504,11 +557,11 @@ describe("addCustomInstructions", () => {
 		expect(result).toContain("(es)") // Check for language code in parentheses
 		expect(result).toContain("Global Instructions:\nglobal instructions")
 		expect(result).toContain("Mode-specific Instructions:\nmode instructions")
-		expect(result).toContain("Rules from .neirarules-test-mode:\nmode specific rules")
+		expect(result).toContain("Rules from .researcherryrules-test-mode:\nmode specific rules")
 	})
 
 	it("should load AGENTS.md when settings.useAgentRules is true", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Mock lstat to indicate AGENTS.md is NOT a symlink
@@ -544,7 +597,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should not load AGENTS.md when settings.useAgentRules is false", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockImplementation((filePath: PathLike) => {
@@ -568,7 +621,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should load AGENTS.md by default when settings.useAgentRules is undefined", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Mock lstat to indicate AGENTS.md is NOT a symlink
@@ -604,7 +657,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should handle missing AGENTS.md gracefully", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
@@ -623,7 +676,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should include AGENTS.md content along with other rules", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Mock lstat to indicate AGENTS.md is NOT a symlink
@@ -642,7 +695,7 @@ describe("addCustomInstructions", () => {
 			if (pathStr.endsWith("AGENTS.md")) {
 				return Promise.resolve("Agent rules content")
 			}
-			if (pathStr.endsWith(".neirarules")) {
+			if (pathStr.endsWith(".researcherryrules")) {
 				return Promise.resolve("Roo rules content")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -656,15 +709,15 @@ describe("addCustomInstructions", () => {
 			{ settings: { maxConcurrentFileReads: 5, todoListEnabled: true, useAgentRules: true } },
 		)
 
-		// Should contain both AGENTS.md and .neirarules content
+		// Should contain both AGENTS.md and .researcherryrules content
 		expect(result).toContain("# Agent Rules Standard (AGENTS.md):")
 		expect(result).toContain("Agent rules content")
-		expect(result).toContain("# Rules from .neirarules:")
+		expect(result).toContain("# Rules from .researcherryrules:")
 		expect(result).toContain("Roo rules content")
 	})
 
 	it("should follow symlinks when loading AGENTS.md", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Mock lstat to indicate AGENTS.md is a symlink
@@ -731,7 +784,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should handle AGENTS.md as a regular file when not a symlink", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Mock lstat to indicate AGENTS.md is NOT a symlink
@@ -776,7 +829,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should return empty string when no instructions provided", async () => {
-		// Simulate no .neira/rules directory
+		// Simulate no .researcherry/rules directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
@@ -786,7 +839,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should handle missing mode-specific rules file", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
@@ -804,7 +857,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should handle unknown language codes properly", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockRejectedValue({ code: "ENOENT" })
@@ -823,7 +876,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should throw on unexpected errors", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		const error = new Error("Permission denied") as NodeJS.ErrnoException
@@ -836,7 +889,7 @@ describe("addCustomInstructions", () => {
 	})
 
 	it("should skip mode-specific rule files that are directories", async () => {
-		// Simulate no .neira/rules-test-mode directory
+		// Simulate no .researcherry/rules-test-mode directory
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		readFileMock.mockImplementation((filePath: PathLike) => {
@@ -858,8 +911,8 @@ describe("addCustomInstructions", () => {
 		expect(result).not.toContain("Rules from .clinerules-test-mode")
 	})
 
-	it("should use .neira/rules-test-mode/ directory when it exists and has files", async () => {
-		// Simulate .neira/rules-test-mode directory exists
+	it("should use .researcherry/rules-test-mode/ directory when it exists and has files", async () => {
+		// Simulate .researcherry/rules-test-mode directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -870,13 +923,13 @@ describe("addCustomInstructions", () => {
 				name: "rule1.txt",
 				isFile: () => true,
 				isSymbolicLink: () => false,
-				parentPath: "/fake/path/.neira/rules-test-mode",
+				parentPath: "/fake/path/.researcherry/rules-test-mode",
 			},
 			{
 				name: "rule2.txt",
 				isFile: () => true,
 				isSymbolicLink: () => false,
-				parentPath: "/fake/path/.neira/rules-test-mode",
+				parentPath: "/fake/path/.researcherry/rules-test-mode",
 			},
 		] as any)
 
@@ -884,8 +937,8 @@ describe("addCustomInstructions", () => {
 			// Handle both Unix and Windows path separators
 			const normalizedPath = path.toString().replace(/\\/g, "/")
 			if (
-				normalizedPath.includes("/fake/path/.neira/rules-test-mode/rule1.txt") ||
-				normalizedPath.includes("/fake/path/.neira/rules-test-mode/rule2.txt")
+				normalizedPath.includes("/fake/path/.researcherry/rules-test-mode/rule1.txt") ||
+				normalizedPath.includes("/fake/path/.researcherry/rules-test-mode/rule2.txt")
 			) {
 				return Promise.resolve({
 					isFile: vi.fn().mockReturnValue(true),
@@ -900,10 +953,10 @@ describe("addCustomInstructions", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules-test-mode/rule1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules-test-mode/rule1.txt") {
 				return Promise.resolve("mode specific rule 1")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules-test-mode/rule2.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules-test-mode/rule2.txt") {
 				return Promise.resolve("mode specific rule 2")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -918,15 +971,17 @@ describe("addCustomInstructions", () => {
 		)
 
 		const expectedTestModeDir =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules-test-mode" : "/fake/path/.neira/rules-test-mode"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules-test-mode"
+				: "/fake/path/.researcherry/rules-test-mode"
 		const expectedRule1Path =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules-test-mode\\rule1.txt"
-				: "/fake/path/.neira/rules-test-mode/rule1.txt"
+				: "/fake/path/.researcherry/rules-test-mode/rule1.txt"
 		const expectedRule2Path =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules-test-mode\\rule2.txt"
-				: "/fake/path/.neira/rules-test-mode/rule2.txt"
+				: "/fake/path/.researcherry/rules-test-mode/rule2.txt"
 
 		expect(result).toContain(`# Rules from ${expectedTestModeDir}`)
 		expect(result).toContain(`# Rules from ${expectedRule1Path}:`)
@@ -935,15 +990,17 @@ describe("addCustomInstructions", () => {
 		expect(result).toContain("mode specific rule 2")
 
 		const expectedTestModeDir2 =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules-test-mode" : "/fake/path/.neira/rules-test-mode"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules-test-mode"
+				: "/fake/path/.researcherry/rules-test-mode"
 		const expectedRule1Path2 =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules-test-mode\\rule1.txt"
-				: "/fake/path/.neira/rules-test-mode/rule1.txt"
+				: "/fake/path/.researcherry/rules-test-mode/rule1.txt"
 		const expectedRule2Path2 =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules-test-mode\\rule2.txt"
-				: "/fake/path/.neira/rules-test-mode/rule2.txt"
+				: "/fake/path/.researcherry/rules-test-mode/rule2.txt"
 
 		expect(statMock).toHaveBeenCalledWith(expectedTestModeDir2)
 		expect(statMock).toHaveBeenCalledWith(expectedRule1Path2)
@@ -952,13 +1009,13 @@ describe("addCustomInstructions", () => {
 		expect(readFileMock).toHaveBeenCalledWith(expectedRule2Path2, "utf-8")
 	})
 
-	it("should fall back to .neirarules-test-mode when .neira/rules-test-mode/ does not exist", async () => {
-		// Simulate .neira/rules-test-mode directory does not exist
+	it("should fall back to .researcherryrules-test-mode when .researcherry/rules-test-mode/ does not exist", async () => {
+		// Simulate .researcherry/rules-test-mode directory does not exist
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
-		// Simulate .neirarules-test-mode exists
+		// Simulate .researcherryrules-test-mode exists
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().includes(".neirarules-test-mode")) {
+			if (filePath.toString().includes(".researcherryrules-test-mode")) {
 				return Promise.resolve("mode specific rules from file")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -971,16 +1028,16 @@ describe("addCustomInstructions", () => {
 			"test-mode",
 		)
 
-		expect(result).toContain("Rules from .neirarules-test-mode:\nmode specific rules from file")
+		expect(result).toContain("Rules from .researcherryrules-test-mode:\nmode specific rules from file")
 	})
 
-	it("should fall back to .clinerules-test-mode when .neira/rules-test-mode/ and .neirarules-test-mode do not exist", async () => {
-		// Simulate .neira/rules-test-mode directory does not exist
+	it("should fall back to .clinerules-test-mode when .researcherry/rules-test-mode/ and .researcherryrules-test-mode do not exist", async () => {
+		// Simulate .researcherry/rules-test-mode directory does not exist
 		statMock.mockRejectedValueOnce({ code: "ENOENT" })
 
 		// Simulate file reading
 		readFileMock.mockImplementation((filePath: PathLike) => {
-			if (filePath.toString().includes(".neirarules-test-mode")) {
+			if (filePath.toString().includes(".researcherryrules-test-mode")) {
 				return Promise.reject({ code: "ENOENT" })
 			}
 			if (filePath.toString().includes(".clinerules-test-mode")) {
@@ -999,12 +1056,12 @@ describe("addCustomInstructions", () => {
 		expect(result).toContain("Rules from .clinerules-test-mode:\nmode specific rules from cline file")
 	})
 
-	it("should correctly format content from directories when using .neira/rules-test-mode/", async () => {
+	it("should correctly format content from directories when using .researcherry/rules-test-mode/", async () => {
 		// Need to reset mockImplementation first to avoid interference from previous tests
 		statMock.mockReset()
 		readFileMock.mockReset()
 
-		// Simulate .neira/rules-test-mode directory exists
+		// Simulate .researcherry/rules-test-mode directory exists
 		statMock.mockImplementationOnce(() =>
 			Promise.resolve({
 				isDirectory: vi.fn().mockReturnValue(true),
@@ -1013,7 +1070,7 @@ describe("addCustomInstructions", () => {
 
 		// Simulate directory has files
 		readdirMock.mockResolvedValueOnce([
-			{ name: "rule1.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules-test-mode" },
+			{ name: "rule1.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules-test-mode" },
 		] as any)
 		readFileMock.mockReset()
 
@@ -1023,7 +1080,7 @@ describe("addCustomInstructions", () => {
 			statCallCount++
 			// Handle both Unix and Windows path separators
 			const normalizedPath = filePath.toString().replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules-test-mode/rule1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules-test-mode/rule1.txt") {
 				return Promise.resolve({
 					isFile: vi.fn().mockReturnValue(true),
 					isDirectory: vi.fn().mockReturnValue(false),
@@ -1039,7 +1096,7 @@ describe("addCustomInstructions", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules-test-mode/rule1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules-test-mode/rule1.txt") {
 				return Promise.resolve("mode specific rule content")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -1053,11 +1110,13 @@ describe("addCustomInstructions", () => {
 		)
 
 		const expectedTestModeDir =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules-test-mode" : "/fake/path/.neira/rules-test-mode"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules-test-mode"
+				: "/fake/path/.researcherry/rules-test-mode"
 		const expectedRule1Path =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules-test-mode\\rule1.txt"
-				: "/fake/path/.neira/rules-test-mode/rule1.txt"
+				: "/fake/path/.researcherry/rules-test-mode/rule1.txt"
 
 		expect(result).toContain(`# Rules from ${expectedTestModeDir}`)
 		expect(result).toContain(`# Rules from ${expectedRule1Path}:`)
@@ -1088,7 +1147,8 @@ describe("Directory existence checks", () => {
 		await loadRuleFiles("/fake/path")
 
 		// Verify stat was called to check directory existence
-		const expectedRulesDir = process.platform === "win32" ? "\\fake\\path\\.roo\\rules" : "/fake/path/.neira/rules"
+		const expectedRulesDir =
+			process.platform === "win32" ? "\\fake\\path\\.roo\\rules" : "/fake/path/.researcherry/rules"
 		expect(statMock).toHaveBeenCalledWith(expectedRulesDir)
 	})
 
@@ -1102,14 +1162,14 @@ describe("Directory existence checks", () => {
 		const result = await loadRuleFiles("/fake/path")
 
 		// Verify it fell back to reading rule files directly
-		expect(result).toBe("\n# Rules from .neirarules:\nfallback content\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\nfallback content\n")
 	})
 })
 
 // Indirectly test readTextFilesFromDirectory and formatDirectoryContent through loadRuleFiles
 describe("Rules directory reading", () => {
 	it.skipIf(process.platform === "win32")("should follow symbolic links in the rules directory", async () => {
-		// Simulate .neira/rules directory exists
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -1121,29 +1181,33 @@ describe("Rules directory reading", () => {
 					name: "regular.txt",
 					isFile: () => true,
 					isSymbolicLink: () => false,
-					parentPath: "/fake/path/.neira/rules",
+					parentPath: "/fake/path/.researcherry/rules",
 				},
 				{
 					name: "link.txt",
 					isFile: () => false,
 					isSymbolicLink: () => true,
-					parentPath: "/fake/path/.neira/rules",
+					parentPath: "/fake/path/.researcherry/rules",
 				},
 				{
 					name: "link_dir",
 					isFile: () => false,
 					isSymbolicLink: () => true,
-					parentPath: "/fake/path/.neira/rules",
+					parentPath: "/fake/path/.researcherry/rules",
 				},
 				{
 					name: "nested_link.txt",
 					isFile: () => false,
 					isSymbolicLink: () => true,
-					parentPath: "/fake/path/.neira/rules",
+					parentPath: "/fake/path/.researcherry/rules",
 				},
 			] as any)
 			.mockResolvedValueOnce([
-				{ name: "subdir_link.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules/symlink-target-dir" },
+				{
+					name: "subdir_link.txt",
+					isFile: () => true,
+					parentPath: "/fake/path/.researcherry/rules/symlink-target-dir",
+				},
 			] as any)
 
 		// Simulate readlink response
@@ -1157,7 +1221,7 @@ describe("Rules directory reading", () => {
 		statMock.mockReset()
 		statMock.mockImplementation((path: string) => {
 			// For directory check
-			if (path === "/fake/path/.neira/rules" || path.endsWith("dir")) {
+			if (path === "/fake/path/.researcherry/rules" || path.endsWith("dir")) {
 				return Promise.resolve({
 					isDirectory: vi.fn().mockReturnValue(true),
 					isFile: vi.fn().mockReturnValue(false),
@@ -1185,16 +1249,16 @@ describe("Rules directory reading", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules/regular.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/regular.txt") {
 				return Promise.resolve("regular file content")
 			}
-			if (normalizedPath === "/fake/path/.neira/symlink-target.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/symlink-target.txt") {
 				return Promise.resolve("symlink target content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/symlink-target-dir/subdir_link.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/symlink-target-dir/subdir_link.txt") {
 				return Promise.resolve("regular file content under symlink target dir")
 			}
-			if (normalizedPath === "/fake/path/.neira/nested-symlink-target.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/nested-symlink-target.txt") {
 				return Promise.resolve("nested symlink target content")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -1206,19 +1270,19 @@ describe("Rules directory reading", () => {
 		const expectedRegularPath =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\regular.txt"
-				: "/fake/path/.neira/rules/regular.txt"
+				: "/fake/path/.researcherry/rules/regular.txt"
 		const expectedSymlinkPath =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\symlink-target.txt"
-				: "/fake/path/.neira/symlink-target.txt"
+				: "/fake/path/.researcherry/symlink-target.txt"
 		const expectedSubdirPath =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\rules\\symlink-target-dir\\subdir_link.txt"
-				: "/fake/path/.neira/rules/symlink-target-dir/subdir_link.txt"
+				: "/fake/path/.researcherry/rules/symlink-target-dir/subdir_link.txt"
 		const expectedNestedPath =
 			process.platform === "win32"
 				? "\\fake\\path\\.roo\\nested-symlink-target.txt"
-				: "/fake/path/.neira/nested-symlink-target.txt"
+				: "/fake/path/.researcherry/nested-symlink-target.txt"
 
 		expect(result).toContain(`# Rules from ${expectedRegularPath}:`)
 		expect(result).toContain("regular file content")
@@ -1230,39 +1294,42 @@ describe("Rules directory reading", () => {
 		expect(result).toContain("nested symlink target content")
 
 		// Verify readlink was called with the symlink path
-		expect(readlinkMock).toHaveBeenCalledWith("/fake/path/.neira/rules/link.txt")
-		expect(readlinkMock).toHaveBeenCalledWith("/fake/path/.neira/rules/link_dir")
+		expect(readlinkMock).toHaveBeenCalledWith("/fake/path/.researcherry/rules/link.txt")
+		expect(readlinkMock).toHaveBeenCalledWith("/fake/path/.researcherry/rules/link_dir")
 
 		// Verify both files were read
-		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.neira/rules/regular.txt", "utf-8")
-		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.neira/symlink-target.txt", "utf-8")
-		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.neira/rules/symlink-target-dir/subdir_link.txt", "utf-8")
-		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.neira/nested-symlink-target.txt", "utf-8")
+		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.researcherry/rules/regular.txt", "utf-8")
+		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.researcherry/symlink-target.txt", "utf-8")
+		expect(readFileMock).toHaveBeenCalledWith(
+			"/fake/path/.researcherry/rules/symlink-target-dir/subdir_link.txt",
+			"utf-8",
+		)
+		expect(readFileMock).toHaveBeenCalledWith("/fake/path/.researcherry/nested-symlink-target.txt", "utf-8")
 	})
 	beforeEach(() => {
 		vi.clearAllMocks()
 	})
 
 	it.skipIf(process.platform === "win32")("should correctly format multiple files from directory", async () => {
-		// Simulate .neira/rules directory exists
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
 
 		// Simulate listing files
 		readdirMock.mockResolvedValueOnce([
-			{ name: "file1.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" },
-			{ name: "file2.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" },
-			{ name: "file3.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" },
+			{ name: "file1.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" },
+			{ name: "file2.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" },
+			{ name: "file3.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" },
 		] as any)
 
 		statMock.mockImplementation((path) => {
 			// Handle both Unix and Windows path separators
 			const normalizedPath = path.toString().replace(/\\/g, "/")
 			expect([
-				"/fake/path/.neira/rules/file1.txt",
-				"/fake/path/.neira/rules/file2.txt",
-				"/fake/path/.neira/rules/file3.txt",
+				"/fake/path/.researcherry/rules/file1.txt",
+				"/fake/path/.researcherry/rules/file2.txt",
+				"/fake/path/.researcherry/rules/file3.txt",
 			]).toContain(normalizedPath)
 
 			return Promise.resolve({
@@ -1274,13 +1341,13 @@ describe("Rules directory reading", () => {
 			const pathStr = filePath.toString()
 			// Handle both Unix and Windows path separators
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules/file1.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/file1.txt") {
 				return Promise.resolve("content of file1")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/file2.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/file2.txt") {
 				return Promise.resolve("content of file2")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/file3.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/file3.txt") {
 				return Promise.resolve("content of file3")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -1289,11 +1356,17 @@ describe("Rules directory reading", () => {
 		const result = await loadRuleFiles("/fake/path")
 
 		const expectedFile1Path =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\file1.txt" : "/fake/path/.neira/rules/file1.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\file1.txt"
+				: "/fake/path/.researcherry/rules/file1.txt"
 		const expectedFile2Path =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\file2.txt" : "/fake/path/.neira/rules/file2.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\file2.txt"
+				: "/fake/path/.researcherry/rules/file2.txt"
 		const expectedFile3Path =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\file3.txt" : "/fake/path/.neira/rules/file3.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\file3.txt"
+				: "/fake/path/.researcherry/rules/file3.txt"
 
 		expect(result).toContain(`# Rules from ${expectedFile1Path}:`)
 		expect(result).toContain("content of file1")
@@ -1304,16 +1377,16 @@ describe("Rules directory reading", () => {
 	})
 
 	it("should return files in alphabetical order by filename", async () => {
-		// Simulate .neira/rules directory exists
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
 
 		// Simulate listing files in non-alphabetical order to test sorting
 		readdirMock.mockResolvedValueOnce([
-			{ name: "zebra.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" },
-			{ name: "alpha.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" },
-			{ name: "Beta.txt", isFile: () => true, parentPath: "/fake/path/.neira/rules" }, // Test case-insensitive sorting
+			{ name: "zebra.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" },
+			{ name: "alpha.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" },
+			{ name: "Beta.txt", isFile: () => true, parentPath: "/fake/path/.researcherry/rules" }, // Test case-insensitive sorting
 		] as any)
 
 		statMock.mockImplementation((path) => {
@@ -1325,13 +1398,13 @@ describe("Rules directory reading", () => {
 		readFileMock.mockImplementation((filePath: PathLike) => {
 			const pathStr = filePath.toString()
 			const normalizedPath = pathStr.replace(/\\/g, "/")
-			if (normalizedPath === "/fake/path/.neira/rules/zebra.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/zebra.txt") {
 				return Promise.resolve("zebra content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/alpha.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/alpha.txt") {
 				return Promise.resolve("alpha content")
 			}
-			if (normalizedPath === "/fake/path/.neira/rules/Beta.txt") {
+			if (normalizedPath === "/fake/path/.researcherry/rules/Beta.txt") {
 				return Promise.resolve("beta content")
 			}
 			return Promise.reject({ code: "ENOENT" })
@@ -1349,11 +1422,17 @@ describe("Rules directory reading", () => {
 
 		// Verify the expected file paths are in the result
 		const expectedAlphaPath =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\alpha.txt" : "/fake/path/.neira/rules/alpha.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\alpha.txt"
+				: "/fake/path/.researcherry/rules/alpha.txt"
 		const expectedBetaPath =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\Beta.txt" : "/fake/path/.neira/rules/Beta.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\Beta.txt"
+				: "/fake/path/.researcherry/rules/Beta.txt"
 		const expectedZebraPath =
-			process.platform === "win32" ? "\\fake\\path\\.roo\\rules\\zebra.txt" : "/fake/path/.neira/rules/zebra.txt"
+			process.platform === "win32"
+				? "\\fake\\path\\.roo\\rules\\zebra.txt"
+				: "/fake/path/.researcherry/rules/zebra.txt"
 
 		expect(result).toContain(`# Rules from ${expectedAlphaPath}:`)
 		expect(result).toContain(`# Rules from ${expectedBetaPath}:`)
@@ -1367,7 +1446,7 @@ describe("Rules directory reading", () => {
 		readlinkMock.mockReset()
 		readFileMock.mockReset()
 
-		// First call: check if .neira/rules directory exists
+		// First call: check if .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -1378,19 +1457,19 @@ describe("Rules directory reading", () => {
 				name: "01-first.link",
 				isFile: () => false,
 				isSymbolicLink: () => true,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 			{
 				name: "02-second.link",
 				isFile: () => false,
 				isSymbolicLink: () => true,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 			{
 				name: "03-third.link",
 				isFile: () => false,
 				isSymbolicLink: () => true,
-				parentPath: "/fake/path/.neira/rules",
+				parentPath: "/fake/path/.researcherry/rules",
 			},
 		] as any)
 
@@ -1455,7 +1534,7 @@ describe("Rules directory reading", () => {
 	})
 
 	it("should handle empty file list gracefully", async () => {
-		// Simulate .neira/rules directory exists
+		// Simulate .researcherry/rules directory exists
 		statMock.mockResolvedValueOnce({
 			isDirectory: vi.fn().mockReturnValue(true),
 		} as any)
@@ -1466,6 +1545,6 @@ describe("Rules directory reading", () => {
 		readFileMock.mockResolvedValueOnce("fallback content")
 
 		const result = await loadRuleFiles("/fake/path")
-		expect(result).toBe("\n# Rules from .neirarules:\nfallback content\n")
+		expect(result).toBe("\n# Rules from .researcherryrules:\nfallback content\n")
 	})
 })

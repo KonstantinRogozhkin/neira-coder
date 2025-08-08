@@ -1,4 +1,4 @@
-import { type Language, isLanguage } from "@neira-coder/types"
+import { type Language, isLanguage } from "@researcherry/types"
 
 /**
  * Language name mapping from ISO codes to full language names.

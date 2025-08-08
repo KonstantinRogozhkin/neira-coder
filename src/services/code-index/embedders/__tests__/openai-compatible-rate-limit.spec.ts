@@ -6,7 +6,7 @@ import { OpenAICompatibleEmbedder } from "../openai-compatible"
 vi.mock("openai")
 
 // Mock TelemetryService
-vi.mock("@neira-coder/telemetry", () => ({
+vi.mock("@researcherry/telemetry", () => ({
 	TelemetryService: {
 		instance: {
 			captureEvent: vi.fn(),

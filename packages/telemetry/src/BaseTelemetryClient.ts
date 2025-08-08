@@ -4,7 +4,7 @@ import {
 	TelemetryClient,
 	TelemetryPropertiesProvider,
 	TelemetryEventSubscription,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 export abstract class BaseTelemetryClient implements TelemetryClient {
 	protected providerRef: WeakRef<TelemetryPropertiesProvider> | null = null
@@ -55,7 +55,7 @@ export abstract class BaseTelemetryClient implements TelemetryClient {
 
 		// Ensure required fields have fallback values to prevent telemetry errors
 		const requiredFields = {
-			appName: "neira-coder",
+			appName: "researcherry",
 			appVersion: "unknown",
 			vscodeVersion: "unknown",
 			platform: "unknown",

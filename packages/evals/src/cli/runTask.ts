@@ -9,11 +9,11 @@ import {
 	type TaskEvent,
 	type ClineSay,
 	TaskCommandName,
-	NeiraCoderEventName,
+	ResearcherryCoderEventName,
 	IpcMessageType,
 	EVALS_SETTINGS,
-} from "@neira-coder/types"
-import { IpcClient } from "@neira-coder/ipc"
+} from "@researcherry/types"
+import { IpcClient } from "@researcherry/ipc"
 
 import {
 	type Run,
@@ -70,7 +70,7 @@ export const processTask = async ({ taskId, logger }: { taskId: number; logger?:
 		await updateTask(task.id, { passed })
 
 		await publish({
-			eventName: passed ? NeiraCoderEventName.EvalPass : NeiraCoderEventName.EvalFail,
+			eventName: passed ? ResearcherryCoderEventName.EvalPass : ResearcherryCoderEventName.EvalFail,
 			taskId: task.id,
 		})
 	} finally {
@@ -95,7 +95,7 @@ export const processTaskInContainer = async ({
 		"-e HOST_EXECUTION_METHOD=docker",
 	]
 
-	const command = `pnpm --filter @neira-coder/evals cli --taskId ${taskId}`
+	const command = `pnpm --filter @researcherry/evals cli --taskId ${taskId}`
 	logger.info(command)
 
 	for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -205,9 +205,9 @@ export const runTask = async ({ run, task, publish, logger }: RunTaskOptions) =>
 	let rooTaskId: string | undefined
 	let isClientDisconnected = false
 
-	const ignoreEvents: Record<"broadcast" | "log", NeiraCoderEventName[]> = {
-		broadcast: [NeiraCoderEventName.Message],
-		log: [NeiraCoderEventName.TaskTokenUsageUpdated, NeiraCoderEventName.TaskAskResponded],
+	const ignoreEvents: Record<"broadcast" | "log", ResearcherryCoderEventName[]> = {
+		broadcast: [ResearcherryCoderEventName.Message],
+		log: [ResearcherryCoderEventName.TaskTokenUsageUpdated, ResearcherryCoderEventName.TaskAskResponded],
 	}
 
 	const loggableSays: ClineSay[] = [
@@ -231,14 +231,14 @@ export const runTask = async ({ run, task, publish, logger }: RunTaskOptions) =>
 		// For message events we only log non-partial messages.
 		if (
 			!ignoreEvents.log.includes(eventName) &&
-			(eventName !== NeiraCoderEventName.Message ||
+			(eventName !== ResearcherryCoderEventName.Message ||
 				(payload?.[0]?.message?.say && loggableSays.includes(payload[0].message.say)) ||
 				payload?.[0]?.message?.partial !== true)
 		) {
 			logger.info(`${eventName} ->`, payload)
 		}
 
-		if (eventName === NeiraCoderEventName.TaskStarted) {
+		if (eventName === ResearcherryCoderEventName.TaskStarted) {
 			taskStartedAt = Date.now()
 
 			const taskMetrics = await createTaskMetrics({
@@ -258,15 +258,15 @@ export const runTask = async ({ run, task, publish, logger }: RunTaskOptions) =>
 			rooTaskId = payload?.[0] as string
 		}
 
-		if (eventName === NeiraCoderEventName.TaskToolFailed) {
+		if (eventName === ResearcherryCoderEventName.TaskToolFailed) {
 			const payloadArray = Array.isArray(payload) ? payload : []
 			const [_taskId, toolName, error] = payloadArray
 			await createToolError({ taskId: task.id, toolName, error })
 		}
 
 		if (
-			(eventName === NeiraCoderEventName.TaskTokenUsageUpdated ||
-				eventName === NeiraCoderEventName.TaskCompleted) &&
+			(eventName === ResearcherryCoderEventName.TaskTokenUsageUpdated ||
+				eventName === ResearcherryCoderEventName.TaskCompleted) &&
 			taskMetricsId
 		) {
 			const duration = Date.now() - taskStartedAt
@@ -299,17 +299,17 @@ export const runTask = async ({ run, task, publish, logger }: RunTaskOptions) =>
 			}
 		}
 
-		if (eventName === NeiraCoderEventName.TaskCompleted && taskMetricsId) {
+		if (eventName === ResearcherryCoderEventName.TaskCompleted && taskMetricsId) {
 			const payloadArray = Array.isArray(payload) ? payload : []
 			const toolUsage = payloadArray[2]
 			await updateTaskMetrics(taskMetricsId, { toolUsage })
 		}
 
-		if (eventName === NeiraCoderEventName.TaskAborted) {
+		if (eventName === ResearcherryCoderEventName.TaskAborted) {
 			taskAbortedAt = Date.now()
 		}
 
-		if (eventName === NeiraCoderEventName.TaskCompleted) {
+		if (eventName === ResearcherryCoderEventName.TaskCompleted) {
 			taskFinishedAt = Date.now()
 		}
 	})

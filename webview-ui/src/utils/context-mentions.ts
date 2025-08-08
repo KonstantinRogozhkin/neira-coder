@@ -1,6 +1,6 @@
 import { Fzf } from "fzf"
 
-import type { ModeConfig } from "@neira-coder/types"
+import type { ModeConfig } from "@researcherry/types"
 import type { Command } from "@roo/ExtensionMessage"
 
 import { mentionRegex } from "@roo/context-mentions"

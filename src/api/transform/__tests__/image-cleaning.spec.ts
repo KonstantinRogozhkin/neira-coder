@@ -1,6 +1,6 @@
 // npx vitest run api/transform/__tests__/image-cleaning.spec.ts
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry/types"
 
 import { ApiHandler } from "../../index"
 import { ApiMessage } from "../../../core/task-persistence/apiMessages"

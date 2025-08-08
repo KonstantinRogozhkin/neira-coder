@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { CodeActionId, CodeActionName } from "@neira-coder/types"
+import { CodeActionId, CodeActionName } from "@researcherry/types"
 
 import { getCodeActionCommand } from "../utils/commands"
 import { EditorUtils } from "../integrations/editor/EditorUtils"

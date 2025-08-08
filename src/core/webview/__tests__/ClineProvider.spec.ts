@@ -4,8 +4,8 @@ import Anthropic from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
 import axios from "axios"
 
-import { type ProviderSettingsEntry, type ClineMessage, ORGANIZATION_ALLOW_ALL } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { type ProviderSettingsEntry, type ClineMessage, ORGANIZATION_ALLOW_ALL } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { ExtensionMessage, ExtensionState } from "../../../shared/ExtensionMessage"
 import { defaultModeSlug } from "../../../shared/modes"
@@ -313,7 +313,7 @@ vi.mock("../diff/strategies/multi-search-replace", () => ({
 	})),
 }))
 
-vi.mock("@neira-coder/cloud", () => ({
+vi.mock("@researcherry/cloud", () => ({
 	CloudService: {
 		hasInstance: vi.fn().mockReturnValue(true),
 		get instance() {
@@ -322,7 +322,7 @@ vi.mock("@neira-coder/cloud", () => ({
 			}
 		},
 	},
-	getNeiraCoderApiUrl: vi.fn().mockReturnValue("https://app.neiracoder.com"),
+	getResearcherryCoderApiUrl: vi.fn().mockReturnValue("https://app.researcherrycoder.com"),
 }))
 
 afterAll(() => {
@@ -531,7 +531,7 @@ describe("ClineProvider", () => {
 			maxWorkspaceFiles: 200,
 			browserToolEnabled: true,
 			telemetrySetting: "unset",
-			showNeiraIgnoredFiles: true,
+			showResearcherryIgnoredFiles: true,
 			renderContext: "sidebar",
 			maxReadFileLine: 500,
 			maxImageFileSize: 5,
@@ -977,24 +977,24 @@ describe("ClineProvider", () => {
 		expect(state.browserToolEnabled).toBe(true) // Default value should be true
 	})
 
-	test("handles showNeiraIgnoredFiles setting", async () => {
+	test("handles showResearcherryIgnoredFiles setting", async () => {
 		await provider.resolveWebviewView(mockWebviewView)
 		const messageHandler = (mockWebviewView.webview.onDidReceiveMessage as any).mock.calls[0][0]
 
 		// Default value should be true
-		expect((await provider.getState()).showNeiraIgnoredFiles).toBe(true)
+		expect((await provider.getState()).showResearcherryIgnoredFiles).toBe(true)
 
-		// Test showNeiraIgnoredFiles with true
-		await messageHandler({ type: "showNeiraIgnoredFiles", bool: true })
-		expect(mockContext.globalState.update).toHaveBeenCalledWith("showNeiraIgnoredFiles", true)
+		// Test showResearcherryIgnoredFiles with true
+		await messageHandler({ type: "showResearcherryIgnoredFiles", bool: true })
+		expect(mockContext.globalState.update).toHaveBeenCalledWith("showResearcherryIgnoredFiles", true)
 		expect(mockPostMessage).toHaveBeenCalled()
-		expect((await provider.getState()).showNeiraIgnoredFiles).toBe(true)
+		expect((await provider.getState()).showResearcherryIgnoredFiles).toBe(true)
 
-		// Test showNeiraIgnoredFiles with false
-		await messageHandler({ type: "showNeiraIgnoredFiles", bool: false })
-		expect(mockContext.globalState.update).toHaveBeenCalledWith("showNeiraIgnoredFiles", false)
+		// Test showResearcherryIgnoredFiles with false
+		await messageHandler({ type: "showResearcherryIgnoredFiles", bool: false })
+		expect(mockContext.globalState.update).toHaveBeenCalledWith("showResearcherryIgnoredFiles", false)
 		expect(mockPostMessage).toHaveBeenCalled()
-		expect((await provider.getState()).showNeiraIgnoredFiles).toBe(false)
+		expect((await provider.getState()).showResearcherryIgnoredFiles).toBe(false)
 	})
 
 	test("handles request delay settings messages", async () => {
@@ -2299,10 +2299,10 @@ describe("Project MCP Settings", () => {
 		expect(mockedFs.mkdir).toHaveBeenCalledWith("/test/workspace/.roo", { recursive: true })
 
 		// Verify file was created with default content
-		expect(safeWriteJson).toHaveBeenCalledWith("/test/workspace/.neira/mcp.json", { mcpServers: {} })
+		expect(safeWriteJson).toHaveBeenCalledWith("/test/workspace/.researcherry/mcp.json", { mcpServers: {} })
 
 		// Check that openFile was called
-		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.neira/mcp.json")
+		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.researcherry/mcp.json")
 	})
 
 	test("handles openProjectMcpSettings when workspace is not open", async () => {
@@ -2337,7 +2337,7 @@ describe("Project MCP Settings", () => {
 
 		// Verify error message was shown
 		expect(vscode.window.showErrorMessage).toHaveBeenCalledWith(
-			expect.stringContaining("Failed to create or open .neira/mcp.json"),
+			expect.stringContaining("Failed to create or open .researcherry/mcp.json"),
 		)
 	})
 })
@@ -2475,7 +2475,7 @@ describe("getTelemetryProperties", () => {
 
 		test("includes cloud authentication property when user is authenticated", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockReturnValue(true),
 			}
@@ -2493,7 +2493,7 @@ describe("getTelemetryProperties", () => {
 
 		test("includes cloud authentication property when user is not authenticated", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockReturnValue(false),
 			}
@@ -2511,7 +2511,7 @@ describe("getTelemetryProperties", () => {
 
 		test("handles CloudService errors gracefully", async () => {
 			// Import the CloudService mock and update it to throw an error
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 			Object.defineProperty(CloudService, "instance", {
 				get: vi.fn().mockImplementation(() => {
 					throw new Error("CloudService not available")
@@ -2532,7 +2532,7 @@ describe("getTelemetryProperties", () => {
 
 		test("handles CloudService method errors gracefully", async () => {
 			// Import the CloudService mock and update it
-			const { CloudService } = await import("@neira-coder/cloud")
+			const { CloudService } = await import("@researcherry/cloud")
 			const mockCloudService = {
 				isAuthenticated: vi.fn().mockImplementation(() => {
 					throw new Error("Authentication check error")

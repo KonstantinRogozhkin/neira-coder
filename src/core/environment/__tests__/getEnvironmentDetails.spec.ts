@@ -78,7 +78,7 @@ describe("getEnvironmentDetails", () => {
 			experiments: {},
 			customInstructions: "test instructions",
 			language: "en",
-			showNeiraIgnoredFiles: true,
+			showResearcherryIgnoredFiles: true,
 		}
 
 		mockProvider = {

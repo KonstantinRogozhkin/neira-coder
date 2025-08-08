@@ -1,5 +1,5 @@
 {
-	"name": "@neira-coder/build",
+	"name": "@researcherry/build",
 	"description": "ESBuild utilities for Roo Code.",
 	"private": true,
 	"type": "module",
@@ -16,8 +16,8 @@
 		"zod": "^3.25.61"
 	},
 	"devDependencies": {
-		"@neira-coder/config-eslint": "workspace:^",
-		"@neira-coder/config-typescript": "workspace:^",
+		"@researcherry/config-eslint": "workspace:^",
+		"@researcherry/config-typescript": "workspace:^",
 		"@types/node": "20.x",
 		"vitest": "^3.2.3"
 	}

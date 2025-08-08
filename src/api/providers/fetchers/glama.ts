@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import type { ModelInfo } from "@neira-coder/types"
+import type { ModelInfo } from "@researcherry/types"
 
 import { parseApiPrice } from "../../../shared/cost"
 

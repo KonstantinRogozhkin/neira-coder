@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 
-import { shareResponseSchema } from "@neira-coder/types"
-import { getNeiraCoderApiUrl } from "./Config.js"
+import { shareResponseSchema } from "@researcherry/types"
+import { getResearcherryCoderApiUrl } from "./Config.js"
 import type { AuthService } from "./auth"
 import type { SettingsService } from "./SettingsService"
 import { getUserAgent } from "./utils"
@@ -37,7 +37,7 @@ export class ShareService {
 				throw new Error("Authentication required")
 			}
 
-			const response = await fetch(`${getNeiraCoderApiUrl()}/api/extension/share`, {
+			const response = await fetch(`${getResearcherryCoderApiUrl()}/api/extension/share`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

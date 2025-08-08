@@ -23,8 +23,8 @@ import { codeParser } from "./parser"
 import { CacheManager } from "../cache-manager"
 import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path"
 import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { TelemetryEventName } from "@researcherry/types"
 import { sanitizeErrorMessage } from "../shared/validation-helpers"
 
 /**
@@ -509,7 +509,7 @@ export class FileWatcher implements IFileWatcher {
 				return {
 					path: filePath,
 					status: "skipped" as const,
-					reason: "File is ignored by .neiraignore or .gitignore",
+					reason: "File is ignored by .researcherryignore or .gitignore",
 				}
 			}
 

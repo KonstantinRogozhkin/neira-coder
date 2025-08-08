@@ -36,7 +36,7 @@ vi.mock("vscode", () => ({
 
 // Mock config
 vi.mock("../Config", () => ({
-	getNeiraCoderApiUrl: () => "https://app.neira-coder.com",
+	getResearcherryCoderApiUrl: () => "https://app.researcherry.com",
 }))
 
 // Mock utils
@@ -72,7 +72,7 @@ describe("ShareService", () => {
 		it("should share task with organization visibility and copy to clipboard", async () => {
 			const mockResponseData = {
 				success: true,
-				shareUrl: "https://app.neira-coder.com/share/abc123",
+				shareUrl: "https://app.researcherry.com/share/abc123",
 			}
 
 			;(mockAuthService.getSessionToken as any).mockReturnValue("session-token")
@@ -84,8 +84,8 @@ describe("ShareService", () => {
 			const result = await shareService.shareTask("task-123", "organization")
 
 			expect(result.success).toBe(true)
-			expect(result.shareUrl).toBe("https://app.neira-coder.com/share/abc123")
-			expect(mockFetch).toHaveBeenCalledWith("https://app.neira-coder.com/api/extension/share", {
+			expect(result.shareUrl).toBe("https://app.researcherry.com/share/abc123")
+			expect(mockFetch).toHaveBeenCalledWith("https://app.researcherry.com/api/extension/share", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -95,13 +95,13 @@ describe("ShareService", () => {
 				body: JSON.stringify({ taskId: "task-123", visibility: "organization" }),
 				signal: expect.any(AbortSignal),
 			})
-			expect(vscode.env.clipboard.writeText).toHaveBeenCalledWith("https://app.neira-coder.com/share/abc123")
+			expect(vscode.env.clipboard.writeText).toHaveBeenCalledWith("https://app.researcherry.com/share/abc123")
 		})
 
 		it("should share task with public visibility", async () => {
 			const mockResponseData = {
 				success: true,
-				shareUrl: "https://app.neira-coder.com/share/abc123",
+				shareUrl: "https://app.researcherry.com/share/abc123",
 			}
 
 			;(mockAuthService.getSessionToken as any).mockReturnValue("session-token")
@@ -113,7 +113,7 @@ describe("ShareService", () => {
 			const result = await shareService.shareTask("task-123", "public")
 
 			expect(result.success).toBe(true)
-			expect(mockFetch).toHaveBeenCalledWith("https://app.neira-coder.com/api/extension/share", {
+			expect(mockFetch).toHaveBeenCalledWith("https://app.researcherry.com/api/extension/share", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -128,7 +128,7 @@ describe("ShareService", () => {
 		it("should default to organization visibility when not specified", async () => {
 			const mockResponseData = {
 				success: true,
-				shareUrl: "https://app.neira-coder.com/share/abc123",
+				shareUrl: "https://app.researcherry.com/share/abc123",
 			}
 
 			;(mockAuthService.getSessionToken as any).mockReturnValue("session-token")
@@ -140,7 +140,7 @@ describe("ShareService", () => {
 			const result = await shareService.shareTask("task-123")
 
 			expect(result.success).toBe(true)
-			expect(mockFetch).toHaveBeenCalledWith("https://app.neira-coder.com/api/extension/share", {
+			expect(mockFetch).toHaveBeenCalledWith("https://app.researcherry.com/api/extension/share", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

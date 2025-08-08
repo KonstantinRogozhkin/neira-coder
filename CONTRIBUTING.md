@@ -11,9 +11,9 @@
 </sub>
 </div>
 
-# Contributing to Neira Coder
+# Contributing to Researcherry Coder
 
-Neira Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
+Researcherry Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
 
 ## Table of Contents
 
@@ -52,10 +52,10 @@ Our roadmap guides the project's direction. Align your contributions with these 
 
 Mention alignment with these areas in your PRs.
 
-### 3. Join the Neira Coder Community
+### 3. Join the Researcherry Coder Community
 
-- **Primary:** Join our [Discord](https://discord.gg/neiracoder) and DM **Hannes Rudolph (`hrudolph`)**.
-- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/NeiraCoderInc/projects/1).
+- **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
+- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
 
 ## Finding & Planning Your Contribution
 
@@ -69,7 +69,7 @@ Mention alignment with these areas in your PRs.
 
 All contributions must begin with a GitHub Issue.
 
-- **Check existing issues**: Search [GitHub Issues](https://github.com/NeiraCoderInc/Neira-Coder/issues).
+- **Check existing issues**: Search [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues).
 - **Create an issue**: Use appropriate templates:
     - **Bugs:** "Bug Report" template.
     - **Features:** "Detailed Feature Proposal" template. Approval required before starting.
@@ -79,14 +79,14 @@ All contributions must begin with a GitHub Issue.
 
 ### Deciding What to Work On
 
-- Check the [GitHub Project](https://github.com/orgs/NeiraCoderInc/projects/1) for unassigned "Good First Issues."
-- For docs, visit [Neira Coder Docs](https://github.com/NeiraCoderInc/Neira-Coder-Docs).
+- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
+- For docs, visit [Researcherry Coder Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
 
 ### Reporting Bugs
 
 - Check for existing reports first.
-- Create new bugs using the ["Bug Report" template](https://github.com/NeiraCoderInc/Neira-Coder/issues/new/choose).
-- **Security issues**: Report privately via [security advisories](https://github.com/NeiraCoderInc/Neira-Coder/security/advisories/new).
+- Create new bugs using the ["Bug Report" template](https://github.com/ResearcherryCoderInc/researcherry/issues/new/choose).
+- **Security issues**: Report privately via [security advisories](https://github.com/ResearcherryCoderInc/researcherry/security/advisories/new).
 
 ## Development & Submission Process
 
@@ -95,7 +95,7 @@ All contributions must begin with a GitHub Issue.
 1. **Fork & Clone:**
 
 ```
-git clone https://github.com/YOUR_USERNAME/Neira-Coder.git
+git clone https://github.com/YOUR_USERNAME/researcherry.git
 ```
 
 2. **Install Dependencies:**
@@ -135,4 +135,4 @@ pnpm install
 
 ## Legal
 
-By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Neira Coder's licensing.
+By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry Coder's licensing.

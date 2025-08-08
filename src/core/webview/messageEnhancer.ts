@@ -1,5 +1,5 @@
-import { ProviderSettings, ClineMessage, GlobalState, TelemetryEventName } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import { ProviderSettings, ClineMessage, GlobalState, TelemetryEventName } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 import { supportPrompt } from "../../shared/support-prompt"
 import { singleCompletionHandler } from "../../utils/single-completion-handler"
 import { ProviderSettingsManager } from "../config/ProviderSettingsManager"

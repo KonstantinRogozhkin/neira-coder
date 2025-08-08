@@ -2,12 +2,12 @@ import * as vscode from "vscode"
 import { CloudSettingsService } from "../CloudSettingsService"
 import { RefreshTimer } from "../RefreshTimer"
 import type { AuthService } from "../auth"
-import type { OrganizationSettings } from "@neira-coder/types"
+import type { OrganizationSettings } from "@researcherry/types"
 
 // Mock dependencies
 vi.mock("../RefreshTimer")
 vi.mock("../Config", () => ({
-	getNeiraCoderApiUrl: vi.fn().mockReturnValue("https://api.example.com"),
+	getResearcherryCoderApiUrl: vi.fn().mockReturnValue("https://api.example.com"),
 }))
 
 // Mock fetch globally

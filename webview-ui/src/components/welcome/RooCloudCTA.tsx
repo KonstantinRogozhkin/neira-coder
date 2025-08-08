@@ -13,7 +13,9 @@ export function RooCloudCTA() {
 					<span>{t("rooCloudCTA.description")}</span>
 				</p>
 				<p>
-					<a href="https://neirajet.com/step/2?utm_source=neiradesctopapp">{t("rooCloudCTA.joinWaitlist")}</a>
+					<a href="https://researcherryjet.com/step/2?utm_source=researcherrydesctopapp">
+						{t("rooCloudCTA.joinWaitlist")}
+					</a>
 				</p>
 			</div>
 		</div>

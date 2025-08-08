@@ -1,17 +1,22 @@
 import { Fragment, HTMLAttributes } from "react"
 
-import { type Keys, type NeiraCoderSettings, GLOBAL_SETTINGS_KEYS, PROVIDER_SETTINGS_KEYS } from "@neira-coder/types"
+import {
+	type Keys,
+	type ResearcherryCoderSettings,
+	GLOBAL_SETTINGS_KEYS,
+	PROVIDER_SETTINGS_KEYS,
+} from "@researcherry/types"
 
 import { cn } from "@/lib/utils"
 
 export const NEIRA_CODER_SETTINGS_KEYS = [
 	...GLOBAL_SETTINGS_KEYS,
 	...PROVIDER_SETTINGS_KEYS,
-] as Keys<NeiraCoderSettings>[]
+] as Keys<ResearcherryCoderSettings>[]
 
 type SettingsDiffProps = HTMLAttributes<HTMLDivElement> & {
-	defaultSettings: NeiraCoderSettings
-	customSettings: NeiraCoderSettings
+	defaultSettings: ResearcherryCoderSettings
+	customSettings: ResearcherryCoderSettings
 }
 
 export function SettingsDiff({

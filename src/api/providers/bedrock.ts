@@ -21,7 +21,7 @@ import {
 	BEDROCK_MAX_TOKENS,
 	BEDROCK_DEFAULT_CONTEXT,
 	AWS_INFERENCE_PROFILE_MAPPING,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 import { ApiStream } from "../transform/stream"
 import { BaseProvider } from "./base-provider"

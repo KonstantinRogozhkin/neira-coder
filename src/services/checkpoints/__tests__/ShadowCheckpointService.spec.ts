@@ -16,8 +16,8 @@ const tmpDir = path.join(os.tmpdir(), "CheckpointService")
 
 const initWorkspaceRepo = async ({
 	workspaceDir,
-	userName = "Neira Coder",
-	userEmail = "support@neiracoder.com",
+	userName = "Researcherry Coder",
+	userEmail = "support@researcherrycoder.com",
 	testFileName = "test.txt",
 	textFileContent = "Hello, world!",
 }: {
@@ -388,16 +388,16 @@ describe.each([[RepoPerTaskCheckpointService, "RepoPerTaskCheckpointService"]])(
 				await fs.mkdir(workspaceDir, { recursive: true })
 				const mainGit = simpleGit(workspaceDir)
 				await mainGit.init()
-				await mainGit.addConfig("user.name", "Neira Coder")
-				await mainGit.addConfig("user.email", "support@neiracoder.com")
+				await mainGit.addConfig("user.name", "Researcherry Coder")
+				await mainGit.addConfig("user.email", "support@researcherrycoder.com")
 
 				// Create a nested repo inside the workspace.
 				const nestedRepoPath = path.join(workspaceDir, "nested-project")
 				await fs.mkdir(nestedRepoPath, { recursive: true })
 				const nestedGit = simpleGit(nestedRepoPath)
 				await nestedGit.init()
-				await nestedGit.addConfig("user.name", "Neira Coder")
-				await nestedGit.addConfig("user.email", "support@neiracoder.com")
+				await nestedGit.addConfig("user.name", "Researcherry Coder")
+				await nestedGit.addConfig("user.email", "support@researcherrycoder.com")
 
 				// Add a file to the nested repo.
 				const nestedFile = path.join(nestedRepoPath, "nested-file.txt")
@@ -455,8 +455,8 @@ describe.each([[RepoPerTaskCheckpointService, "RepoPerTaskCheckpointService"]])(
 				await fs.mkdir(workspaceDir, { recursive: true })
 				const mainGit = simpleGit(workspaceDir)
 				await mainGit.init()
-				await mainGit.addConfig("user.name", "Neira Coder")
-				await mainGit.addConfig("user.email", "support@neiracoder.com")
+				await mainGit.addConfig("user.name", "Researcherry Coder")
+				await mainGit.addConfig("user.email", "support@researcherrycoder.com")
 
 				// Create a test file in the main workspace.
 				const mainFile = path.join(workspaceDir, "main-file.txt")

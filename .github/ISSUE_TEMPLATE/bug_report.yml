@@ -6,13 +6,13 @@ body:
     attributes:
       value: |
         **Thanks for your report!** Please check existing issues first:  
-        👉 https://github.com/NeiraCoderInc/Neira-Coder/issues
+        👉 https://github.com/ResearcherryCoderInc/researcherry/issues
 
   - type: input
     id: version
     attributes:
       label: App Version
-      description: What version of Neira Coder are you using? (e.g., v3.3.1)
+      description: What version of Researcherry Coder are you using? (e.g., v3.3.1)
     validations:
       required: true
 
@@ -61,7 +61,7 @@ body:
       description: |
         If you have any publicly shared task links that demonstrate the issue, please paste them here.
         This helps maintainers understand the context.
-        Example: https://app.neira.app/share/task-id
+        Example: https://app.researcherry.app/share/task-id
       placeholder: Paste your Roo Code share links here, one per line
 
   - type: textarea

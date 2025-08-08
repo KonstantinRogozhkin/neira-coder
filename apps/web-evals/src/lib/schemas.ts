@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-import { neiraCoderSettingsSchema } from "@neira-coder/types"
+import { researcherryCoderSettingsSchema } from "@researcherry/types"
 
 /**
  * CreateRun
@@ -22,7 +22,7 @@ export const createRunSchema = z
 		description: z.string().optional(),
 		suite: z.enum(["full", "partial"]),
 		exercises: z.array(z.string()).optional(),
-		settings: neiraCoderSettingsSchema.optional(),
+		settings: researcherryCoderSettingsSchema.optional(),
 		concurrency: z.number().int().min(CONCURRENCY_MIN).max(CONCURRENCY_MAX),
 		timeout: z.number().int().min(TIMEOUT_MIN).max(TIMEOUT_MAX),
 		systemPrompt: z.string().optional(),

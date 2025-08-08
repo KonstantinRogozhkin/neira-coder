@@ -31,10 +31,10 @@
 		"prompts": "Prompts",
 		"experimental": "Experimental",
 		"language": "Language",
-		"about": "About Neira Coder"
+		"about": "About Researcherry Coder"
 	},
 	"prompts": {
-		"description": "Configure support prompts used for quick actions like prompt improvement, code explanation, and issue fixing. These prompts help Neira provide better support for common development tasks."
+		"description": "Configure support prompts used for quick actions like prompt improvement, code explanation, and issue fixing. These prompts help Researcherry provide better support for common development tasks."
 	},
 	"providers": {
 		"apiProvider": "API Provider",
@@ -52,4 +52,4 @@
 		}
 	},
 	"importSettings": "Import Settings"
-} 
+}

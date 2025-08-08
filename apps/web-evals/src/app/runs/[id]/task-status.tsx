@@ -1,6 +1,6 @@
 import { CircleCheck, CircleDashed, CircleSlash, LoaderCircle } from "lucide-react"
 
-import type { Task } from "@neira-coder/evals"
+import type { Task } from "@researcherry/evals"
 
 type TaskStatusProps = {
 	task: Task

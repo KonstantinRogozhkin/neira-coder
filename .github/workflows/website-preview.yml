@@ -1,14 +1,14 @@
-name: Preview neira-coder.com
+name: Preview researcherry.com
 
 on:
     push:
         branches-ignore:
             - main
         paths:
-            - "apps/web-neira-coder/**"
+            - "apps/web-researcherry/**"
     pull_request:
         paths:
-            - "apps/web-neira-coder/**"
+            - "apps/web-researcherry/**"
     workflow_dispatch:
 
 env:

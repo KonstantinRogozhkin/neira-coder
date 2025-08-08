@@ -100,7 +100,7 @@ export const globalSettingsSchema = z.object({
 
 	maxOpenTabsContext: z.number().optional(),
 	maxWorkspaceFiles: z.number().optional(),
-	showNeiraIgnoredFiles: z.boolean().optional(),
+	showResearcherryIgnoredFiles: z.boolean().optional(),
 	maxReadFileLine: z.number().optional(),
 	maxImageFileSize: z.number().optional(),
 	maxTotalImageSize: z.number().optional(),
@@ -153,12 +153,12 @@ export type GlobalSettings = z.infer<typeof globalSettingsSchema>
 export const GLOBAL_SETTINGS_KEYS = globalSettingsSchema.keyof().options
 
 /**
- * NeiraCoderSettings
+ * ResearcherryCoderSettings
  */
 
-export const neiraCoderSettingsSchema = providerSettingsSchema.merge(globalSettingsSchema)
+export const researcherryCoderSettingsSchema = providerSettingsSchema.merge(globalSettingsSchema)
 
-export type NeiraCoderSettings = GlobalSettings & ProviderSettings
+export type ResearcherryCoderSettings = GlobalSettings & ProviderSettings
 
 /**
  * SecretState
@@ -201,10 +201,10 @@ export const isSecretStateKey = (key: string): key is Keys<SecretState> =>
  * GlobalState
  */
 
-export type GlobalState = Omit<NeiraCoderSettings, Keys<SecretState>>
+export type GlobalState = Omit<ResearcherryCoderSettings, Keys<SecretState>>
 
 export const GLOBAL_STATE_KEYS = [...GLOBAL_SETTINGS_KEYS, ...PROVIDER_SETTINGS_KEYS].filter(
-	(key: Keys<NeiraCoderSettings>) => !SECRET_STATE_KEYS.includes(key as Keys<SecretState>),
+	(key: Keys<ResearcherryCoderSettings>) => !SECRET_STATE_KEYS.includes(key as Keys<SecretState>),
 ) as Keys<GlobalState>[]
 
 export const isGlobalStateKey = (key: string): key is Keys<GlobalState> =>
@@ -215,7 +215,7 @@ export const isGlobalStateKey = (key: string): key is Keys<GlobalState> =>
  */
 
 // Default settings when running evals (unless overridden).
-export const EVALS_SETTINGS: NeiraCoderSettings = {
+export const EVALS_SETTINGS: ResearcherryCoderSettings = {
 	apiProvider: "openrouter",
 	openRouterUseMiddleOutTransform: false,
 
@@ -277,7 +277,7 @@ export const EVALS_SETTINGS: NeiraCoderSettings = {
 	rateLimitSeconds: 0,
 	maxOpenTabsContext: 20,
 	maxWorkspaceFiles: 200,
-	showNeiraIgnoredFiles: true,
+	showResearcherryIgnoredFiles: true,
 	maxReadFileLine: -1, // -1 to enable full file reading.
 
 	includeDiagnosticMessages: true,

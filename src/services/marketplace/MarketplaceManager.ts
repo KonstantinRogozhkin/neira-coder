@@ -4,9 +4,14 @@ import * as path from "path"
 import * as vscode from "vscode"
 import * as yaml from "yaml"
 
-import type { MarketplaceItem, MarketplaceItemType, McpMarketplaceItem, OrganizationSettings } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { CloudService } from "@neira-coder/cloud"
+import type {
+	MarketplaceItem,
+	MarketplaceItemType,
+	McpMarketplaceItem,
+	OrganizationSettings,
+} from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { CloudService } from "@researcherry/cloud"
 
 import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
@@ -251,8 +256,8 @@ export class MarketplaceManager {
 				return // No workspace, no project installations
 			}
 
-			// Check modes in .neira/.neira-modes
-			const projectModesPath = path.join(workspaceFolder.uri.fsPath, ".neira", ".neira-modes")
+			// Check modes in .researcherry/.researcherry-modes
+			const projectModesPath = path.join(workspaceFolder.uri.fsPath, ".researcherry", ".researcherry-modes")
 			try {
 				const content = await fs.readFile(projectModesPath, "utf-8")
 				const data = yaml.parse(content)
@@ -269,8 +274,8 @@ export class MarketplaceManager {
 				// File doesn't exist or can't be read, skip
 			}
 
-			// Check MCPs in .neira/mcp.json
-			const projectMcpPath = path.join(workspaceFolder.uri.fsPath, ".neira", "mcp.json")
+			// Check MCPs in .researcherry/mcp.json
+			const projectMcpPath = path.join(workspaceFolder.uri.fsPath, ".researcherry", "mcp.json")
 			try {
 				const content = await fs.readFile(projectMcpPath, "utf-8")
 				const data = JSON.parse(content)

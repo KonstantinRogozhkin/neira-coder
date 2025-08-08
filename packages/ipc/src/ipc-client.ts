@@ -10,7 +10,7 @@ import {
 	IpcOrigin,
 	IpcMessageType,
 	ipcMessageSchema,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
 export class IpcClient extends EventEmitter<IpcClientEvents> {
 	private readonly _socketPath: string

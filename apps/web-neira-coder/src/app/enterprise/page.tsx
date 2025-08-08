@@ -17,7 +17,7 @@ export default async function Enterprise() {
 						<div className="flex flex-col justify-center space-y-6 sm:space-y-8">
 							<div>
 								<h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-									<span className="block">Neira Coder Cloud for</span>
+									<span className="block">Researcherry Coder Cloud for</span>
 									<AnimatedText className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
 										Enterprise
 									</AnimatedText>
@@ -46,7 +46,7 @@ export default async function Enterprise() {
 									size="lg"
 									className="w-full sm:w-auto bg-white/20 dark:bg-white/10 backdrop-blur-sm border border-black/40 dark:border-white/30 hover:border-blue-400 hover:bg-white/30 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
 									<a href="#benefits" className="flex w-full items-center justify-center">
-										Why Neira Coder
+										Why Researcherry Coder
 									</a>
 								</Button>
 							</div>
@@ -58,16 +58,16 @@ export default async function Enterprise() {
 							<div className="relative z-10 rounded-lg border border-border bg-card p-6 shadow-lg">
 								<div className="mb-4 flex items-center space-x-2">
 									<Code className="h-6 w-6 text-blue-400" />
-									<h3 className="text-lg font-semibold">Neira Coder Cloud Control-Plane</h3>
+									<h3 className="text-lg font-semibold">Researcherry Coder Cloud Control-Plane</h3>
 								</div>
 								<p className="mb-4 text-sm text-muted-foreground">
-									A unified control system for managing Neira Coder across your organization, with the
-									flexibility to extend governance to your broader AI toolkit.
+									A unified control system for managing Researcherry Coder across your organization,
+									with the flexibility to extend governance to your broader AI toolkit.
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-center space-x-2">
 										<CheckCircle className="h-4 w-4 text-green-400" />
-										<span className="text-sm">Centralized Neira Coder management</span>
+										<span className="text-sm">Centralized Researcherry Coder management</span>
 									</div>
 									<div className="flex items-center space-x-2">
 										<CheckCircle className="h-4 w-4 text-green-400" />
@@ -96,8 +96,8 @@ export default async function Enterprise() {
 							Take Control of Your AI Development
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-							Neira Code Cloud provides enterprise-grade control and visibility for Neira Code
-							deployments, with an extensible architecture for your evolving AI strategy.
+							Researcherry Code Cloud provides enterprise-grade control and visibility for Researcherry
+							Code deployments, with an extensible architecture for your evolving AI strategy.
 						</p>
 					</div>
 
@@ -111,8 +111,8 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">Centralized AI Management Hub</h3>
 							<p className="text-muted-foreground">
-								Manage Neira Code deployments enterprise-wide, with an extensible platform ready for
-								your broader AI ecosystem.
+								Manage Researcherry Code deployments enterprise-wide, with an extensible platform ready
+								for your broader AI ecosystem.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -139,7 +139,7 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">Real-Time Usage Visibility</h3>
 							<p className="text-muted-foreground">
-								Track Neira Code usage across teams with detailed analytics and cost attribution.
+								Track Researcherry Code usage across teams with detailed analytics and cost attribution.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -166,8 +166,8 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">Enterprise-Grade Governance</h3>
 							<p className="text-muted-foreground">
-								Implement security policies for Neira Code that align with your enterprise AI governance
-								framework.
+								Implement security policies for Researcherry Code that align with your enterprise AI
+								governance framework.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -194,8 +194,8 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">5-Minute Control-Plane Setup</h3>
 							<p className="text-muted-foreground">
-								Deploy your Neira Code control-plane instantly with our SaaS solution. No infrastructure
-								required.
+								Deploy your Researcherry Code control-plane instantly with our SaaS solution. No
+								infrastructure required.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -222,7 +222,7 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">Manage AI Development Costs</h3>
 							<p className="text-muted-foreground">
-								Track and control Neira Code costs with detailed analytics and budget controls.
+								Track and control Researcherry Code costs with detailed analytics and budget controls.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -249,7 +249,8 @@ export default async function Enterprise() {
 							</div>
 							<h3 className="mb-2 text-xl font-bold">Zero Friction for Developers</h3>
 							<p className="text-muted-foreground">
-								Developers get seamless Neira Code access while you maintain governance and visibility.
+								Developers get seamless Researcherry Code access while you maintain governance and
+								visibility.
 							</p>
 							<ul className="mt-4 space-y-2">
 								<li className="flex items-start">
@@ -276,7 +277,7 @@ export default async function Enterprise() {
 					<div className="mb-12 text-center">
 						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Why You Need a Control-Plane</h2>
 						<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-							See how Neira Code Cloud brings enterprise control to AI-powered development.
+							See how Researcherry Code Cloud brings enterprise control to AI-powered development.
 						</p>
 					</div>
 
@@ -297,7 +298,7 @@ export default async function Enterprise() {
 											d="M6 18L18 6M6 6l12 12"
 										/>
 									</svg>
-									<span>Neira Code tokens managed individually by developers</span>
+									<span>Researcherry Code tokens managed individually by developers</span>
 								</li>
 								<li className="flex items-start">
 									<svg
@@ -363,11 +364,13 @@ export default async function Enterprise() {
 						</div>
 
 						<div className="rounded-lg border border-border bg-card p-8 shadow-sm">
-							<h3 className="mb-4 text-2xl font-bold text-blue-400">Neira Code Cloud Control-Plane</h3>
+							<h3 className="mb-4 text-2xl font-bold text-blue-400">
+								Researcherry Code Cloud Control-Plane
+							</h3>
 							<ul className="space-y-3">
 								<li className="flex items-start">
 									<CheckCircle className="mr-2 mt-0.5 h-5 w-5 text-green-500" />
-									<span>Centralized Neira Code management dashboard</span>
+									<span>Centralized Researcherry Code management dashboard</span>
 								</li>
 								<li className="flex items-start">
 									<CheckCircle className="mr-2 mt-0.5 h-5 w-5 text-green-500" />
@@ -480,7 +483,7 @@ export default async function Enterprise() {
 									<div className="rounded-lg border border-border bg-card/80 backdrop-blur-sm p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 dark:border-white/20 dark:bg-gray-800/80 dark:hover:border-white/40 dark:hover:bg-gray-700/90 dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] dark:hover:scale-[1.02]">
 										<h3 className="mb-2 text-xl font-bold">Become an Early Access Partner</h3>
 										<p className="mb-4 text-muted-foreground">
-											Collaborate in shaping Neira Code&apos;s enterprise solution.
+											Collaborate in shaping Researcherry Code&apos;s enterprise solution.
 										</p>
 										<ContactForm
 											formType="early-access"
@@ -491,7 +494,7 @@ export default async function Enterprise() {
 									<div className="rounded-lg border border-border bg-card/80 backdrop-blur-sm p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 dark:border-white/20 dark:bg-gray-800/80 dark:hover:border-white/40 dark:hover:bg-gray-700/90 dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] dark:hover:scale-[1.02]">
 										<h3 className="mb-2 text-xl font-bold">Request a Demo</h3>
 										<p className="mb-4 text-muted-foreground">
-											See Neira Code&apos;s enterprise capabilities in action.
+											See Researcherry Code&apos;s enterprise capabilities in action.
 										</p>
 										<ContactForm
 											formType="demo"

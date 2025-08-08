@@ -2,8 +2,8 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import type { ModelInfo } from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+import type { ModelInfo } from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { BaseProvider } from "../../../api/providers/base-provider"
 import { ApiMessage } from "../../task-persistence/apiMessages"

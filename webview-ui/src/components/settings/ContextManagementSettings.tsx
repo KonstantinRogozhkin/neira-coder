@@ -18,7 +18,7 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	listApiConfigMeta: any[]
 	maxOpenTabsContext: number
 	maxWorkspaceFiles: number
-	showNeiraIgnoredFiles?: boolean
+	showResearcherryIgnoredFiles?: boolean
 	maxReadFileLine?: number
 	maxImageFileSize?: number
 	maxTotalImageSize?: number
@@ -32,7 +32,7 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 		| "autoCondenseContextPercent"
 		| "maxOpenTabsContext"
 		| "maxWorkspaceFiles"
-		| "showNeiraIgnoredFiles"
+		| "showResearcherryIgnoredFiles"
 		| "maxReadFileLine"
 		| "maxImageFileSize"
 		| "maxTotalImageSize"
@@ -50,7 +50,7 @@ export const ContextManagementSettings = ({
 	listApiConfigMeta,
 	maxOpenTabsContext,
 	maxWorkspaceFiles,
-	showNeiraIgnoredFiles,
+	showResearcherryIgnoredFiles,
 	setCachedStateField,
 	maxReadFileLine,
 	maxImageFileSize,
@@ -164,8 +164,8 @@ export const ContextManagementSettings = ({
 
 				<div>
 					<VSCodeCheckbox
-						checked={showNeiraIgnoredFiles}
-						onChange={(e: any) => setCachedStateField("showNeiraIgnoredFiles", e.target.checked)}
+						checked={showResearcherryIgnoredFiles}
+						onChange={(e: any) => setCachedStateField("showResearcherryIgnoredFiles", e.target.checked)}
 						data-testid="show-rooignored-files-checkbox">
 						<label className="block font-medium mb-1">
 							{t("settings:contextManagement.rooignore.label")}

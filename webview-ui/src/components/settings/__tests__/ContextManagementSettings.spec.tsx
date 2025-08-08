@@ -90,7 +90,7 @@ describe("ContextManagementSettings", () => {
 		listApiConfigMeta: [],
 		maxOpenTabsContext: 20,
 		maxWorkspaceFiles: 200,
-		showNeiraIgnoredFiles: false,
+		showResearcherryIgnoredFiles: false,
 		maxReadFileLine: -1,
 		maxConcurrentFileReads: 5,
 		profileThresholds: {},
@@ -467,7 +467,7 @@ describe("ContextManagementSettings", () => {
 	it("handles undefined optional props gracefully", () => {
 		const propsWithUndefined = {
 			...defaultProps,
-			showNeiraIgnoredFiles: undefined,
+			showResearcherryIgnoredFiles: undefined,
 			maxReadFileLine: undefined,
 		}
 

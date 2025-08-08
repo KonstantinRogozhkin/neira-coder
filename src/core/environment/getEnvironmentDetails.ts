@@ -5,8 +5,8 @@ import * as vscode from "vscode"
 import pWaitFor from "p-wait-for"
 import delay from "delay"
 
-import type { ExperimentId } from "@neira-coder/types"
-import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@neira-coder/types"
+import type { ExperimentId } from "@researcherry/types"
+import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@researcherry/types"
 
 import { EXPERIMENT_IDS, experiments as Experiments } from "../../shared/experiments"
 import { formatLanguage } from "../../shared/language"
@@ -253,14 +253,14 @@ export async function getEnvironmentDetails(cline: Task, includeFileDetails: boo
 				details += "(Workspace files context disabled. Use list_files to explore if needed.)"
 			} else {
 				const [files, didHitLimit] = await listFiles(cline.cwd, true, maxFiles)
-				const { showNeiraIgnoredFiles = true } = state ?? {}
+				const { showResearcherryIgnoredFiles = true } = state ?? {}
 
 				const result = formatResponse.formatFilesList(
 					cline.cwd,
 					files,
 					didHitLimit,
 					cline.rooIgnoreController,
-					showNeiraIgnoredFiles,
+					showResearcherryIgnoredFiles,
 				)
 
 				details += result

@@ -1,5 +1,5 @@
-import type { McpInstallationMethod } from "@neira-coder/types"
-import { mcpInstallationMethodSchema, mcpMarketplaceItemSchema } from "@neira-coder/types"
+import type { McpInstallationMethod } from "@researcherry/types"
+import { mcpInstallationMethodSchema, mcpMarketplaceItemSchema } from "@researcherry/types"
 
 describe("Nested Parameters", () => {
 	describe("McpInstallationMethod Schema", () => {

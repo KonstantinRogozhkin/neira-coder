@@ -7,7 +7,7 @@ index e2acc3766..e547b94e0 100644
  	"changelog": "./changelog-config.js",
  	"commit": false,
 -	"fixed": [["roo-cline"]],
-+	"fixed": [["neira"]],
++	"fixed": [["researcherry"]],
  	"linked": [],
  	"access": "restricted",
  	"baseBranch": "main",
@@ -20,14 +20,14 @@ index 965566a31..16da1350d 100644
        value: |
          **Thanks for your report!** Please check existing issues first:  
 -        👉 https://github.com/RooCodeInc/Roo-Code/issues
-+        👉 https://github.com/NeiraCoderInc/Neira-Coder/issues
++        👉 https://github.com/ResearcherryCoderInc/researcherry/issues
  
    - type: input
      id: version
      attributes:
        label: App Version
 -      description: What version of Roo Code are you using? (e.g., v3.3.1)
-+      description: What version of Neira Coder are you using? (e.g., v3.3.1)
++      description: What version of Researcherry Coder are you using? (e.g., v3.3.1)
      validations:
        required: true
  
@@ -48,7 +48,7 @@ index 0351ad193..1f04efb24 100644
  contact_links:
      - name: Feature Request
 -      url: https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests
-+      url: https://github.com/NeiraCoderInc/Neira-Coder/discussions/categories/feature-requests
++      url: https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests
        about: Share and vote on feature requests for Roo Code
      - name: Leave a Review
        url: https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&ssr=false#review-details
@@ -59,25 +59,25 @@ index 4863f9ffa..1db7a854b 100644
 @@ -1,19 +1,19 @@
  name: Detailed Feature Proposal
 -description: Report a specific problem that needs solving in Roo Code
-+description: Report a specific problem that needs solving in Neira Coder
++description: Report a specific problem that needs solving in Researcherry Coder
  labels: ["proposal", "enhancement"]
  body:
    - type: markdown
      attributes:
        value: |
 -        **Thank you for submitting a feature request for Roo Code!**
-+        **Thank you for submitting a feature request for Neira Coder!**
++        **Thank you for submitting a feature request for Researcherry Coder!**
          
 -        This template helps you describe problems that need solving. Focus on the problem - the Roo team will work to design solutions unless you want to contribute the implementation yourself.
-+        This template helps you describe problems that need solving. Focus on the problem - the Neira team will work to design solutions unless you want to contribute the implementation yourself.
++        This template helps you describe problems that need solving. Focus on the problem - the Researcherry team will work to design solutions unless you want to contribute the implementation yourself.
          
          **Quality over speed:** We prefer detailed, clear problem descriptions over quick ones. Vague requests often get closed or require multiple rounds of clarification, which wastes everyone's time.
          
          **Before submitting:**
 -        - Search existing [Issues](https://github.com/RooCodeInc/Roo-Code/issues) and [Discussions](https://github.com/RooCodeInc/Roo-Code/discussions) to avoid duplicates
 -        - For general ideas, use [GitHub Discussions](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests) instead of this template.
-+        - Search existing [Issues](https://github.com/NeiraCoderInc/Neira-Coder/issues) and [Discussions](https://github.com/NeiraCoderInc/Neira-Coder/discussions) to avoid duplicates
-+        - For general ideas, use [GitHub Discussions](https://github.com/NeiraCoderInc/Neira-Coder/discussions/categories/feature-requests) instead of this template.
++        - Search existing [Issues](https://github.com/ResearcherryCoderInc/researcherry/issues) and [Discussions](https://github.com/ResearcherryCoderInc/researcherry/discussions) to avoid duplicates
++        - For general ideas, use [GitHub Discussions](https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests) instead of this template.
  
    - type: markdown
      attributes:
@@ -86,15 +86,15 @@ index 4863f9ffa..1db7a854b 100644
      id: roo-code-tasks
      attributes:
 -      label: Roo Code Task Links (Optional)
-+      label: Neira Coder Task Links (Optional)
++      label: Researcherry Coder Task Links (Optional)
        description: |
 -        If you used Roo Code to explore this feature request or develop solutions, share the public task links here.
-+        If you used Neira Coder to explore this feature request or develop solutions, share the public task links here.
++        If you used Researcherry Coder to explore this feature request or develop solutions, share the public task links here.
          This helps maintainers understand the context and any exploration you've done.
 -        Example: https://app.roocode.com/share/task-id
 -      placeholder: Paste your Roo Code share links here, one per line
-+        Example: https://app.neiracoder.com/share/task-id
-+      placeholder: Paste your Neira Coder share links here, one per line
++        Example: https://app.researcherrycoder.com/share/task-id
++      placeholder: Paste your Researcherry Coder share links here, one per line
  
    - type: checkboxes
      id: checklist
@@ -104,8 +104,8 @@ index 4863f9ffa..1db7a854b 100644
          - A maintainer (especially @hannesrudolph) will review this proposal. **Do not start implementation until approved and assigned.** We're a small team with limited resources, so every code addition needs careful consideration. We're always happy to receive clear, actionable proposals though!
 -        - Join [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph** (`hrudolph`) for guidance on implementation
 -        - Check our [Roadmap](https://github.com/orgs/RooCodeInc/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
-+        - Join [Discord](https://discord.gg/neiracoder) and DM **Hannes Rudolph** (`hrudolph`) for guidance on implementation
-+        - Check our [Roadmap](https://github.com/orgs/NeiraCoderInc/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
++        - Join [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph** (`hrudolph`) for guidance on implementation
++        - Check our [Roadmap](https://github.com/orgs/ResearcherryCoderInc/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
  
    - type: checkboxes
      id: willingness-to-contribute
@@ -125,7 +125,7 @@ index f314ca520..c2bd2cec3 100644
      attributes:
        value: |
 -        **Thanks for your feedback!** Please check existing issues first: https://github.com/RooCodeInc/Roo-Code/issues
-+        **Thanks for your feedback!** Please check existing issues first: https://github.com/NeiraCoderInc/Neira-Coder/issues
++        **Thanks for your feedback!** Please check existing issues first: https://github.com/ResearcherryCoderInc/researcherry/issues
  
    - type: dropdown
      id: feedback-type
@@ -138,11 +138,11 @@ index b99fd7659..7f31df70f 100644
  
              - name: Run database migrations
 -              run: docker compose run --rm runner pnpm --filter @roo-code/evals db:migrate
-+              run: docker compose run --rm runner pnpm --filter @neira-coder/evals db:migrate
++              run: docker compose run --rm runner pnpm --filter @researcherry/evals db:migrate
  
              - name: Run evals
 -              run: docker compose run --rm runner pnpm --filter @roo-code/evals cli --ci
-+              run: docker compose run --rm runner pnpm --filter @neira-coder/evals cli --ci
++              run: docker compose run --rm runner pnpm --filter @researcherry/evals cli --ci
  
              - name: Cleanup
                if: always()
@@ -155,7 +155,7 @@ index aef91b2d3..6ae6b96c6 100644
  
            # Save VSIX contents to a temporary file to avoid broken pipe issues.
 -          unzip -l bin/roo-cline-${current_package_version}.vsix > /tmp/roo-code-vsix-contents.txt
-+          unzip -l bin/neira-cline-${current_package_version}.vsix > /tmp/neira-coder-vsix-contents.txt
++          unzip -l bin/researcherry-cline-${current_package_version}.vsix > /tmp/researcherry-vsix-contents.txt
  
            # Check for required files.
 -          grep -q "extension/package.json" /tmp/roo-code-vsix-contents.txt || exit 1
@@ -166,18 +166,18 @@ index aef91b2d3..6ae6b96c6 100644
 -          grep -q "extension/assets/codicons/codicon.ttf" /tmp/roo-code-vsix-contents.txt || exit 1
 -          grep -q "extension/assets/vscode-material-icons/icons/3d.svg" /tmp/roo-code-vsix-contents.txt || exit 1
 -          grep -q ".env" /tmp/roo-code-vsix-contents.txt || exit 1
-+          grep -q "extension/package.json" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/package.nls.json" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/dist/extension.js" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/webview-ui/audio/celebration.wav" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/webview-ui/build/assets/index.js" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/assets/codicons/codicon.ttf" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q "extension/assets/vscode-material-icons/icons/3d.svg" /tmp/neira-coder-vsix-contents.txt || exit 1
-+          grep -q ".env" /tmp/neira-coder-vsix-contents.txt || exit 1
++          grep -q "extension/package.json" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/package.nls.json" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/dist/extension.js" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/webview-ui/audio/celebration.wav" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/webview-ui/build/assets/index.js" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/assets/codicons/codicon.ttf" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q "extension/assets/vscode-material-icons/icons/3d.svg" /tmp/researcherry-vsix-contents.txt || exit 1
++          grep -q ".env" /tmp/researcherry-vsix-contents.txt || exit 1
            
            # Clean up temporary file.
 -          rm /tmp/roo-code-vsix-contents.txt
-+          rm /tmp/neira-coder-vsix-contents.txt
++          rm /tmp/researcherry-vsix-contents.txt
        - name: Create and Push Git Tag
          run: |
            current_package_version=$(node -p "require('./src/package.json').version")
@@ -186,7 +186,7 @@ index aef91b2d3..6ae6b96c6 100644
          run: |
            current_package_version=$(node -p "require('./src/package.json').version")
 -          pnpm --filter roo-cline publish:marketplace
-+          pnpm --filter neira-cline publish:marketplace
++          pnpm --filter researcherry-cline publish:marketplace
            echo "Successfully published version $current_package_version to VS Code Marketplace"
        - name: Create GitHub Release
          env:
@@ -205,7 +205,7 @@ index aef91b2d3..6ae6b96c6 100644
              --target ${{ env.GIT_REF }} \
 -            bin/roo-cline-${current_package_version}.vsix
 -          echo "Successfully created GitHub Release v${current_package_version}"
-+            bin/neira-cline-${current_package_version}.vsix
++            bin/researcherry-cline-${current_package_version}.vsix
 +          echo "Successfully created GitHub Release v${current_package_version}"
 \ No newline at end of file
 diff --git a/.github/workflows/nightly-publish.yml b/.github/workflows/nightly-publish.yml
@@ -217,7 +217,7 @@ index e25bdba99..edc6d1071 100644
            EOF
        - name: Build VSIX
 -        run: pnpm vsix:nightly # Produces bin/roo-code-nightly-0.0.[count].vsix
-+        run: pnpm vsix:nightly # Produces bin/neira-coder-nightly-0.0.[count].vsix
++        run: pnpm vsix:nightly # Produces bin/researcherry-nightly-0.0.[count].vsix
        - name: Publish to VS Code Marketplace
          env:
            VSCE_PAT: ${{ secrets.VSCE_PAT }}
@@ -240,7 +240,7 @@ index 20eea4288..0452df0f0 100644
 +++ b/.github/workflows/website-deploy.yml
 @@ -1,11 +1,11 @@
 -name: Deploy roocode.com
-+name: Deploy neira-coder.com
++name: Deploy researcherry.com
  
  on:
      push:
@@ -248,7 +248,7 @@ index 20eea4288..0452df0f0 100644
              - main
          paths:
 -            - 'apps/web-roo-code/**'
-+            - 'apps/web-neira-coder/**'
++            - 'apps/web-researcherry/**'
      workflow_dispatch:
  
  env:
@@ -258,7 +258,7 @@ index 6966005ea..3d355be93 100644
 +++ b/.github/workflows/website-preview.yml
 @@ -1,14 +1,14 @@
 -name: Preview roocode.com
-+name: Preview neira-coder.com
++name: Preview researcherry.com
  
  on:
      push:
@@ -266,11 +266,11 @@ index 6966005ea..3d355be93 100644
              - main
          paths:
 -            - "apps/web-roo-code/**"
-+            - "apps/web-neira-coder/**"
++            - "apps/web-researcherry/**"
      pull_request:
          paths:
 -            - "apps/web-roo-code/**"
-+            - "apps/web-neira-coder/**"
++            - "apps/web-researcherry/**"
      workflow_dispatch:
  
  env:
@@ -335,7 +335,7 @@ index 549a1174a..f122be9f0 100644
  			"label": "watch:webview",
  			"type": "shell",
 -			"command": "pnpm --filter @roo-code/vscode-webview dev",
-+			"command": "pnpm --filter @neira-coder/vscode-webview dev",
++			"command": "pnpm --filter @researcherry/vscode-webview dev",
  			"group": "build",
  			"problemMatcher": {
  				"owner": "vite",
@@ -345,7 +345,7 @@ index 694bf7366..89744993a 100644
 +++ b/apps/vscode-e2e/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -355,38 +355,38 @@ index 024d6157d..df6adcaab 100644
 +++ b/apps/web-evals/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { nextJsConfig } from "@roo-code/config-eslint/next-js"
-+import { nextJsConfig } from "@neira-coder/config-eslint/next-js"
++import { nextJsConfig } from "@researcherry/config-eslint/next-js"
  
  /** @type {import("eslint").Linter.Config} */
  export default [
-diff --git a/apps/web-roo-code/eslint.config.mjs b/apps/web-neira-coder/eslint.config.mjs
+diff --git a/apps/web-roo-code/eslint.config.mjs b/apps/web-researcherry/eslint.config.mjs
 similarity index 54%
 rename from apps/web-roo-code/eslint.config.mjs
-rename to apps/web-neira-coder/eslint.config.mjs
+rename to apps/web-researcherry/eslint.config.mjs
 index 9668cb3ba..40d5e58b2 100644
 --- a/apps/web-roo-code/eslint.config.mjs
-+++ b/apps/web-neira-coder/eslint.config.mjs
++++ b/apps/web-researcherry/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { nextJsConfig } from "@roo-code/config-eslint/next-js"
-+import { nextJsConfig } from "@neira-coder/config-eslint/next-js"
++import { nextJsConfig } from "@researcherry/config-eslint/next-js"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...nextJsConfig]
-diff --git a/apps/web-roo-code/next.config.ts b/apps/web-neira-coder/next.config.ts
+diff --git a/apps/web-roo-code/next.config.ts b/apps/web-researcherry/next.config.ts
 similarity index 70%
 rename from apps/web-roo-code/next.config.ts
-rename to apps/web-neira-coder/next.config.ts
+rename to apps/web-researcherry/next.config.ts
 index b50bd9399..3be574c6b 100644
 --- a/apps/web-roo-code/next.config.ts
-+++ b/apps/web-neira-coder/next.config.ts
++++ b/apps/web-researcherry/next.config.ts
 @@ -10,21 +10,21 @@ const nextConfig: NextConfig = {
  			// Redirect www to non-www
  			{
  				source: "/:path*",
 -				has: [{ type: "host", value: "www.roocode.com" }],
 -				destination: "https://roocode.com/:path*",
-+				has: [{ type: "host", value: "www.neiracoder.com" }],
-+				destination: "https://neiracoder.com/:path*",
++				has: [{ type: "host", value: "www.researcherrycoder.com" }],
++				destination: "https://researcherrycoder.com/:path*",
  				permanent: true,
  			},
  			// Redirect HTTP to HTTPS
@@ -394,25 +394,25 @@ index b50bd9399..3be574c6b 100644
  				source: "/:path*",
  				has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
 -				destination: "https://roocode.com/:path*",
-+				destination: "https://neiracoder.com/:path*",
++				destination: "https://researcherrycoder.com/:path*",
  				permanent: true,
  			},
  			// Redirect cloud waitlist to Notion page
  			{
  				source: "/cloud-waitlist",
 -				destination: "https://roo-code.notion.site/238fd1401b0a8087b858e1ad431507cf?pvs=105",
-+				destination: "https://neira-coder.notion.site/238fd1401b0a8087b858e1ad431507cf?pvs=105",
++				destination: "https://researcherry.notion.site/238fd1401b0a8087b858e1ad431507cf?pvs=105",
  				permanent: false,
  			},
  		]
-diff --git a/apps/web-roo-code/postcss.config.cjs b/apps/web-neira-coder/postcss.config.cjs
+diff --git a/apps/web-roo-code/postcss.config.cjs b/apps/web-researcherry/postcss.config.cjs
 similarity index 100%
 rename from apps/web-roo-code/postcss.config.cjs
-rename to apps/web-neira-coder/postcss.config.cjs
-diff --git a/apps/web-roo-code/tailwind.config.ts b/apps/web-neira-coder/tailwind.config.ts
+rename to apps/web-researcherry/postcss.config.cjs
+diff --git a/apps/web-roo-code/tailwind.config.ts b/apps/web-researcherry/tailwind.config.ts
 similarity index 100%
 rename from apps/web-roo-code/tailwind.config.ts
-rename to apps/web-neira-coder/tailwind.config.ts
+rename to apps/web-researcherry/tailwind.config.ts
 diff --git a/package.json b/package.json
 index 5e73f0c47..6c6dbed37 100644
 --- a/package.json
@@ -420,7 +420,7 @@ index 5e73f0c47..6c6dbed37 100644
 @@ -1,5 +1,6 @@
  {
 -	"name": "roo-code",
-+	"name": "neira-coder",
++	"name": "researcherry",
 +	"version": "3.31.2",
  	"packageManager": "pnpm@10.8.1",
  	"engines": {
@@ -431,7 +431,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/build/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -442,7 +442,7 @@ index a1fbb0506..14f6f91ef 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/build",
-+	"name": "@neira-coder/build",
++	"name": "@researcherry/build",
  	"description": "ESBuild utilities for Roo Code.",
  	"private": true,
  	"type": "module",
@@ -452,8 +452,8 @@ index a1fbb0506..14f6f91ef 100644
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"vitest": "^3.2.3"
  	}
@@ -464,7 +464,7 @@ index a66434e57..d497543b8 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/base.json",
-+	"extends": "@neira-coder/config-typescript/base.json",
++	"extends": "@researcherry/config-typescript/base.json",
  	"compilerOptions": {
  		"types": ["vitest/globals"],
  		"outDir": "dist"
@@ -474,7 +474,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/cloud/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -485,7 +485,7 @@ index d67b5ae7e..714282998 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/cloud",
-+	"name": "@neira-coder/cloud",
++	"name": "@researcherry/cloud",
  	"description": "Roo Code Cloud VSCode integration.",
  	"version": "0.0.0",
  	"type": "module",
@@ -495,15 +495,15 @@ index d67b5ae7e..714282998 100644
  	"dependencies": {
 -		"@roo-code/telemetry": "workspace:^",
 -		"@roo-code/types": "workspace:^",
-+		"@neira-coder/telemetry": "workspace:^",
-+		"@neira-coder/types": "workspace:^",
++		"@researcherry/telemetry": "workspace:^",
++		"@researcherry/types": "workspace:^",
  		"zod": "^3.25.61"
  	},
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"@types/vscode": "^1.84.0",
  		"vitest": "^3.2.3"
@@ -514,7 +514,7 @@ index f599e2220..a99ebb12b 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/vscode-library.json",
-+	"extends": "@neira-coder/config-typescript/vscode-library.json",
++	"extends": "@researcherry/config-typescript/vscode-library.json",
  	"include": ["src"],
  	"exclude": ["node_modules"]
  }
@@ -525,7 +525,7 @@ index 930569803..8b73c70c3 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/config-eslint",
-+	"name": "@neira-coder/config-eslint",
++	"name": "@researcherry/config-eslint",
  	"private": true,
  	"type": "module",
  	"exports": {
@@ -536,7 +536,7 @@ index 0fa45e15d..d8d6b2da7 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/config-typescript",
-+	"name": "@neira-coder/config-typescript",
++	"name": "@researcherry/config-typescript",
  	"private": true,
  	"publishConfig": {
  		"access": "public"
@@ -546,7 +546,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/evals/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -557,7 +557,7 @@ index 83690a99c..3293a39db 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/evals",
-+	"name": "@neira-coder/evals",
++	"name": "@researcherry/evals",
  	"description": "Roo Code evals.",
  	"version": "0.0.0",
  	"type": "module",
@@ -567,8 +567,8 @@ index 83690a99c..3293a39db 100644
  	"dependencies": {
 -		"@roo-code/ipc": "workspace:^",
 -		"@roo-code/types": "workspace:^",
-+		"@neira-coder/ipc": "workspace:^",
-+		"@neira-coder/types": "workspace:^",
++		"@researcherry/ipc": "workspace:^",
++		"@researcherry/types": "workspace:^",
  		"cmd-ts": "^0.13.0",
  		"drizzle-orm": "^0.44.1",
  		"execa": "^9.6.0",
@@ -578,8 +578,8 @@ index 83690a99c..3293a39db 100644
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"@types/node-ipc": "^9.2.3",
  		"@types/ps-tree": "^1.1.6",
@@ -590,7 +590,7 @@ index 811519a30..ad9e2073e 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/base.json",
-+	"extends": "@neira-coder/config-typescript/base.json",
++	"extends": "@researcherry/config-typescript/base.json",
  	"compilerOptions": {
  		"types": ["vitest/globals"]
  	},
@@ -600,7 +600,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/ipc/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -611,7 +611,7 @@ index 03cb3beec..752226822 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/ipc",
-+	"name": "@neira-coder/ipc",
++	"name": "@researcherry/ipc",
  	"description": "IPC server and client for remote Roo Code access.",
  	"version": "0.0.0",
  	"type": "module",
@@ -620,14 +620,14 @@ index 03cb3beec..752226822 100644
  	},
  	"dependencies": {
 -		"@roo-code/types": "workspace:^",
-+		"@neira-coder/types": "workspace:^",
++		"@researcherry/types": "workspace:^",
  		"node-ipc": "^12.0.0"
  	},
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"@types/node-ipc": "^9.2.3",
  		"vitest": "^3.2.3"
@@ -638,7 +638,7 @@ index 0f9961fdb..fb1e94051 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/base.json",
-+	"extends": "@neira-coder/config-typescript/base.json",
++	"extends": "@researcherry/config-typescript/base.json",
  	"compilerOptions": {
  		"types": ["vitest/globals"]
  	},
@@ -648,7 +648,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/telemetry/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -659,7 +659,7 @@ index 42d0df387..81ec5bfe0 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/telemetry",
-+	"name": "@neira-coder/telemetry",
++	"name": "@researcherry/telemetry",
  	"description": "Roo Code telemetry service and clients.",
  	"version": "0.0.0",
  	"type": "module",
@@ -668,15 +668,15 @@ index 42d0df387..81ec5bfe0 100644
  	},
  	"dependencies": {
 -		"@roo-code/types": "workspace:^",
-+		"@neira-coder/types": "workspace:^",
++		"@researcherry/types": "workspace:^",
  		"posthog-node": "^5.0.0",
  		"zod": "^3.25.61"
  	},
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"@types/vscode": "^1.84.0",
  		"vitest": "^3.2.3"
@@ -687,7 +687,7 @@ index f599e2220..a99ebb12b 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/vscode-library.json",
-+	"extends": "@neira-coder/config-typescript/vscode-library.json",
++	"extends": "@researcherry/config-typescript/vscode-library.json",
  	"include": ["src"],
  	"exclude": ["node_modules"]
  }
@@ -697,7 +697,7 @@ index 694bf7366..89744993a 100644
 +++ b/packages/types/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [...config]
@@ -710,34 +710,34 @@ index f73a83a7b..c987e2df1 100644
 -	"name": "@roo-code/types",
 -	"version": "1.44.0",
 -	"description": "TypeScript type definitions for Roo Code.",
-+	"name": "@neira-coder/types",
++	"name": "@researcherry/types",
 +	"version": "1.40.0",
-+	"description": "TypeScript type definitions for Neira Coder.",
++	"description": "TypeScript type definitions for Researcherry Coder.",
  	"publishConfig": {
  		"access": "public",
 -		"name": "@roo-code/types",
 -		"registry": "https://registry.npmjs.org/"
-+		"name": "@neira-coder/types"
++		"name": "@researcherry/types"
  	},
 -	"author": "Roo Code Team",
-+	"author": "Neira Coder Team",
++	"author": "Researcherry Coder Team",
  	"license": "MIT",
  	"repository": {
  		"type": "git",
 -		"url": "git+https://github.com/RooCodeInc/Roo-Code.git"
-+		"url": "git+https://github.com/NeiraCoderInc/Neira-Coder.git"
++		"url": "git+https://github.com/ResearcherryCoderInc/researcherry.git"
  	},
  	"bugs": {
 -		"url": "https://github.com/RooCodeInc/Roo-Code/issues"
-+		"url": "https://github.com/NeiraCoderInc/Neira-Coder/issues"
++		"url": "https://github.com/ResearcherryCoderInc/researcherry/issues"
  	},
 -	"homepage": "https://roocode.com",
-+	"homepage": "https://github.com/NeiraCoderInc/Neira-Coder/tree/main/packages/types",
++	"homepage": "https://github.com/ResearcherryCoderInc/researcherry/tree/main/packages/types",
  	"keywords": [
 -		"roo",
 -		"roo-code",
-+		"neira",
-+		"neira-coder",
++		"researcherry",
++		"researcherry",
  		"ai"
  	],
  	"main": "./dist/index.cjs",
@@ -758,7 +758,7 @@ index feda97f28..beddfa547 100644
 @@ -1,5 +1,5 @@
  {
 -	"name": "@roo-code/types",
-+	"name": "@neira-coder/types",
++	"name": "@researcherry/types",
  	"version": "0.0.0",
  	"type": "module",
  	"main": "./dist/index.cjs",
@@ -777,8 +777,8 @@ index feda97f28..beddfa547 100644
  	"devDependencies": {
 -		"@roo-code/config-eslint": "workspace:^",
 -		"@roo-code/config-typescript": "workspace:^",
-+		"@neira-coder/config-eslint": "workspace:^",
-+		"@neira-coder/config-typescript": "workspace:^",
++		"@researcherry/config-eslint": "workspace:^",
++		"@researcherry/config-typescript": "workspace:^",
  		"@types/node": "20.x",
  		"tsup": "^8.3.5",
  		"vitest": "^3.2.3"
@@ -789,7 +789,7 @@ index a66434e57..d497543b8 100644
 @@ -1,5 +1,5 @@
  {
 -	"extends": "@roo-code/config-typescript/base.json",
-+	"extends": "@neira-coder/config-typescript/base.json",
++	"extends": "@researcherry/config-typescript/base.json",
  	"compilerOptions": {
  		"types": ["vitest/globals"],
  		"outDir": "dist"
@@ -858,15 +858,15 @@ index 3e7bb79b6..7d9b46285 100644
    apps/vscode-e2e:
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../../packages/config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../../packages/config-typescript
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../../packages/types
        '@types/mocha':
@@ -901,7 +901,7 @@ index 3e7bb79b6..7d9b46285 100644
    apps/vscode-nightly:
      devDependencies:
 -      '@roo-code/build':
-+      '@neira-coder/build':
++      '@researcherry/build':
          specifier: workspace:^
          version: link:../../packages/build
  
@@ -911,10 +911,10 @@ index 3e7bb79b6..7d9b46285 100644
          specifier: ^5.1.1
 -        version: 5.1.1(react-hook-form@7.57.0(react@18.3.1))
 +        version: 5.2.1(react-hook-form@7.61.1(react@18.3.1))
-+      '@neira-coder/evals':
++      '@researcherry/evals':
 +        specifier: workspace:^
 +        version: link:../../packages/evals
-+      '@neira-coder/types':
++      '@researcherry/types':
 +        specifier: workspace:^
 +        version: link:../../packages/types
        '@radix-ui/react-alert-dialog':
@@ -1018,11 +1018,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../../packages/config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../../packages/config-typescript
        '@tailwindcss/postcss':
@@ -1044,12 +1044,12 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.2.4(@types/debug@4.1.12)(@types/node@20.19.9)(@vitest/ui@3.2.4)(jiti@2.5.1)(jsdom@26.1.0)(lightningcss@1.30.1)(tsx@4.20.3)(yaml@2.8.0)
  
 -  apps/web-roo-code:
-+  apps/web-neira-coder:
++  apps/web-researcherry:
      dependencies:
-+      '@neira-coder/evals':
++      '@researcherry/evals':
 +        specifier: workspace:^
 +        version: link:../../packages/evals
-+      '@neira-coder/types':
++      '@researcherry/types':
 +        specifier: workspace:^
 +        version: link:../../packages/types
        '@radix-ui/react-dialog':
@@ -1109,11 +1109,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../../packages/config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../../packages/config-typescript
        '@tailwindcss/typography':
@@ -1147,11 +1147,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1166,11 +1166,11 @@ index 3e7bb79b6..7d9b46285 100644
    packages/cloud:
      dependencies:
 -      '@roo-code/telemetry':
-+      '@neira-coder/telemetry':
++      '@researcherry/telemetry':
          specifier: workspace:^
          version: link:../telemetry
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../types
        zod:
@@ -1179,11 +1179,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1246,11 +1246,11 @@ index 3e7bb79b6..7d9b46285 100644
    packages/evals:
      dependencies:
 -      '@roo-code/ipc':
-+      '@neira-coder/ipc':
++      '@researcherry/ipc':
          specifier: workspace:^
          version: link:../ipc
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../types
        cmd-ts:
@@ -1275,11 +1275,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1307,7 +1307,7 @@ index 3e7bb79b6..7d9b46285 100644
    packages/ipc:
      dependencies:
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../types
        node-ipc:
@@ -1315,11 +1315,11 @@ index 3e7bb79b6..7d9b46285 100644
          version: 12.0.0
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1337,7 +1337,7 @@ index 3e7bb79b6..7d9b46285 100644
    packages/telemetry:
      dependencies:
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../types
        posthog-node:
@@ -1350,11 +1350,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1378,11 +1378,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../config-typescript
        '@types/node':
@@ -1430,19 +1430,19 @@ index 3e7bb79b6..7d9b46285 100644
 -        version: 1.14.0(typescript@5.8.3)
 -      '@roo-code/cloud':
 +        version: 1.17.1
-+      '@neira-coder/cloud':
++      '@researcherry/cloud':
          specifier: workspace:^
          version: link:../packages/cloud
 -      '@roo-code/ipc':
-+      '@neira-coder/ipc':
++      '@researcherry/ipc':
          specifier: workspace:^
          version: link:../packages/ipc
 -      '@roo-code/telemetry':
-+      '@neira-coder/telemetry':
++      '@researcherry/telemetry':
          specifier: workspace:^
          version: link:../packages/telemetry
 -      '@roo-code/types':
-+      '@neira-coder/types':
++      '@researcherry/types':
          specifier: workspace:^
          version: link:../packages/types
 +      '@qdrant/js-client-rest':
@@ -1523,15 +1523,15 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/build':
-+      '@neira-coder/build':
++      '@researcherry/build':
          specifier: workspace:^
          version: link:../packages/build
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../packages/config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../packages/config-typescript
        '@types/clone-deep':
@@ -1605,7 +1605,7 @@ index 3e7bb79b6..7d9b46285 100644
  
    webview-ui:
      dependencies:
-+      '@neira-coder/types':
++      '@researcherry/types':
 +        specifier: workspace:^
 +        version: link:../packages/types
        '@radix-ui/react-alert-dialog':
@@ -1770,11 +1770,11 @@ index 3e7bb79b6..7d9b46285 100644
 +        version: 3.25.76
      devDependencies:
 -      '@roo-code/config-eslint':
-+      '@neira-coder/config-eslint':
++      '@researcherry/config-eslint':
          specifier: workspace:^
          version: link:../packages/config-eslint
 -      '@roo-code/config-typescript':
-+      '@neira-coder/config-typescript':
++      '@researcherry/config-typescript':
          specifier: workspace:^
          version: link:../packages/config-typescript
        '@testing-library/jest-dom':
@@ -11886,7 +11886,7 @@ index d0813406d..b60b54d5a 100644
 +++ b/src/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { config } from "@roo-code/config-eslint/base"
-+import { config } from "@neira-coder/config-eslint/base"
++import { config } from "@researcherry/config-eslint/base"
  
  /** @type {import("eslint").Linter.Config} */
  export default [
@@ -11899,7 +11899,7 @@ index 707945546..391ee4de4 100644
  		"check-types": {},
  		"test": {
 -			"dependsOn": ["@roo-code/types#build"]
-+			"dependsOn": ["@neira-coder/types#build"]
++			"dependsOn": ["@researcherry/types#build"]
  		},
  		"format": {},
  		"clean": {
@@ -11909,7 +11909,7 @@ index db76f4921..535db9768 100644
 +++ b/webview-ui/eslint.config.mjs
 @@ -1,4 +1,4 @@
 -import { reactConfig } from "@roo-code/config-eslint/react"
-+import { reactConfig } from "@neira-coder/config-eslint/react"
++import { reactConfig } from "@researcherry/config-eslint/react"
  
  /** @type {import("eslint").Linter.Config} */
  export default [
@@ -11922,7 +11922,7 @@ index 0579344a2..7d4e8d18e 100644
  	}
  
 -	// TODO: We can use `@roo-code/build` to generate `define` once the
-+	// TODO: We can use `@neira-coder/build` to generate `define` once the
++	// TODO: We can use `@researcherry/build` to generate `define` once the
  	// monorepo is deployed.
  	if (mode === "nightly") {
  		outDir = "../apps/vscode-nightly/build/webview-ui/build"
@@ -11960,7 +11960,7 @@ index 0579344a2..7d4e8d18e 100644
  			alias: {
  				"@": resolve(__dirname, "./src"),
  				"@src": resolve(__dirname, "./src"),
-+				"@neira": resolve(__dirname, "../src/shared"),
++				"@researcherry": resolve(__dirname, "../src/shared"),
  				"@roo": resolve(__dirname, "../src/shared"),
 +				"styled-components": resolve(__dirname, "node_modules/styled-components"),
  			},
@@ -12022,7 +12022,7 @@ index b9455584b..6a4151f23 100644
  			"@": path.resolve(__dirname, "./src"),
  			"@src": path.resolve(__dirname, "./src"),
  			"@roo": path.resolve(__dirname, "../src/shared"),
-+			"@neira": path.resolve(__dirname, "../src/shared"),
++			"@researcherry": path.resolve(__dirname, "../src/shared"),
  		},
  	},
  })

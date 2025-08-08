@@ -1,4 +1,4 @@
-import { CODEBASE_INDEX_DEFAULTS } from "@neira-coder/types"
+import { CODEBASE_INDEX_DEFAULTS } from "@researcherry/types"
 
 /**Parser */
 export const MAX_BLOCK_CHARS = 1000

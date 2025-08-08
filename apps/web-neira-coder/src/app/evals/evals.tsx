@@ -3,7 +3,7 @@
 import { useMemo } from "react"
 import { ScatterChart, Scatter, XAxis, YAxis, Label, Customized, Cross } from "recharts"
 
-import type { TaskMetrics, Run } from "@neira-coder/evals"
+import type { TaskMetrics, Run } from "@researcherry/evals"
 
 import { formatTokens, formatCurrency, formatDuration, formatScore } from "@/lib"
 import { useOpenRouterModels } from "@/lib/hooks"
@@ -60,7 +60,7 @@ export function Evals({
 		<div className="mx-auto flex max-w-screen-lg flex-col gap-8 p-8">
 			<div className="flex flex-col gap-4">
 				<div>
-					Neira Code tests each frontier model against{" "}
+					Researcherry Code tests each frontier model against{" "}
 					<a href="https://github.com/RooCodeInc/Roo-Code-Evals" className="underline">
 						a suite of hundreds of exercises
 					</a>{" "}

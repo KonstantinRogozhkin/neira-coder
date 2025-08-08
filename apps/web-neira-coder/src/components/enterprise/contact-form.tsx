@@ -42,8 +42,8 @@ export function ContactForm({ formType, buttonText, buttonClassName }: ContactFo
 
 	const formDescription =
 		formType === "early-access"
-			? "Fill out the form below to collaborate in shaping Neira Code's enterprise solution."
-			: "Fill out the form below to see Neira Code's enterprise capabilities in action."
+			? "Fill out the form below to collaborate in shaping Researcherry Code's enterprise solution."
+			: "Fill out the form below to see Researcherry Code's enterprise capabilities in action."
 
 	// Get Basin endpoint from environment variable
 	// This should be set in .env.local as NEXT_PUBLIC_BASIN_ENDPOINT="https://usebasin.com/f/your-form-id"

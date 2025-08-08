@@ -1,4 +1,4 @@
-import type { ProviderName, ModelInfo, OrganizationAllowList } from "@neira-coder/types"
+import type { ProviderName, ModelInfo, OrganizationAllowList } from "@researcherry/types"
 
 export const filterProviders = (
 	providers: Array<{ value: string; label: string }>,

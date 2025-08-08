@@ -3,12 +3,12 @@ import path from "path"
 import * as os from "os"
 import { Dirent } from "fs"
 
-import { isLanguage } from "@neira-coder/types"
+import { isLanguage } from "@researcherry/types"
 
 import type { SystemPromptSettings } from "../types"
 
 import { LANGUAGES } from "../../../shared/language"
-import { getNeiraDirectoriesForCwd, getGlobalNeiraDirectory } from "../../../services/neira-config"
+import { getResearcherryDirectoriesForCwd, getGlobalResearcherryDirectory } from "../../../services/researcherry-config"
 
 /**
  * Safely read a file and return its trimmed content
@@ -179,17 +179,17 @@ function formatDirectoryContent(dirPath: string, files: Array<{ filename: string
 }
 
 /**
- * Load rule files from global and project-local .neira/rules/ directories
+ * Load rule files from global and project-local .researcherry/rules/ directories
  * Global rules are loaded first, then project-local rules which can override global ones
- * Falls back to legacy .neirarules/.clinerules files if .neira/rules/ directories don't exist
+ * Falls back to legacy .researcherryrules/.clinerules files if .researcherry/rules/ directories don't exist
  */
 export async function loadRuleFiles(cwd: string): Promise<string> {
 	const rules: string[] = []
-	const neiraDirectories = getNeiraDirectoriesForCwd(cwd)
+	const researcherryDirectories = getResearcherryDirectoriesForCwd(cwd)
 
-	// Check for .neira/rules/ directories in order (global first, then project-local)
-	for (const neiraDir of neiraDirectories) {
-		const rulesDir = path.join(neiraDir, "rules")
+	// Check for .researcherry/rules/ directories in order (global first, then project-local)
+	for (const researcherryDir of researcherryDirectories) {
+		const rulesDir = path.join(researcherryDir, "rules")
 		if (await directoryExists(rulesDir)) {
 			const files = await readTextFilesFromDirectory(rulesDir)
 			if (files.length > 0) {
@@ -199,13 +199,13 @@ export async function loadRuleFiles(cwd: string): Promise<string> {
 		}
 	}
 
-	// If we found rules in .neira/rules/ directories, return them
+	// If we found rules in .researcherry/rules/ directories, return them
 	if (rules.length > 0) {
 		return "\n" + rules.join("\n\n")
 	}
 
-					// Fall back to existing behavior for legacy .neirarules/.clinerules files (deprecated)
-		const ruleFiles = [".neirarules", ".clinerules"]
+	// Fall back to existing behavior for legacy .researcherryrules/.clinerules files (deprecated)
+	const ruleFiles = [".researcherryrules", ".clinerules"]
 
 	for (const file of ruleFiles) {
 		const content = await safeReadFile(path.join(cwd, file))
@@ -275,11 +275,11 @@ export async function addCustomInstructions(
 
 	if (mode) {
 		const modeRules: string[] = []
-		const neiraDirectories = getNeiraDirectoriesForCwd(cwd)
+		const researcherryDirectories = getResearcherryDirectoriesForCwd(cwd)
 
-		// Check for .neira/rules-${mode}/ directories in order (global first, then project-local)
-		for (const neiraDir of neiraDirectories) {
-			const modeRulesDir = path.join(neiraDir, `rules-${mode}`)
+		// Check for .researcherry/rules-${mode}/ directories in order (global first, then project-local)
+		for (const researcherryDir of researcherryDirectories) {
+			const modeRulesDir = path.join(researcherryDir, `rules-${mode}`)
 			if (await directoryExists(modeRulesDir)) {
 				const files = await readTextFilesFromDirectory(modeRulesDir)
 				if (files.length > 0) {
@@ -289,13 +289,13 @@ export async function addCustomInstructions(
 			}
 		}
 
-		// If we found mode-specific rules in .neira/rules-${mode}/ directories, use them
+		// If we found mode-specific rules in .researcherry/rules-${mode}/ directories, use them
 		if (modeRules.length > 0) {
 			modeRuleContent = "\n" + modeRules.join("\n\n")
 			usedRuleFile = `rules-${mode} directories`
 		} else {
 			// Fall back to existing behavior for legacy files
-			const rooModeRuleFile = `.neirarules-${mode}`
+			const rooModeRuleFile = `.researcherryrules-${mode}`
 			modeRuleContent = await safeReadFile(path.join(cwd, rooModeRuleFile))
 			if (modeRuleContent) {
 				usedRuleFile = rooModeRuleFile
@@ -332,7 +332,7 @@ export async function addCustomInstructions(
 
 	// Add mode-specific rules first if they exist
 	if (modeRuleContent && modeRuleContent.trim()) {
-		if (usedRuleFile.includes(path.join(".neira", `rules-${mode}`))) {
+		if (usedRuleFile.includes(path.join(".researcherry", `rules-${mode}`))) {
 			rules.push(modeRuleContent.trim())
 		} else {
 			rules.push(`# Rules from ${usedRuleFile}:\n${modeRuleContent}`)

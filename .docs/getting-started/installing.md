@@ -1,4 +1,4 @@
-# Установка Neira Coder
+# Установка Researcherry Coder
 
 ## Требования
 
@@ -12,12 +12,12 @@
 
 1. Откройте VS Code или Cursor
 2. Перейдите в раздел Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-3. Найдите "Neira Coder" в поиске
+3. Найдите "Researcherry Coder" в поиске
 4. Нажмите "Install"
 
 ### 2. Установка из VSIX файла
 
-1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/NeiraCoderInc/Neira-Coder/releases)
+1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/ResearcherryCoderInc/researcherry/releases)
 2. В VS Code перейдите в Extensions
 3. Нажмите на три точки (...) и выберите "Install from VSIX..."
 4. Выберите скачанный файл
@@ -28,8 +28,8 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/NeiraCoderInc/Neira-Coder.git
-cd Neira-Coder
+git clone https://github.com/ResearcherryCoderInc/researcherry.git
+cd researcherry
 
 # Установите зависимости
 pnpm install
@@ -44,7 +44,7 @@ pnpm install:vsix
 
 1. Перезапустите VS Code/Cursor
 2. Откройте Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
-3. Введите "Neira Coder" - вы должны увидеть доступные команды
+3. Введите "Researcherry Coder" - вы должны увидеть доступные команды
 4. Перейдите к [подключению API провайдера](./connecting-api-provider.md)
 
 ## Устранение неполадок

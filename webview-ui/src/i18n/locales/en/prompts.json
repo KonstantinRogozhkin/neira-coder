@@ -8,7 +8,7 @@
 		"noMatchFound": "No modes found",
 		"editModesConfig": "Edit modes configuration",
 		"editGlobalModes": "Edit global modes",
-		"editProjectModes": "Edit project modes (.neiramodes)",
+		"editProjectModes": "Edit project modes (.researcherrymodes)",
 		"createModeHelpText": "Modes are specialized personas that adapt Roo's behavior. <0>Learn about using modes</0> or <1>configuring modes.</1>",
 		"selectMode": "Search modes"
 	},
@@ -50,7 +50,7 @@
 		"title": "Custom mode instructions (optional)",
 		"resetToDefault": "Reset to default",
 		"description": "Add behavior recommendations specific to mode {{modeName}}.",
-		"loadFromFile": "Custom instructions for mode {{mode}} can also be loaded from the <span>.neira/rules-{{slug}}/</span> folder in your workspace (.neiramodes-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
+		"loadFromFile": "Custom instructions for mode {{mode}} can also be loaded from the <span>.researcherry/rules-{{slug}}/</span> folder in your workspace (.researcherrymodes-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
 	},
 	"exportMode": {
 		"title": "Export mode",
@@ -61,7 +61,7 @@
 	"globalCustomInstructions": {
 		"title": "Custom instructions for all modes",
 		"description": "These instructions apply to all modes. They set the base behavior that can be extended with the instructions below. <0>Learn more</0>",
-		"loadFromFile": "Instructions can also be loaded from the <span>.neira/rules/</span> folder in your workspace (.neiramodes and .clinerules are deprecated and will stop working soon)."
+		"loadFromFile": "Instructions can also be loaded from the <span>.researcherry/rules/</span> folder in your workspace (.researcherrymodes and .clinerules are deprecated and will stop working soon)."
 	},
 	"importMode": {
 		"selectLevel": "Select where to import this mode:",
@@ -73,7 +73,7 @@
 		},
 		"project": {
 			"label": "Project level",
-			"description": "Available only in this workspace. If the exported mode contained rule files, they will be recreated in the .neira/rules-{slug}/ folder."
+			"description": "Available only in this workspace. If the exported mode contained rule files, they will be recreated in the .researcherry/rules-{slug}/ folder."
 		}
 	},
 	"systemPrompt": {
@@ -100,4 +100,4 @@
 			"apiConfigDescription": "Select which API configuration to use for context condensing operations. Leave unselected to use the currently active configuration."
 		}
 	}
-} 
+}

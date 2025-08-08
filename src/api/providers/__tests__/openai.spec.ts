@@ -4,7 +4,7 @@ import { OpenAiHandler } from "../openai"
 import { ApiHandlerOptions } from "../../../shared/api"
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
-import { openAiModelInfoSaneDefaults } from "@neira-coder/types"
+import { openAiModelInfoSaneDefaults } from "@researcherry/types"
 import { Package } from "../../../shared/package"
 
 const mockCreate = vitest.fn()
@@ -104,8 +104,8 @@ describe("OpenAiHandler", () => {
 				apiKey: expect.any(String),
 				defaultHeaders: {
 					"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-					"X-Title": "Neira Coder",
-					"User-Agent": `NeiraCoder/${Package.version}`,
+					"X-Title": "Researcherry Coder",
+					"User-Agent": `ResearcherryCoder/${Package.version}`,
 				},
 			})
 		})

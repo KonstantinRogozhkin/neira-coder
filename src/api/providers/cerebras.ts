@@ -1,6 +1,6 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { type CerebrasModelId, cerebrasDefaultModelId, cerebrasModels } from "@neira-coder/types"
+import { type CerebrasModelId, cerebrasDefaultModelId, cerebrasModels } from "@researcherry/types"
 
 import type { ApiHandlerOptions } from "../../shared/api"
 import { calculateApiCostOpenAI } from "../../shared/cost"

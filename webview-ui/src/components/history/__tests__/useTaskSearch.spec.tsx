@@ -1,6 +1,6 @@
 import { renderHook, act } from "@/utils/test-utils"
 
-import type { HistoryItem } from "@neira-coder/types"
+import type { HistoryItem } from "@researcherry/types"
 
 import { useTaskSearch } from "../useTaskSearch"
 

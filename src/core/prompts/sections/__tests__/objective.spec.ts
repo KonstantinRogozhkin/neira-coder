@@ -22,10 +22,10 @@ describe("getObjectiveSection", () => {
 
 			// Check that the objective includes the codebase_search enforcement
 			expect(objective).toContain(
-				"for ANY exploration of code you haven't examined yet in this conversation, you MUST use the `codebase_search` tool",
+				"для ЛЮБОГО исследования кода, который вы еще не изучили в этом разговоре, вы ОБЯЗАТЕЛЬНО должны использовать инструмент `codebase_search`",
 			)
-			expect(objective).toContain("BEFORE using any other search or file exploration tools")
-			expect(objective).toContain("This applies throughout the entire task, not just at the beginning")
+			expect(objective).toContain("ПЕРЕД использованием любых других инструментов поиска или исследования файлов")
+			expect(objective).toContain("Это применяется на протяжении всей задачи, а не только в начале")
 		})
 	})
 
@@ -34,8 +34,8 @@ describe("getObjectiveSection", () => {
 			const objective = getObjectiveSection(mockCodeIndexManagerDisabled)
 
 			// Check that the objective does not include the codebase_search enforcement
-			expect(objective).not.toContain("you MUST use the `codebase_search` tool")
-			expect(objective).not.toContain("BEFORE using any other search or file exploration tools")
+			expect(objective).not.toContain("вы ОБЯЗАТЕЛЬНО должны использовать инструмент `codebase_search`")
+			expect(objective).not.toContain("ПЕРЕД использованием любых других инструментов поиска")
 		})
 	})
 
@@ -45,11 +45,11 @@ describe("getObjectiveSection", () => {
 
 		// Check that all numbered items are present in both cases
 		for (const objective of [objectiveEnabled, objectiveDisabled]) {
-			expect(objective).toContain("1. Analyze the user's task")
-			expect(objective).toContain("2. Work through these goals sequentially")
-			expect(objective).toContain("3. Remember, you have extensive capabilities")
-			expect(objective).toContain("4. Once you've completed the user's task")
-			expect(objective).toContain("5. The user may provide feedback")
+			expect(objective).toContain("1. Проанализируйте задачу пользователя")
+			expect(objective).toContain("2. Проработайте эти цели последовательно")
+			expect(objective).toContain("3. Помните, что у вас есть обширные возможности")
+			expect(objective).toContain("4. Как только вы завершили задачу пользователя")
+			expect(objective).toContain("5. Пользователь может предоставить обратную связь")
 		}
 	})
 
@@ -59,9 +59,11 @@ describe("getObjectiveSection", () => {
 
 		// Check that thinking tags guidance is included in both cases
 		for (const objective of [objectiveEnabled, objectiveDisabled]) {
-			expect(objective).toContain("<thinking></thinking> tags")
-			expect(objective).toContain("analyze the file structure provided in environment_details")
-			expect(objective).toContain("think about which of the provided tools is the most relevant")
+			expect(objective).toContain("<thinking></thinking>")
+			expect(objective).toContain("проанализируйте структуру файлов, предоставленную в environment_details")
+			expect(objective).toContain(
+				"подумайте о том, какой из предоставленных инструментов является наиболее релевантным",
+			)
 		}
 	})
 
@@ -71,12 +73,12 @@ describe("getObjectiveSection", () => {
 
 		// Check parameter inference guidance in both cases
 		for (const objective of [objectiveEnabled, objectiveDisabled]) {
-			expect(objective).toContain("Go through each of the required parameters")
+			expect(objective).toContain("Пройдите через каждый из требуемых параметров релевантного инструмента")
 			expect(objective).toContain(
-				"determine if the user has directly provided or given enough information to infer a value",
+				"определите, предоставил ли пользователь напрямую или дал достаточно информации для вывода значения",
 			)
-			expect(objective).toContain("DO NOT invoke the tool (not even with fillers for the missing params)")
-			expect(objective).toContain("ask_followup_question tool")
+			expect(objective).toContain("НЕ вызывайте инструмент (даже с заполнителями для отсутствующих параметров)")
+			expect(objective).toContain("ask_followup_question")
 		}
 	})
 })

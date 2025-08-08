@@ -16,7 +16,7 @@ export default defineConfig({
 			"@": path.resolve(__dirname, "./src"),
 			"@src": path.resolve(__dirname, "./src"),
 			"@roo": path.resolve(__dirname, "../src/shared"),
-			"@neira": path.resolve(__dirname, "../src/shared"),
+			"@researcherry": path.resolve(__dirname, "../src/shared"),
 		},
 	},
 })

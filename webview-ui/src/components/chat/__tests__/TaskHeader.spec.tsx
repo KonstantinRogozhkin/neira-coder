@@ -4,7 +4,7 @@ import React from "react"
 import { render, screen, fireEvent } from "@/utils/test-utils"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
-import type { ProviderSettings } from "@neira-coder/types"
+import type { ProviderSettings } from "@researcherry/types"
 
 import TaskHeader, { TaskHeaderProps } from "../TaskHeader"
 

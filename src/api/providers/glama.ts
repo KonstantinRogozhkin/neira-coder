@@ -2,7 +2,7 @@ import { Anthropic } from "@anthropic-ai/sdk"
 import axios from "axios"
 import OpenAI from "openai"
 
-import { glamaDefaultModelId, glamaDefaultModelInfo, GLAMA_DEFAULT_TEMPERATURE } from "@neira-coder/types"
+import { glamaDefaultModelId, glamaDefaultModelInfo, GLAMA_DEFAULT_TEMPERATURE } from "@researcherry/types"
 
 import { Package } from "../../shared/package"
 import { ApiHandlerOptions } from "../../shared/api"

@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Neira Coder",
+		"name": "Researcherry Coder",
 		"description": "Целая команда ИИ-разработчиков в вашем редакторе."
 	},
 	"number_format": {
@@ -104,7 +104,7 @@
 	"warnings": {
 		"no_terminal_content": "Не выбрано содержимое терминала",
 		"missing_task_files": "Файлы этой задачи отсутствуют. Хотите удалить её из списка задач?",
-		"auto_import_failed": "Не удалось автоматически импортировать настройки NeiraCoder: {{error}}"
+		"auto_import_failed": "Не удалось автоматически импортировать настройки ResearcherryCoder: {{error}}"
 	},
 	"info": {
 		"no_changes": "Изменения не найдены.",
@@ -113,7 +113,7 @@
 		"custom_storage_path_set": "Установлен пользовательский путь хранения: {{path}}",
 		"default_storage_path": "Возвращено использование пути хранения по умолчанию",
 		"settings_imported": "Настройки успешно импортированы.",
-		"auto_import_success": "Настройки NeiraCoder автоматически импортированы из {{filename}}",
+		"auto_import_success": "Настройки ResearcherryCoder автоматически импортированы из {{filename}}",
 		"share_link_copied": "Ссылка для совместного использования скопирована в буфер обмена",
 		"image_copied_to_clipboard": "URI данных изображения скопирован в буфер обмена",
 		"image_saved": "Изображение сохранено в {{path}}",
@@ -141,8 +141,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Введите пользовательский путь хранения истории разговоров, оставьте пустым для использования расположения по умолчанию",
-		"path_placeholder": "D:\\NeiraCoderStorage",
-		"enter_absolute_path": "Пожалуйста, введите абсолютный путь (например, D:\\NeiraCoderStorage или /home/user/storage)",
+		"path_placeholder": "D:\\ResearcherryCoderStorage",
+		"enter_absolute_path": "Пожалуйста, введите абсолютный путь (например, D:\\ResearcherryCoderStorage или /home/user/storage)",
 		"enter_valid_path": "Пожалуйста, введите корректный путь"
 	},
 	"input": {
@@ -162,8 +162,8 @@
 	},
 	"customModes": {
 		"errors": {
-					"yamlParseError": "Недопустимый YAML в файле .neira-modes на строке {{line}}. Проверь:\n• Правильные отступы (используй пробелы, не табы)\n• Соответствующие кавычки и скобки\n• Допустимый синтаксис YAML",
-		"schemaValidationError": "Недопустимый формат пользовательских режимов в .neira-modes:\n{{issues}}",
+			"yamlParseError": "Недопустимый YAML в файле .researcherry-modes на строке {{line}}. Проверь:\n• Правильные отступы (используй пробелы, не табы)\n• Соответствующие кавычки и скобки\n• Допустимый синтаксис YAML",
+			"schemaValidationError": "Недопустимый формат пользовательских режимов в .researcherry-modes:\n{{issues}}",
 			"invalidFormat": "Недопустимый формат пользовательских режимов. Убедись, что твои настройки соответствуют правильному формату YAML.",
 			"updateFailed": "Не удалось обновить пользовательский режим: {{error}}",
 			"deleteFailed": "Не удалось удалить пользовательский режим: {{error}}",

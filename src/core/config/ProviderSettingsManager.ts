@@ -6,8 +6,8 @@ import {
 	providerSettingsSchema,
 	providerSettingsSchemaDiscriminated,
 	DEFAULT_CONSECUTIVE_MISTAKE_LIMIT,
-} from "@neira-coder/types"
-import { TelemetryService } from "@neira-coder/telemetry"
+} from "@researcherry/types"
+import { TelemetryService } from "@researcherry/telemetry"
 
 import { Mode, modes } from "../../shared/modes"
 

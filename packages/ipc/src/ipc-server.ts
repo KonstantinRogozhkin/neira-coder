@@ -6,14 +6,14 @@ import ipc from "node-ipc"
 
 import {
 	type IpcServerEvents,
-	type NeiraCoderIpcServer,
+	type ResearcherryCoderIpcServer,
 	IpcOrigin,
 	IpcMessageType,
 	type IpcMessage,
 	ipcMessageSchema,
-} from "@neira-coder/types"
+} from "@researcherry/types"
 
-export class IpcServer extends EventEmitter<IpcServerEvents> implements NeiraCoderIpcServer {
+export class IpcServer extends EventEmitter<IpcServerEvents> implements ResearcherryCoderIpcServer {
 	private readonly _socketPath: string
 	private readonly _log: (...args: unknown[]) => void
 	private readonly _clients: Map<string, Socket>

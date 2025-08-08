@@ -1,5 +1,5 @@
 {
-	"title": "Neira Marketplace",
+	"title": "Researcherry Marketplace",
 	"tabs": {
 		"installed": "Installed",
 		"settings": "Settings",
@@ -99,4 +99,4 @@
 		"goToMcp": "Go to MCP tab",
 		"goToModes": "Go to Modes settings"
 	}
-} 
+}

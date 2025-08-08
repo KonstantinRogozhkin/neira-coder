@@ -13,13 +13,13 @@ export class RooProtectedController {
 
 	// Predefined list of protected Roo configuration patterns
 	private static readonly PROTECTED_PATTERNS = [
-		".neiraignore",
-		".neira-modes",
-		".neirarules*",
+		".researcherryignore",
+		".researcherry-modes",
+		".researcherryrules*",
 		".clinerules*",
-		".neira/**",
+		".researcherry/**",
 		".vscode/**",
-		".neiraprotected", // For future use
+		".researcherryprotected", // For future use
 		"AGENTS.md",
 	]
 

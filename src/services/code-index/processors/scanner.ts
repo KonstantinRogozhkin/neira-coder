@@ -26,8 +26,8 @@ import {
 	MAX_PENDING_BATCHES,
 } from "../constants"
 import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
-import { TelemetryService } from "@neira-coder/telemetry"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryService } from "@researcherry/telemetry"
+import { TelemetryEventName } from "@researcherry/types"
 import { sanitizeErrorMessage } from "../shared/validation-helpers"
 
 export class DirectoryScanner implements IDirectoryScanner {
@@ -68,7 +68,7 @@ export class DirectoryScanner implements IDirectoryScanner {
 
 		await ignoreController.initialize()
 
-		// Filter paths using .neiraignore
+		// Filter paths using .researcherryignore
 		const allowedPaths = ignoreController.filterPaths(filePaths)
 
 		// Filter by supported extensions, ignore patterns, and excluded directories

@@ -29,7 +29,13 @@ export function NavBar({ stars, downloads }: NavBarProps) {
 			<div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center">
 					<Link href="/" className="flex items-center">
-						<Image src={logoSrc} alt="Neira Code Logo" width={120} height={40} className="h-8 w-auto" />
+						<Image
+							src={logoSrc}
+							alt="Researcherry Code Logo"
+							width={120}
+							height={40}
+							className="h-8 w-auto"
+						/>
 					</Link>
 				</div>
 
@@ -72,7 +78,7 @@ export function NavBar({ stars, downloads }: NavBarProps) {
 					<div className="flex items-center rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 p-0.5 text-xs">
 						<div className="rounded-full bg-background px-2 py-1.5">
 							<span className="text-muted-foreground border-r-2 border-foreground/50 pr-1.5">
-								Neira Code Cloud is coming
+								Researcherry Code Cloud is coming
 							</span>
 							<a
 								href="/cloud-waitlist"
@@ -124,7 +130,7 @@ export function NavBar({ stars, downloads }: NavBarProps) {
 					<div className="mx-5 mb-2 flex items-center rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 p-0.5 text-xs">
 						<div className="flex-grow text-center rounded-full bg-background px-2 py-1.5">
 							<span className="text-muted-foreground border-r-2 border-foreground/50 pr-3">
-								Neira Code Cloud is coming
+								Researcherry Code Cloud is coming
 							</span>
 							<a
 								href="/cloud-waitlist"

@@ -48,7 +48,7 @@ describe("AccountView", () => {
 			<AccountView
 				userInfo={null}
 				isAuthenticated={false}
-				cloudApiUrl="https://app.neira.app"
+				cloudApiUrl="https://app.researcherry.app"
 				onDone={() => {}}
 			/>,
 		)
@@ -74,7 +74,7 @@ describe("AccountView", () => {
 			<AccountView
 				userInfo={mockUserInfo}
 				isAuthenticated={true}
-				cloudApiUrl="https://app.neira.app"
+				cloudApiUrl="https://app.researcherry.app"
 				onDone={() => {}}
 			/>,
 		)

@@ -17,7 +17,7 @@ export const formatResponse = {
 		`Выполнение инструмента не удалось со следующей ошибкой:\n<error>\n${error}\n</error>`,
 
 	rooIgnoreError: (path: string) =>
-		`Доступ к ${path} заблокирован настройками файла .neiraignore. Вы должны попытаться продолжить задачу без использования этого файла, или попросить пользователя обновить файл .neiraignore.`,
+		`Доступ к ${path} заблокирован настройками файла .researcherryignore. Вы должны попытаться продолжить задачу без использования этого файла, или попросить пользователя обновить файл .researcherryignore.`,
 
 	noToolsUsed: () =>
 		`[ОШИБКА] Вы не использовали инструмент в вашем предыдущем ответе! Пожалуйста, повторите попытку с использованием инструмента.
@@ -98,7 +98,7 @@ ${toolUseInstructionsReminder}
 		files: string[],
 		didHitLimit: boolean,
 		rooIgnoreController: RooIgnoreController | undefined,
-		showNeiraIgnoredFiles: boolean,
+		showResearcherryIgnoredFiles: boolean,
 		rooProtectedController?: RooProtectedController,
 	): string => {
 		const sorted = files
@@ -142,7 +142,7 @@ ${toolUseInstructionsReminder}
 
 				if (isIgnored) {
 					// Если файл игнорируется и мы не показываем игнорируемые файлы, пропускаем его
-					if (!showNeiraIgnoredFiles) {
+					if (!showResearcherryIgnoredFiles) {
 						continue
 					}
 					// В противном случае помечаем его символом блокировки

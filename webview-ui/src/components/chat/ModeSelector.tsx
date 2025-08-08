@@ -8,9 +8,9 @@ import { vscode } from "@/utils/vscode"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import { Mode, getAllModes } from "@roo/modes"
-import { ModeConfig, CustomModePrompts } from "@neira-coder/types"
+import { ModeConfig, CustomModePrompts } from "@researcherry/types"
 import { telemetryClient } from "@/utils/TelemetryClient"
-import { TelemetryEventName } from "@neira-coder/types"
+import { TelemetryEventName } from "@researcherry/types"
 import { Fzf } from "fzf"
 
 // Minimum number of modes required to show search functionality

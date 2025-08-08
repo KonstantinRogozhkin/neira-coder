@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Скрипт для переименования проекта roo-code → neira-coder
+# Скрипт для переименования проекта roo-code → researcherry
 # Использование: ./scripts/rename-project.sh [--dry-run] [--backup]
 
 set -e
@@ -14,13 +14,13 @@ NC='\033[0m' # No Color
 
 # Переменные
 OLD_NAME="roo-code"
-NEW_NAME="neira-coder"
+NEW_NAME="researcherry"
 OLD_ORG="roo-code"
-NEW_ORG="neira-coder"
+NEW_ORG="researcherry"
 OLD_DOMAIN="roocode.com"
-NEW_DOMAIN="neira-coder.com"
+NEW_DOMAIN="researcherry.com"
 OLD_EMAIL="roocode.com"
-NEW_EMAIL="neira-coder.com"
+NEW_EMAIL="researcherry.com"
 
 DRY_RUN=false
 CREATE_BACKUP=false
@@ -161,8 +161,8 @@ replace_in_files "@$OLD_ORG/" "@$NEW_ORG/" "turbo.json"
 # Шаг 4: Переименование директорий
 log_info "=== Шаг 4: Переименование директорий ==="
 
-# Переименование web-roo-code → web-neira-coder
-rename_directory "apps/web-roo-code" "apps/web-neira-coder"
+# Переименование web-roo-code → web-researcherry
+rename_directory "apps/web-roo-code" "apps/web-researcherry"
 
 # Шаг 5: Обновление URL и доменов
 log_info "=== Шаг 5: Обновление URL и доменов ==="
@@ -175,11 +175,11 @@ replace_in_files "$OLD_DOMAIN" "$NEW_DOMAIN" "*.json"
 replace_in_files "$OLD_DOMAIN" "$NEW_DOMAIN" "*.md"
 
 # Замена GitHub URLs
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/NeiraCoderInc/Neira-Coder" "*.ts"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/NeiraCoderInc/Neira-Coder" "*.tsx"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/NeiraCoderInc/Neira-Coder" "*.js"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/NeiraCoderInc/Neira-Coder" "*.json"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/NeiraCoderInc/Neira-Coder" "*.md"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.ts"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.tsx"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.js"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.json"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.md"
 
 # Замена email адресов
 replace_in_files "@$OLD_EMAIL" "@$NEW_EMAIL" "*.ts"
@@ -192,8 +192,8 @@ replace_in_files "@$OLD_EMAIL" "@$NEW_EMAIL" "*.md"
 log_info "=== Шаг 6: Обновление локализации ==="
 
 # Обновление файлов локализации
-replace_in_files "roo-code-settings.json" "neira-coder-settings.json" "*.json"
-replace_in_files "RooCode" "NeiraCoder" "*.json"
+replace_in_files "roo-code-settings.json" "researcherry-settings.json" "*.json"
+replace_in_files "RooCode" "ResearcherryCoder" "*.json"
 
 # Шаг 7: Очистка и переустановка зависимостей
 if [[ "$DRY_RUN" == "false" ]]; then

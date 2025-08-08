@@ -3,41 +3,41 @@ import * as os from "os"
 import * as fs from "fs/promises"
 
 /**
- * Gets the global .neira directory path
+ * Gets the global .researcherry directory path
  *
- * @returns The absolute path to the global .neira directory
+ * @returns The absolute path to the global .researcherry directory
  *
  * @example
  * ```typescript
- * const globalDir = getGlobalNeiraDirectory()
- * // Returns: "/Users/john/.neira" (on macOS/Linux)
- * // Returns: "C:\\Users\\john\\.neira" (on Windows)
+ * const globalDir = getGlobalResearcherryDirectory()
+ * // Returns: "/Users/john/.researcherry" (on macOS/Linux)
+ * // Returns: "C:\\Users\\john\\.researcherry" (on Windows)
  * ```
  */
-export function getGlobalNeiraDirectory(): string {
+export function getGlobalResearcherryDirectory(): string {
 	const homeDir = os.homedir()
-	return path.join(homeDir, ".neira")
+	return path.join(homeDir, ".researcherry")
 }
 
 /**
- * Gets the project-local .neira directory path for a given cwd
+ * Gets the project-local .researcherry directory path for a given cwd
  *
  * @param cwd - Current working directory (project path)
- * @returns The absolute path to the project-local .neira directory
+ * @returns The absolute path to the project-local .researcherry directory
  *
  * @example
  * ```typescript
- * const projectDir = getProjectNeiraDirectoryForCwd('/Users/john/my-project')
- * // Returns: "/Users/john/my-project/.neira"
+ * const projectDir = getProjectResearcherryDirectoryForCwd('/Users/john/my-project')
+ * // Returns: "/Users/john/my-project/.researcherry"
  *
- * const windowsProjectDir = getProjectNeiraDirectoryForCwd('C:\\Users\\john\\my-project')
- * // Returns: "C:\\Users\\john\\my-project\\.neira"
+ * const windowsProjectDir = getProjectResearcherryDirectoryForCwd('C:\\Users\\john\\my-project')
+ * // Returns: "C:\\Users\\john\\my-project\\.researcherry"
  * ```
  *
  * @example Directory structure:
  * ```
  * /Users/john/my-project/
- * ├── .neira/                    # Project-local configuration directory
+ * ├── .researcherry/                    # Project-local configuration directory
  * │   ├── rules/
  * │   │   └── rules.md
  * │   ├── custom-instructions.md
@@ -48,8 +48,8 @@ export function getGlobalNeiraDirectory(): string {
  * └── package.json
  * ```
  */
-export function getProjectNeiraDirectoryForCwd(cwd: string): string {
-	return path.join(cwd, ".neira")
+export function getProjectResearcherryDirectoryForCwd(cwd: string): string {
+	return path.join(cwd, ".researcherry")
 }
 
 /**
@@ -103,20 +103,20 @@ export async function readFileIfExists(filePath: string): Promise<string | null>
 }
 
 /**
- * Gets the ordered list of .neira directories to check (global first, then project-local)
+ * Gets the ordered list of .researcherry directories to check (global first, then project-local)
  *
  * @param cwd - Current working directory (project path)
  * @returns Array of directory paths to check in order [global, project-local]
  *
  * @example
  * ```typescript
- * const directories = getNeiraDirectoriesForCwd('/Users/john/my-project')
- * // Returns: ["/Users/john/.neira", "/Users/john/my-project/.neira"]
+ * const directories = getResearcherryDirectoriesForCwd('/Users/john/my-project')
+ * // Returns: ["/Users/john/.researcherry", "/Users/john/my-project/.researcherry"]
  * ```
  *
  * @example Directory structure:
  * ```
- * ~/.neira/                      # Global configuration directory
+ * ~/.researcherry/                      # Global configuration directory
  * ├── rules/
  * │   └── rules.md              # Global rules
  * ├── custom-instructions.md
@@ -124,7 +124,7 @@ export async function readFileIfExists(filePath: string): Promise<string | null>
  *     └── settings.json
  *
  * /Users/john/my-project/
- * ├── .neira/                    # Project-local configuration directory
+ * ├── .researcherry/                    # Project-local configuration directory
  * │   ├── rules/
  * │   │   └── rules.md     # Overrides global rules
  * │   └── project-notes.md
@@ -132,22 +132,22 @@ export async function readFileIfExists(filePath: string): Promise<string | null>
  *     └── index.ts
  * ```
  */
-export function getNeiraDirectoriesForCwd(cwd: string): string[] {
+export function getResearcherryDirectoriesForCwd(cwd: string): string[] {
 	const directories: string[] = []
 
 	// Add global directory first
-	directories.push(getGlobalNeiraDirectory())
+	directories.push(getGlobalResearcherryDirectory())
 
 	// Add project-local directory second
-	directories.push(getProjectNeiraDirectoryForCwd(cwd))
+	directories.push(getProjectResearcherryDirectoryForCwd(cwd))
 
 	return directories
 }
 
 /**
- * Loads configuration from multiple .neira directories with project overriding global
+ * Loads configuration from multiple .researcherry directories with project overriding global
  *
- * @param relativePath - The relative path within each .neira directory (e.g., 'rules/rules.md')
+ * @param relativePath - The relative path within each .researcherry directory (e.g., 'rules/rules.md')
  * @param cwd - Current working directory (project path)
  * @returns Object with global and project content, plus merged content
  *
@@ -158,8 +158,8 @@ export function getNeiraDirectoriesForCwd(cwd: string): string[] {
  *
  * // Returns:
  * // {
- * //   global: "Global rules content...",     // From ~/.neira/rules/rules.md
- * //   project: "Project rules content...",   // From /Users/john/my-project/.neira/rules/rules.md
+ * //   global: "Global rules content...",     // From ~/.researcherry/rules/rules.md
+ * //   project: "Project rules content...",   // From /Users/john/my-project/.researcherry/rules/rules.md
  * //   merged: "Global rules content...\n\n# Project-specific rules (override global):\n\nProject rules content..."
  * // }
  * ```
@@ -170,8 +170,8 @@ export function getNeiraDirectoriesForCwd(cwd: string): string[] {
  * cwd: '/Users/john/my-project'
  *
  * Reads from:
- * - Global: /Users/john/.neira/rules/rules.md
- * - Project: /Users/john/my-project/.neira/rules/rules.md
+ * - Global: /Users/john/.researcherry/rules/rules.md
+ * - Project: /Users/john/my-project/.researcherry/rules/rules.md
  *
  * Other common relativePath examples:
  * - 'custom-instructions.md'
@@ -203,8 +203,8 @@ export async function loadConfiguration(
 	project: string | null
 	merged: string
 }> {
-	const globalDir = getGlobalNeiraDirectory()
-	const projectDir = getProjectNeiraDirectoryForCwd(cwd)
+	const globalDir = getGlobalResearcherryDirectory()
+	const projectDir = getProjectResearcherryDirectoryForCwd(cwd)
 
 	const globalFilePath = path.join(globalDir, relativePath)
 	const projectFilePath = path.join(projectDir, relativePath)
@@ -234,4 +234,4 @@ export async function loadConfiguration(
 		project: projectContent,
 		merged,
 	}
-} 
+}

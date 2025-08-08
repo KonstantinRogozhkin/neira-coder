@@ -3,7 +3,7 @@ import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 import { Trans } from "react-i18next"
 import { ChevronsUpDown, Check, X } from "lucide-react"
 
-import type { ProviderSettings, ModelInfo, OrganizationAllowList } from "@neira-coder/types"
+import type { ProviderSettings, ModelInfo, OrganizationAllowList } from "@researcherry/types"
 
 import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { useSelectedModel } from "@/components/ui/hooks/useSelectedModel"

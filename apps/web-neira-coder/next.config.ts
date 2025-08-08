@@ -10,21 +10,21 @@ const nextConfig: NextConfig = {
 			// Redirect www to non-www
 			{
 				source: "/:path*",
-				has: [{ type: "host", value: "www.neiracoder.com" }],
-				destination: "https://neiracoder.com/:path*",
+				has: [{ type: "host", value: "www.researcherrycoder.com" }],
+				destination: "https://researcherrycoder.com/:path*",
 				permanent: true,
 			},
 			// Redirect HTTP to HTTPS
 			{
 				source: "/:path*",
 				has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
-				destination: "https://neiracoder.com/:path*",
+				destination: "https://researcherrycoder.com/:path*",
 				permanent: true,
 			},
 			// Redirect cloud waitlist to Notion page
 			{
 				source: "/cloud-waitlist",
-				destination: "https://neira-coder.notion.site/238fd1401b0a8087b858e1ad431507cf?pvs=105",
+				destination: "https://researcherry.notion.site/238fd1401b0a8087b858e1ad431507cf?pvs=105",
 				permanent: false,
 			},
 		]
