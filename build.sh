@@ -60,7 +60,7 @@ UPSTREAM_BRANCH="main"
 BUILD_DIR="build-src"
 PATCHES_DIR="patches"
 
-echo "=== Подготовка к сборке Researcherry Coder ==="
+echo "=== Подготовка к сборке Researcherry ==="
 
 # 1. Очистка
 echo "-> Очистка предыдущей сборочной директории..."

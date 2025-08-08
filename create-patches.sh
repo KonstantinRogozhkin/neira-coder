@@ -8,7 +8,7 @@ PATCHES_DIR="patches"
 MAIN_BRANCH="main"
 DEV_BRANCH="researcherry"
 
-echo "=== Создание патчей Researcherry Coder (только ru/en локализация) ==="
+echo "=== Создание патчей Researcherry (только ru/en локализация) ==="
 
 # Очищаем старые патчи
 echo "-> Очистка старых патчей..."

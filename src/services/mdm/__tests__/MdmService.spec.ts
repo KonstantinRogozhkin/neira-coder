@@ -47,9 +47,9 @@ vi.mock("../../../i18n", () => ({
 	t: vi.fn((key: string) => {
 		const translations: Record<string, string> = {
 			"mdm.errors.cloud_auth_required":
-				"Your organization requires Researcherry Coder Cloud authentication. Please sign in to continue.",
+				"Your organization requires Researcherry authentication. Please sign in to continue.",
 			"mdm.errors.organization_mismatch":
-				"You must be authenticated with your organization's Researcherry Coder Cloud account.",
+				"You must be authenticated with your organization's Researcherry account.",
 			"mdm.errors.verification_failed": "Unable to verify organization authentication.",
 		}
 		return translations[key] || key
@@ -286,9 +286,7 @@ describe("MdmService", () => {
 
 			expect(compliance.compliant).toBe(false)
 			if (!compliance.compliant) {
-				expect(compliance.reason).toContain(
-					"Your organization requires Researcherry Coder Cloud authentication",
-				)
+				expect(compliance.reason).toContain("Your organization requires Researcherry authentication")
 			}
 		})
 
@@ -311,7 +309,7 @@ describe("MdmService", () => {
 			expect(compliance.compliant).toBe(false)
 			if (!compliance.compliant) {
 				expect(compliance.reason).toContain(
-					"You must be authenticated with your organization's Researcherry Coder Cloud account",
+					"You must be authenticated with your organization's Researcherry account",
 				)
 			}
 		})

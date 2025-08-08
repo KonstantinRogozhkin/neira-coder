@@ -8,7 +8,7 @@
 const fs = require("fs")
 const path = require("path")
 
-console.log("🧹 Clearing Researcherry Coder modes cache...\n")
+console.log("🧹 Clearing Researcherry modes cache...\n")
 
 // Paths to clear
 const pathsToClear = [
@@ -40,7 +40,7 @@ console.log(
 	"   - ~/.vscode/extensions/researcherrycoderinc.researcherry-*/globalStorage/researcherrycoderinc.researcherry",
 )
 console.log("3. Reopen VS Code")
-console.log('4. Run the command: "Researcherry Coder: Clear Modes Cache"')
+console.log('4. Run the command: "Researcherry: Clear Modes Cache"')
 console.log('5. Or use Command Palette (Ctrl+Shift+P) and search for "Clear Modes Cache"')
 
 console.log("\nAlternative solution:")

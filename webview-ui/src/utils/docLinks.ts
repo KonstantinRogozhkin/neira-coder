@@ -1,5 +1,5 @@
 /**
- * Utility for building Researcherry Coder documentation links to local documentation.
+ * Utility for building Researcherry documentation links to local documentation.
  *
  * @param path - The path after the docs root (no leading slash)
  * @param campaign - The campaign context (e.g. "welcome", "provider_docs", "tips", "error_tooltip")

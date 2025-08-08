@@ -31,7 +31,7 @@
 		"prompts": "Prompts",
 		"experimental": "Experimental",
 		"language": "Language",
-		"about": "About Researcherry Coder"
+		"about": "About Researcherry"
 	},
 	"prompts": {
 		"description": "Configure support prompts used for quick actions like prompt improvement, code explanation, and issue fixing. These prompts help Researcherry provide better support for common development tasks."

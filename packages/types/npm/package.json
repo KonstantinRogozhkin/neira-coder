@@ -1,12 +1,12 @@
 {
 	"name": "@researcherry/types",
 	"version": "1.40.0",
-	"description": "TypeScript type definitions for Researcherry Coder.",
+	"description": "TypeScript type definitions for Researcherry.",
 	"publishConfig": {
 		"access": "public",
 		"name": "@researcherry/types"
 	},
-	"author": "Researcherry Coder Team",
+	"author": "Researcherry Team",
 	"license": "MIT",
 	"repository": {
 		"type": "git",

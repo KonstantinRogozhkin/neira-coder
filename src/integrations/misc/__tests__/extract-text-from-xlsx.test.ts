@@ -152,13 +152,13 @@ describe("extractTextFromXLSX", () => {
 			const worksheet = workbook.addWorksheet("Sheet1")
 
 			worksheet.getCell("A1").value = {
-				text: "Researcherry Coder",
+				text: "Researcherry",
 				hyperlink: "https://researcherrycoder.com/",
 			}
 
 			const result = await extractTextFromXLSX(workbook)
 
-			expect(result).toContain("Researcherry Coder (https://researcherrycoder.com/)")
+			expect(result).toContain("Researcherry (https://researcherrycoder.com/)")
 		})
 
 		it("should handle formulas with and without results", async () => {

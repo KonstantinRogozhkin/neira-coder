@@ -1,4 +1,4 @@
-# Установка Researcherry Coder
+# Установка Researcherry
 
 ## Требования
 
@@ -12,7 +12,7 @@
 
 1. Откройте VS Code или Cursor
 2. Перейдите в раздел Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-3. Найдите "Researcherry Coder" в поиске
+3. Найдите "Researcherry" в поиске
 4. Нажмите "Install"
 
 ### 2. Установка из VSIX файла
@@ -44,7 +44,7 @@ pnpm install:vsix
 
 1. Перезапустите VS Code/Cursor
 2. Откройте Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
-3. Введите "Researcherry Coder" - вы должны увидеть доступные команды
+3. Введите "Researcherry" - вы должны увидеть доступные команды
 4. Перейдите к [подключению API провайдера](./connecting-api-provider.md)
 
 ## Устранение неполадок

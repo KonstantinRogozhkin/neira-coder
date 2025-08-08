@@ -62,8 +62,6 @@ describe("getVisibleProviderOrLog", () => {
 		const result = getVisibleProviderOrLog(mockOutputChannel)
 
 		expect(result).toBeUndefined()
-		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith(
-			"Cannot find any visible Researcherry Coder instances.",
-		)
+		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Researcherry instances.")
 	})
 })

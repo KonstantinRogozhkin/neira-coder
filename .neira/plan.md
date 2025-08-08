@@ -142,7 +142,7 @@ UPSTREAM_REPO="https://github.com/RooCodeInc/Roo-Code.git"
 UPSTREAM_BRANCH="main"
 BUILD_DIR="build-src"
 
-echo "=== Подготовка к сборке Researcherry Coder ==="
+echo "=== Подготовка к сборке Researcherry ==="
 
 # 1. Очистка
 echo "-> Очистка предыдущей сборочной директории..."

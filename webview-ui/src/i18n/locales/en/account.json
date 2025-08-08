@@ -3,12 +3,12 @@
 	"profilePicture": "Profile Picture",
 	"logOut": "Log Out",
 	"testApiAuthentication": "Test API Authentication",
-	"signIn": "Connect to Researcherry Coder Cloud",
+	"signIn": "Connect to Researcherry",
 	"connect": "Connect",
-	"cloudBenefitsTitle": "Connect to Researcherry Coder Cloud",
+	"cloudBenefitsTitle": "Connect to Researcherry",
 	"cloudBenefitsSubtitle": "Sync your prompts and telemetry to enable:",
 	"cloudBenefitHistory": "Online task history",
 	"cloudBenefitSharing": "Sharing and collaboration features",
 	"cloudBenefitMetrics": "Usage metrics based on tasks, tokens, and costs",
-	"visitCloudWebsite": "Visit Researcherry Coder Cloud"
+	"visitCloudWebsite": "Visit Researcherry"
 }

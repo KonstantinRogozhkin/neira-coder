@@ -1,6 +1,6 @@
 {
 	"name": "researcherry",
-	"version": "3.31.17",
+	"version": "3.31.18",
 	"packageManager": "pnpm@10.8.1",
 	"engines": {
 		"node": "20.19.2"

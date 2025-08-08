@@ -1,5 +1,5 @@
 {
-	"greeting": "Welcome to Researcherry Coder",
+	"greeting": "Welcome to Researcherry",
 	"task": {
 		"title": "Task",
 		"seeMore": "Show more",
@@ -18,7 +18,7 @@
 		"sharePublicly": "Share publicly",
 		"sharePubliclyDescription": "Anyone with the link can access",
 		"connectToCloud": "Connect to cloud",
-		"connectToCloudDescription": "Sign in to Researcherry Coder Cloud to share tasks",
+		"connectToCloudDescription": "Sign in to Researcherry to share tasks",
 		"sharingDisabledByOrganization": "Sharing disabled by organization",
 		"shareSuccessOrganization": "Organization link copied to clipboard",
 		"shareSuccessPublic": "Public link copied to clipboard"

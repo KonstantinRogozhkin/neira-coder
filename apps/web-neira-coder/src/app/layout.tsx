@@ -12,9 +12,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-	title: "Researcherry Coder – Your AI-Powered Dev Team in VS Code",
+	title: "Researcherry – Your AI-Powered Dev Team in VS Code",
 	description:
-		"Researcherry Coder puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
+		"Researcherry puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
 	alternates: {
 		canonical: "https://researcherrycoder.com",
 	},
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				</Script>
 				<div itemScope itemType="https://schema.org/WebSite">
 					<link itemProp="url" href="https://researcherrycoder.com" />
-					<meta itemProp="name" content="Researcherry Coder" />
+					<meta itemProp="name" content="Researcherry" />
 				</div>
 				<Providers>
 					<Shell>{children}</Shell>

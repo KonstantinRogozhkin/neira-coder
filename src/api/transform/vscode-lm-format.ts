@@ -23,7 +23,7 @@ function asObjectSafe(value: any): object {
 
 		return {}
 	} catch (error) {
-		console.warn("Researcherry Coder <Language Model API>: Failed to parse object:", error)
+		console.warn("Researcherry <Language Model API>: Failed to parse object:", error)
 		return {}
 	}
 }
@@ -183,10 +183,7 @@ export function extractTextCountFromMessage(message: vscode.LanguageModelChatMes
 					try {
 						text += JSON.stringify(item.input)
 					} catch (error) {
-						console.error(
-							"Researcherry Coder <Language Model API>: Failed to stringify tool call input:",
-							error,
-						)
+						console.error("Researcherry <Language Model API>: Failed to stringify tool call input:", error)
 					}
 				}
 			}

@@ -81,7 +81,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Create logger for cloud services
 	const cloudLogger = createDualLogger(createOutputChannelLogger(outputChannel))
 
-	// Initialize Researcherry Coder Cloud service.
+	// Initialize Researcherry service.
 	const cloudService = await CloudService.createInstance(context, cloudLogger)
 	const postStateListener = () => {
 		ClineProvider.getVisibleInstance()?.postStateToWebview()

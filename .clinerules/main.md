@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Researcherry Coder is an AI-powered autonomous coding agent that lives in a VS Code extension. It can communicate in natural language, read/write files, run terminal commands, automate browser actions, and integrate with various AI models via OpenAI-compatible APIs. The project supports multiple specialized modes, custom instructions, and MCP (Model Context Protocol) integration.
+Researcherry is an AI-powered autonomous coding agent that lives in a VS Code extension. It can communicate in natural language, read/write files, run terminal commands, automate browser actions, and integrate with various AI models via OpenAI-compatible APIs. The project supports multiple specialized modes, custom instructions, and MCP (Model Context Protocol) integration.
 
 ## Development Commands
 

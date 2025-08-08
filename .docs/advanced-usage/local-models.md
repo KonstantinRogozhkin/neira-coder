@@ -1,6 +1,6 @@
 # Локальные модели
 
-Локальные модели позволяют использовать Researcherry Coder без подключения к внешним API, обеспечивая приватность и независимость от интернета.
+Локальные модели позволяют использовать Researcherry без подключения к внешним API, обеспечивая приватность и независимость от интернета.
 
 ## Что такое локальные модели?
 
@@ -43,9 +43,9 @@ ollama serve
 ollama run llama3.2 "Привет, как дела?"
 ```
 
-#### Настройка в Researcherry Coder
+#### Настройка в Researcherry
 
-1. Откройте настройки Researcherry Coder
+1. Откройте настройки Researcherry
 2. Перейдите в раздел "API Providers"
 3. Выберите "Local Model"
 4. Укажите URL: `http://localhost:11434`
@@ -66,7 +66,7 @@ ollama run llama3.2 "Привет, как дела?"
 1. Запустите LM Studio
 2. Загрузите модель
 3. Запустите локальный сервер
-4. В Researcherry Coder укажите URL: `http://localhost:1234/v1`
+4. В Researcherry укажите URL: `http://localhost:1234/v1`
 
 ### Text Generation WebUI
 
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 python server.py --listen --api
 ```
 
-#### Настройка в Researcherry Coder
+#### Настройка в Researcherry
 
 URL: `http://localhost:5000/api/v1`
 

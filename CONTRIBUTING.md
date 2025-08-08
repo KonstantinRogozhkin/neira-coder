@@ -11,9 +11,9 @@
 </sub>
 </div>
 
-# Contributing to Researcherry Coder
+# Contributing to Researcherry
 
-Researcherry Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
+Researcherry is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
 
 ## Table of Contents
 
@@ -52,7 +52,7 @@ Our roadmap guides the project's direction. Align your contributions with these 
 
 Mention alignment with these areas in your PRs.
 
-### 3. Join the Researcherry Coder Community
+### 3. Join the Researcherry Community
 
 - **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
 - **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
@@ -80,7 +80,7 @@ All contributions must begin with a GitHub Issue.
 ### Deciding What to Work On
 
 - Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
-- For docs, visit [Researcherry Coder Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
+- For docs, visit [Researcherry Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
 
 ### Reporting Bugs
 
@@ -135,4 +135,4 @@ pnpm install
 
 ## Legal
 
-By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry Coder's licensing.
+By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry's licensing.

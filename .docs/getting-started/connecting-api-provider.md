@@ -1,6 +1,6 @@
 # Подключение API провайдера
 
-Researcherry Coder поддерживает множество ИИ-провайдеров. Вам нужно выбрать и настроить одного из них для работы с расширением.
+Researcherry поддерживает множество ИИ-провайдеров. Вам нужно выбрать и настроить одного из них для работы с расширением.
 
 ## Поддерживаемые провайдеры
 
@@ -56,10 +56,10 @@ Researcherry Coder поддерживает множество ИИ-провай
 4. Создайте новый ключ
 5. Скопируйте ключ
 
-### 2. Настройка в Researcherry Coder
+### 2. Настройка в Researcherry
 
 1. Откройте Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
-2. Введите "Researcherry Coder: Configure API Provider"
+2. Введите "Researcherry: Configure API Provider"
 3. Выберите ваш провайдер из списка
 4. Введите API ключ в соответствующее поле
 5. Нажмите "Save"
@@ -67,7 +67,7 @@ Researcherry Coder поддерживает множество ИИ-провай
 ### 3. Проверка подключения
 
 1. Откройте Command Palette
-2. Введите "Researcherry Coder: Test Connection"
+2. Введите "Researcherry: Test Connection"
 3. Если всё настроено правильно, вы увидите сообщение об успехе
 
 ## Настройка локальных моделей
@@ -76,7 +76,7 @@ Researcherry Coder поддерживает множество ИИ-провай
 
 1. Установите [Ollama](https://ollama.ai)
 2. Скачайте нужную модель: `ollama pull llama3.2`
-3. В настройках Researcherry Coder выберите "Local Model"
+3. В настройках Researcherry выберите "Local Model"
 4. Укажите URL: `http://localhost:11434`
 5. Выберите модель из списка доступных
 

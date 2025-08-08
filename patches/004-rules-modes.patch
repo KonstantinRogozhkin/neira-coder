@@ -10,7 +10,7 @@ index 000000000..7213d1f81
 +
 +## Overview
 +
-+Researcherry Coder is an AI-powered autonomous coding agent that lives in a VS Code extension. It can communicate in natural language, read/write files, run terminal commands, automate browser actions, and integrate with various AI models via OpenAI-compatible APIs. The project supports multiple specialized modes, custom instructions, and MCP (Model Context Protocol) integration.
++Researcherry is an AI-powered autonomous coding agent that lives in a VS Code extension. It can communicate in natural language, read/write files, run terminal commands, automate browser actions, and integrate with various AI models via OpenAI-compatible APIs. The project supports multiple specialized modes, custom instructions, and MCP (Model Context Protocol) integration.
 +
 +## Development Commands
 +
@@ -169,7 +169,7 @@ index 965566a31..16da1350d 100644
      attributes:
        label: App Version
 -      description: What version of Roo Code are you using? (e.g., v3.3.1)
-+      description: What version of Researcherry Coder are you using? (e.g., v3.3.1)
++      description: What version of Researcherry are you using? (e.g., v3.3.1)
      validations:
        required: true
  
@@ -201,14 +201,14 @@ index 4863f9ffa..1db7a854b 100644
 @@ -1,19 +1,19 @@
  name: Detailed Feature Proposal
 -description: Report a specific problem that needs solving in Roo Code
-+description: Report a specific problem that needs solving in Researcherry Coder
++description: Report a specific problem that needs solving in Researcherry
  labels: ["proposal", "enhancement"]
  body:
    - type: markdown
      attributes:
        value: |
 -        **Thank you for submitting a feature request for Roo Code!**
-+        **Thank you for submitting a feature request for Researcherry Coder!**
++        **Thank you for submitting a feature request for Researcherry!**
          
 -        This template helps you describe problems that need solving. Focus on the problem - the Roo team will work to design solutions unless you want to contribute the implementation yourself.
 +        This template helps you describe problems that need solving. Focus on the problem - the Researcherry team will work to design solutions unless you want to contribute the implementation yourself.
@@ -228,15 +228,15 @@ index 4863f9ffa..1db7a854b 100644
      id: roo-code-tasks
      attributes:
 -      label: Roo Code Task Links (Optional)
-+      label: Researcherry Coder Task Links (Optional)
++      label: Researcherry Task Links (Optional)
        description: |
 -        If you used Roo Code to explore this feature request or develop solutions, share the public task links here.
-+        If you used Researcherry Coder to explore this feature request or develop solutions, share the public task links here.
++        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
          This helps maintainers understand the context and any exploration you've done.
 -        Example: https://app.roocode.com/share/task-id
 -      placeholder: Paste your Roo Code share links here, one per line
 +        Example: https://app.researcherrycoder.com/share/task-id
-+      placeholder: Paste your Researcherry Coder share links here, one per line
++      placeholder: Paste your Researcherry share links here, one per line
  
    - type: checkboxes
      id: checklist
@@ -566,7 +566,7 @@ index 000000000..ec1732d5f
 +UPSTREAM_BRANCH="main"
 +BUILD_DIR="build-src"
 +
-+echo "=== Подготовка к сборке Researcherry Coder ==="
++echo "=== Подготовка к сборке Researcherry ==="
 +
 +# 1. Очистка
 +echo "-> Очистка предыдущей сборочной директории..."
@@ -13544,7 +13544,7 @@ index 000000000..c565ed556
 +const fs = require('fs');
 +const path = require('path');
 +
-+console.log('🧹 Clearing Researcherry Coder modes cache...\n');
++console.log('🧹 Clearing Researcherry modes cache...\n');
 +
 +// Paths to clear
 +const pathsToClear = [
@@ -13566,7 +13566,7 @@ index 000000000..c565ed556
 +console.log('   - ~/.vscode-oss/extensions/researcherrycoderinc.researcherry-*/globalStorage/researcherrycoderinc.researcherry');
 +console.log('   - ~/.vscode/extensions/researcherrycoderinc.researcherry-*/globalStorage/researcherrycoderinc.researcherry');
 +console.log('3. Reopen VS Code');
-+console.log('4. Run the command: "Researcherry Coder: Clear Modes Cache"');
++console.log('4. Run the command: "Researcherry: Clear Modes Cache"');
 +console.log('5. Or use Command Palette (Ctrl+Shift+P) and search for "Clear Modes Cache"');
 +
 +console.log('\nAlternative solution:');

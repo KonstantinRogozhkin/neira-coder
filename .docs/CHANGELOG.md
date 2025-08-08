@@ -8,7 +8,7 @@
 - Создан главный файл документации `.docs/README.md`
 - Добавлены разделы:
     - **Getting Started** (Начало работы)
-        - `installing.md` - Установка Researcherry Coder
+        - `installing.md` - Установка Researcherry
         - `connecting-api-provider.md` - Подключение API провайдера
         - `your-first-task.md` - Первая задача
     - **Basic Usage** (Базовое использование)

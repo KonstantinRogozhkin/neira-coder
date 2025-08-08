@@ -44,7 +44,7 @@ index c72d2f5f6..538beee20 100644
 -- More tolerant search/replace match
 -- Clean up the auto-approve UI (thanks @mrubens!)
 -- Skip interpolation for non-existent slash commands (thanks @app/roomote!)
-+# Researcherry Coder Changelog
++# Researcherry Changelog
 +
 +## 3.31.2
 +
@@ -84,7 +84,7 @@ index c72d2f5f6..538beee20 100644
 +
 +### Bug Fixes
 +
-+- fix: resolve build issues after project rebranding from Roo Code to Researcherry Coder
++- fix: resolve build issues after project rebranding from Roo Code to Researcherry
 +- fix: update all package references from @roo-code/_ to @researcherry/_
 +- fix: correct TypeScript configuration paths after rebranding
 +- fix: restore missing Config.ts file in cloud package
@@ -208,7 +208,7 @@ index c72d2f5f6..538beee20 100644
 +
 +### Minor Changes
 +
-+- feat: complete rename from Roo Code to Researcherry Coder
++- feat: complete rename from Roo Code to Researcherry
  
  ## [3.25.4] - 2025-07-30
  
@@ -226,7 +226,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.23.19] - 2025-07-23
  
 -- Add Roo Code Cloud Waitlist CTAs (thanks @brunobergher!)
-+- Add Researcherry Coder Cloud Waitlist CTAs (thanks @brunobergher!)
++- Add Researcherry Waitlist CTAs (thanks @brunobergher!)
  - Split commands on newlines when evaluating auto-approve
  - Smarter auto-deny of commands
  
@@ -288,7 +288,7 @@ index c72d2f5f6..538beee20 100644
  - MCP server errors are now captured and shown in a new "Errors" tab (thanks @robertheadley)
  - Error logging will no longer break MCP functionality if the server is properly connected (thanks @ksze)
 -- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Roo Code settings (thanks @KJ7LNW)
-+- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Researcherry Coder settings (thanks @KJ7LNW)
++- You can now toggle the `terminal.integrated.inheritEnv` VSCode setting directly for the Researcherry settings (thanks @KJ7LNW)
  - Add `gemini-2.5-pro-preview-05-06` to the Vertex and Gemini providers (thanks @zetaloop)
  - Ensure evals exercises are up-to-date before running evals (thanks @shariqriazz)
  - Lots of general UI improvements (thanks @elianiva)
@@ -297,7 +297,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.15.4] - 2025-05-04
  
 -- Fix a nasty bug that would cause Roo Code to hang, particularly in orchestrator mode
-+- Fix a nasty bug that would cause Researcherry Coder to hang, particularly in orchestrator mode
++- Fix a nasty bug that would cause Researcherry to hang, particularly in orchestrator mode
  - Improve Gemini caching efficiency
  
  ## [3.15.3] - 2025-05-02
@@ -307,8 +307,8 @@ index c72d2f5f6..538beee20 100644
  - Improve support for mult-root workspaces (thanks @snoyiatk)
 -- Simplify and streamline Roo Code's quick actions
 -- Allow Roo Code settings to be imported from the welcome screen (thanks @julionav)
-+- Simplify and streamline Researcherry Coder's quick actions
-+- Allow Researcherry Coder settings to be imported from the welcome screen (thanks @julionav)
++- Simplify and streamline Researcherry's quick actions
++- Allow Researcherry settings to be imported from the welcome screen (thanks @julionav)
  - Remove unused types (thanks @wkordalski)
  - Improve the performance of mode switching (thanks @dlab-anton)
  - Fix importing & exporting of custom modes (thanks @julionav)
@@ -326,7 +326,7 @@ index c72d2f5f6..538beee20 100644
  - Add o1-pro support (thanks @arthurauffray!)
  - Follow symlinked rules files/directories to allow for more flexible rule setups
 -- Focus Roo Code in the sidebar when running tasks in the sidebar via the API
-+- Focus Researcherry Coder in the sidebar when running tasks in the sidebar via the API
++- Focus Researcherry in the sidebar when running tasks in the sidebar via the API
  - Improve subtasks UI
  
  ## [3.11.10] - 2025-04-08
@@ -335,7 +335,7 @@ index c72d2f5f6..538beee20 100644
  - Persist settings on api.setConfiguration (thanks @gtaylor!)
  - Add deep links to settings sections
 -- Add command to focus Roo Code input field (thanks @axkirillov!)
-+- Add command to focus Researcherry Coder input field (thanks @axkirillov!)
++- Add command to focus Researcherry input field (thanks @axkirillov!)
  - Add resize and hover actions to the browser (thanks @SplittyDev!)
  - Add resumeTask and isTaskInHistory to the API (thanks @franekp!)
  - Fix bug displaying boolean/numeric suggested answers
@@ -344,7 +344,7 @@ index c72d2f5f6..538beee20 100644
  - Update AWS region dropdown menu to the most recent data (thanks @Smartsheet-JB-Brown!)
  - Fix prompt enhancement for Bedrock (thanks @Smartsheet-JB-Brown!)
 -- Allow processes to access the Roo Code API via a unix socket
-+- Allow processes to access the Researcherry Coder API via a unix socket
++- Allow processes to access the Researcherry API via a unix socket
  - Improve zh-TW Traditional Chinese translations (thanks @PeterDaveHello!)
  - Add support for Azure AI Inference Service with DeepSeek-V3 model (thanks @thomasjeung!)
  - Fix off-by-one error in tree-sitter line numbers
@@ -353,7 +353,7 @@ index c72d2f5f6..538beee20 100644
  - Refactor tool-calling logic to make the code a lot easier to work with (thanks @diarmidmackenzie, @bramburn, @KJ7LNW, and everyone else who helped!)
  - Prioritize “Add to Context” in the code actions and include line numbers (thanks @samhvw8!)
 -- Add an activation command that other extensions can use to interface with Roo Code (thanks @gtaylor!)
-+- Add an activation command that other extensions can use to interface with Researcherry Coder (thanks @gtaylor!)
++- Add an activation command that other extensions can use to interface with Researcherry (thanks @gtaylor!)
  - Preserve language characters in file @-mentions (thanks @aheizi!)
  - Browser tool improvements (thanks @afshawnlotfi!)
  - Display info about partial reads in the chat row
@@ -362,7 +362,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.9.0] - 2025-03-18
  
 -- Internationalize Roo Code into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
-+- Internationalize Researcherry Coder into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
++- Internationalize Researcherry into Catalan, German, Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Turkish, Vietnamese, Simplified Chinese, and Traditional Chinese (thanks @feifei325!)
  - Bring back support for MCP over SSE (thanks @aheizi!)
  - Add a text-to-speech option to have Roo talk to you as it works (thanks @heyseth!)
  - Choose a specific provider when using OpenRouter (thanks PhunkyBob!)
@@ -380,11 +380,11 @@ index c72d2f5f6..538beee20 100644
  ## [3.8.0] - 2025-03-07
  
 -- Add opt-in telemetry to help us improve Roo Code faster (thanks Cline!)
-+- Add opt-in telemetry to help us improve Researcherry Coder faster (thanks Cline!)
++- Add opt-in telemetry to help us improve Researcherry faster (thanks Cline!)
  - Fix terminal overload / gray screen of death, and other terminal issues
  - Add a new experimental diff editing strategy that applies multiple diff edits at once (thanks @qdaxb!)
 -- Add support for a .rooignore to prevent Roo Code from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
-+- Add support for a .rooignore to prevent Researcherry Coder from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
++- Add support for a .rooignore to prevent Researcherry from read/writing certain files, with a setting to also exclude them from search/lists (thanks Cline!)
  - Update the new_task tool to return results to the parent task on completion, supporting better orchestration (thanks @shaybc!)
  - Support running Roo in multiple editor windows simultaneously (thanks @samhvw8!)
  - Make checkpoints asynchronous and exclude more files to speed them up
@@ -392,7 +392,7 @@ index c72d2f5f6..538beee20 100644
  - Add credential-based authentication for Vertex AI, enabling users to easily switch between Google Cloud accounts (thanks @eonghk!)
  - Update the DeepSeek provider with the correct baseUrl and track caching correctly (thanks @olweraltuve!)
 -- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Roo Code (thanks @NyxJae)!
-+- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Researcherry Coder (thanks @NyxJae)!
++- Add a new “Human Relay” provider that allows you to manually copy information to a Web AI when needed, and then paste the AI's response back into Researcherry (thanks @NyxJae)!
  - Add observability for OpenAI providers (thanks @refactorthis!)
  - Support speculative decoding for LM Studio local models (thanks @adamwlarson!)
  - Improve UI for mode/provider selectors in chat
@@ -410,7 +410,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.7.0] - 2025-02-24
  
 -- Introducing Roo Code 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
-+- Introducing Researcherry Coder 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
++- Introducing Researcherry 3.7, with support for the new Claude Sonnet 3.7. Because who cares about skipping version numbers anymore? Thanks @lupuletic and @cte for the PRs!
  
  ## [3.3.26] - 2025-02-27
  
@@ -433,7 +433,7 @@ index c72d2f5f6..538beee20 100644
  - Custom modes can now be restricted to specific file patterns (for example, a technical writer who can only edit markdown files 👋)
  - Support for configuring the Bedrock provider with AWS Profiles
 -- New Roo Code community Discord at https://roocode.com/discord!
-+- New Researcherry Coder community Discord at https://researcherrycoder.com/discord!
++- New Researcherry community Discord at https://researcherrycoder.com/discord!
  
 -## [3.2.8]
 +## [3.2.8] - 2025-02-17
@@ -473,10 +473,10 @@ index c72d2f5f6..538beee20 100644
 +## [3.2.0 - 3.2.2] - 2025-02-17
  
 -- **Name Change From Roo Cline to Roo Code:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Roo Cline to Roo Code to better reflect our identity as we chart our own course.
-+- **Name Change From Researcherry Cline to Researcherry Coder:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Researcherry Cline to Researcherry Coder to better reflect our identity as we chart our own course.
++- **Name Change From Researcherry Cline to Researcherry:** We're excited to announce our new name! After growing beyond 50,000 installations, we've rebranded from Researcherry Cline to Researcherry to better reflect our identity as we chart our own course.
  
 -- **Custom Modes:** Create your own personas for Roo Code! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
-+- **Custom Modes:** Create your own personas for Researcherry Coder! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
++- **Custom Modes:** Create your own personas for Researcherry! While our built-in modes (Code, Architect, Ask) are still here, you can now shape entirely new ones:
      - Define custom prompts
      - Choose which tools each mode can access
      - Create specialized assistants for any workflow
@@ -548,7 +548,7 @@ index c72d2f5f6..538beee20 100644
 +## [3.0.0] - 2025-02-17
  
 -- This release adds chat modes! Now you can ask Roo Code questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Roo Code Reddit! https://www.reddit.com/r/RooCode
-+- This release adds chat modes! Now you can ask Researcherry Coder questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Researcherry Coder Reddit! https://www.reddit.com/r/ResearcherryCoder
++- This release adds chat modes! Now you can ask Researcherry questions about system architecture or the codebase without immediately jumping into writing code. You can even assign different API configuration profiles to each mode if you prefer to use different models for thinking vs coding. Would love feedback in the new Researcherry Reddit! https://www.reddit.com/r/ResearcherryCoder
  
 -## [2.2.46]
 +## [2.2.46] - 2025-02-17
@@ -883,10 +883,10 @@ index c23c424f4..d5576a429 100644
  </div>
  
 -# Contributing to Roo Code
-+# Contributing to Researcherry Coder
++# Contributing to Researcherry
  
 -Roo Code is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
-+Researcherry Coder is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
++Researcherry is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
  
  ## Table of Contents
  
@@ -895,7 +895,7 @@ index c23c424f4..d5576a429 100644
  Mention alignment with these areas in your PRs.
  
 -### 3. Join the Roo Code Community
-+### 3. Join the Researcherry Coder Community
++### 3. Join the Researcherry Community
  
 -- **Primary:** Join our [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph (`hrudolph`)**.
 -- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/RooCodeInc/projects/1).
@@ -920,7 +920,7 @@ index c23c424f4..d5576a429 100644
 -- Check the [GitHub Project](https://github.com/orgs/RooCodeInc/projects/1) for unassigned "Good First Issues."
 -- For docs, visit [Roo Code Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
 +- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
-+- For docs, visit [Researcherry Coder Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
++- For docs, visit [Researcherry Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
  
  ### Reporting Bugs
  
@@ -946,7 +946,7 @@ index c23c424f4..d5576a429 100644
  ## Legal
  
 -By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Roo Code's licensing.
-+By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry Coder's licensing.
++By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry's licensing.
 diff --git a/README.md b/README.md
 index 08f8f8180..4ab185c68 100644
 --- a/README.md
@@ -954,7 +954,7 @@ index 08f8f8180..4ab185c68 100644
 @@ -1,260 +1,165 @@
 -<div align="center">
 -<sub>
-+**Researcherry Coder** — это **автономный агент программирования** на базе ИИ, который живет в вашем редакторе. Он может:
++**Researcherry** — это **автономный агент программирования** на базе ИИ, который живет в вашем редакторе. Он может:
  
 -<b>English</b> • [Català](locales/ca/README.md) • [Deutsch](locales/de/README.md) • [Español](locales/es/README.md) • [Français](locales/fr/README.md) • [हिंदी](locales/hi/README.md) • [Bahasa Indonesia](locales/id/README.md) • [Italiano](locales/it/README.md) • [日本語](locales/ja/README.md)
 +- Общаться на естественном языке
@@ -966,7 +966,7 @@ index 08f8f8180..4ab185c68 100644
  
 -</sub>
 -<sub>
-+Независимо от того, ищете ли вы гибкого партнера по программированию, системного архитектора или специализированные роли, такие как инженер по обеспечению качества или менеджер продукта, Researcherry Coder может помочь вам создавать программное обеспечение более эффективно.
++Независимо от того, ищете ли вы гибкого партнера по программированию, системного архитектора или специализированные роли, такие как инженер по обеспечению качества или менеджер продукта, Researcherry может помочь вам создавать программное обеспечение более эффективно.
  
 -[한국어](locales/ko/README.md) • [Nederlands](locales/nl/README.md) • [Polski](locales/pl/README.md) • [Português (BR)](locales/pt-BR/README.md) • [Русский](locales/ru/README.md) • [Türkçe](locales/tr/README.md) • [Tiếng Việt](locales/vi/README.md) • [简体中文](locales/zh-CN/README.md) • [繁體中文](locales/zh-TW/README.md)
 -
@@ -1013,10 +1013,10 @@ index 08f8f8180..4ab185c68 100644
  ---
  
 -## 🎉 Roo Code 3.25 Released
-+## 🎉 Выпущен Researcherry Coder 3.25
++## 🎉 Выпущен Researcherry 3.25
  
 -Roo Code 3.25 brings powerful new features and significant improvements to enhance your development workflow!
-+Researcherry Coder 3.25 приносит мощные новые функции и значительные улучшения для повышения эффективности вашего рабочего процесса разработки!
++Researcherry 3.25 приносит мощные новые функции и значительные улучшения для повышения эффективности вашего рабочего процесса разработки!
  
 -- **Message Queueing** - Queue multiple messages while Roo is working, allowing you to continue planning your workflow without interruption.
 -- **Custom Slash Commands** - Create personalized slash commands for quick access to frequently used prompts and workflows, with full UI management.
@@ -1028,7 +1028,7 @@ index 08f8f8180..4ab185c68 100644
  ---
  
 -## What Can Roo Code Do?
-+## Что может делать Researcherry Coder?
++## Что может делать Researcherry?
  
 -- 🚀 **Generate Code** from natural language descriptions
 -- 🔧 **Refactor & Debug** existing code
@@ -1049,7 +1049,7 @@ index 08f8f8180..4ab185c68 100644
 -1. [Install Roo Code](https://docs.roocode.com/getting-started/installing)
 -2. [Connect Your AI Provider](https://docs.roocode.com/getting-started/connecting-api-provider)
 -3. [Try Your First Task](https://docs.roocode.com/getting-started/your-first-task)
-+1. [Установите Researcherry Coder](.docs/getting-started/installing.md)
++1. [Установите Researcherry](.docs/getting-started/installing.md)
 +2. [Подключите вашего ИИ-провайдера](.docs/getting-started/connecting-api-provider.md)
 +3. [Попробуйте свою первую задачу](.docs/getting-started/your-first-task.md)
  
@@ -1060,7 +1060,7 @@ index 08f8f8180..4ab185c68 100644
 +### Множественные режимы
  
 -Roo Code adapts to your needs with specialized [modes](https://docs.roocode.com/basic-usage/using-modes):
-+Researcherry Coder адаптируется к вашим потребностям со специализированными [режимами](.docs/basic-usage/using-modes.md):
++Researcherry адаптируется к вашим потребностям со специализированными [режимами](.docs/basic-usage/using-modes.md):
  
 -- **Code Mode:** For general-purpose coding tasks
 -- **Architect Mode:** For planning and technical leadership
@@ -1077,7 +1077,7 @@ index 08f8f8180..4ab185c68 100644
 +### Умные инструменты
  
 -Roo Code comes with powerful [tools](https://docs.roocode.com/basic-usage/how-tools-work) that can:
-+Researcherry Coder поставляется с мощными [инструментами](.docs/basic-usage/how-tools-work.md), которые могут:
++Researcherry поставляется с мощными [инструментами](.docs/basic-usage/how-tools-work.md), которые могут:
  
 -- Read and write files in your project
 -- Execute commands in your VS Code terminal
@@ -1089,13 +1089,13 @@ index 08f8f8180..4ab185c68 100644
 +- Использовать внешние инструменты через [MCP (Model Context Protocol)](.docs/advanced-usage/mcp.md)
  
 -MCP extends Roo Code's capabilities by allowing you to add unlimited custom tools. Integrate with external APIs, connect to databases, or create specialized development tools - MCP provides the framework to expand Roo Code's functionality to meet your specific needs.
-+MCP расширяет возможности Researcherry Coder, позволяя добавлять неограниченное количество пользовательских инструментов. Интегрируйтесь с внешними API, подключайтесь к базам данных или создавайте специализированные инструменты разработки - MCP предоставляет основу для расширения функциональности Researcherry Coder в соответствии с вашими конкретными потребностями.
++MCP расширяет возможности Researcherry, позволяя добавлять неограниченное количество пользовательских инструментов. Интегрируйтесь с внешними API, подключайтесь к базам данных или создавайте специализированные инструменты разработки - MCP предоставляет основу для расширения функциональности Researcherry в соответствии с вашими конкретными потребностями.
  
 -### Customization
 +### Настройка
  
 -Make Roo Code work your way with:
-+Заставьте Researcherry Coder работать по-вашему с помощью:
++Заставьте Researcherry работать по-вашему с помощью:
  
 -- [Custom Instructions](https://docs.roocode.com/advanced-usage/custom-instructions) for personalized behavior
 -- [Custom Modes](https://docs.roocode.com/advanced-usage/custom-modes) for specialized tasks
@@ -1153,7 +1153,7 @@ index 08f8f8180..4ab185c68 100644
 +3. **Запустите расширение**:
  
 -There are several ways to run the Roo Code extension:
-+Есть несколько способов запустить расширение Researcherry Coder:
++Есть несколько способов запустить расширение Researcherry:
  
 -### Development Mode (F5)
 +### Режим разработки (F5)
@@ -1162,7 +1162,7 @@ index 08f8f8180..4ab185c68 100644
 +Для активной разработки используйте встроенную отладку VSCode:
  
 -Press `F5` (or go to **Run** → **Start Debugging**) in VSCode. This will open a new VSCode window with the Roo Code extension running.
-+Нажмите `F5` (или перейдите в **Run** → **Start Debugging**) в VSCode. Это откроет новое окно VSCode с запущенным расширением Researcherry Coder.
++Нажмите `F5` (или перейдите в **Run** → **Start Debugging**) в VSCode. Это откроет новое окно VSCode с запущенным расширением Researcherry.
  
 -- Changes to the webview will appear immediately.
 -- Changes to the core extension will also hot reload automatically.
@@ -1232,7 +1232,7 @@ index 08f8f8180..4ab185c68 100644
 +## Отказ от ответственности
  
 -**Please note** that Roo Code, Inc does **not** make any representations or warranties regarding any code, models, or other tools provided or made available in connection with Roo Code, any associated third-party tools, or any resulting outputs. You assume **all risks** associated with the use of any such tools or outputs; such tools are provided on an **"AS IS"** and **"AS AVAILABLE"** basis. Such risks may include, without limitation, intellectual property infringement, cyber vulnerabilities or attacks, bias, inaccuracies, errors, defects, viruses, downtime, property loss or damage, and/or personal injury. You are solely responsible for your use of any such tools or outputs (including, without limitation, the legality, appropriateness, and results thereof).
-+**Обратите внимание**, что Researcherry Coder, Inc **не** дает никаких заявлений или гарантий в отношении любого кода, моделей или других инструментов, предоставленных или доступных в связи с Researcherry Coder, любых связанных сторонних инструментов или любых результирующих выходных данных. Вы принимаете **все риски**, связанные с использованием любых таких инструментов или выходных данных; такие инструменты предоставляются на основе **"КАК ЕСТЬ"** и **"КАК ДОСТУПНО"**. Такие риски могут включать, без ограничений, нарушение интеллектуальной собственности, киберуязвимости или атаки, предвзятость, неточности, ошибки, дефекты, вирусы, простои, потерю или повреждение имущества и/или телесные повреждения. Вы несете единоличную ответственность за использование любых таких инструментов или выходных данных (включая, без ограничений, законность, уместность и результаты такого использования).
++**Обратите внимание**, что Researcherry, Inc **не** дает никаких заявлений или гарантий в отношении любого кода, моделей или других инструментов, предоставленных или доступных в связи с Researcherry, любых связанных сторонних инструментов или любых результирующих выходных данных. Вы принимаете **все риски**, связанные с использованием любых таких инструментов или выходных данных; такие инструменты предоставляются на основе **"КАК ЕСТЬ"** и **"КАК ДОСТУПНО"**. Такие риски могут включать, без ограничений, нарушение интеллектуальной собственности, киберуязвимости или атаки, предвзятость, неточности, ошибки, дефекты, вирусы, простои, потерю или повреждение имущества и/или телесные повреждения. Вы несете единоличную ответственность за использование любых таких инструментов или выходных данных (включая, без ограничений, законность, уместность и результаты такого использования).
  
  ---
  
@@ -13746,7 +13746,7 @@ index 000000000..d8fec0a7c
 +						<div className="flex flex-col justify-center space-y-6 sm:space-y-8">
 +							<div>
 +								<h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-+									<span className="block">Researcherry Coder Cloud for</span>
++									<span className="block">Researcherry for</span>
 +									<AnimatedText className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
 +										Enterprise
 +									</AnimatedText>
@@ -13775,7 +13775,7 @@ index 000000000..d8fec0a7c
 +									size="lg"
 +									className="w-full sm:w-auto bg-white/20 dark:bg-white/10 backdrop-blur-sm border border-black/40 dark:border-white/30 hover:border-blue-400 hover:bg-white/30 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
 +									<a href="#benefits" className="flex w-full items-center justify-center">
-+										Why Researcherry Coder
++										Why Researcherry
 +									</a>
 +								</Button>
 +							</div>
@@ -13787,16 +13787,16 @@ index 000000000..d8fec0a7c
 +							<div className="relative z-10 rounded-lg border border-border bg-card p-6 shadow-lg">
 +								<div className="mb-4 flex items-center space-x-2">
 +									<Code className="h-6 w-6 text-blue-400" />
-+									<h3 className="text-lg font-semibold">Researcherry Coder Cloud Control-Plane</h3>
++									<h3 className="text-lg font-semibold">Researcherry Control-Plane</h3>
 +								</div>
 +								<p className="mb-4 text-sm text-muted-foreground">
-+									A unified control system for managing Researcherry Coder across your organization, with the
++									A unified control system for managing Researcherry across your organization, with the
 +									flexibility to extend governance to your broader AI toolkit.
 +								</p>
 +								<div className="space-y-2">
 +									<div className="flex items-center space-x-2">
 +										<CheckCircle className="h-4 w-4 text-green-400" />
-+										<span className="text-sm">Centralized Researcherry Coder management</span>
++										<span className="text-sm">Centralized Researcherry management</span>
 +									</div>
 +									<div className="flex items-center space-x-2">
 +										<CheckCircle className="h-4 w-4 text-green-400" />
@@ -14602,9 +14602,9 @@ index 000000000..acf011ee2
 +const inter = Inter({ subsets: ["latin"] })
 +
 +export const metadata: Metadata = {
-+	title: "Researcherry Coder – Your AI-Powered Dev Team in VS Code",
++	title: "Researcherry – Your AI-Powered Dev Team in VS Code",
 +	description:
-+		"Researcherry Coder puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
++		"Researcherry puts an entire AI dev team right in your editor, outpacing closed tools with deep project-wide context, multi-step agentic coding, and unmatched developer-centric flexibility.",
 +	alternates: {
 +		canonical: "https://researcherrycoder.com",
 +	},
@@ -14655,7 +14655,7 @@ index 000000000..acf011ee2
 +				</Script>
 +				<div itemScope itemType="https://schema.org/WebSite">
 +					<link itemProp="url" href="https://researcherrycoder.com" />
-+					<meta itemProp="name" content="Researcherry Coder" />
++					<meta itemProp="name" content="Researcherry" />
 +				</div>
 +				<Providers>
 +					<Shell>{children}</Shell>
@@ -19634,7 +19634,7 @@ index 05d039a49..1ecddf171 100644
  {
  	"extension": {
 -		"name": "Roo Code",
-+		"name": "Researcherry Coder",
++		"name": "Researcherry",
  		"description": "A whole dev team of AI agents in your editor."
  	},
  	"number_format": {
@@ -19707,7 +19707,7 @@ index 0d7b800d8..7df29ba7b 100644
  {
  	"extension": {
 -		"name": "Roo Code",
-+		"name": "Researcherry Coder",
++		"name": "Researcherry",
  		"description": "Целая команда ИИ-разработчиков в вашем редакторе."
  	},
  	"number_format": {
@@ -19794,7 +19794,7 @@ index dab031404..02be51c19 100644
  	},
  	"author": {
 -		"name": "Roo Code"
-+		"name": "Researcherry Coder"
++		"name": "Researcherry"
  	},
  	"repository": {
  		"type": "git",
@@ -20263,16 +20263,16 @@ index 36ef72a82..fbd02024b 100644
 @@ -1,10 +1,10 @@
  {
 -	"extension.displayName": "Roo Code",
-+	"extension.displayName": "Researcherry Coder",
++	"extension.displayName": "Researcherry",
  	"extension.description": "A whole dev team of AI agents in your editor.",
 -	"views.contextMenu.label": "Roo Code",
 -	"views.terminalMenu.label": "Roo Code",
 -	"views.activitybar.title": "Roo Code",
 -	"views.sidebar.name": "Roo Code",
-+	"views.contextMenu.label": "Researcherry Coder",
-+	"views.terminalMenu.label": "Researcherry Coder",
-+	"views.activitybar.title": "Researcherry Coder",
-+	"views.sidebar.name": "Researcherry Coder",
++	"views.contextMenu.label": "Researcherry",
++	"views.terminalMenu.label": "Researcherry",
++	"views.activitybar.title": "Researcherry",
++	"views.sidebar.name": "Researcherry",
  	"command.newTask.title": "New Task",
  	"command.mcpServers.title": "MCP Servers",
  	"command.prompts.title": "Modes",
@@ -20281,7 +20281,7 @@ index 36ef72a82..fbd02024b 100644
  	"command.terminal.explainCommand.title": "Explain This Command",
  	"command.acceptInput.title": "Accept Input/Suggestion",
 -	"configuration.title": "Roo Code",
-+	"configuration.title": "Researcherry Coder",
++	"configuration.title": "Researcherry",
  	"commands.allowedCommands.description": "Commands that can be auto-executed when 'Always approve execute operations' is enabled",
  	"commands.deniedCommands.description": "Command prefixes that will be automatically denied without asking for approval. In case of conflicts with allowed commands, the longest prefix match takes precedence. Add * to deny all commands.",
  	"commands.commandExecutionTimeout.description": "Maximum time in seconds to wait for command execution to complete before timing out (0 = no timeout, 1-600s, default: 0s)",
@@ -20293,8 +20293,8 @@ index 36ef72a82..fbd02024b 100644
 -	"settings.enableCodeActions.description": "Enable Roo Code quick fixes",
 -	"settings.autoImportSettingsPath.description": "Path to a RooCode configuration file to automatically import on extension startup. Supports absolute paths and paths relative to the home directory (e.g. '~/Documents/roo-code-settings.json'). Leave empty to disable auto-import.",
 +	"settings.customStoragePath.description": "Custom storage path. Leave empty to use the default location. Supports absolute paths (e.g. 'D:\\ResearcherryCoderStorage')",
-+	"settings.enableCodeActions.description": "Enable Researcherry Coder quick fixes",
-+	"settings.autoImportSettingsPath.description": "Path to a Researcherry Coder configuration file to automatically import on extension startup. Supports absolute paths and paths relative to the home directory (e.g. '~/Documents/researcherry-settings.json'). Leave empty to disable auto-import.",
++	"settings.enableCodeActions.description": "Enable Researcherry quick fixes",
++	"settings.autoImportSettingsPath.description": "Path to a Researcherry configuration file to automatically import on extension startup. Supports absolute paths and paths relative to the home directory (e.g. '~/Documents/researcherry-settings.json'). Leave empty to disable auto-import.",
  	"settings.useAgentRules.description": "Enable loading of AGENTS.md files for agent-specific rules (see https://agent-rules.org/)"
  }
 diff --git a/src/package.nls.ru.json b/src/package.nls.ru.json
@@ -20304,16 +20304,16 @@ index 380337249..5be597ab1 100644
 @@ -1,10 +1,10 @@
  {
 -	"extension.displayName": "Roo Code",
-+	"extension.displayName": "Researcherry Coder",
++	"extension.displayName": "Researcherry",
  	"extension.description": "Целая команда ИИ-разработчиков в вашем редакторе.",
 -	"views.contextMenu.label": "Roo Code",
 -	"views.terminalMenu.label": "Roo Code",
 -	"views.activitybar.title": "Roo Code",
 -	"views.sidebar.name": "Roo Code",
-+	"views.contextMenu.label": "Researcherry Coder",
-+	"views.terminalMenu.label": "Researcherry Coder",
-+	"views.activitybar.title": "Researcherry Coder",
-+	"views.sidebar.name": "Researcherry Coder",
++	"views.contextMenu.label": "Researcherry",
++	"views.terminalMenu.label": "Researcherry",
++	"views.activitybar.title": "Researcherry",
++	"views.sidebar.name": "Researcherry",
  	"command.newTask.title": "Новая задача",
  	"command.mcpServers.title": "MCP серверы",
  	"command.prompts.title": "Режимы",
@@ -20322,7 +20322,7 @@ index 380337249..5be597ab1 100644
  	"command.terminal.explainCommand.title": "Объяснить эту команду",
  	"command.acceptInput.title": "Принять ввод/предложение",
 -	"configuration.title": "Roo Code",
-+	"configuration.title": "Researcherry Coder",
++	"configuration.title": "Researcherry",
  	"commands.allowedCommands.description": "Команды, которые могут быть автоматически выполнены, когда включена опция 'Всегда подтверждать операции выполнения'",
  	"commands.deniedCommands.description": "Префиксы команд, которые будут автоматически отклонены без запроса подтверждения. В случае конфликтов с разрешенными командами приоритет имеет самое длинное совпадение префикса. Добавьте * чтобы отклонить все команды.",
  	"commands.commandExecutionTimeout.description": "Максимальное время в секундах для ожидания завершения выполнения команды до истечения времени ожидания (0 = без тайм-аута, 1-600с, по умолчанию: 0с)",
@@ -20407,10 +20407,10 @@ index f900abb29..31ffaf1be 100644
 +	"logOut": "Log Out",
  	"testApiAuthentication": "Test API Authentication",
 -	"signIn": "Connect to Roo Code Cloud",
-+	"signIn": "Connect to Researcherry Coder Cloud",
++	"signIn": "Connect to Researcherry",
  	"connect": "Connect",
 -	"cloudBenefitsTitle": "Connect to Roo Code Cloud",
-+	"cloudBenefitsTitle": "Connect to Researcherry Coder Cloud",
++	"cloudBenefitsTitle": "Connect to Researcherry",
  	"cloudBenefitsSubtitle": "Sync your prompts and telemetry to enable:",
  	"cloudBenefitHistory": "Online task history",
  	"cloudBenefitSharing": "Sharing and collaboration features",
@@ -20418,7 +20418,7 @@ index f900abb29..31ffaf1be 100644
 -	"visitCloudWebsite": "Visit Roo Code Cloud"
 -}
 +	"cloudBenefitMetrics": "Usage metrics based on tasks, tokens, and costs",
-+	"visitCloudWebsite": "Visit Researcherry Coder Cloud"
++	"visitCloudWebsite": "Visit Researcherry"
 +} 
 \ No newline at end of file
 diff --git a/webview-ui/src/i18n/locales/en/chat.json b/webview-ui/src/i18n/locales/en/chat.json
@@ -20428,7 +20428,7 @@ index 3b1847a10..3aca82b49 100644
 @@ -1,25 +1,24 @@
  {
 -	"greeting": "Welcome to Roo Code!",
-+	"greeting": "Welcome to Researcherry Coder",
++	"greeting": "Welcome to Researcherry",
  	"task": {
  		"title": "Task",
 -		"seeMore": "See more",
@@ -20461,7 +20461,7 @@ index 3b1847a10..3aca82b49 100644
 -		"connectToCloud": "Connect to Cloud",
 -		"connectToCloudDescription": "Sign in to Roo Code Cloud to share tasks",
 +		"connectToCloud": "Connect to cloud",
-+		"connectToCloudDescription": "Sign in to Researcherry Coder Cloud to share tasks",
++		"connectToCloudDescription": "Sign in to Researcherry to share tasks",
  		"sharingDisabledByOrganization": "Sharing disabled by organization",
  		"shareSuccessOrganization": "Organization link copied to clipboard",
  		"shareSuccessPublic": "Public link copied to clipboard"
@@ -21550,7 +21550,7 @@ index 6e0f13750..80cd662b5 100644
  		"experimental": "Experimental",
  		"language": "Language",
 -		"about": "About Roo Code"
-+		"about": "About Researcherry Coder"
++		"about": "About Researcherry"
  	},
  	"prompts": {
 -		"description": "Configure support prompts that are used for quick actions like enhancing prompts, explaining code, and fixing issues. These prompts help Roo provide better assistance for common development tasks."
@@ -22347,8 +22347,8 @@ index 2202f6fd6..69ab5f2fa 100644
 -	"greeting": "Welcome to Roo Code!",
 -	"introduction": "With a range of built-in and extensible Modes, Roo Code lets you plan, architect, code, debug and boost your productivity like never before.",
 -	"notice": "To get started, this extension needs an API provider.",
-+	"greeting": "Welcome to Researcherry Coder!",
-+	"introduction": "With built-in and extensible Modes, Researcherry Coder lets you plan, design, code, debug, and boost productivity like never before.",
++	"greeting": "Welcome to Researcherry!",
++	"introduction": "With built-in and extensible Modes, Researcherry lets you plan, design, code, debug, and boost productivity like never before.",
 +	"notice": "This extension needs an API provider to get started.",
  	"start": "Let's go!",
  	"routers": {
@@ -22371,7 +22371,7 @@ index 2202f6fd6..69ab5f2fa 100644
 -		"title": "Help Improve Roo Code",
 -		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. No code, prompts, or personal information is ever sent (unless you connect to Roo Code Cloud). See our <privacyLink>privacy policy</privacyLink> for more details.",
 -		"changeSettings": "You can always change this at the bottom of the <settingsLink>settings</settingsLink>",
-+		"title": "Help improve Researcherry Coder",
++		"title": "Help improve Researcherry",
 +		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. Code, prompts, and personal information are never sent.",
 +		"changeSettings": "You can always change this at the bottom of the <settingsLink>settings</settingsLink> page",
  		"settings": "settings",
@@ -22391,16 +22391,16 @@ index 1c8dcf528..ae7f30e49 100644
  	"logOut": "Выход",
  	"testApiAuthentication": "Проверить аутентификацию API",
 -	"signIn": "Подключиться к Roo Code Cloud",
-+	"signIn": "Подключиться к Researcherry Coder Cloud",
++	"signIn": "Подключиться к Researcherry",
  	"connect": "Подключиться",
 -	"cloudBenefitsTitle": "Подключиться к Roo Code Cloud",
-+	"cloudBenefitsTitle": "Подключиться к Researcherry Coder Cloud",
++	"cloudBenefitsTitle": "Подключиться к Researcherry",
  	"cloudBenefitsSubtitle": "Синхронизируй свои промпты и телеметрию, чтобы включить:",
  	"cloudBenefitHistory": "Онлайн-история задач",
  	"cloudBenefitSharing": "Функции обмена и совместной работы",
  	"cloudBenefitMetrics": "Метрики использования на основе задач, токенов и затрат",
 -	"visitCloudWebsite": "Посетить Roo Code Cloud"
-+	"visitCloudWebsite": "Посетить Researcherry Coder Cloud"
++	"visitCloudWebsite": "Посетить Researcherry"
  }
 diff --git a/webview-ui/src/i18n/locales/ru/chat.json b/webview-ui/src/i18n/locales/ru/chat.json
 index cab736621..00c91a7d4 100644
@@ -22409,7 +22409,7 @@ index cab736621..00c91a7d4 100644
 @@ -1,14 +1,13 @@
  {
 -	"greeting": "Добро пожаловать в Roo Code",
-+	"greeting": "Добро пожаловать в Researcherry Coder",
++	"greeting": "Добро пожаловать в Researcherry",
  	"task": {
  		"title": "Задача",
  		"seeMore": "Показать больше",
@@ -22431,7 +22431,7 @@ index cab736621..00c91a7d4 100644
  		"sharePubliclyDescription": "Любой, у кого есть ссылка, может получить доступ",
  		"connectToCloud": "Подключиться к облаку",
 -		"connectToCloudDescription": "Войди в Roo Code Cloud, чтобы делиться задачами",
-+		"connectToCloudDescription": "Войди в Researcherry Coder Cloud, чтобы делиться задачами",
++		"connectToCloudDescription": "Войди в Researcherry, чтобы делиться задачами",
  		"sharingDisabledByOrganization": "Обмен отключен организацией",
  		"shareSuccessOrganization": "Ссылка организации скопирована в буфер обмена",
  		"shareSuccessPublic": "Публичная ссылка скопирована в буфер обмена"
@@ -22584,7 +22584,7 @@ index cab736621..00c91a7d4 100644
  		"title": "Автоодобрение:",
  		"none": "Нет",
 -		"description": "Автоодобрение позволяет Roo Code выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
-+		"description": "Автоодобрение позволяет Researcherry Coder выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
++		"description": "Автоодобрение позволяет Researcherry выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
  		"selectOptionsFirst": "Выберите хотя бы один параметр ниже, чтобы включить автоодобрение",
  		"toggleAriaLabel": "Переключить автоодобрение",
  		"disabledAriaLabel": "Автоодобрение отключено - сначала выберите опции"
@@ -22592,8 +22592,8 @@ index cab736621..00c91a7d4 100644
  	"announcement": {
 -		"title": "🎉 Выпущен Roo Code {{version}}",
 -		"description": "Roo Code {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
-+		"title": "🎉 Выпущен Researcherry Coder {{version}}",
-+		"description": "Researcherry Coder {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
++		"title": "🎉 Выпущен Researcherry {{version}}",
++		"description": "Researcherry {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
  		"whatsNew": "Что нового",
 -		"feature1": "<bold>Очередь сообщений</bold>: Ставьте несколько сообщений в очередь, пока Roo работает, позволяя вам продолжать планировать рабочий процесс без прерывания.",
 +		"feature1": "<bold>Очередь сообщений</bold>: Ставьте несколько сообщений в очередь, пока Researcherry работает, позволяя вам продолжать планировать рабочий процесс без прерывания.",
@@ -22614,7 +22614,7 @@ index cab736621..00c91a7d4 100644
  	"shellIntegration": {
  		"title": "Предупреждение о выполнении команды",
 -		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Roo Code</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
-+		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Researcherry Coder</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
++		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Researcherry</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
  		"troubleshooting": "Нажмите здесь для просмотра документации по интеграции оболочки."
  	},
  	"ask": {
@@ -22641,7 +22641,7 @@ index cab736621..00c91a7d4 100644
  	},
  	"rooCloudCTA": {
 -		"title": "Roo Code Cloud скоро появится!",
-+		"title": "Researcherry Coder Cloud скоро появится!",
++		"title": "Researcherry скоро появится!",
  		"description": "Запускайте удаленные агенты в облаке, получайте доступ к своим задачам из любого места, сотрудничайте с другими и многое другое.",
  		"joinWaitlist": "Присоединитесь к списку ожидания для получения раннего доступа."
  	},
@@ -22691,7 +22691,7 @@ index 38e986ab8..8d3589c31 100644
  		"experimental": "Экспериментальное",
  		"language": "Язык",
 -		"about": "О Roo Code"
-+		"about": "О Researcherry Coder"
++		"about": "О Researcherry"
  	},
  	"prompts": {
 -		"description": "Настройте промпты поддержки, используемые для быстрых действий, таких как улучшение промптов, объяснение кода и исправление проблем. Эти промпты помогают Roo обеспечить лучшую поддержку для общих задач разработки."
@@ -22758,14 +22758,14 @@ index 38e986ab8..8d3589c31 100644
  			"selectDraftModel": "Выбрать черновую модель",
  			"noModelsFound": "Черновых моделей не найдено. Проверьте, что LM Studio запущен с включённым серверным режимом.",
 -			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Roo Code использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
-+			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Researcherry Coder использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
++			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
  		},
  		"ollama": {
  			"baseUrl": "Базовый URL (опционально)",
  			"modelId": "ID модели",
  			"description": "Ollama позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с кратким руководством.",
 -			"warning": "Примечание: Roo Code использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
-+			"warning": "Примечание: Researcherry Coder использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
++			"warning": "Примечание: Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
  		},
  		"unboundApiKey": "Unbound API-ключ",
  		"getUnboundApiKey": "Получить Unbound API-ключ",
@@ -22774,7 +22774,7 @@ index 38e986ab8..8d3589c31 100644
  		},
  		"customModel": {
 -			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Roo Code.",
-+			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Researcherry Coder.",
++			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Researcherry.",
  			"maxTokens": {
  				"label": "Максимум токенов на вывод",
  				"description": "Максимальное количество токенов, которые модель может сгенерировать в ответе. (Укажите -1, чтобы сервер сам определил максимум.)"
@@ -22930,7 +22930,7 @@ index 38e986ab8..8d3589c31 100644
  	},
  	"modelPicker": {
 -		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Roo Code лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
-+		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Researcherry Coder лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
++		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Researcherry лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
  		"label": "Модель",
  		"searchPlaceholder": "Поиск",
  		"noMatchFound": "Совпадений не найдено",
@@ -22942,7 +22942,7 @@ index 38e986ab8..8d3589c31 100644
  		"telemetry": {
  			"label": "Разрешить анонимную отправку ошибок и статистики использования",
 -			"description": "Помогите улучшить Roo Code, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
-+			"description": "Помогите улучшить Researcherry Coder, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
++			"description": "Помогите улучшить Researcherry, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
  		},
  		"settings": {
  			"import": "Импорт",
@@ -22954,8 +22954,8 @@ index cae5b790e..1fc327d1e 100644
  {
 -	"greeting": "Добро пожаловать в Roo Code!",
 -	"introduction": "С набором встроенных и расширяемых Режимов, Roo Code позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
-+	"greeting": "Добро пожаловать в Researcherry Coder!",
-+	"introduction": "С набором встроенных и расширяемых Режимов, Researcherry Coder позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
++	"greeting": "Добро пожаловать в Researcherry!",
++	"introduction": "С набором встроенных и расширяемых Режимов, Researcherry позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
  	"notice": "Для начала работы этому расширению нужен провайдер API.",
  	"start": "Поехали!",
  	"routers": {
@@ -22964,7 +22964,7 @@ index cae5b790e..1fc327d1e 100644
  	"startCustom": "Или вы можете использовать свой собственный API-ключ:",
  	"telemetry": {
 -		"title": "Помогите улучшить Roo Code",
-+		"title": "Помогите улучшить Researcherry Coder",
++		"title": "Помогите улучшить Researcherry",
  		"anonymousTelemetry": "Отправлять анонимные данные об ошибках и использовании, чтобы помочь нам исправлять баги и совершенствовать расширение. Код, промпты и личная информация никогда не отправляются.",
  		"changeSettings": "Вы всегда можете изменить это внизу страницы <settingsLink>настроек</settingsLink>",
  		"settings": "настройки",

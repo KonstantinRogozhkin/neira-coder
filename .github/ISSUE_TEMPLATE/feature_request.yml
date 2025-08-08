@@ -1,11 +1,11 @@
 name: Detailed Feature Proposal
-description: Report a specific problem that needs solving in Researcherry Coder
+description: Report a specific problem that needs solving in Researcherry
 labels: ["proposal", "enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        **Thank you for submitting a feature request for Researcherry Coder!**
+        **Thank you for submitting a feature request for Researcherry!**
         
         This template helps you describe problems that need solving. Focus on the problem - the Researcherry team will work to design solutions unless you want to contribute the implementation yourself.
         
@@ -60,12 +60,12 @@ body:
   - type: textarea
     id: roo-code-tasks
     attributes:
-      label: Researcherry Coder Task Links (Optional)
+      label: Researcherry Task Links (Optional)
       description: |
-        If you used Researcherry Coder to explore this feature request or develop solutions, share the public task links here.
+        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
         This helps maintainers understand the context and any exploration you've done.
         Example: https://app.researcherrycoder.com/share/task-id
-      placeholder: Paste your Researcherry Coder share links here, one per line
+      placeholder: Paste your Researcherry share links here, one per line
 
   - type: checkboxes
     id: checklist

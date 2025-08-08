@@ -17,7 +17,7 @@ export default async function Enterprise() {
 						<div className="flex flex-col justify-center space-y-6 sm:space-y-8">
 							<div>
 								<h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-									<span className="block">Researcherry Coder Cloud for</span>
+									<span className="block">Researcherry for</span>
 									<AnimatedText className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
 										Enterprise
 									</AnimatedText>
@@ -46,7 +46,7 @@ export default async function Enterprise() {
 									size="lg"
 									className="w-full sm:w-auto bg-white/20 dark:bg-white/10 backdrop-blur-sm border border-black/40 dark:border-white/30 hover:border-blue-400 hover:bg-white/30 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
 									<a href="#benefits" className="flex w-full items-center justify-center">
-										Why Researcherry Coder
+										Why Researcherry
 									</a>
 								</Button>
 							</div>
@@ -58,16 +58,16 @@ export default async function Enterprise() {
 							<div className="relative z-10 rounded-lg border border-border bg-card p-6 shadow-lg">
 								<div className="mb-4 flex items-center space-x-2">
 									<Code className="h-6 w-6 text-blue-400" />
-									<h3 className="text-lg font-semibold">Researcherry Coder Cloud Control-Plane</h3>
+									<h3 className="text-lg font-semibold">Researcherry Control-Plane</h3>
 								</div>
 								<p className="mb-4 text-sm text-muted-foreground">
-									A unified control system for managing Researcherry Coder across your organization,
-									with the flexibility to extend governance to your broader AI toolkit.
+									A unified control system for managing Researcherry across your organization, with
+									the flexibility to extend governance to your broader AI toolkit.
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-center space-x-2">
 										<CheckCircle className="h-4 w-4 text-green-400" />
-										<span className="text-sm">Centralized Researcherry Coder management</span>
+										<span className="text-sm">Centralized Researcherry management</span>
 									</div>
 									<div className="flex items-center space-x-2">
 										<CheckCircle className="h-4 w-4 text-green-400" />

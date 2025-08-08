@@ -167,7 +167,7 @@ function runProcess({
 		"stream-json",
 		"--disallowedTools",
 		claudeCodeTools,
-		// Researcherry Coder will handle recursive calls
+		// Researcherry will handle recursive calls
 		"--max-turns",
 		"1",
 	)
