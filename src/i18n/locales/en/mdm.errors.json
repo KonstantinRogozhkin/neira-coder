@@ -1,0 +1,9 @@
+{
+	"mdm": {
+		"errors": {
+			"cloud_auth_required": "Cloud authentication required. Please sign in to access this feature.",
+			"organization_mismatch": "Organization mismatch. You do not have access to this resource.",
+			"verification_failed": "Verification failed. Please check the provided information and try again."
+		}
+	}
+}

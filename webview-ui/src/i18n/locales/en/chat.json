@@ -98,5 +98,58 @@
 			"title": "Customizable modes",
 			"description": "Specialized personas with their own behavior and assigned models"
 		}
+	},
+	"announcement": {
+		"title": "What's new",
+		"description": "Updates and improvements in the latest version (v{{version}}).",
+		"whatsNew": "What's new",
+		"feature1": "New feature 1: describe here",
+		"feature2": "New feature 2: describe here",
+		"feature3": "New feature 3: describe here",
+		"detailsDiscussLinks": "Discuss details on our <discordLink>Discord</discordLink> or <redditLink>Reddit</redditLink>."
+	},
+	"edit": "Edit",
+	"autoApprove": {
+		"title": "Auto-approve",
+		"description": "Automatically approve certain actions",
+		"none": "None",
+		"selectOptionsFirst": "Select options first",
+		"toggleAriaLabel": "Toggle auto approve",
+		"disabledAriaLabel": "Auto approve disabled"
+	},
+	"browser": {
+		"rooWantsToUse": "Roo wants to use the browser",
+		"screenshot": "Screenshot",
+		"consoleLogs": "Console logs",
+		"navigation": {
+			"previous": "Previous",
+			"next": "Next"
+		},
+		"sessionStarted": "Browser session started",
+		"actions": {
+			"title": "Actions",
+			"scrollDown": "Scroll down",
+			"scrollUp": "Scroll up",
+			"close": "Close"
+		},
+		"cursor": "Cursor position",
+		"noNewLogs": "No new logs"
+	},
+	"error": "Error",
+	"troubleMessage": "There was an issue",
+	"taskCompleted": "Task completed",
+	"apiRequest": {
+		"cancelled": "Cancelled",
+		"streamingFailed": "Streaming failed",
+		"title": "API Request",
+		"failed": "Request failed",
+		"streaming": "Streaming..."
+	},
+	"questions": {
+		"hasQuestion": "Has a question"
+	},
+	"codebaseSearch": {
+		"wantsToSearchWithPath": "Search with path",
+		"wantsToSearch": "Search"
 	}
 }
