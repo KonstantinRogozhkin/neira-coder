@@ -277,22 +277,36 @@ export async function addCustomInstructions(
 		const modeRules: string[] = []
 		const neiraDirectories = getNeiraDirectoriesForCwd(cwd)
 
-		// Check for .neira/rules-${mode}/ directories in order (global first, then project-local)
-		for (const neiraDir of neiraDirectories) {
-			const modeRulesDir = path.join(neiraDir, `rules-${mode}`)
-			if (await directoryExists(modeRulesDir)) {
-				const files = await readTextFilesFromDirectory(modeRulesDir)
-				if (files.length > 0) {
-					const content = formatDirectoryContent(modeRulesDir, files)
-					modeRules.push(content)
-				}
-			}
-		}
+        // Check for new nested path .neira/rules/{mode}/ first (global → project)
+        for (const neiraDir of neiraDirectories) {
+            const nestedDir = path.join(neiraDir, "rules", mode)
+            if (await directoryExists(nestedDir)) {
+                const files = await readTextFilesFromDirectory(nestedDir)
+                if (files.length > 0) {
+                    const content = formatDirectoryContent(nestedDir, files)
+                    modeRules.push(content)
+                }
+            }
+        }
 
-		// If we found mode-specific rules in .neira/rules-${mode}/ directories, use them
+        // Backward-compat: also support legacy .neira/rules-${mode}/ if present
+        if (modeRules.length === 0) {
+            for (const neiraDir of neiraDirectories) {
+                const legacyDir = path.join(neiraDir, `rules-${mode}`)
+                if (await directoryExists(legacyDir)) {
+                    const files = await readTextFilesFromDirectory(legacyDir)
+                    if (files.length > 0) {
+                        const content = formatDirectoryContent(legacyDir, files)
+                        modeRules.push(content)
+                    }
+                }
+            }
+        }
+
+        // If we found mode-specific rules, use them
 		if (modeRules.length > 0) {
 			modeRuleContent = "\n" + modeRules.join("\n\n")
-			usedRuleFile = `rules-${mode} directories`
+            usedRuleFile = `rules/${mode} directories`
 		} else {
 			// Fall back to existing behavior for legacy files
 			const rooModeRuleFile = `.neirarules-${mode}`

@@ -61,7 +61,7 @@
 	"globalCustomInstructions": {
 		"title": "Custom instructions for all modes",
 		"description": "These instructions apply to all modes. They set the base behavior that can be extended with the instructions below. <0>Learn more</0>",
-		"loadFromFile": "Instructions can also be loaded from the <span>.neira/rules/</span> folder in your workspace (.neiramodes and .clinerules are deprecated and will stop working soon)."
+		"loadFromFile": "Instructions can also be loaded from the <span>.neira/rules/global/</span> folder in your workspace (.neiramodes and .clinerules are deprecated and will stop working soon)."
 	},
 	"importMode": {
 		"selectLevel": "Select where to import this mode:",
