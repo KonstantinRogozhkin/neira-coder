@@ -1147,7 +1147,7 @@ const ModesView = ({ onDone }: ModesViewProps) => {
 												// Open or create an empty file
                                                 vscode.postMessage({
                                                     type: "openFile",
-                                                    text: `./.neira/rules-${currentMode.slug}/rules.md`,
+                                                    text: `./.neira/rules/${currentMode.slug}/rules.md`,
                                                     values: {
                                                         create: true,
                                                         content: "",

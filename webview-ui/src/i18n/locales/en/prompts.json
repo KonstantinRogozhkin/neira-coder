@@ -50,7 +50,7 @@
 		"title": "Custom mode instructions (optional)",
 		"resetToDefault": "Reset to default",
 		"description": "Add behavior recommendations specific to mode {{modeName}}.",
-		"loadFromFile": "Custom instructions for mode {{mode}} can also be loaded from the <span>.neira/rules-{{slug}}/</span> folder in your workspace (.neiramodes-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
+		"loadFromFile": "Custom instructions for mode {{mode}} can also be loaded from the <span>.neira/rules/{{slug}}/</span> folder in your workspace (.neiramodes-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
 	},
 	"exportMode": {
 		"title": "Export mode",
@@ -73,7 +73,7 @@
 		},
 		"project": {
 			"label": "Project level",
-			"description": "Available only in this workspace. If the exported mode contained rule files, they will be recreated in the .neira/rules-{slug}/ folder."
+			"description": "Available only in this workspace. If the exported mode contained rule files, they will be recreated in the .neira/rules/{slug}/ folder."
 		}
 	},
 	"systemPrompt": {
