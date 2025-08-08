@@ -1145,14 +1145,14 @@ const ModesView = ({ onDone }: ModesViewProps) => {
 												if (!currentMode) return
 
 												// Open or create an empty file
-												vscode.postMessage({
-													type: "openFile",
-													text: `./.roo/rules-${currentMode.slug}/rules.md`,
-													values: {
-														create: true,
-														content: "",
-													},
-												})
+                                                vscode.postMessage({
+                                                    type: "openFile",
+                                                    text: `./.neira/rules-${currentMode.slug}/rules.md`,
+                                                    values: {
+                                                        create: true,
+                                                        content: "",
+                                                    },
+                                                })
 											}}
 										/>
 									),
@@ -1264,14 +1264,14 @@ const ModesView = ({ onDone }: ModesViewProps) => {
 															const currentMode = getCurrentMode()
 															if (!currentMode) return
 
-															vscode.postMessage({
-																type: "openFile",
-																text: `./.roo/system-prompt-${currentMode.slug}`,
-																values: {
-																	create: true,
-																	content: "",
-																},
-															})
+                                                vscode.postMessage({
+                                                    type: "openFile",
+                                                    text: `./.neira/system-prompt-${currentMode.slug}`,
+                                                    values: {
+                                                        create: true,
+                                                        content: "",
+                                                    },
+                                                })
 														}}
 													/>
 												),
@@ -1331,14 +1331,14 @@ const ModesView = ({ onDone }: ModesViewProps) => {
 									<span
 										className="text-vscode-textLink-foreground cursor-pointer underline"
 										onClick={() =>
-											vscode.postMessage({
-												type: "openFile",
-												text: "./.roo/rules/rules.md",
-												values: {
-													create: true,
-													content: "",
-												},
-											})
+                                            vscode.postMessage({
+                                                type: "openFile",
+                                                text: "./.neira/rules/rules.md",
+                                                values: {
+                                                    create: true,
+                                                    content: "",
+                                                },
+                                            })
 										}
 									/>
 								),
