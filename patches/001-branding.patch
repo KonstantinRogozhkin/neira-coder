@@ -401,7 +401,7 @@ index c72d2f5f6..538beee20 100644
  ## [3.7.5] - 2025-02-26
  
 -- Fix context window truncation math (see [#1173](https://github.com/RooCodeInc/Roo-Code/issues/1173))
-+- Fix context window truncation math (see [#1173](https://github.com/ResearcherryCoderInc/researcherry/issues/1173))
++- Fix context window truncation math (see [#1173](https://github.com/Researcherry/researcherry/issues/1173))
  - Fix various issues with the model picker (thanks @System233!)
  - Fix model input / output cost parsing (thanks @System233!)
  - Add drag-and-drop for files
@@ -700,7 +700,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.2.16] - 2025-02-17
  
 -- Incorporate Premshay's [PR](https://github.com/RooCodeInc/Roo-Code/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
-+- Incorporate Premshay's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
++- Incorporate Premshay's [PR](https://github.com/Researcherry/researcherry/pull/60) to add support for Amazon Nova and Meta Llama Models via Bedrock (3, 3.1, 3.2) and unified Bedrock calls using BedrockClient and Bedrock Runtime API
  
 -## [2.2.14 - 2.2.15]
 +## [2.2.14 - 2.2.15] - 2025-02-17
@@ -792,7 +792,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.15] - 2025-02-17
  
 -- Incorporate dbasclpy's [PR](https://github.com/RooCodeInc/Roo-Code/pull/54) to add support for gemini-exp-1206
-+- Incorporate dbasclpy's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/54) to add support for gemini-exp-1206
++- Incorporate dbasclpy's [PR](https://github.com/Researcherry/researcherry/pull/54) to add support for gemini-exp-1206
  - Make it clear that diff editing is very experimental
  
 -## [2.1.14]
@@ -805,7 +805,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.13] - 2025-02-17
  
 -- Fix https://github.com/RooCodeInc/Roo-Code/issues/50 where sound effects were not respecting settings
-+- Fix https://github.com/ResearcherryCoderInc/researcherry/issues/50 where sound effects were not respecting settings
++- Fix https://github.com/Researcherry/researcherry/issues/50 where sound effects were not respecting settings
  
 -## [2.1.12]
 +## [2.1.12] - 2025-02-17
@@ -816,7 +816,7 @@ index c72d2f5f6..538beee20 100644
 +## [2.1.11] - 2025-02-17
  
 -- Incorporate lloydchang's [PR](https://github.com/RooCodeInc/Roo-Code/pull/42) to add support for OpenRouter compression
-+- Incorporate lloydchang's [PR](https://github.com/ResearcherryCoderInc/researcherry/pull/42) to add support for OpenRouter compression
++- Incorporate lloydchang's [PR](https://github.com/Researcherry/researcherry/pull/42) to add support for OpenRouter compression
  
 -## [2.1.10]
 +## [2.1.10] - 2025-02-17
@@ -900,7 +900,7 @@ index c23c424f4..d5576a429 100644
 -- **Primary:** Join our [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph (`hrudolph`)**.
 -- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/RooCodeInc/projects/1).
 +- **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
-+- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
++- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/Researcherry/projects/1).
  
  ## Finding & Planning Your Contribution
  
@@ -909,7 +909,7 @@ index c23c424f4..d5576a429 100644
  All contributions must begin with a GitHub Issue.
  
 -- **Check existing issues**: Search [GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues).
-+- **Check existing issues**: Search [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues).
++- **Check existing issues**: Search [GitHub Issues](https://github.com/Researcherry/researcherry/issues).
  - **Create an issue**: Use appropriate templates:
      - **Bugs:** "Bug Report" template.
      - **Features:** "Detailed Feature Proposal" template. Approval required before starting.
@@ -919,16 +919,16 @@ index c23c424f4..d5576a429 100644
  
 -- Check the [GitHub Project](https://github.com/orgs/RooCodeInc/projects/1) for unassigned "Good First Issues."
 -- For docs, visit [Roo Code Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
-+- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
-+- For docs, visit [Researcherry Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
++- Check the [GitHub Project](https://github.com/orgs/Researcherry/projects/1) for unassigned "Good First Issues."
++- For docs, visit [Researcherry Docs](https://github.com/Researcherry/researcherry-Docs).
  
  ### Reporting Bugs
  
  - Check for existing reports first.
 -- Create new bugs using the ["Bug Report" template](https://github.com/RooCodeInc/Roo-Code/issues/new/choose).
 -- **Security issues**: Report privately via [security advisories](https://github.com/RooCodeInc/Roo-Code/security/advisories/new).
-+- Create new bugs using the ["Bug Report" template](https://github.com/ResearcherryCoderInc/researcherry/issues/new/choose).
-+- **Security issues**: Report privately via [security advisories](https://github.com/ResearcherryCoderInc/researcherry/security/advisories/new).
++- Create new bugs using the ["Bug Report" template](https://github.com/Researcherry/researcherry/issues/new/choose).
++- **Security issues**: Report privately via [security advisories](https://github.com/Researcherry/researcherry/security/advisories/new).
  
  ## Development & Submission Process
  
@@ -1127,7 +1127,7 @@ index 08f8f8180..4ab185c68 100644
 -- **GitHub:** Report [issues](https://github.com/RooCodeInc/Roo-Code/issues) or request [features](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
 +- **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder) для помощи в реальном времени и обсуждений
 +- **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder) чтобы поделиться опытом и советами
-+- **GitHub:** Сообщайте о [проблемах](https://github.com/ResearcherryCoderInc/researcherry/issues) или запрашивайте [функции](https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
++- **GitHub:** Сообщайте о [проблемах](https://github.com/Researcherry/researcherry/issues) или запрашивайте [функции](https://github.com/Researcherry/researcherry/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
  
  ---
  
@@ -1139,7 +1139,7 @@ index 08f8f8180..4ab185c68 100644
  
  ```sh
 -git clone https://github.com/RooCodeInc/Roo-Code.git
-+git clone https://github.com/ResearcherryCoderInc/researcherry.git
++git clone https://github.com/Researcherry/researcherry.git
  ```
  
 -2. **Install dependencies**:
@@ -18944,8 +18944,8 @@ index 000000000..2867eff47
 +++ b/apps/web-researcherry/src/lib/constants.ts
 @@ -0,0 +1,31 @@
 +export const EXTERNAL_LINKS = {
-+	GITHUB: "https://github.com/ResearcherryCoderInc/researcherry",
-+	GITHUB_DISCUSSIONS: "https://github.com/ResearcherryCoderInc/researcherry/discussions",
++	GITHUB: "https://github.com/Researcherry/researcherry",
++	GITHUB_DISCUSSIONS: "https://github.com/Researcherry/researcherry/discussions",
 +	DISCORD: "https://discord.gg/researcherry",
 +	REDDIT: "https://reddit.com/r/ResearcherryCoder",
 +	X: "https://x.com/researcherry_coder",
@@ -18955,14 +18955,14 @@ index 000000000..2867eff47
 +	YOUTUBE: "https://www.youtube.com/@ResearcherryCoderYT",
 +	DOCUMENTATION: "https://docs.researcherry.com",
 +	CAREERS: "https://careers.researcherry.com",
-+	ISSUES: "https://github.com/ResearcherryCoderInc/researcherry/issues",
-+	FEATURE_REQUESTS: "https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests",
-+	COMMUNITY: "https://github.com/ResearcherryCoderInc/researcherry/discussions",
-+	CHANGELOG: "https://github.com/ResearcherryCoderInc/researcherry/blob/main/CHANGELOG.md",
-+	PRIVACY_POLICY_EXTENSION: "https://github.com/ResearcherryCoderInc/researcherry/blob/main/PRIVACY.md",
++	ISSUES: "https://github.com/Researcherry/researcherry/issues",
++	FEATURE_REQUESTS: "https://github.com/Researcherry/researcherry/discussions/categories/feature-requests",
++	COMMUNITY: "https://github.com/Researcherry/researcherry/discussions",
++	CHANGELOG: "https://github.com/Researcherry/researcherry/blob/main/CHANGELOG.md",
++	PRIVACY_POLICY_EXTENSION: "https://github.com/Researcherry/researcherry/blob/main/PRIVACY.md",
 +	INTEGRATIONS: "https://docs.researcherry.com/community",
 +	TUTORIALS: "https://docs.researcherry.com/tutorial-videos",
-+	MARKETPLACE: "https://marketplace.visualstudio.com/items?itemName=ResearcherryCoderInc.researcherry",
++	MARKETPLACE: "https://marketplace.visualstudio.com/items?itemName=Researcherry.researcherry",
 +	SECURITY: "https://trust.researcherry.com",
 +	EVALS: "https://researcherry.com/evals",
 +	BLOG: "https://blog.researcherry.com",
@@ -19178,7 +19178,7 @@ index 000000000..3a71f3712
 @@ -0,0 +1,118 @@
 +export async function getGitHubStars() {
 +	try {
-+		const res = await fetch("https://api.github.com/repos/ResearcherryCoderInc/researcherry")
++		const res = await fetch("https://api.github.com/repos/Researcherry/researcherry")
 +		const data = await res.json()
 +
 +		if (typeof data.stargazers_count !== "number") {
@@ -19206,7 +19206,7 @@ index 000000000..3a71f3712
 +					criteria: [
 +						{
 +							filterType: 7,
-+							value: "ResearcherryCoderInc.researcherry",
++							value: "Researcherry.researcherry",
 +						},
 +					],
 +				},
@@ -19250,7 +19250,7 @@ index 000000000..3a71f3712
 +					criteria: [
 +						{
 +							filterType: 7,
-+							value: "ResearcherryCoderInc.researcherry",
++							value: "Researcherry.researcherry",
 +						},
 +					],
 +				},
@@ -19784,7 +19784,7 @@ index dab031404..02be51c19 100644
  	"description": "%extension.description%",
 -	"publisher": "RooVeterinaryInc",
 -	"version": "3.25.7",
-+	"publisher": "ResearcherryCoderInc",
++	"publisher": "Researcherry",
 +	"version": "3.31.2",
  	"icon": "assets/icons/icon.png",
  	"galleryBanner": {
@@ -19799,10 +19799,10 @@ index dab031404..02be51c19 100644
  	"repository": {
  		"type": "git",
 -		"url": "https://github.com/RooCodeInc/Roo-Code"
-+		"url": "https://github.com/ResearcherryCoderInc/researcherry"
++		"url": "https://github.com/Researcherry/researcherry"
  	},
 -	"homepage": "https://github.com/RooCodeInc/Roo-Code",
-+	"homepage": "https://github.com/ResearcherryCoderInc/researcherry",
++	"homepage": "https://github.com/Researcherry/researcherry",
  	"categories": [
  		"AI",
  		"Chat",
@@ -22938,7 +22938,7 @@ index 38e986ab8..8d3589c31 100644
  	},
  	"footer": {
 -		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/RooCodeInc/Roo-Code</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/RooCode</redditLink> или <discordLink>discord.gg/roocode</discordLink>",
-+		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/ResearcherryCoderInc/researcherry</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/ResearcherryCoder</redditLink> или <discordLink>discord.gg/researcherry</discordLink>",
++		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/Researcherry/researcherry</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/ResearcherryCoder</redditLink> или <discordLink>discord.gg/researcherry</discordLink>",
  		"telemetry": {
  			"label": "Разрешить анонимную отправку ошибок и статистики использования",
 -			"description": "Помогите улучшить Roo Code, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."

@@ -175,11 +175,11 @@ replace_in_files "$OLD_DOMAIN" "$NEW_DOMAIN" "*.json"
 replace_in_files "$OLD_DOMAIN" "$NEW_DOMAIN" "*.md"
 
 # Замена GitHub URLs
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.ts"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.tsx"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.js"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.json"
-replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/ResearcherryCoderInc/researcherry" "*.md"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/Researcherry/researcherry" "*.ts"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/Researcherry/researcherry" "*.tsx"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/Researcherry/researcherry" "*.js"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/Researcherry/researcherry" "*.json"
+replace_in_files "github.com/RooCodeInc/Roo-Code" "github.com/Researcherry/researcherry" "*.md"
 
 # Замена email адресов
 replace_in_files "@$OLD_EMAIL" "@$NEW_EMAIL" "*.ts"

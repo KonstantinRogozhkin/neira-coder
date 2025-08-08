@@ -51,4 +51,4 @@
 
 - **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder)
 - **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder)
-- **GitHub:** [Сообщите о проблеме](https://github.com/ResearcherryCoderInc/researcherry/issues)
+- **GitHub:** [Сообщите о проблеме](https://github.com/Researcherry/researcherry/issues)

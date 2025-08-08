@@ -129,7 +129,7 @@ index 000000000..1b5f5d47a
 +
 +- **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder)
 +- **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder)
-+- **GitHub:** [Сообщите о проблеме](https://github.com/ResearcherryCoderInc/researcherry/issues)
++- **GitHub:** [Сообщите о проблеме](https://github.com/Researcherry/researcherry/issues)
 diff --git a/.docs/advanced-usage/auto-approving-actions.md b/.docs/advanced-usage/auto-approving-actions.md
 new file mode 100644
 index 000000000..107065b56
@@ -2509,18 +2509,18 @@ index 000000000..1410c79e6
 +
 +- **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder)
 +- **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder)
-+- **GitHub:** [Сообщите о проблеме](https://github.com/ResearcherryCoderInc/researcherry/issues)
++- **GitHub:** [Сообщите о проблеме](https://github.com/Researcherry/researcherry/issues)
 +
 +### Как сообщить об ошибке?
 +
-+1. Перейдите на [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues)
++1. Перейдите на [GitHub Issues](https://github.com/Researcherry/researcherry/issues)
 +2. Нажмите "New Issue"
 +3. Опишите проблему подробно
 +4. Приложите логи и скриншоты
 +
 +### Как предложить новую функцию?
 +
-+1. Перейдите на [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues)
++1. Перейдите на [GitHub Issues](https://github.com/Researcherry/researcherry/issues)
 +2. Нажмите "New Issue"
 +3. Выберите тип "Feature Request"
 +4. Опишите вашу идею
@@ -2540,7 +2540,7 @@ index 000000000..1410c79e6
 +
 +### Как узнать о новых функциях?
 +
-+- Следите за [GitHub Releases](https://github.com/ResearcherryCoderInc/researcherry/releases)
++- Следите за [GitHub Releases](https://github.com/Researcherry/researcherry/releases)
 +- Присоединяйтесь к [Discord серверу](https://discord.gg/researcherrycoder)
 +- Подпишитесь на обновления в VS Code
 +
@@ -2571,7 +2571,7 @@ index 000000000..1410c79e6
 +
 +### Где найти исходный код?
 +
-+Исходный код доступен на [GitHub](https://github.com/ResearcherryCoderInc/researcherry).
++Исходный код доступен на [GitHub](https://github.com/Researcherry/researcherry).
 diff --git a/.docs/getting-started/connecting-api-provider.md b/.docs/getting-started/connecting-api-provider.md
 new file mode 100644
 index 000000000..11952da08
@@ -2730,7 +2730,7 @@ index 000000000..298a94465
 +
 +### 2. Установка из VSIX файла
 +
-+1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/ResearcherryCoderInc/researcherry/releases)
++1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/Researcherry/researcherry/releases)
 +2. В VS Code перейдите в Extensions
 +3. Нажмите на три точки (...) и выберите "Install from VSIX..."
 +4. Выберите скачанный файл
@@ -2741,7 +2741,7 @@ index 000000000..298a94465
 +
 +```bash
 +# Клонируйте репозиторий
-+git clone https://github.com/ResearcherryCoderInc/researcherry.git
++git clone https://github.com/Researcherry/researcherry.git
 +cd researcherry
 +
 +# Установите зависимости
@@ -2921,7 +2921,7 @@ index c23c424f4..d5576a429 100644
 -- **Primary:** Join our [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph (`hrudolph`)**.
 -- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/RooCodeInc/projects/1).
 +- **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
-+- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
++- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/Researcherry/projects/1).
  
  ## Finding & Planning Your Contribution
  
@@ -2930,7 +2930,7 @@ index c23c424f4..d5576a429 100644
  All contributions must begin with a GitHub Issue.
  
 -- **Check existing issues**: Search [GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues).
-+- **Check existing issues**: Search [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues).
++- **Check existing issues**: Search [GitHub Issues](https://github.com/Researcherry/researcherry/issues).
  - **Create an issue**: Use appropriate templates:
      - **Bugs:** "Bug Report" template.
      - **Features:** "Detailed Feature Proposal" template. Approval required before starting.
@@ -2940,16 +2940,16 @@ index c23c424f4..d5576a429 100644
  
 -- Check the [GitHub Project](https://github.com/orgs/RooCodeInc/projects/1) for unassigned "Good First Issues."
 -- For docs, visit [Roo Code Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
-+- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
-+- For docs, visit [Researcherry Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
++- Check the [GitHub Project](https://github.com/orgs/Researcherry/projects/1) for unassigned "Good First Issues."
++- For docs, visit [Researcherry Docs](https://github.com/Researcherry/researcherry-Docs).
  
  ### Reporting Bugs
  
  - Check for existing reports first.
 -- Create new bugs using the ["Bug Report" template](https://github.com/RooCodeInc/Roo-Code/issues/new/choose).
 -- **Security issues**: Report privately via [security advisories](https://github.com/RooCodeInc/Roo-Code/security/advisories/new).
-+- Create new bugs using the ["Bug Report" template](https://github.com/ResearcherryCoderInc/researcherry/issues/new/choose).
-+- **Security issues**: Report privately via [security advisories](https://github.com/ResearcherryCoderInc/researcherry/security/advisories/new).
++- Create new bugs using the ["Bug Report" template](https://github.com/Researcherry/researcherry/issues/new/choose).
++- **Security issues**: Report privately via [security advisories](https://github.com/Researcherry/researcherry/security/advisories/new).
  
  ## Development & Submission Process
  

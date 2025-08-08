@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         **Thanks for your report!** Please check existing issues first:  
-        👉 https://github.com/ResearcherryCoderInc/researcherry/issues
+        👉 https://github.com/Researcherry/researcherry/issues
 
   - type: input
     id: version

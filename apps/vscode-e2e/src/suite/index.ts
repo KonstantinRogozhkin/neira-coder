@@ -8,7 +8,7 @@ import type { ResearcherryCoderAPI } from "@researcherry/types"
 import { waitFor } from "./utils"
 
 export async function run() {
-	const extension = vscode.extensions.getExtension<ResearcherryCoderAPI>("ResearcherryCoderInc.researcherry")
+	const extension = vscode.extensions.getExtension<ResearcherryCoderAPI>("Researcherry.researcherry")
 
 	if (!extension) {
 		throw new Error("Extension not found")

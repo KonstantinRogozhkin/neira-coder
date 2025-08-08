@@ -55,7 +55,7 @@ Mention alignment with these areas in your PRs.
 ### 3. Join the Researcherry Community
 
 - **Primary:** Join our [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph (`hrudolph`)**.
-- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/ResearcherryCoderInc/projects/1).
+- **Alternative:** Experienced contributors can engage directly via [GitHub Projects](https://github.com/orgs/Researcherry/projects/1).
 
 ## Finding & Planning Your Contribution
 
@@ -69,7 +69,7 @@ Mention alignment with these areas in your PRs.
 
 All contributions must begin with a GitHub Issue.
 
-- **Check existing issues**: Search [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues).
+- **Check existing issues**: Search [GitHub Issues](https://github.com/Researcherry/researcherry/issues).
 - **Create an issue**: Use appropriate templates:
     - **Bugs:** "Bug Report" template.
     - **Features:** "Detailed Feature Proposal" template. Approval required before starting.
@@ -79,14 +79,14 @@ All contributions must begin with a GitHub Issue.
 
 ### Deciding What to Work On
 
-- Check the [GitHub Project](https://github.com/orgs/ResearcherryCoderInc/projects/1) for unassigned "Good First Issues."
-- For docs, visit [Researcherry Docs](https://github.com/ResearcherryCoderInc/researcherry-Docs).
+- Check the [GitHub Project](https://github.com/orgs/Researcherry/projects/1) for unassigned "Good First Issues."
+- For docs, visit [Researcherry Docs](https://github.com/Researcherry/researcherry-Docs).
 
 ### Reporting Bugs
 
 - Check for existing reports first.
-- Create new bugs using the ["Bug Report" template](https://github.com/ResearcherryCoderInc/researcherry/issues/new/choose).
-- **Security issues**: Report privately via [security advisories](https://github.com/ResearcherryCoderInc/researcherry/security/advisories/new).
+- Create new bugs using the ["Bug Report" template](https://github.com/Researcherry/researcherry/issues/new/choose).
+- **Security issues**: Report privately via [security advisories](https://github.com/Researcherry/researcherry/security/advisories/new).
 
 ## Development & Submission Process
 

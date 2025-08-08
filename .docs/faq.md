@@ -202,18 +202,18 @@ MCP (Model Context Protocol) - это протокол для подключен
 
 - **Discord:** [Присоединяйтесь к нашему Discord серверу](https://discord.gg/researcherrycoder)
 - **Reddit:** [Посетите наш сабреддит](https://www.reddit.com/r/ResearcherryCoder)
-- **GitHub:** [Сообщите о проблеме](https://github.com/ResearcherryCoderInc/researcherry/issues)
+- **GitHub:** [Сообщите о проблеме](https://github.com/Researcherry/researcherry/issues)
 
 ### Как сообщить об ошибке?
 
-1. Перейдите на [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues)
+1. Перейдите на [GitHub Issues](https://github.com/Researcherry/researcherry/issues)
 2. Нажмите "New Issue"
 3. Опишите проблему подробно
 4. Приложите логи и скриншоты
 
 ### Как предложить новую функцию?
 
-1. Перейдите на [GitHub Issues](https://github.com/ResearcherryCoderInc/researcherry/issues)
+1. Перейдите на [GitHub Issues](https://github.com/Researcherry/researcherry/issues)
 2. Нажмите "New Issue"
 3. Выберите тип "Feature Request"
 4. Опишите вашу идею
@@ -233,7 +233,7 @@ Researcherry обновляется автоматически через VS Cod
 
 ### Как узнать о новых функциях?
 
-- Следите за [GitHub Releases](https://github.com/ResearcherryCoderInc/researcherry/releases)
+- Следите за [GitHub Releases](https://github.com/Researcherry/researcherry/releases)
 - Присоединяйтесь к [Discord серверу](https://discord.gg/researcherrycoder)
 - Подпишитесь на обновления в VS Code
 
@@ -264,4 +264,4 @@ Researcherry распространяется под лицензией MIT. П�
 
 ### Где найти исходный код?
 
-Исходный код доступен на [GitHub](https://github.com/ResearcherryCoderInc/researcherry).
+Исходный код доступен на [GitHub](https://github.com/Researcherry/researcherry).

@@ -17,7 +17,7 @@
 
 ### 2. Установка из VSIX файла
 
-1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/ResearcherryCoderInc/researcherry/releases)
+1. Скачайте последний VSIX файл с [GitHub Releases](https://github.com/Researcherry/researcherry/releases)
 2. В VS Code перейдите в Extensions
 3. Нажмите на три точки (...) и выберите "Install from VSIX..."
 4. Выберите скачанный файл
@@ -28,7 +28,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/ResearcherryCoderInc/researcherry.git
+git clone https://github.com/Researcherry/researcherry.git
 cd researcherry
 
 # Установите зависимости

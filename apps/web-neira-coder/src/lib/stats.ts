@@ -1,6 +1,6 @@
 export async function getGitHubStars() {
 	try {
-		const res = await fetch("https://api.github.com/repos/ResearcherryCoderInc/researcherry")
+		const res = await fetch("https://api.github.com/repos/Researcherry/researcherry")
 		const data = await res.json()
 
 		if (typeof data.stargazers_count !== "number") {
@@ -28,7 +28,7 @@ export async function getVSCodeReviews() {
 					criteria: [
 						{
 							filterType: 7,
-							value: "ResearcherryCoderInc.researcherry",
+							value: "Researcherry.researcherry",
 						},
 					],
 				},
@@ -72,7 +72,7 @@ export async function getVSCodeDownloads() {
 					criteria: [
 						{
 							filterType: 7,
-							value: "ResearcherryCoderInc.researcherry",
+							value: "Researcherry.researcherry",
 						},
 					],
 				},

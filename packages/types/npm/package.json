@@ -10,12 +10,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ResearcherryCoderInc/researcherry.git"
+		"url": "git+https://github.com/Researcherry/researcherry.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ResearcherryCoderInc/researcherry/issues"
+		"url": "https://github.com/Researcherry/researcherry/issues"
 	},
-	"homepage": "https://github.com/ResearcherryCoderInc/researcherry/tree/main/packages/types",
+	"homepage": "https://github.com/Researcherry/researcherry/tree/main/packages/types",
 	"keywords": [
 		"researcherry",
 		"researcherry",

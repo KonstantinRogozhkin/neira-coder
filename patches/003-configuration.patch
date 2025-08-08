@@ -20,7 +20,7 @@ index 965566a31..16da1350d 100644
        value: |
          **Thanks for your report!** Please check existing issues first:  
 -        👉 https://github.com/RooCodeInc/Roo-Code/issues
-+        👉 https://github.com/ResearcherryCoderInc/researcherry/issues
++        👉 https://github.com/Researcherry/researcherry/issues
  
    - type: input
      id: version
@@ -48,7 +48,7 @@ index 0351ad193..1f04efb24 100644
  contact_links:
      - name: Feature Request
 -      url: https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests
-+      url: https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests
++      url: https://github.com/Researcherry/researcherry/discussions/categories/feature-requests
        about: Share and vote on feature requests for Roo Code
      - name: Leave a Review
        url: https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&ssr=false#review-details
@@ -76,8 +76,8 @@ index 4863f9ffa..1db7a854b 100644
          **Before submitting:**
 -        - Search existing [Issues](https://github.com/RooCodeInc/Roo-Code/issues) and [Discussions](https://github.com/RooCodeInc/Roo-Code/discussions) to avoid duplicates
 -        - For general ideas, use [GitHub Discussions](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests) instead of this template.
-+        - Search existing [Issues](https://github.com/ResearcherryCoderInc/researcherry/issues) and [Discussions](https://github.com/ResearcherryCoderInc/researcherry/discussions) to avoid duplicates
-+        - For general ideas, use [GitHub Discussions](https://github.com/ResearcherryCoderInc/researcherry/discussions/categories/feature-requests) instead of this template.
++        - Search existing [Issues](https://github.com/Researcherry/researcherry/issues) and [Discussions](https://github.com/Researcherry/researcherry/discussions) to avoid duplicates
++        - For general ideas, use [GitHub Discussions](https://github.com/Researcherry/researcherry/discussions/categories/feature-requests) instead of this template.
  
    - type: markdown
      attributes:
@@ -105,7 +105,7 @@ index 4863f9ffa..1db7a854b 100644
 -        - Join [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph** (`hrudolph`) for guidance on implementation
 -        - Check our [Roadmap](https://github.com/orgs/RooCodeInc/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
 +        - Join [Discord](https://discord.gg/researcherrycoder) and DM **Hannes Rudolph** (`hrudolph`) for guidance on implementation
-+        - Check our [Roadmap](https://github.com/orgs/ResearcherryCoderInc/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
++        - Check our [Roadmap](https://github.com/orgs/Researcherry/projects/1/views/1?query=sort%3Aupdated-desc+is%3Aopen&filterQuery=is%3Aissue%2Copen%2Cclosed+label%3A%22feature+request%22+status%3A%22Issue+%5BUnassigned%5D%22%2C%22Issue+%5BIn+Progress%5D%22) to see open feature requests ready to be implemented or currently being worked on
  
    - type: checkboxes
      id: willingness-to-contribute
@@ -125,7 +125,7 @@ index f314ca520..c2bd2cec3 100644
      attributes:
        value: |
 -        **Thanks for your feedback!** Please check existing issues first: https://github.com/RooCodeInc/Roo-Code/issues
-+        **Thanks for your feedback!** Please check existing issues first: https://github.com/ResearcherryCoderInc/researcherry/issues
++        **Thanks for your feedback!** Please check existing issues first: https://github.com/Researcherry/researcherry/issues
  
    - type: dropdown
      id: feedback-type
@@ -725,14 +725,14 @@ index f73a83a7b..c987e2df1 100644
  	"repository": {
  		"type": "git",
 -		"url": "git+https://github.com/RooCodeInc/Roo-Code.git"
-+		"url": "git+https://github.com/ResearcherryCoderInc/researcherry.git"
++		"url": "git+https://github.com/Researcherry/researcherry.git"
  	},
  	"bugs": {
 -		"url": "https://github.com/RooCodeInc/Roo-Code/issues"
-+		"url": "https://github.com/ResearcherryCoderInc/researcherry/issues"
++		"url": "https://github.com/Researcherry/researcherry/issues"
  	},
 -	"homepage": "https://roocode.com",
-+	"homepage": "https://github.com/ResearcherryCoderInc/researcherry/tree/main/packages/types",
++	"homepage": "https://github.com/Researcherry/researcherry/tree/main/packages/types",
  	"keywords": [
 -		"roo",
 -		"roo-code",
