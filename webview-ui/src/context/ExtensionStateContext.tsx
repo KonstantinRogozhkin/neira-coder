@@ -186,7 +186,7 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		diffEnabled: false,
 		enableCheckpoints: true,
 		fuzzyMatchThreshold: 1.0,
-		language: "en", // Default language code
+		language: "ru", // Default language code
 		writeDelayMs: 1000,
 		browserViewportSize: "900x600",
 		screenshotQuality: 75,
