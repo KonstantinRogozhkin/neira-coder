@@ -2,7 +2,7 @@
 	"name": "neira-coder",
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
-	"publisher": "NeiraCoderInc",
+	"publisher": "Neira",
 	"version": "3.31.20",
 	"icon": "assets/icons/icon.png",
 	"galleryBanner": {
