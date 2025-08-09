@@ -3,12 +3,16 @@ import Mocha from "mocha"
 import { glob } from "glob"
 import * as vscode from "vscode"
 
-import type { NeiraCoderAPI } from "@neira-coder/types"
+import type { NeiraCoderAPI } from "@neira-coder/types/src/api"
 
 import { waitFor } from "./utils"
 
+declare global {
+	var api: NeiraCoderAPI
+}
+
 export async function run() {
-	const extension = vscode.extensions.getExtension<NeiraCoderAPI>("NeiraCoderInc.neira")
+	const extension = vscode.extensions.getExtension<NeiraCoderAPI>("NeiraCoderInc.neira-coder")
 
 	if (!extension) {
 		throw new Error("Extension not found")
@@ -22,7 +26,7 @@ export async function run() {
 		openRouterModelId: "openai/gpt-4.1",
 	})
 
-	await vscode.commands.executeCommand("neira.SidebarProvider.focus")
+	await vscode.commands.executeCommand("neira-coder.SidebarProvider.focus")
 	await waitFor(() => api.isReady())
 
 	globalThis.api = api
