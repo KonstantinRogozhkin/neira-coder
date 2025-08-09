@@ -317,7 +317,7 @@ export class CustomModesManager {
 		const workspaceFolders = vscode.workspace.workspaceFolders
 		if (workspaceFolders && workspaceFolders.length > 0) {
 			const workspaceRoot = getWorkspacePath()
-			const roomodesPath = path.join(workspaceRoot, ROOMODES_FILENAME)
+			const roomodesPath = path.join(workspaceRoot, ".neira", ROOMODES_FILENAME)
 			const roomodesWatcher = vscode.workspace.createFileSystemWatcher(roomodesPath)
 
 			const handleRoomodesChange = async () => {
@@ -423,7 +423,7 @@ export class CustomModesManager {
 				}
 
 				const workspaceRoot = getWorkspacePath()
-				targetPath = path.join(workspaceRoot, ROOMODES_FILENAME)
+				targetPath = path.join(workspaceRoot, ".neira", ROOMODES_FILENAME)
 				const exists = await fileExistsAtPath(targetPath)
 
 				logger.info(`${exists ? "Updating" : "Creating"} project mode in ${ROOMODES_FILENAME}`, {
@@ -627,7 +627,7 @@ export class CustomModesManager {
 					return false
 				}
 
-				const roomodesPath = path.join(workspacePath, ROOMODES_FILENAME)
+				const roomodesPath = path.join(workspacePath, ".neira", ROOMODES_FILENAME)
 				try {
 					const roomodesExists = await fileExistsAtPath(roomodesPath)
 					if (roomodesExists) {
