@@ -6,7 +6,7 @@ import { TelemetryEventName, type TelemetryEvent } from "@researcherry/types"
 import { BaseTelemetryClient } from "./BaseTelemetryClient"
 
 /**
- * PostHogTelemetryClient handles telemetry event tracking for the Roo Code extension.
+ * PostHogTelemetryClient handles telemetry event tracking for the Researcherry extension.
  * Uses PostHog analytics to track user interactions and system events.
  * Respects user privacy settings and VSCode's global telemetry configuration.
  */
