@@ -9,7 +9,7 @@ suite("Roo Code Modes", function () {
 	test("Should handle switching modes correctly", async () => {
 		const modes: string[] = []
 
-		globalThis.api.on("taskModeSwitched", (_taskId, mode) => modes.push(mode))
+		globalThis.api.on("taskModeSwitched", (_taskId: string, mode: string) => modes.push(mode))
 
 		const switchModesTaskId = await globalThis.api.startNewTask({
 			configuration: { mode: "code", alwaysAllowModeSwitch: true, autoApprovalEnabled: true },

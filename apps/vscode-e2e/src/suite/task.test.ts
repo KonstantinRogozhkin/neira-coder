@@ -13,7 +13,7 @@ suite("Roo Code Task", function () {
 
 		const messages: ClineMessage[] = []
 
-		api.on("message", ({ message }) => {
+		api.on("message", ({ message }: { message: ClineMessage }) => {
 			if (message.type === "say" && message.partial === false) {
 				messages.push(message)
 			}
