@@ -1,6 +1,6 @@
 {
 	"name": "@researcherry/evals",
-	"description": "Roo Code evals.",
+	"description": "Researcherry evals.",
 	"version": "0.0.0",
 	"type": "module",
 	"exports": "./src/index.ts",

@@ -1,6 +1,6 @@
 {
 	"name": "@researcherry/cloud",
-	"description": "Roo Code Cloud VSCode integration.",
+	"description": "Researcherry Cloud VSCode integration.",
 	"version": "0.0.0",
 	"type": "module",
 	"exports": "./src/index.ts",
