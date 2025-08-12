@@ -16,7 +16,7 @@ index a1fbb0506..14f6f91ef 100644
  {
 -	"name": "@roo-code/build",
 +	"name": "@researcherry/build",
- 	"description": "ESBuild utilities for Roo Code.",
+ 	"description": "ESBuild utilities for Researcherry.",
  	"private": true,
  	"type": "module",
 @@ -16,8 +16,8 @@
@@ -59,7 +59,7 @@ index d67b5ae7e..714282998 100644
  {
 -	"name": "@roo-code/cloud",
 +	"name": "@researcherry/cloud",
- 	"description": "Roo Code Cloud VSCode integration.",
+ 	"description": "Researcherry Cloud VSCode integration.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -11,13 +11,13 @@
@@ -1185,7 +1185,7 @@ index b94957950..10a613b5c 100644
 +			const url = `${getResearcherryCoderApiUrl()}/extension/sign-in?${params.toString()}`
  			await vscode.env.openExternal(vscode.Uri.parse(url))
  		} catch (error) {
- 			this.log(`[auth] Error initiating Roo Code Cloud auth: ${error}`)
+ 			this.log(`[auth] Error initiating Researcherry Cloud auth: ${error}`)
 @@ -519,13 +514,9 @@ export class WebAuthService extends EventEmitter<AuthServiceEvents> implements A
  			throw new Error(`HTTP ${response.status}: ${response.statusText}`)
  		}
@@ -1347,7 +1347,7 @@ index 83690a99c..3293a39db 100644
  {
 -	"name": "@roo-code/evals",
 +	"name": "@researcherry/evals",
- 	"description": "Roo Code evals.",
+ 	"description": "Researcherry evals.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -26,8 +26,8 @@
@@ -1459,7 +1459,7 @@ index 03cb3beec..752226822 100644
  {
 -	"name": "@roo-code/ipc",
 +	"name": "@researcherry/ipc",
- 	"description": "IPC server and client for remote Roo Code access.",
+ 	"description": "IPC server and client for remote Researcherry access.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -10,12 +10,12 @@
@@ -1542,7 +1542,7 @@ index 42d0df387..81ec5bfe0 100644
  {
 -	"name": "@roo-code/telemetry",
 +	"name": "@researcherry/telemetry",
- 	"description": "Roo Code telemetry service and clients.",
+ 	"description": "Researcherry telemetry service and clients.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -11,13 +11,13 @@
@@ -1976,7 +1976,7 @@ index f73a83a7b..c987e2df1 100644
  {
 -	"name": "@roo-code/types",
 -	"version": "1.44.0",
--	"description": "TypeScript type definitions for Roo Code.",
+-	"description": "TypeScript type definitions for Researcherry.",
 +	"name": "@researcherry/types",
 +	"version": "1.40.0",
 +	"description": "TypeScript type definitions for Researcherry.",
@@ -1986,7 +1986,7 @@ index f73a83a7b..c987e2df1 100644
 -		"registry": "https://registry.npmjs.org/"
 +		"name": "@researcherry/types"
  	},
--	"author": "Roo Code Team",
+-	"author": "Researcherry Team",
 +	"author": "Researcherry Team",
  	"license": "MIT",
  	"repository": {
@@ -4150,7 +4150,7 @@ index 7fc82f559..0aeabb35a 100644
  	}),
  	createTerminal: () => ({
  		exitStatus: undefined,
--		name: "Roo Code",
+-		name: "Researcherry",
 +		name: "Researcherry",
  		processId: Promise.resolve(123),
  		creationOptions: {},
@@ -4305,11 +4305,11 @@ index 4a0eb1b81..ea99401f5 100644
  import { EditorUtils } from "../integrations/editor/EditorUtils"
  
  export const TITLES: Record<CodeActionName, string> = {
--	EXPLAIN: "Explain with Roo Code",
--	FIX: "Fix with Roo Code",
--	IMPROVE: "Improve with Roo Code",
--	ADD_TO_CONTEXT: "Add to Roo Code",
--	NEW_TASK: "New Roo Code Task",
+-	EXPLAIN: "Explain with Researcherry",
+-	FIX: "Fix with Researcherry",
+-	IMPROVE: "Improve with Researcherry",
+-	ADD_TO_CONTEXT: "Add to Researcherry",
+-	NEW_TASK: "New Researcherry Task",
 +	EXPLAIN: "Explain with Researcherry",
 +	FIX: "Fix with Researcherry",
 +	IMPROVE: "Improve with Researcherry",
@@ -4326,7 +4326,7 @@ index 92c129fa0..7596bf7c9 100644
  		const result = getVisibleProviderOrLog(mockOutputChannel)
  
  		expect(result).toBeUndefined()
--		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Roo Code instances.")
+-		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Researcherry instances.")
 +		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Researcherry instances.")
  	})
  })
@@ -4373,7 +4373,7 @@ index 2f8212ffa..2c6488d26 100644
  export function getVisibleProviderOrLog(outputChannel: vscode.OutputChannel): ClineProvider | undefined {
  	const visibleProvider = ClineProvider.getVisibleInstance()
  	if (!visibleProvider) {
--		outputChannel.appendLine("Cannot find any visible Roo Code instances.")
+-		outputChannel.appendLine("Cannot find any visible Researcherry instances.")
 +		outputChannel.appendLine("Cannot find any visible Researcherry instances.")
  		return undefined
  	}
@@ -4414,7 +4414,7 @@ index 2f8212ffa..2c6488d26 100644
  
  	const targetCol = hasVisibleEditors ? Math.max(lastCol + 1, 1) : vscode.ViewColumn.Two
  
--	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Roo Code", targetCol, {
+-	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Researcherry", targetCol, {
 +	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Researcherry", targetCol, {
  		enableScripts: true,
  		retainContextWhenHidden: true,
@@ -4483,7 +4483,7 @@ index 2b7668435..3e760095c 100644
  vi.mock("../constants", () => ({
  	DEFAULT_HEADERS: {
  		"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--		"X-Title": "Roo Code",
+-		"X-Title": "Researcherry",
 -		"User-Agent": "RooCode/1.0.0",
 +		"X-Title": "Researcherry",
 +		"User-Agent": "ResearcherryCoder/1.0.0",
@@ -4509,7 +4509,7 @@ index 2b7668435..3e760095c 100644
  						"Content-Type": "application/json",
  						Authorization: "Bearer test-api-key",
  						"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--						"X-Title": "Roo Code",
+-						"X-Title": "Researcherry",
 -						"User-Agent": "RooCode/1.0.0",
 +						"X-Title": "Researcherry",
 +						"User-Agent": "ResearcherryCoder/1.0.0",
@@ -4542,7 +4542,7 @@ index 8a04416d7..418ec1c9b 100644
  	})
  
  	it("should have correct X-Title value", () => {
--		expect(DEFAULT_HEADERS["X-Title"]).toBe("Roo Code")
+-		expect(DEFAULT_HEADERS["X-Title"]).toBe("Researcherry")
 +		expect(DEFAULT_HEADERS["X-Title"]).toBe("Researcherry")
  	})
  
@@ -5025,7 +5025,7 @@ index 0d42c082a..eedd5e8b6 100644
  				apiKey: expect.any(String),
  				defaultHeaders: {
  					"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--					"X-Title": "Roo Code",
+-					"X-Title": "Researcherry",
 -					"User-Agent": `RooCode/${Package.version}`,
 +					"X-Title": "Researcherry",
 +					"User-Agent": `ResearcherryCoder/${Package.version}`,
@@ -5184,7 +5184,7 @@ index ea850c47b..16bba31f0 100644
  			apiKey: mockOptions.openRouterApiKey,
  			defaultHeaders: {
  				"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--				"X-Title": "Roo Code",
+-				"X-Title": "Researcherry",
 -				"User-Agent": `RooCode/${Package.version}`,
 +				"X-Title": "Researcherry",
 +				"User-Agent": `ResearcherryCoder/${Package.version}`,
@@ -5199,7 +5199,7 @@ index 55fb976fd..39260f658 100644
  			apiKey: mockOptions.requestyApiKey,
  			defaultHeaders: {
  				"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--				"X-Title": "Roo Code",
+-				"X-Title": "Researcherry",
 -				"User-Agent": `RooCode/${Package.version}`,
 +				"X-Title": "Researcherry",
 +				"User-Agent": `ResearcherryCoder/${Package.version}`,
@@ -5620,7 +5620,7 @@ index 144ff7234..e8d70737b 100644
  
  export const DEFAULT_HEADERS = {
  	"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
--	"X-Title": "Roo Code",
+-	"X-Title": "Researcherry",
 -	"User-Agent": `RooCode/${Package.version}`,
 +	"X-Title": "Researcherry",
 +	"User-Agent": `ResearcherryCoder/${Package.version}`,
@@ -5997,7 +5997,7 @@ index 6c49920bd..c47303ce4 100644
  			} as const
  		} catch (error) {
  			throw new Error(
--				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Roo Code's prompts.",
+-				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Researcherry's prompts.",
 +				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Researcherry's prompts.",
  			)
  		}
@@ -6006,7 +6006,7 @@ index 6c49920bd..c47303ce4 100644
  			return response.choices[0]?.message.content || ""
  		} catch (error) {
  			throw new Error(
--				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Roo Code's prompts.",
+-				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Researcherry's prompts.",
 +				"Please check the LM Studio developer logs to debug what went wrong. You may need to load the model with a larger context length to work with Researcherry's prompts.",
  			)
  		}
@@ -6187,7 +6187,7 @@ index d8a492f77..5c8d809dd 100644
  			this.dispose()
  
  			throw new Error(
--				`Roo Code <Language Model API>: Failed to initialize handler: ${error instanceof Error ? error.message : "Unknown error"}`,
+-				`Researcherry <Language Model API>: Failed to initialize handler: ${error instanceof Error ? error.message : "Unknown error"}`,
 +				`Researcherry <Language Model API>: Failed to initialize handler: ${error instanceof Error ? error.message : "Unknown error"}`,
  			)
  		}
@@ -6196,19 +6196,19 @@ index d8a492f77..5c8d809dd 100644
  		try {
  			// Check if the client is already initialized
  			if (this.client) {
--				console.debug("Roo Code <Language Model API>: Client already initialized")
+-				console.debug("Researcherry <Language Model API>: Client already initialized")
 +				console.debug("Researcherry <Language Model API>: Client already initialized")
  				return
  			}
  			// Create a new client instance
  			this.client = await this.createClient(this.options.vsCodeLmModelSelector || {})
--			console.debug("Roo Code <Language Model API>: Client initialized successfully")
+-			console.debug("Researcherry <Language Model API>: Client initialized successfully")
 +			console.debug("Researcherry <Language Model API>: Client initialized successfully")
  		} catch (error) {
  			// Handle errors during client initialization
  			const errorMessage = error instanceof Error ? error.message : "Unknown error"
--			console.error("Roo Code <Language Model API>: Client initialization failed:", errorMessage)
--			throw new Error(`Roo Code <Language Model API>: Failed to initialize client: ${errorMessage}`)
+-			console.error("Researcherry <Language Model API>: Client initialization failed:", errorMessage)
+-			throw new Error(`Researcherry <Language Model API>: Failed to initialize client: ${errorMessage}`)
 +			console.error("Researcherry <Language Model API>: Client initialization failed:", errorMessage)
 +			throw new Error(`Researcherry <Language Model API>: Failed to initialize client: ${errorMessage}`)
  		}
@@ -6218,7 +6218,7 @@ index d8a492f77..5c8d809dd 100644
  			}
  		} catch (error) {
  			const errorMessage = error instanceof Error ? error.message : "Unknown error"
--			throw new Error(`Roo Code <Language Model API>: Failed to select model: ${errorMessage}`)
+-			throw new Error(`Researcherry <Language Model API>: Failed to select model: ${errorMessage}`)
 +			throw new Error(`Researcherry <Language Model API>: Failed to select model: ${errorMessage}`)
  		}
  	}
@@ -6227,20 +6227,20 @@ index d8a492f77..5c8d809dd 100644
  	private async internalCountTokens(text: string | vscode.LanguageModelChatMessage): Promise<number> {
  		// Check for required dependencies
  		if (!this.client) {
--			console.warn("Roo Code <Language Model API>: No client available for token counting")
+-			console.warn("Researcherry <Language Model API>: No client available for token counting")
 +			console.warn("Researcherry <Language Model API>: No client available for token counting")
  			return 0
  		}
  
  		if (!this.currentRequestCancellation) {
--			console.warn("Roo Code <Language Model API>: No cancellation token available for token counting")
+-			console.warn("Researcherry <Language Model API>: No cancellation token available for token counting")
 +			console.warn("Researcherry <Language Model API>: No cancellation token available for token counting")
  			return 0
  		}
  
  		// Validate input
  		if (!text) {
--			console.debug("Roo Code <Language Model API>: Empty text provided for token counting")
+-			console.debug("Researcherry <Language Model API>: Empty text provided for token counting")
 +			console.debug("Researcherry <Language Model API>: Empty text provided for token counting")
  			return 0
  		}
@@ -6249,27 +6249,27 @@ index d8a492f77..5c8d809dd 100644
  			} else if (text instanceof vscode.LanguageModelChatMessage) {
  				// For chat messages, ensure we have content
  				if (!text.content || (Array.isArray(text.content) && text.content.length === 0)) {
--					console.debug("Roo Code <Language Model API>: Empty chat message content")
+-					console.debug("Researcherry <Language Model API>: Empty chat message content")
 +					console.debug("Researcherry <Language Model API>: Empty chat message content")
  					return 0
  				}
  				const countMessage = extractTextCountFromMessage(text)
  				tokenCount = await this.client.countTokens(countMessage, this.currentRequestCancellation.token)
  			} else {
--				console.warn("Roo Code <Language Model API>: Invalid input type for token counting")
+-				console.warn("Researcherry <Language Model API>: Invalid input type for token counting")
 +				console.warn("Researcherry <Language Model API>: Invalid input type for token counting")
  				return 0
  			}
  
  			// Validate the result
  			if (typeof tokenCount !== "number") {
--				console.warn("Roo Code <Language Model API>: Non-numeric token count received:", tokenCount)
+-				console.warn("Researcherry <Language Model API>: Non-numeric token count received:", tokenCount)
 +				console.warn("Researcherry <Language Model API>: Non-numeric token count received:", tokenCount)
  				return 0
  			}
  
  			if (tokenCount < 0) {
--				console.warn("Roo Code <Language Model API>: Negative token count received:", tokenCount)
+-				console.warn("Researcherry <Language Model API>: Negative token count received:", tokenCount)
 +				console.warn("Researcherry <Language Model API>: Negative token count received:", tokenCount)
  				return 0
  			}
@@ -6278,13 +6278,13 @@ index d8a492f77..5c8d809dd 100644
  		} catch (error) {
  			// Handle specific error types
  			if (error instanceof vscode.CancellationError) {
--				console.debug("Roo Code <Language Model API>: Token counting cancelled by user")
+-				console.debug("Researcherry <Language Model API>: Token counting cancelled by user")
 +				console.debug("Researcherry <Language Model API>: Token counting cancelled by user")
  				return 0
  			}
  
  			const errorMessage = error instanceof Error ? error.message : "Unknown error"
--			console.warn("Roo Code <Language Model API>: Token counting failed:", errorMessage)
+-			console.warn("Researcherry <Language Model API>: Token counting failed:", errorMessage)
 +			console.warn("Researcherry <Language Model API>: Token counting failed:", errorMessage)
  
  			// Log additional error details if available
@@ -6293,7 +6293,7 @@ index d8a492f77..5c8d809dd 100644
  
  	private async getClient(): Promise<vscode.LanguageModelChat> {
  		if (!this.client) {
--			console.debug("Roo Code <Language Model API>: Getting client with options:", {
+-			console.debug("Researcherry <Language Model API>: Getting client with options:", {
 +			console.debug("Researcherry <Language Model API>: Getting client with options:", {
  				vsCodeLmModelSelector: this.options.vsCodeLmModelSelector,
  				hasOptions: !!this.options,
@@ -6302,13 +6302,13 @@ index d8a492f77..5c8d809dd 100644
  			try {
  				// Use default empty selector if none provided to get all available models
  				const selector = this.options?.vsCodeLmModelSelector || {}
--				console.debug("Roo Code <Language Model API>: Creating client with selector:", selector)
+-				console.debug("Researcherry <Language Model API>: Creating client with selector:", selector)
 +				console.debug("Researcherry <Language Model API>: Creating client with selector:", selector)
  				this.client = await this.createClient(selector)
  			} catch (error) {
  				const message = error instanceof Error ? error.message : "Unknown error"
--				console.error("Roo Code <Language Model API>: Client creation failed:", message)
--				throw new Error(`Roo Code <Language Model API>: Failed to create client: ${message}`)
+-				console.error("Researcherry <Language Model API>: Client creation failed:", message)
+-				throw new Error(`Researcherry <Language Model API>: Failed to create client: ${message}`)
 +				console.error("Researcherry <Language Model API>: Client creation failed:", message)
 +				throw new Error(`Researcherry <Language Model API>: Failed to create client: ${message}`)
  			}
@@ -6318,7 +6318,7 @@ index d8a492f77..5c8d809dd 100644
  		try {
  			// Create the response stream with minimal required options
  			const requestOptions: vscode.LanguageModelChatRequestOptions = {
--				justification: `Roo Code would like to use '${client.name}' from '${client.vendor}', Click 'Allow' to proceed.`,
+-				justification: `Researcherry would like to use '${client.name}' from '${client.vendor}', Click 'Allow' to proceed.`,
 +				justification: `Researcherry would like to use '${client.name}' from '${client.vendor}', Click 'Allow' to proceed.`,
  			}
  
@@ -6327,7 +6327,7 @@ index d8a492f77..5c8d809dd 100644
  				if (chunk instanceof vscode.LanguageModelTextPart) {
  					// Validate text part value
  					if (typeof chunk.value !== "string") {
--						console.warn("Roo Code <Language Model API>: Invalid text part value received:", chunk.value)
+-						console.warn("Researcherry <Language Model API>: Invalid text part value received:", chunk.value)
 +						console.warn("Researcherry <Language Model API>: Invalid text part value received:", chunk.value)
  						continue
  					}
@@ -6336,13 +6336,13 @@ index d8a492f77..5c8d809dd 100644
  					try {
  						// Validate tool call parameters
  						if (!chunk.name || typeof chunk.name !== "string") {
--							console.warn("Roo Code <Language Model API>: Invalid tool name received:", chunk.name)
+-							console.warn("Researcherry <Language Model API>: Invalid tool name received:", chunk.name)
 +							console.warn("Researcherry <Language Model API>: Invalid tool name received:", chunk.name)
  							continue
  						}
  
  						if (!chunk.callId || typeof chunk.callId !== "string") {
--							console.warn("Roo Code <Language Model API>: Invalid tool callId received:", chunk.callId)
+-							console.warn("Researcherry <Language Model API>: Invalid tool callId received:", chunk.callId)
 +							console.warn(
 +								"Researcherry <Language Model API>: Invalid tool callId received:",
 +								chunk.callId,
@@ -6352,7 +6352,7 @@ index d8a492f77..5c8d809dd 100644
  
  						// Ensure input is a valid object
  						if (!chunk.input || typeof chunk.input !== "object") {
--							console.warn("Roo Code <Language Model API>: Invalid tool input received:", chunk.input)
+-							console.warn("Researcherry <Language Model API>: Invalid tool input received:", chunk.input)
 +							console.warn("Researcherry <Language Model API>: Invalid tool input received:", chunk.input)
  							continue
  						}
@@ -6361,7 +6361,7 @@ index d8a492f77..5c8d809dd 100644
  						accumulatedText += toolCallText
  
  						// Log tool call for debugging
--						console.debug("Roo Code <Language Model API>: Processing tool call:", {
+-						console.debug("Researcherry <Language Model API>: Processing tool call:", {
 +						console.debug("Researcherry <Language Model API>: Processing tool call:", {
  							name: chunk.name,
  							callId: chunk.callId,
@@ -6370,13 +6370,13 @@ index d8a492f77..5c8d809dd 100644
  							text: toolCallText,
  						}
  					} catch (error) {
--						console.error("Roo Code <Language Model API>: Failed to process tool call:", error)
+-						console.error("Researcherry <Language Model API>: Failed to process tool call:", error)
 +						console.error("Researcherry <Language Model API>: Failed to process tool call:", error)
  						// Continue processing other chunks even if one fails
  						continue
  					}
  				} else {
--					console.warn("Roo Code <Language Model API>: Unknown chunk type received:", chunk)
+-					console.warn("Researcherry <Language Model API>: Unknown chunk type received:", chunk)
 +					console.warn("Researcherry <Language Model API>: Unknown chunk type received:", chunk)
  				}
  			}
@@ -6385,12 +6385,12 @@ index d8a492f77..5c8d809dd 100644
  			this.ensureCleanState()
  
  			if (error instanceof vscode.CancellationError) {
--				throw new Error("Roo Code <Language Model API>: Request cancelled by user")
+-				throw new Error("Researcherry <Language Model API>: Request cancelled by user")
 +				throw new Error("Researcherry <Language Model API>: Request cancelled by user")
  			}
  
  			if (error instanceof Error) {
--				console.error("Roo Code <Language Model API>: Stream error details:", {
+-				console.error("Researcherry <Language Model API>: Stream error details:", {
 +				console.error("Researcherry <Language Model API>: Stream error details:", {
  					message: error.message,
  					stack: error.stack,
@@ -6399,15 +6399,15 @@ index d8a492f77..5c8d809dd 100644
  			} else if (typeof error === "object" && error !== null) {
  				// Handle error-like objects
  				const errorDetails = JSON.stringify(error, null, 2)
--				console.error("Roo Code <Language Model API>: Stream error object:", errorDetails)
--				throw new Error(`Roo Code <Language Model API>: Response stream error: ${errorDetails}`)
+-				console.error("Researcherry <Language Model API>: Stream error object:", errorDetails)
+-				throw new Error(`Researcherry <Language Model API>: Response stream error: ${errorDetails}`)
 +				console.error("Researcherry <Language Model API>: Stream error object:", errorDetails)
 +				throw new Error(`Researcherry <Language Model API>: Response stream error: ${errorDetails}`)
  			} else {
  				// Fallback for unknown error types
  				const errorMessage = String(error)
--				console.error("Roo Code <Language Model API>: Unknown stream error:", errorMessage)
--				throw new Error(`Roo Code <Language Model API>: Response stream error: ${errorMessage}`)
+-				console.error("Researcherry <Language Model API>: Unknown stream error:", errorMessage)
+-				throw new Error(`Researcherry <Language Model API>: Response stream error: ${errorMessage}`)
 +				console.error("Researcherry <Language Model API>: Unknown stream error:", errorMessage)
 +				throw new Error(`Researcherry <Language Model API>: Response stream error: ${errorMessage}`)
  			}
@@ -6417,7 +6417,7 @@ index d8a492f77..5c8d809dd 100644
  			// Log any missing properties for debugging
  			for (const [prop, value] of Object.entries(requiredProps)) {
  				if (!value && value !== 0) {
--					console.warn(`Roo Code <Language Model API>: Client missing ${prop} property`)
+-					console.warn(`Researcherry <Language Model API>: Client missing ${prop} property`)
 +					console.warn(`Researcherry <Language Model API>: Client missing ${prop} property`)
  				}
  			}
@@ -6426,7 +6426,7 @@ index d8a492f77..5c8d809dd 100644
  			? stringifyVsCodeLmModelSelector(this.options.vsCodeLmModelSelector)
  			: "vscode-lm"
  
--		console.debug("Roo Code <Language Model API>: No client available, using fallback model info")
+-		console.debug("Researcherry <Language Model API>: No client available, using fallback model info")
 +		console.debug("Researcherry <Language Model API>: No client available, using fallback model info")
  
  		return {
@@ -6664,7 +6664,7 @@ index 58b85f19a..c6a8d5db0 100644
  
  		return {}
  	} catch (error) {
--		console.warn("Roo Code <Language Model API>: Failed to parse object:", error)
+-		console.warn("Researcherry <Language Model API>: Failed to parse object:", error)
 +		console.warn("Researcherry <Language Model API>: Failed to parse object:", error)
  		return {}
  	}
@@ -6673,7 +6673,7 @@ index 58b85f19a..c6a8d5db0 100644
  					try {
  						text += JSON.stringify(item.input)
  					} catch (error) {
--						console.error("Roo Code <Language Model API>: Failed to stringify tool call input:", error)
+-						console.error("Researcherry <Language Model API>: Failed to stringify tool call input:", error)
 +						console.error("Researcherry <Language Model API>: Failed to stringify tool call input:", error)
  					}
  				}
@@ -9371,14 +9371,14 @@ index b25286f5f..ebc0d5f4a 100644
  
  		it("should match content with smart quotes", async () => {
  			const originalContent =
--				"**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!"
+-				"**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!"
 +				"**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/ResearcherryCoder/) or [Discord](https://discord.gg/researcherrycoder). Happy coding!"
  			const diffContent = `test.ts
  <<<<<<< SEARCH
--**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
+-**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
 +**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/ResearcherryCoder/) or [Discord](https://discord.gg/researcherrycoder). Happy coding!
  =======
--**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
+-**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
 +**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/ResearcherryCoder/) or [Discord](https://discord.gg/researcherrycoder). Happy coding!
  
  You're still here?
@@ -9387,7 +9387,7 @@ index b25286f5f..ebc0d5f4a 100644
  			expect(result.success).toBe(true)
  			if (result.success) {
  				expect(result.content).toBe(
--					"**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!\n\nYou're still here?",
+-					"**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!\n\nYou're still here?",
 +					"**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/ResearcherryCoder/) or [Discord](https://discord.gg/researcherrycoder). Happy coding!\n\nYou're still here?",
  				)
  			}
@@ -13874,7 +13874,7 @@ index 274060a19..1c247ad82 100644
  
  		this.marketplaceManager = new MarketplaceManager(this.context, this.customModesManager)
 -
--		// Initialize Roo Code Cloud profile sync.
+-		// Initialize Researcherry Cloud profile sync.
 -		this.initializeCloudProfileSync().catch((error) => {
 -			this.log(`Failed to initialize cloud profile sync: ${error}`)
 -		})
@@ -14114,7 +14114,7 @@ index 274060a19..1c247ad82 100644
  						window.AUDIO_BASE_URI = "${audioUri}"
  						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
  					</script>
--					<title>Roo Code</title>
+-					<title>Researcherry</title>
 +					<title>Researcherry</title>
  				</head>
  				<body>
@@ -14123,7 +14123,7 @@ index 274060a19..1c247ad82 100644
  				window.AUDIO_BASE_URI = "${audioUri}"
  				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
  			</script>
--            <title>Roo Code</title>
+-            <title>Researcherry</title>
 +            <title>Researcherry</title>
            </head>
            <body>
@@ -14200,7 +14200,7 @@ index 274060a19..1c247ad82 100644
  
  		const packageJSON = this.context.extension?.packageJSON
  
--		// Get Roo Code Cloud authentication state
+-		// Get Researcherry Cloud authentication state
 +		// Get Researcherry authentication state
  		let cloudIsAuthenticated: boolean | undefined
  
@@ -14917,7 +14917,7 @@ index 1a7b6c5ac..e60ec7ade 100644
  	// Create logger for cloud services
  	const cloudLogger = createDualLogger(createOutputChannelLogger(outputChannel))
  
--	// Initialize Roo Code Cloud service.
+-	// Initialize Researcherry Cloud service.
 +	// Initialize Researcherry service.
  	const cloudService = await CloudService.createInstance(context, cloudLogger)
  	const postStateListener = () => {
@@ -15191,7 +15191,7 @@ index 05d039a49..1ecddf171 100644
 @@ -1,6 +1,6 @@
  {
  	"extension": {
--		"name": "Roo Code",
+-		"name": "Researcherry",
 +		"name": "Researcherry",
  		"description": "A whole dev team of AI agents in your editor."
  	},
@@ -15264,7 +15264,7 @@ index 0d7b800d8..7df29ba7b 100644
 @@ -1,6 +1,6 @@
  {
  	"extension": {
--		"name": "Roo Code",
+-		"name": "Researcherry",
 +		"name": "Researcherry",
  		"description": "Целая команда ИИ-разработчиков в вашем редакторе."
  	},
@@ -15347,7 +15347,7 @@ index 3f438df0f..62d28c69a 100644
  		"stream-json",
  		"--disallowedTools",
  		claudeCodeTools,
--		// Roo Code will handle recursive calls
+-		// Researcherry will handle recursive calls
 +		// Researcherry will handle recursive calls
  		"--max-turns",
  		"1",
@@ -15373,7 +15373,7 @@ index a3c46e30b..4494be328 100644
  			const worksheet = workbook.addWorksheet("Sheet1")
  
  			worksheet.getCell("A1").value = {
--				text: "Roo Code",
+-				text: "Researcherry",
 -				hyperlink: "https://roocode.com/",
 +				text: "Researcherry",
 +				hyperlink: "https://researcherrycoder.com/",
@@ -15381,7 +15381,7 @@ index a3c46e30b..4494be328 100644
  
  			const result = await extractTextFromXLSX(workbook)
  
--			expect(result).toContain("Roo Code (https://roocode.com/)")
+-			expect(result).toContain("Researcherry (https://roocode.com/)")
 +			expect(result).toContain("Researcherry (https://researcherrycoder.com/)")
  		})
  
@@ -15418,7 +15418,7 @@ index 3474f6de1..c3995d44a 100644
  
  	// These markers indicate the command is some kind of local dev
  	// server recompiling the app, which we want to wait for output
--	// of before sending request to Roo Code.
+-	// of before sending request to Researcherry.
 +	// of before sending request to Researcherry.
  	private static compilingMarkers = ["compiling", "building", "bundling", "transpiling", "generating", "starting"]
  
@@ -15444,7 +15444,7 @@ index 8bf2072f3..973c2f296 100644
  
  		const env = Terminal.getEnv()
  		const iconPath = new vscode.ThemeIcon("rocket")
--		this.terminal = terminal ?? vscode.window.createTerminal({ cwd, name: "Roo Code", iconPath, env })
+-		this.terminal = terminal ?? vscode.window.createTerminal({ cwd, name: "Researcherry", iconPath, env })
 +		this.terminal = terminal ?? vscode.window.createTerminal({ cwd, name: "Researcherry", iconPath, env })
  
  		if (Terminal.getTerminalZdotdir()) {
@@ -15457,7 +15457,7 @@ index 04c31bd93..cebf52999 100644
  			shellIntegration: {
  				executeCommand: vi.fn(),
  			},
--			name: "Roo Code",
+-			name: "Researcherry",
 +			name: "Researcherry",
  			processId: Promise.resolve(123),
  			creationOptions: {},
@@ -15470,7 +15470,7 @@ index e6b9483d0..02413aa4d 100644
  			executeCommand: vi.fn(),
  			cwd: vscode.Uri.file("/test/path"),
  		},
--		name: "Roo Code",
+-		name: "Researcherry",
 +		name: "Researcherry",
  		processId: Promise.resolve(123),
  		creationOptions: {},
@@ -15483,7 +15483,7 @@ index d85b9bf40..feb2506d5 100644
  			executeCommand: vi.fn(),
  			cwd: vscode.Uri.file("C:\\test\\path"),
  		},
--		name: "Roo Code",
+-		name: "Researcherry",
 +		name: "Researcherry",
  		processId: Promise.resolve(123),
  		creationOptions: {},
@@ -15496,7 +15496,7 @@ index 2d0384305..26bae24a6 100644
  			executeCommand: vi.fn(),
  			cwd: vscode.Uri.file("/test/path"),
  		},
--		name: "Roo Code",
+-		name: "Researcherry",
 +		name: "Researcherry",
  		processId: Promise.resolve(123),
  		creationOptions: {},
@@ -15509,7 +15509,7 @@ index d3912caf4..371abd407 100644
  			(...args: any[]) =>
  				({
  					exitStatus: undefined,
--					name: "Roo Code",
+-					name: "Researcherry",
 +					name: "Researcherry",
  					processId: Promise.resolve(123),
  					creationOptions: {},
@@ -15518,7 +15518,7 @@ index d3912caf4..371abd407 100644
  
  			expect(mockCreateTerminal).toHaveBeenCalledWith({
  				cwd: "/test/path",
--				name: "Roo Code",
+-				name: "Researcherry",
 +				name: "Researcherry",
  				iconPath: expect.any(Object),
  				env: {
@@ -15527,7 +15527,7 @@ index d3912caf4..371abd407 100644
  
  				expect(mockCreateTerminal).toHaveBeenCalledWith({
  					cwd: "/test/path",
--					name: "Roo Code",
+-					name: "Researcherry",
 +					name: "Researcherry",
  					iconPath: expect.any(Object),
  					env: {
@@ -15536,7 +15536,7 @@ index d3912caf4..371abd407 100644
  
  				expect(mockCreateTerminal).toHaveBeenCalledWith({
  					cwd: "/test/path",
--					name: "Roo Code",
+-					name: "Researcherry",
 +					name: "Researcherry",
  					iconPath: expect.any(Object),
  					env: {
@@ -15545,7 +15545,7 @@ index d3912caf4..371abd407 100644
  
  				expect(mockCreateTerminal).toHaveBeenCalledWith({
  					cwd: "/test/path",
--					name: "Roo Code",
+-					name: "Researcherry",
 +					name: "Researcherry",
  					iconPath: expect.any(Object),
  					env: {
@@ -15571,7 +15571,7 @@ index dab031404..02be51c19 100644
  		"node": "20.19.2"
  	},
  	"author": {
--		"name": "Roo Code"
+-		"name": "Researcherry"
 +		"name": "Researcherry"
  	},
  	"repository": {
@@ -15588,7 +15588,7 @@ index dab031404..02be51c19 100644
  		"sonnet",
  		"ai",
  		"llama",
--		"roo code",
+-		"Researcherry",
 -		"roocode"
 +		"researcherry coder",
 +		"researcherry"
@@ -16040,13 +16040,13 @@ index 36ef72a82..fbd02024b 100644
 +++ b/src/package.nls.json
 @@ -1,10 +1,10 @@
  {
--	"extension.displayName": "Roo Code",
+-	"extension.displayName": "Researcherry",
 +	"extension.displayName": "Researcherry",
  	"extension.description": "A whole dev team of AI agents in your editor.",
--	"views.contextMenu.label": "Roo Code",
--	"views.terminalMenu.label": "Roo Code",
--	"views.activitybar.title": "Roo Code",
--	"views.sidebar.name": "Roo Code",
+-	"views.contextMenu.label": "Researcherry",
+-	"views.terminalMenu.label": "Researcherry",
+-	"views.activitybar.title": "Researcherry",
+-	"views.sidebar.name": "Researcherry",
 +	"views.contextMenu.label": "Researcherry",
 +	"views.terminalMenu.label": "Researcherry",
 +	"views.activitybar.title": "Researcherry",
@@ -16058,7 +16058,7 @@ index 36ef72a82..fbd02024b 100644
  	"command.terminal.fixCommand.title": "Fix This Command",
  	"command.terminal.explainCommand.title": "Explain This Command",
  	"command.acceptInput.title": "Accept Input/Suggestion",
--	"configuration.title": "Roo Code",
+-	"configuration.title": "Researcherry",
 +	"configuration.title": "Researcherry",
  	"commands.allowedCommands.description": "Commands that can be auto-executed when 'Always approve execute operations' is enabled",
  	"commands.deniedCommands.description": "Command prefixes that will be automatically denied without asking for approval. In case of conflicts with allowed commands, the longest prefix match takes precedence. Add * to deny all commands.",
@@ -16068,7 +16068,7 @@ index 36ef72a82..fbd02024b 100644
  	"settings.vsCodeLmModelSelector.vendor.description": "The vendor of the language model (e.g. copilot)",
  	"settings.vsCodeLmModelSelector.family.description": "The family of the language model (e.g. gpt-4)",
 -	"settings.customStoragePath.description": "Custom storage path. Leave empty to use the default location. Supports absolute paths (e.g. 'D:\\RooCodeStorage')",
--	"settings.enableCodeActions.description": "Enable Roo Code quick fixes",
+-	"settings.enableCodeActions.description": "Enable Researcherry quick fixes",
 -	"settings.autoImportSettingsPath.description": "Path to a RooCode configuration file to automatically import on extension startup. Supports absolute paths and paths relative to the home directory (e.g. '~/Documents/roo-code-settings.json'). Leave empty to disable auto-import.",
 +	"settings.customStoragePath.description": "Custom storage path. Leave empty to use the default location. Supports absolute paths (e.g. 'D:\\ResearcherryCoderStorage')",
 +	"settings.enableCodeActions.description": "Enable Researcherry quick fixes",
@@ -16081,13 +16081,13 @@ index 380337249..5be597ab1 100644
 +++ b/src/package.nls.ru.json
 @@ -1,10 +1,10 @@
  {
--	"extension.displayName": "Roo Code",
+-	"extension.displayName": "Researcherry",
 +	"extension.displayName": "Researcherry",
  	"extension.description": "Целая команда ИИ-разработчиков в вашем редакторе.",
--	"views.contextMenu.label": "Roo Code",
--	"views.terminalMenu.label": "Roo Code",
--	"views.activitybar.title": "Roo Code",
--	"views.sidebar.name": "Roo Code",
+-	"views.contextMenu.label": "Researcherry",
+-	"views.terminalMenu.label": "Researcherry",
+-	"views.activitybar.title": "Researcherry",
+-	"views.sidebar.name": "Researcherry",
 +	"views.contextMenu.label": "Researcherry",
 +	"views.terminalMenu.label": "Researcherry",
 +	"views.activitybar.title": "Researcherry",
@@ -16099,7 +16099,7 @@ index 380337249..5be597ab1 100644
  	"command.terminal.fixCommand.title": "Исправить эту команду",
  	"command.terminal.explainCommand.title": "Объяснить эту команду",
  	"command.acceptInput.title": "Принять ввод/предложение",
--	"configuration.title": "Roo Code",
+-	"configuration.title": "Researcherry",
 +	"configuration.title": "Researcherry",
  	"commands.allowedCommands.description": "Команды, которые могут быть автоматически выполнены, когда включена опция 'Всегда подтверждать операции выполнения'",
  	"commands.deniedCommands.description": "Префиксы команд, которые будут автоматически отклонены без запроса подтверждения. В случае конфликтов с разрешенными командами приоритет имеет самое длинное совпадение префикса. Добавьте * чтобы отклонить все команды.",
@@ -16110,7 +16110,7 @@ index 380337249..5be597ab1 100644
  	"settings.vsCodeLmModelSelector.family.description": "Семейство языковой модели (например, gpt-4)",
 -	"settings.customStoragePath.description": "Пользовательский путь хранения. Оставьте пустым для использования пути по умолчанию. Поддерживает абсолютные пути (например, 'D:\\RooCodeStorage')",
 +	"settings.customStoragePath.description": "Пользовательский путь хранения. Оставьте пустым для использования пути по умолчанию. Поддерживает абсолютные пути (например, 'D:\\ResearcherryCoderStorage')",
- 	"settings.enableCodeActions.description": "Включить быстрые исправления Roo Code.",
+ 	"settings.enableCodeActions.description": "Включить быстрые исправления Researcherry.",
 -	"settings.autoImportSettingsPath.description": "Путь к файлу конфигурации RooCode для автоматического импорта при запуске расширения. Поддерживает абсолютные пути и пути относительно домашнего каталога (например, '~/Documents/roo-code-settings.json'). Оставьте пустым, чтобы отключить автоматический импорт.",
 +	"settings.autoImportSettingsPath.description": "Путь к файлу конфигурации ResearcherryCoder для автоматического импорта при запуске расширения. Поддерживает абсолютные пути и пути относительно домашнего каталога (например, '~/Documents/roo-code-settings.json'). Оставьте пустым, чтобы отключить автоматический импорт.",
  	"settings.useAgentRules.description": "Включить загрузку файлов AGENTS.md для специфичных для агента правил (см. https://agent-rules.org/)"
@@ -16175,7 +16175,7 @@ index 03e019ed6..7c9635e5f 100644
  			await git.init()
  			await git.addConfig("core.worktree", this.workspaceDir) // Sets the working tree to the current workspace.
  			await git.addConfig("commit.gpgSign", "false") // Disable commit signing for shadow repo.
--			await git.addConfig("user.name", "Roo Code")
+-			await git.addConfig("user.name", "Researcherry")
 +			await git.addConfig("user.name", "Researcherry")
  			await git.addConfig("user.email", "noreply@example.com")
  			await this.writeExcludeFile()
@@ -16205,7 +16205,7 @@ index 4bf2529d5..e92a2013f 100644
  
  const initWorkspaceRepo = async ({
  	workspaceDir,
--	userName = "Roo Code",
+-	userName = "Researcherry",
 -	userEmail = "support@roocode.com",
 +	userName = "Researcherry",
 +	userEmail = "support@researcherrycoder.com",
@@ -16216,7 +16216,7 @@ index 4bf2529d5..e92a2013f 100644
  				await fs.mkdir(workspaceDir, { recursive: true })
  				const mainGit = simpleGit(workspaceDir)
  				await mainGit.init()
--				await mainGit.addConfig("user.name", "Roo Code")
+-				await mainGit.addConfig("user.name", "Researcherry")
 -				await mainGit.addConfig("user.email", "support@roocode.com")
 +				await mainGit.addConfig("user.name", "Researcherry")
 +				await mainGit.addConfig("user.email", "support@researcherrycoder.com")
@@ -16226,7 +16226,7 @@ index 4bf2529d5..e92a2013f 100644
  				await fs.mkdir(nestedRepoPath, { recursive: true })
  				const nestedGit = simpleGit(nestedRepoPath)
  				await nestedGit.init()
--				await nestedGit.addConfig("user.name", "Roo Code")
+-				await nestedGit.addConfig("user.name", "Researcherry")
 -				await nestedGit.addConfig("user.email", "support@roocode.com")
 +				await nestedGit.addConfig("user.name", "Researcherry")
 +				await nestedGit.addConfig("user.email", "support@researcherrycoder.com")
@@ -16237,7 +16237,7 @@ index 4bf2529d5..e92a2013f 100644
  				await fs.mkdir(workspaceDir, { recursive: true })
  				const mainGit = simpleGit(workspaceDir)
  				await mainGit.init()
--				await mainGit.addConfig("user.name", "Roo Code")
+-				await mainGit.addConfig("user.name", "Researcherry")
 -				await mainGit.addConfig("user.email", "support@roocode.com")
 +				await mainGit.addConfig("user.name", "Researcherry")
 +				await mainGit.addConfig("user.email", "support@researcherrycoder.com")
@@ -17112,7 +17112,7 @@ index 1171a4b24..f80f43c96 100644
  	describe("argument-hint functionality", () => {
  		it("should load command with argument-hint from frontmatter", async () => {
  			const commandContent = `---
--description: Create a new release of the Roo Code extension
+-description: Create a new release of the Researcherry extension
 +description: Create a new release of the Researcherry extension
  argument-hint: patch | minor | major
  ---
@@ -17122,7 +17122,7 @@ index 1171a4b24..f80f43c96 100644
  				content: "# Release Command\n\nCreate a new release.",
  				source: "project",
 -				filePath: path.join("/test/cwd", ".roo", "commands", "release.md"),
--				description: "Create a new release of the Roo Code extension",
+-				description: "Create a new release of the Researcherry extension",
 +				filePath: path.join("/test/cwd", ".researcherry", "commands", "release.md"),
 +				description: "Create a new release of the Researcherry extension",
  				argumentHint: "patch | minor | major",
@@ -17667,7 +17667,7 @@ index 6d512b3f2..b33eb6421 100644
  		try {
  			const client = new Client(
  				{
--					name: "Roo Code",
+-					name: "Researcherry",
 +					name: "Researcherry",
  					version: this.providerRef.deref()?.context.extension?.packageJSON?.version ?? "1.0.0",
  				},
@@ -19323,10 +19323,10 @@ index 81ff61652..b46e3560b 100644
  	t: vi.fn((key: string) => {
  		const translations: Record<string, string> = {
  			"mdm.errors.cloud_auth_required":
--				"Your organization requires Roo Code Cloud authentication. Please sign in to continue.",
+-				"Your organization requires Researcherry Cloud authentication. Please sign in to continue.",
 +				"Your organization requires Researcherry authentication. Please sign in to continue.",
  			"mdm.errors.organization_mismatch":
--				"You must be authenticated with your organization's Roo Code Cloud account.",
+-				"You must be authenticated with your organization's Researcherry Cloud account.",
 +				"You must be authenticated with your organization's Researcherry account.",
  			"mdm.errors.verification_failed": "Unable to verify organization authentication.",
  		}
@@ -19432,7 +19432,7 @@ index 81ff61652..b46e3560b 100644
  
  			expect(compliance.compliant).toBe(false)
  			if (!compliance.compliant) {
--				expect(compliance.reason).toContain("Your organization requires Roo Code Cloud authentication")
+-				expect(compliance.reason).toContain("Your organization requires Researcherry Cloud authentication")
 +				expect(compliance.reason).toContain("Your organization requires Researcherry authentication")
  			}
  		})
@@ -19441,7 +19441,7 @@ index 81ff61652..b46e3560b 100644
  			expect(compliance.compliant).toBe(false)
  			if (!compliance.compliant) {
  				expect(compliance.reason).toContain(
--					"You must be authenticated with your organization's Roo Code Cloud account",
+-					"You must be authenticated with your organization's Researcherry Cloud account",
 +					"You must be authenticated with your organization's Researcherry account",
  				)
  			}
@@ -19896,12 +19896,12 @@ index 6413581a4..ac7e35aa6 100644
  
  ## License
  
--[Apache 2.0 © 2025 Roo Code, Inc.](./LICENSE)
+-[Apache 2.0 © 2025 Researcherry, Inc.](./LICENSE)
 +[Apache 2.0 © 2025 Researcherry, Inc.](./LICENSE)
  
  ---
  
--**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build.`
+-**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build.`
 +**Enjoy Researcherry!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build.`
  
  		const captures = parseMarkdown(content)
@@ -22333,8 +22333,8 @@ index 4c1138944..b2f8d2dee 100644
 +			expect(shareButton).toBeDefined()
 +			fireEvent.click(shareButton!)
  
- 			expect(screen.getByText("Connect to Roo Code Cloud")).toBeInTheDocument()
- 			expect(screen.getByText("Sign in to Roo Code Cloud to share tasks")).toBeInTheDocument()
+ 			expect(screen.getByText("Connect to Researcherry Cloud")).toBeInTheDocument()
+ 			expect(screen.getByText("Sign in to Researcherry Cloud to share tasks")).toBeInTheDocument()
 @@ -203,9 +216,11 @@ describe("TaskActions", () => {
  		it("does not show organization and public options when not authenticated", () => {
  			render(<TaskActions item={mockItem} buttonsDisabled={false} />)
@@ -25311,16 +25311,16 @@ index f900abb29..31ffaf1be 100644
 +	"profilePicture": "Profile Picture",
 +	"logOut": "Log Out",
  	"testApiAuthentication": "Test API Authentication",
--	"signIn": "Connect to Roo Code Cloud",
+-	"signIn": "Connect to Researcherry Cloud",
 +	"signIn": "Connect to Researcherry",
  	"connect": "Connect",
--	"cloudBenefitsTitle": "Connect to Roo Code Cloud",
+-	"cloudBenefitsTitle": "Connect to Researcherry Cloud",
 +	"cloudBenefitsTitle": "Connect to Researcherry",
  	"cloudBenefitsSubtitle": "Sync your prompts and telemetry to enable:",
  	"cloudBenefitHistory": "Online task history",
  	"cloudBenefitSharing": "Sharing and collaboration features",
 -	"cloudBenefitMetrics": "Task, token, and cost-based usage metrics",
--	"visitCloudWebsite": "Visit Roo Code Cloud"
+-	"visitCloudWebsite": "Visit Researcherry Cloud"
 -}
 +	"cloudBenefitMetrics": "Usage metrics based on tasks, tokens, and costs",
 +	"visitCloudWebsite": "Visit Researcherry"
@@ -25332,7 +25332,7 @@ index 3b1847a10..3aca82b49 100644
 +++ b/webview-ui/src/i18n/locales/en/chat.json
 @@ -1,25 +1,24 @@
  {
--	"greeting": "Welcome to Roo Code!",
+-	"greeting": "Welcome to Researcherry!",
 +	"greeting": "Welcome to Researcherry",
  	"task": {
  		"title": "Task",
@@ -25364,7 +25364,7 @@ index 3b1847a10..3aca82b49 100644
 +		"sharePublicly": "Share publicly",
  		"sharePubliclyDescription": "Anyone with the link can access",
 -		"connectToCloud": "Connect to Cloud",
--		"connectToCloudDescription": "Sign in to Roo Code Cloud to share tasks",
+-		"connectToCloudDescription": "Sign in to Researcherry Cloud to share tasks",
 +		"connectToCloud": "Connect to cloud",
 +		"connectToCloudDescription": "Sign in to Researcherry to share tasks",
  		"sharingDisabledByOrganization": "Sharing disabled by organization",
@@ -25626,14 +25626,14 @@ index 3b1847a10..3aca82b49 100644
 -	"autoApprove": {
 -		"title": "Auto-approve:",
 -		"none": "None",
--		"description": "Auto-approve allows Roo Code to perform actions without asking for permission. Only enable for actions you fully trust. More detailed configuration available in <settingsLink>Settings</settingsLink>.",
+-		"description": "Auto-approve allows Researcherry to perform actions without asking for permission. Only enable for actions you fully trust. More detailed configuration available in <settingsLink>Settings</settingsLink>.",
 -		"selectOptionsFirst": "Select at least one option below to enable auto-approval",
 -		"toggleAriaLabel": "Toggle auto-approval",
 -		"disabledAriaLabel": "Auto-approval disabled - select options first"
 -	},
 -	"announcement": {
--		"title": "🎉 Roo Code {{version}} Released",
--		"description": "Roo Code {{version}} brings powerful new features and significant improvements to enhance your development workflow.",
+-		"title": "🎉 Researcherry {{version}} Released",
+-		"description": "Researcherry {{version}} brings powerful new features and significant improvements to enhance your development workflow.",
 -		"whatsNew": "What's New",
 -		"feature1": "<bold>Message Queueing</bold>: Queue multiple messages while Roo is working, allowing you to continue planning your workflow without interruption.",
 -		"feature2": "<bold>Custom Slash Commands</bold>: Create personalized slash commands for quick access to frequently used prompts and workflows, with full UI management.",
@@ -25687,7 +25687,7 @@ index 3b1847a10..3aca82b49 100644
 -	"profileViolationWarning": "The current profile isn't compatible with your organization's settings",
 -	"shellIntegration": {
 -		"title": "Command Execution Warning",
--		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>Roo Code settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
+-		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>Researcherry settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
 -		"troubleshooting": "Click here for shell integration documentation."
 -	},
 -	"ask": {
@@ -25713,7 +25713,7 @@ index 3b1847a10..3aca82b49 100644
 -		"ariaLabel": "Version {{version}} - Click to view release notes"
 -	},
 -	"rooCloudCTA": {
--		"title": "Roo Code Cloud is coming soon!",
+-		"title": "Researcherry Cloud is coming soon!",
 -		"description": "Run Roomote agents in the cloud, access your tasks from anywhere, collaborate with others, and more.",
 -		"joinWaitlist": "Join the waitlist to get early access."
 -	},
@@ -26454,7 +26454,7 @@ index 6e0f13750..80cd662b5 100644
  		"prompts": "Prompts",
  		"experimental": "Experimental",
  		"language": "Language",
--		"about": "About Roo Code"
+-		"about": "About Researcherry"
 +		"about": "About Researcherry"
  	},
  	"prompts": {
@@ -26778,13 +26778,13 @@ index 6e0f13750..80cd662b5 100644
 -			"draftModelDesc": "Draft model must be from the same model family for speculative decoding to work correctly.",
 -			"selectDraftModel": "Select Draft Model",
 -			"noModelsFound": "No draft models found. Please ensure LM Studio is running with Server Mode enabled.",
--			"description": "LM Studio allows you to run models locally on your computer. For instructions on how to get started, see their <a>quickstart guide</a>. You will also need to start LM Studio's <b>local server</b> feature to use it with this extension. <span>Note:</span> Roo Code uses complex prompts and works best with Claude models. Less capable models may not work as expected."
+-			"description": "LM Studio allows you to run models locally on your computer. For instructions on how to get started, see their <a>quickstart guide</a>. You will also need to start LM Studio's <b>local server</b> feature to use it with this extension. <span>Note:</span> Researcherry uses complex prompts and works best with Claude models. Less capable models may not work as expected."
 -		},
 -		"ollama": {
 -			"baseUrl": "Base URL (optional)",
 -			"modelId": "Model ID",
 -			"description": "Ollama allows you to run models locally on your computer. For instructions on how to get started, see their quickstart guide.",
--			"warning": "Note: Roo Code uses complex prompts and works best with Claude models. Less capable models may not work as expected."
+-			"warning": "Note: Researcherry uses complex prompts and works best with Claude models. Less capable models may not work as expected."
 -		},
 -		"unboundApiKey": "Unbound API Key",
 -		"getUnboundApiKey": "Get Unbound API Key",
@@ -26802,7 +26802,7 @@ index 6e0f13750..80cd662b5 100644
 -			}
 -		},
 -		"customModel": {
--			"capabilities": "Configure the capabilities and pricing for your custom OpenAI-compatible model. Be careful when specifying the model capabilities, as they can affect how Roo Code performs.",
+-			"capabilities": "Configure the capabilities and pricing for your custom OpenAI-compatible model. Be careful when specifying the model capabilities, as they can affect how Researcherry performs.",
 -			"maxTokens": {
 -				"label": "Max Output Tokens",
 -				"description": "Maximum number of tokens the model can generate in a response. (Specify -1 to allow the server to set the max tokens.)"
@@ -27157,7 +27157,7 @@ index 6e0f13750..80cd662b5 100644
 -		}
 -	},
 -	"modelPicker": {
--		"automaticFetch": "The extension automatically fetches the latest list of models available on <serviceLink>{{serviceName}}</serviceLink>. If you're unsure which model to choose, Roo Code works best with <defaultModelLink>{{defaultModelId}}</defaultModelLink>. You can also try searching \"free\" for no-cost options currently available.",
+-		"automaticFetch": "The extension automatically fetches the latest list of models available on <serviceLink>{{serviceName}}</serviceLink>. If you're unsure which model to choose, Researcherry works best with <defaultModelLink>{{defaultModelId}}</defaultModelLink>. You can also try searching \"free\" for no-cost options currently available.",
 -		"label": "Model",
 -		"searchPlaceholder": "Search",
 -		"noMatchFound": "No match found",
@@ -27167,7 +27167,7 @@ index 6e0f13750..80cd662b5 100644
 -		"feedback": "If you have any questions or feedback, feel free to open an issue at <githubLink>github.com/RooCodeInc/Roo-Code</githubLink> or join <redditLink>reddit.com/r/RooCode</redditLink> or <discordLink>discord.gg/roocode</discordLink>",
 -		"telemetry": {
 -			"label": "Allow anonymous error and usage reporting",
--			"description": "Help improve Roo Code by sending anonymous usage data and error reports. No code, prompts, or personal information is ever sent (unless you connect to Roo Code Cloud). See our <privacyLink>privacy policy</privacyLink> for more details."
+-			"description": "Help improve Researcherry by sending anonymous usage data and error reports. No code, prompts, or personal information is ever sent (unless you connect to Researcherry Cloud). See our <privacyLink>privacy policy</privacyLink> for more details."
 -		},
 -		"settings": {
 -			"import": "Import",
@@ -27249,8 +27249,8 @@ index 2202f6fd6..69ab5f2fa 100644
 +++ b/webview-ui/src/i18n/locales/en/welcome.json
 @@ -1,7 +1,7 @@
  {
--	"greeting": "Welcome to Roo Code!",
--	"introduction": "With a range of built-in and extensible Modes, Roo Code lets you plan, architect, code, debug and boost your productivity like never before.",
+-	"greeting": "Welcome to Researcherry!",
+-	"introduction": "With a range of built-in and extensible Modes, Researcherry lets you plan, architect, code, debug and boost your productivity like never before.",
 -	"notice": "To get started, this extension needs an API provider.",
 +	"greeting": "Welcome to Researcherry!",
 +	"introduction": "With built-in and extensible Modes, Researcherry lets you plan, design, code, debug, and boost productivity like never before.",
@@ -27273,8 +27273,8 @@ index 2202f6fd6..69ab5f2fa 100644
 +	"startRouter": "We recommend using an LLM router:",
 +	"startCustom": "Or you can use your own API key:",
  	"telemetry": {
--		"title": "Help Improve Roo Code",
--		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. No code, prompts, or personal information is ever sent (unless you connect to Roo Code Cloud). See our <privacyLink>privacy policy</privacyLink> for more details.",
+-		"title": "Help Improve Researcherry",
+-		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. No code, prompts, or personal information is ever sent (unless you connect to Researcherry Cloud). See our <privacyLink>privacy policy</privacyLink> for more details.",
 -		"changeSettings": "You can always change this at the bottom of the <settingsLink>settings</settingsLink>",
 +		"title": "Help improve Researcherry",
 +		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. Code, prompts, and personal information are never sent.",
@@ -27295,16 +27295,16 @@ index 1c8dcf528..ae7f30e49 100644
  	"profilePicture": "Фото профиля",
  	"logOut": "Выход",
  	"testApiAuthentication": "Проверить аутентификацию API",
--	"signIn": "Подключиться к Roo Code Cloud",
+-	"signIn": "Подключиться к Researcherry Cloud",
 +	"signIn": "Подключиться к Researcherry",
  	"connect": "Подключиться",
--	"cloudBenefitsTitle": "Подключиться к Roo Code Cloud",
+-	"cloudBenefitsTitle": "Подключиться к Researcherry Cloud",
 +	"cloudBenefitsTitle": "Подключиться к Researcherry",
  	"cloudBenefitsSubtitle": "Синхронизируй свои промпты и телеметрию, чтобы включить:",
  	"cloudBenefitHistory": "Онлайн-история задач",
  	"cloudBenefitSharing": "Функции обмена и совместной работы",
  	"cloudBenefitMetrics": "Метрики использования на основе задач, токенов и затрат",
--	"visitCloudWebsite": "Посетить Roo Code Cloud"
+-	"visitCloudWebsite": "Посетить Researcherry Cloud"
 +	"visitCloudWebsite": "Посетить Researcherry"
  }
 diff --git a/webview-ui/src/i18n/locales/ru/chat.json b/webview-ui/src/i18n/locales/ru/chat.json
@@ -27313,7 +27313,7 @@ index cab736621..00c91a7d4 100644
 +++ b/webview-ui/src/i18n/locales/ru/chat.json
 @@ -1,14 +1,13 @@
  {
--	"greeting": "Добро пожаловать в Roo Code",
+-	"greeting": "Добро пожаловать в Researcherry",
 +	"greeting": "Добро пожаловать в Researcherry",
  	"task": {
  		"title": "Задача",
@@ -27335,7 +27335,7 @@ index cab736621..00c91a7d4 100644
  		"sharePublicly": "Поделиться публично",
  		"sharePubliclyDescription": "Любой, у кого есть ссылка, может получить доступ",
  		"connectToCloud": "Подключиться к облаку",
--		"connectToCloudDescription": "Войди в Roo Code Cloud, чтобы делиться задачами",
+-		"connectToCloudDescription": "Войди в Researcherry Cloud, чтобы делиться задачами",
 +		"connectToCloudDescription": "Войди в Researcherry, чтобы делиться задачами",
  		"sharingDisabledByOrganization": "Обмен отключен организацией",
  		"shareSuccessOrganization": "Ссылка организации скопирована в буфер обмена",
@@ -27488,15 +27488,15 @@ index cab736621..00c91a7d4 100644
  	"autoApprove": {
  		"title": "Автоодобрение:",
  		"none": "Нет",
--		"description": "Автоодобрение позволяет Roo Code выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
+-		"description": "Автоодобрение позволяет Researcherry выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
 +		"description": "Автоодобрение позволяет Researcherry выполнять действия без запроса разрешения. Включайте только для полностью доверенных действий. Более подробная настройка доступна в <settingsLink>Настройках</settingsLink>.",
  		"selectOptionsFirst": "Выберите хотя бы один параметр ниже, чтобы включить автоодобрение",
  		"toggleAriaLabel": "Переключить автоодобрение",
  		"disabledAriaLabel": "Автоодобрение отключено - сначала выберите опции"
  	},
  	"announcement": {
--		"title": "🎉 Выпущен Roo Code {{version}}",
--		"description": "Roo Code {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
+-		"title": "🎉 Выпущен Researcherry {{version}}",
+-		"description": "Researcherry {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
 +		"title": "🎉 Выпущен Researcherry {{version}}",
 +		"description": "Researcherry {{version}} приносит мощные новые функции и значительные улучшения для совершенствования вашего рабочего процесса разработки.",
  		"whatsNew": "Что нового",
@@ -27518,7 +27518,7 @@ index cab736621..00c91a7d4 100644
  	"profileViolationWarning": "Текущий профиль несовместим с настройками вашей организации",
  	"shellIntegration": {
  		"title": "Предупреждение о выполнении команды",
--		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Roo Code</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
+-		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Researcherry</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
 +		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Researcherry</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
  		"troubleshooting": "Нажмите здесь для просмотра документации по интеграции оболочки."
  	},
@@ -27545,7 +27545,7 @@ index cab736621..00c91a7d4 100644
  		"ariaLabel": "Версия {{version}} - Нажмите, чтобы просмотреть примечания к выпуску"
  	},
  	"rooCloudCTA": {
--		"title": "Roo Code Cloud скоро появится!",
+-		"title": "Researcherry Cloud скоро появится!",
 +		"title": "Researcherry скоро появится!",
  		"description": "Запускайте удаленные агенты в облаке, получайте доступ к своим задачам из любого места, сотрудничайте с другими и многое другое.",
  		"joinWaitlist": "Присоединитесь к списку ожидания для получения раннего доступа."
@@ -27595,7 +27595,7 @@ index 38e986ab8..8d3589c31 100644
  		"prompts": "Промпты",
  		"experimental": "Экспериментальное",
  		"language": "Язык",
--		"about": "О Roo Code"
+-		"about": "О Researcherry"
 +		"about": "О Researcherry"
  	},
  	"prompts": {
@@ -27662,14 +27662,14 @@ index 38e986ab8..8d3589c31 100644
  			"draftModelDesc": "Черновая модель должна быть из той же семьи моделей для корректной работы speculative decoding.",
  			"selectDraftModel": "Выбрать черновую модель",
  			"noModelsFound": "Черновых моделей не найдено. Проверьте, что LM Studio запущен с включённым серверным режимом.",
--			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Roo Code использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
+-			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
 +			"description": "LM Studio позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с <a>кратким руководством</a>. Также необходимо включить <b>локальный сервер</b> LM Studio для работы с этим расширением. <span>Примечание:</span> Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
  		},
  		"ollama": {
  			"baseUrl": "Базовый URL (опционально)",
  			"modelId": "ID модели",
  			"description": "Ollama позволяет запускать модели локально на вашем компьютере. Для начала ознакомьтесь с кратким руководством.",
--			"warning": "Примечание: Roo Code использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
+-			"warning": "Примечание: Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
 +			"warning": "Примечание: Researcherry использует сложные подсказки и лучше всего работает с моделями Claude. Менее мощные модели могут работать некорректно."
  		},
  		"unboundApiKey": "Unbound API-ключ",
@@ -27678,7 +27678,7 @@ index 38e986ab8..8d3589c31 100644
  			}
  		},
  		"customModel": {
--			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Roo Code.",
+-			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Researcherry.",
 +			"capabilities": "Настройте возможности и стоимость вашей пользовательской модели, совместимой с OpenAI. Будьте осторожны при указании возможностей модели, это может повлиять на работу Researcherry.",
  			"maxTokens": {
  				"label": "Максимум токенов на вывод",
@@ -27834,7 +27834,7 @@ index 38e986ab8..8d3589c31 100644
  		}
  	},
  	"modelPicker": {
--		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Roo Code лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
+-		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Researcherry лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
 +		"automaticFetch": "Расширение автоматически получает актуальный список моделей на <serviceLink>{{serviceName}}</serviceLink>. Если не уверены, что выбрать, Researcherry лучше всего работает с <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Также попробуйте поискать \"free\" для бесплатных вариантов.",
  		"label": "Модель",
  		"searchPlaceholder": "Поиск",
@@ -27846,7 +27846,7 @@ index 38e986ab8..8d3589c31 100644
 +		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/Researcherry/researcherry</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/ResearcherryCoder</redditLink> или <discordLink>discord.gg/researcherry</discordLink>",
  		"telemetry": {
  			"label": "Разрешить анонимную отправку ошибок и статистики использования",
--			"description": "Помогите улучшить Roo Code, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
+-			"description": "Помогите улучшить Researcherry, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
 +			"description": "Помогите улучшить Researcherry, отправляя анонимные данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."
  		},
  		"settings": {
@@ -27857,8 +27857,8 @@ index cae5b790e..1fc327d1e 100644
 +++ b/webview-ui/src/i18n/locales/ru/welcome.json
 @@ -1,6 +1,6 @@
  {
--	"greeting": "Добро пожаловать в Roo Code!",
--	"introduction": "С набором встроенных и расширяемых Режимов, Roo Code позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
+-	"greeting": "Добро пожаловать в Researcherry!",
+-	"introduction": "С набором встроенных и расширяемых Режимов, Researcherry позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
 +	"greeting": "Добро пожаловать в Researcherry!",
 +	"introduction": "С набором встроенных и расширяемых Режимов, Researcherry позволяет вам планировать, проектировать, писать код, отлаживать и повышать продуктивность как никогда раньше.",
  	"notice": "Для начала работы этому расширению нужен провайдер API.",
@@ -27868,7 +27868,7 @@ index cae5b790e..1fc327d1e 100644
  	"startRouter": "Мы рекомендуем использовать маршрутизатор LLM:",
  	"startCustom": "Или вы можете использовать свой собственный API-ключ:",
  	"telemetry": {
--		"title": "Помогите улучшить Roo Code",
+-		"title": "Помогите улучшить Researcherry",
 +		"title": "Помогите улучшить Researcherry",
  		"anonymousTelemetry": "Отправлять анонимные данные об ошибках и использовании, чтобы помочь нам исправлять баги и совершенствовать расширение. Код, промпты и личная информация никогда не отправляются.",
  		"changeSettings": "Вы всегда можете изменить это внизу страницы <settingsLink>настроек</settingsLink>",
@@ -28105,7 +28105,7 @@ index 5d8b517b8..cca241cb1 100644
 +++ b/webview-ui/src/utils/docLinks.ts
 @@ -1,14 +1,34 @@
  /**
-- * Utility for building Roo Code documentation links with UTM telemetry.
+- * Utility for building Researcherry documentation links with UTM telemetry.
 + * Utility for building Researcherry documentation links to local documentation.
   *
   * @param path - The path after the docs root (no leading slash)

@@ -26,7 +26,7 @@ index 965566a31..16da1350d 100644
      id: version
      attributes:
        label: App Version
--      description: What version of Roo Code are you using? (e.g., v3.3.1)
+-      description: What version of Researcherry are you using? (e.g., v3.3.1)
 +      description: What version of Researcherry are you using? (e.g., v3.3.1)
      validations:
        required: true
@@ -49,7 +49,7 @@ index 0351ad193..1f04efb24 100644
      - name: Feature Request
 -      url: https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests
 +      url: https://github.com/Researcherry/researcherry/discussions/categories/feature-requests
-       about: Share and vote on feature requests for Roo Code
+       about: Share and vote on feature requests for Researcherry
      - name: Leave a Review
        url: https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&ssr=false#review-details
 diff --git a/.github/ISSUE_TEMPLATE/feature_request.yml b/.github/ISSUE_TEMPLATE/feature_request.yml
@@ -58,14 +58,14 @@ index 4863f9ffa..1db7a854b 100644
 +++ b/.github/ISSUE_TEMPLATE/feature_request.yml
 @@ -1,19 +1,19 @@
  name: Detailed Feature Proposal
--description: Report a specific problem that needs solving in Roo Code
+-description: Report a specific problem that needs solving in Researcherry
 +description: Report a specific problem that needs solving in Researcherry
  labels: ["proposal", "enhancement"]
  body:
    - type: markdown
      attributes:
        value: |
--        **Thank you for submitting a feature request for Roo Code!**
+-        **Thank you for submitting a feature request for Researcherry!**
 +        **Thank you for submitting a feature request for Researcherry!**
          
 -        This template helps you describe problems that need solving. Focus on the problem - the Roo team will work to design solutions unless you want to contribute the implementation yourself.
@@ -85,14 +85,14 @@ index 4863f9ffa..1db7a854b 100644
    - type: textarea
      id: roo-code-tasks
      attributes:
--      label: Roo Code Task Links (Optional)
+-      label: Researcherry Task Links (Optional)
 +      label: Researcherry Task Links (Optional)
        description: |
--        If you used Roo Code to explore this feature request or develop solutions, share the public task links here.
+-        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
 +        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
          This helps maintainers understand the context and any exploration you've done.
 -        Example: https://app.roocode.com/share/task-id
--      placeholder: Paste your Roo Code share links here, one per line
+-      placeholder: Paste your Researcherry share links here, one per line
 +        Example: https://app.researcherrycoder.com/share/task-id
 +      placeholder: Paste your Researcherry share links here, one per line
  
@@ -443,7 +443,7 @@ index a1fbb0506..14f6f91ef 100644
  {
 -	"name": "@roo-code/build",
 +	"name": "@researcherry/build",
- 	"description": "ESBuild utilities for Roo Code.",
+ 	"description": "ESBuild utilities for Researcherry.",
  	"private": true,
  	"type": "module",
 @@ -16,8 +16,8 @@
@@ -486,7 +486,7 @@ index d67b5ae7e..714282998 100644
  {
 -	"name": "@roo-code/cloud",
 +	"name": "@researcherry/cloud",
- 	"description": "Roo Code Cloud VSCode integration.",
+ 	"description": "Researcherry Cloud VSCode integration.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -11,13 +11,13 @@
@@ -558,7 +558,7 @@ index 83690a99c..3293a39db 100644
  {
 -	"name": "@roo-code/evals",
 +	"name": "@researcherry/evals",
- 	"description": "Roo Code evals.",
+ 	"description": "Researcherry evals.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -26,8 +26,8 @@
@@ -612,7 +612,7 @@ index 03cb3beec..752226822 100644
  {
 -	"name": "@roo-code/ipc",
 +	"name": "@researcherry/ipc",
- 	"description": "IPC server and client for remote Roo Code access.",
+ 	"description": "IPC server and client for remote Researcherry access.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -10,12 +10,12 @@
@@ -660,7 +660,7 @@ index 42d0df387..81ec5bfe0 100644
  {
 -	"name": "@roo-code/telemetry",
 +	"name": "@researcherry/telemetry",
- 	"description": "Roo Code telemetry service and clients.",
+ 	"description": "Researcherry telemetry service and clients.",
  	"version": "0.0.0",
  	"type": "module",
 @@ -11,13 +11,13 @@
@@ -709,7 +709,7 @@ index f73a83a7b..c987e2df1 100644
  {
 -	"name": "@roo-code/types",
 -	"version": "1.44.0",
--	"description": "TypeScript type definitions for Roo Code.",
+-	"description": "TypeScript type definitions for Researcherry.",
 +	"name": "@researcherry/types",
 +	"version": "1.40.0",
 +	"description": "TypeScript type definitions for Researcherry.",
@@ -719,7 +719,7 @@ index f73a83a7b..c987e2df1 100644
 -		"registry": "https://registry.npmjs.org/"
 +		"name": "@researcherry/types"
  	},
--	"author": "Roo Code Team",
+-	"author": "Researcherry Team",
 +	"author": "Researcherry Team",
  	"license": "MIT",
  	"repository": {

@@ -168,7 +168,7 @@ index 965566a31..16da1350d 100644
      id: version
      attributes:
        label: App Version
--      description: What version of Roo Code are you using? (e.g., v3.3.1)
+-      description: What version of Researcherry are you using? (e.g., v3.3.1)
 +      description: What version of Researcherry are you using? (e.g., v3.3.1)
      validations:
        required: true
@@ -191,7 +191,7 @@ index 0351ad193..1f04efb24 100644
      - name: Feature Request
 -      url: https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests
 +      url: https://github.com/Researcherry/researcherry/discussions/categories/feature-requests
-       about: Share and vote on feature requests for Roo Code
+       about: Share and vote on feature requests for Researcherry
      - name: Leave a Review
        url: https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&ssr=false#review-details
 diff --git a/.github/ISSUE_TEMPLATE/feature_request.yml b/.github/ISSUE_TEMPLATE/feature_request.yml
@@ -200,14 +200,14 @@ index 4863f9ffa..1db7a854b 100644
 +++ b/.github/ISSUE_TEMPLATE/feature_request.yml
 @@ -1,19 +1,19 @@
  name: Detailed Feature Proposal
--description: Report a specific problem that needs solving in Roo Code
+-description: Report a specific problem that needs solving in Researcherry
 +description: Report a specific problem that needs solving in Researcherry
  labels: ["proposal", "enhancement"]
  body:
    - type: markdown
      attributes:
        value: |
--        **Thank you for submitting a feature request for Roo Code!**
+-        **Thank you for submitting a feature request for Researcherry!**
 +        **Thank you for submitting a feature request for Researcherry!**
          
 -        This template helps you describe problems that need solving. Focus on the problem - the Roo team will work to design solutions unless you want to contribute the implementation yourself.
@@ -227,14 +227,14 @@ index 4863f9ffa..1db7a854b 100644
    - type: textarea
      id: roo-code-tasks
      attributes:
--      label: Roo Code Task Links (Optional)
+-      label: Researcherry Task Links (Optional)
 +      label: Researcherry Task Links (Optional)
        description: |
--        If you used Roo Code to explore this feature request or develop solutions, share the public task links here.
+-        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
 +        If you used Researcherry to explore this feature request or develop solutions, share the public task links here.
          This helps maintainers understand the context and any exploration you've done.
 -        Example: https://app.roocode.com/share/task-id
--      placeholder: Paste your Roo Code share links here, one per line
+-      placeholder: Paste your Researcherry share links here, one per line
 +        Example: https://app.researcherrycoder.com/share/task-id
 +      placeholder: Paste your Researcherry share links here, one per line
  
@@ -925,7 +925,7 @@ index ec54b804d..000000000
 +++ /dev/null
 @@ -1,40 +0,0 @@
 ----
--description: "Create a new release of the Roo Code extension"
+-description: "Create a new release of the Researcherry extension"
 -argument-hint: patch | minor | major
 ----
 -
@@ -6138,18 +6138,18 @@ index 4c35819b1..000000000
 @@ -1,205 +0,0 @@
 -<pr_template_instructions>
 -  <overview>
--    This file contains the official Roo Code PR template that must be used when creating pull requests.
+-    This file contains the official Researcherry PR template that must be used when creating pull requests.
 -    All PRs must follow this exact format to ensure consistency and proper documentation.
 -  </overview>
 -
 -  <pr_body_template>
 -    <description>
--      The PR body must follow this exact Roo Code PR template with all required sections.
+-      The PR body must follow this exact Researcherry PR template with all required sections.
 -      Replace placeholder content in square brackets with actual information.
 -    </description>
 -    <template><![CDATA[
 -<!--
--Thank you for contributing to Roo Code!
+-Thank you for contributing to Researcherry!
 -
 -Before submitting your PR, please ensure:
 -- It's linked to an approved GitHub Issue.
@@ -6162,10 +6162,10 @@ index 4c35819b1..000000000
 -
 -Closes: #[ISSUE_NUMBER] <!-- Replace with the issue number, e.g., Closes: #123 -->
 -
--### Roo Code Task Context (Optional)
+-### Researcherry Task Context (Optional)
 -
 -<!--
--If you used Roo Code to help create this PR, you can share public task links here.
+-If you used Researcherry to help create this PR, you can share public task links here.
 -This helps reviewers understand your development process and provides additional context.
 -Example: https://app.roocode.com/share/task-id
 --->
@@ -6300,9 +6300,9 @@ index 4c35819b1..000000000
 -        <example>123</example>
 -      </placeholder>
 -      <placeholder name="TASK_CONTEXT">
--        <description>Optional Roo Code task links if used during development</description>
+-        <description>Optional Researcherry task links if used during development</description>
 -        <example>https://app.roocode.com/share/task-abc123</example>
--        <default>_No Roo Code task context for this PR_</default>
+-        <default>_No Researcherry task context for this PR_</default>
 -      </placeholder>
 -      <placeholder name="DESCRIPTION_CONTENT">
 -        <description>Detailed explanation of implementation approach</description>
@@ -9871,7 +9871,7 @@ index 77a172859..000000000
 -<mode_management_workflow>
 -  <overview>
 -    This workflow guides you through creating new custom modes or editing existing modes
--    for the Roo Code Software, ensuring comprehensive understanding and cohesive implementation.
+-    for the Researcherry Software, ensuring comprehensive understanding and cohesive implementation.
 -  </overview>
 -
 -  <initial_determination>
@@ -9954,7 +9954,7 @@ index 77a172859..000000000
 -          <field name="roleDefinition">
 -            <description>Detailed description of the mode's role and expertise</description>
 -            <best_practice>
--              Start with "You are Roo Code, a [specialist type]..."
+-              Start with "You are Researcherry, a [specialist type]..."
 -              List specific areas of expertise
 -              Mention key technologies or methodologies
 -            </best_practice>
@@ -10422,7 +10422,7 @@ index 82a5f845a..000000000
 -- slug: api-specialist
 -  name: 🔌 API Specialist
 -  roleDefinition: >-
--    You are Roo Code, an API development specialist with expertise in:
+-    You are Researcherry, an API development specialist with expertise in:
 -    - RESTful API design and implementation
 -    - GraphQL schema design
 -    - API documentation with OpenAPI/Swagger
@@ -10462,7 +10462,7 @@ index 82a5f845a..000000000
 -- slug: migration-guide
 -  name: 🔄 Migration Guide
 -  roleDefinition: >-
--    You are Roo Code, a migration specialist who guides users through
+-    You are Researcherry, a migration specialist who guides users through
 -    complex migration processes:
 -    - Database schema migrations
 -    - Framework version upgrades
@@ -10499,7 +10499,7 @@ index 82a5f845a..000000000
 -- slug: security-auditor
 -  name: 🔒 Security Auditor
 -  roleDefinition: >-
--    You are Roo Code, a security analysis specialist focused on:
+-    You are Researcherry, a security analysis specialist focused on:
 -    - Identifying security vulnerabilities
 -    - Analyzing authentication and authorization
 -    - Reviewing data validation and sanitization
@@ -10537,7 +10537,7 @@ index 82a5f845a..000000000
 -- slug: component-designer
 -  name: 🎨 Component Designer
 -  roleDefinition: >-
--    You are Roo Code, a UI component design specialist who creates:
+-    You are Researcherry, a UI component design specialist who creates:
 -    - Reusable React/Vue/Angular components
 -    - Component documentation and examples
 -    - Storybook stories
@@ -11268,7 +11268,7 @@ index db65b31c2..000000000
 @@ -1,207 +0,0 @@
 -<mode_testing_validation>
 -  <overview>
--    Guidelines for testing and validating newly created modes to ensure they function correctly and integrate well with the Roo Code ecosystem.
+-    Guidelines for testing and validating newly created modes to ensure they function correctly and integrate well with the Researcherry ecosystem.
 -  </overview>
 -
 -  <validation_checklist>

@@ -2903,10 +2903,10 @@ index c23c424f4..d5576a429 100644
  </sub>
  </div>
  
--# Contributing to Roo Code
+-# Contributing to Researcherry
 +# Contributing to Researcherry
  
--Roo Code is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
+-Researcherry is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
 +Researcherry is a community-driven project, and we deeply value every contribution. To streamline collaboration, we operate on an [Issue-First](#issue-first-approach) basis, meaning all [Pull Requests (PRs)](#submitting-a-pull-request) must first be linked to a GitHub Issue. Please review this guide carefully.
  
  ## Table of Contents
@@ -2915,7 +2915,7 @@ index c23c424f4..d5576a429 100644
  
  Mention alignment with these areas in your PRs.
  
--### 3. Join the Roo Code Community
+-### 3. Join the Researcherry Community
 +### 3. Join the Researcherry Community
  
 -- **Primary:** Join our [Discord](https://discord.gg/roocode) and DM **Hannes Rudolph (`hrudolph`)**.
@@ -2939,7 +2939,7 @@ index c23c424f4..d5576a429 100644
  ### Deciding What to Work On
  
 -- Check the [GitHub Project](https://github.com/orgs/RooCodeInc/projects/1) for unassigned "Good First Issues."
--- For docs, visit [Roo Code Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
+-- For docs, visit [Researcherry Docs](https://github.com/RooCodeInc/Roo-Code-Docs).
 +- Check the [GitHub Project](https://github.com/orgs/Researcherry/projects/1) for unassigned "Good First Issues."
 +- For docs, visit [Researcherry Docs](https://github.com/Researcherry/researcherry-Docs).
  
@@ -2966,14 +2966,14 @@ index c23c424f4..d5576a429 100644
  
  ## Legal
  
--By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Roo Code's licensing.
+-By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry's licensing.
 +By contributing, you agree your contributions will be licensed under the Apache 2.0 License, consistent with Researcherry's licensing.
 diff --git a/locales/ru/README.md b/locales/ru/README.md
 index 11b34b0de..9483dfac7 100644
 --- a/locales/ru/README.md
 +++ b/locales/ru/README.md
 @@ -181,48 +181,45 @@ code --install-extension bin/roo-cline-<version>.vsix
- Спасибо всем нашим участникам, которые помогли сделать Roo Code лучше!
+ Спасибо всем нашим участникам, которые помогли сделать Researcherry лучше!
  
  <!-- START CONTRIBUTORS SECTION - AUTO-GENERATED, DO NOT EDIT MANUALLY -->
 -
