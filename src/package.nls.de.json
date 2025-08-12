@@ -34,7 +34,7 @@
 	"settings.vsCodeLmModelSelector.vendor.description": "Der Anbieter des Sprachmodells (z.B. copilot)",
 	"settings.vsCodeLmModelSelector.family.description": "Die Familie des Sprachmodells (z.B. gpt-4)",
 	"settings.customStoragePath.description": "Benutzerdefinierter Speicherpfad. Leer lassen, um den Standardspeicherort zu verwenden. Unterstützt absolute Pfade (z.B. 'D:\\ResearcherryCoderStorage')",
-	"settings.enableCodeActions.description": "Roo Code Schnelle Problembehebung aktivieren.",
+	"settings.enableCodeActions.description": "Researcherry Schnelle Problembehebung aktivieren.",
 	"settings.autoImportSettingsPath.description": "Pfad zu einer ResearcherryCoder-Konfigurationsdatei, die beim Start der Erweiterung automatisch importiert wird. Unterstützt absolute Pfade und Pfade relativ zum Home-Verzeichnis (z.B. '~/Documents/roo-code-settings.json'). Leer lassen, um den automatischen Import zu deaktivieren.",
 	"settings.useAgentRules.description": "Aktiviert das Laden von AGENTS.md-Dateien für agentenspezifische Regeln (siehe https://agent-rules.org/)"
 }

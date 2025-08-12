@@ -173,8 +173,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Your organization requires Roo Code Cloud authentication. Please sign in to continue.",
-			"organization_mismatch": "You must be authenticated with your organization's Roo Code Cloud account.",
+			"cloud_auth_required": "Your organization requires Researcherry Cloud authentication. Please sign in to continue.",
+			"organization_mismatch": "You must be authenticated with your organization's Researcherry Cloud account.",
 			"verification_failed": "Unable to verify organization authentication."
 		}
 	},
