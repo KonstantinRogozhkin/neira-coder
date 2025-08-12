@@ -243,7 +243,7 @@
 
 ### Bug Fixes
 
-- fix: resolve build issues after project rebranding from Roo Code to Researcherry
+- fix: resolve build issues after project rebranding from Researcherry to Researcherry
 - fix: update all package references from @roo-code/_ to @researcherry/_
 - fix: correct TypeScript configuration paths after rebranding
 - fix: restore missing Config.ts file in cloud package
@@ -367,7 +367,7 @@
 
 ### Minor Changes
 
-- feat: complete rename from Roo Code to Researcherry
+- feat: complete rename from Researcherry to Researcherry
 
 ## [3.25.4] - 2025-07-30
 
