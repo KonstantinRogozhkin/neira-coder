@@ -8,7 +8,7 @@ import type { ClineMessage } from "@researcherry/types"
 import { waitFor, sleep } from "../utils"
 import { setDefaultSuiteTimeout } from "../test-utils"
 
-suite("Roo Code write_to_file Tool", function () {
+suite("Researcherry write_to_file Tool", function () {
 	setDefaultSuiteTimeout(this)
 
 	let tempDir: string

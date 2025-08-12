@@ -8,7 +8,7 @@ import type { ClineMessage } from "@researcherry/types"
 import { waitFor, sleep } from "../utils"
 import { setDefaultSuiteTimeout } from "../test-utils"
 
-suite("Roo Code search_and_replace Tool", function () {
+suite("Researcherry search_and_replace Tool", function () {
 	setDefaultSuiteTimeout(this)
 
 	let workspaceDir: string

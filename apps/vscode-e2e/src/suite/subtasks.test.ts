@@ -4,7 +4,7 @@ import type { ClineMessage } from "@researcherry/types"
 
 import { sleep, waitFor, waitUntilCompleted } from "./utils"
 
-suite.skip("Roo Code Subtasks", () => {
+suite.skip("Researcherry Subtasks", () => {
 	test("Should handle subtask cancellation and resumption correctly", async () => {
 		const api = globalThis.api
 
